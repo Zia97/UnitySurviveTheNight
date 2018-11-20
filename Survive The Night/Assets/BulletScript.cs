@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
 
-    public float velX =75f;
-    float velY = 0f;
+    public float velX =50f;
+    float velY = 6f;
     Rigidbody2D rb;
     private Vector3 target;
 
@@ -13,14 +13,31 @@ public class BulletScript : MonoBehaviour {
     void Start () {
 
         rb = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-        rb.velocity = new Vector2(velX, velY);
+        Vector3 shootDirection;
+        shootDirection = Input.mousePosition;
+        shootDirection.z = 0.0f;
+        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+        shootDirection = shootDirection - transform.position;
+        rb.velocity = new Vector2(shootDirection.x*velX, shootDirection.y*velX);
         Destroy(gameObject, 3f);
 
+    }
+	
+	// Update is called once per frame
+	void Update ()
+    {
+
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.gameObject.name == "Enemy")
+        {
+            Destroy(this.gameObject);
         }
+    }
+
+
 
 }

@@ -28,17 +28,24 @@ public class PlayerControls : MonoBehaviour {
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
-            fireBullet();
+            if (target.x > -6)
+            {
+                fireBullet(target);
+            };
         }
-        transform.position = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
+
+        if (target.x < -6)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
+        };
     }
 
 
-    void fireBullet()
+    void fireBullet(Vector3 target)
     {
         bulletPos = transform.position;
-        bulletPos += new Vector2(1f, -0.5f);
-        Instantiate(bullet, bulletPos, Quaternion.identity);
+        bulletPos += new Vector2(1f, 0f);
+        Instantiate(bullet,bulletPos,Quaternion.identity);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
