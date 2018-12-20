@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour {
 
     private float speed = 3.0f;
     private bool isMoving = true;
+    private double health = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -22,9 +23,18 @@ public class EnemyScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Hit:"+collision.collider.name);
         if (collision.transform.gameObject.name != "wall")
         {
-            Destroy(this.gameObject);
+            if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
+            {
+                health = health - 30;
+            }
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+          
         }
         else
         {
