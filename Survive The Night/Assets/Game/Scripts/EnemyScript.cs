@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     private bool isMoving = true;
     private double health = 100;
     private GameController gameController;
+    private System.Timers.Timer aTimer = new System.Timers.Timer();
 
     // Use this for initialization
     void Start()
@@ -49,6 +50,7 @@ public class EnemyScript : MonoBehaviour
 
             if (health <= 0)
             {
+                killTimer();
                 Destroy(gameObject);
             }
         }
@@ -61,7 +63,6 @@ public class EnemyScript : MonoBehaviour
 
     void beginWallDamage()
     {
-        System.Timers.Timer aTimer = new System.Timers.Timer();
         aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
         aTimer.Interval = 2000;
         aTimer.Enabled = true;
@@ -70,5 +71,11 @@ public class EnemyScript : MonoBehaviour
     private void OnTimedEvent(object source, ElapsedEventArgs e)
     {
         gameController.damageWall(1);
+    }
+
+    private void killTimer()
+    {
+        aTimer.Stop();
+        aTimer.Dispose();
     }
 }
