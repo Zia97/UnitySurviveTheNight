@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
@@ -8,11 +9,20 @@ public class EnemyScript : MonoBehaviour
     private float speed = 3.0f;
     private bool isMoving = true;
     private double health = 100;
+    private GameController gameController;
 
     // Use this for initialization
     void Start()
     {
-
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if (gameController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
     }
 
     // Update is called once per frame
@@ -26,12 +36,11 @@ public class EnemyScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hit:" + collision.collider.name);
-
         
         if (collision.transform.gameObject.name == "wall")
         {
             isMoving = false;
+            beginWallDamage();
         }
 
         else if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
@@ -48,5 +57,18 @@ public class EnemyScript : MonoBehaviour
         {
             Debug.Log("Unidentified enemy collision");
         }
+    }
+
+    void beginWallDamage()
+    {
+        System.Timers.Timer aTimer = new System.Timers.Timer();
+        aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+        aTimer.Interval = 2000;
+        aTimer.Enabled = true;
+    }
+
+    private void OnTimedEvent(object source, ElapsedEventArgs e)
+    {
+        gameController.damageWall(1);
     }
 }

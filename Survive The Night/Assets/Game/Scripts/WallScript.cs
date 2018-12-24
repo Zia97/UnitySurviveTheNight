@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WallScript : MonoBehaviour {
 
+    int health = 100;
+
 
     // Use this for initialization
     void Start () {
@@ -12,7 +14,14 @@ public class WallScript : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
+
+    void decreaseHealth(int damage)
+    {
+        health = health - damage;
+        Debug.Log(health);
+    }
 }

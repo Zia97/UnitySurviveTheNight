@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hazard: {fileID: 1131701345907200, guid: e0b53f999d66446428547f147ad0985a, type: 3}
   spawnValues: {x: 13, y: 4, z: 0}
-  hazardCount: 10
+  hazardCount: 5
   spawnWait: 1
   startWait: 1
   waveWait: 10

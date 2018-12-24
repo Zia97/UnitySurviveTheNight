@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public int wallHeath = 100;
 
     private void Start()
     {
@@ -29,9 +30,17 @@ public class GameController : MonoBehaviour
                 yield return new WaitForSeconds(spawnWait);
             }
 
+            hazardCount = hazardCount + 5;
+
             yield return new WaitForSeconds(waveWait);
         }
       
     }
 
+    public void damageWall(int damage)
+    {
+        wallHeath = wallHeath - damage;
+        print(wallHeath);
+    }
+ 
 }
