@@ -41,6 +41,7 @@ public class EnemyScript : MonoBehaviour
         if (collision.transform.gameObject.name == "wall")
         {
             isMoving = false;
+            StartCoroutine("beginWallDamage");
             beginWallDamage();
         }
 
@@ -50,7 +51,7 @@ public class EnemyScript : MonoBehaviour
 
             if (health <= 0)
             {
-                killTimer();
+                gameController.updateScore();
                 Destroy(gameObject);
             }
         }
@@ -61,21 +62,13 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    void beginWallDamage()
+    private IEnumerator beginWallDamage()
     {
-        aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-        aTimer.Interval = 2000;
-        aTimer.Enabled = true;
+        while (true)
+        {
+            gameController.damageWall(1);
+            yield return new WaitForSeconds(1f); 
+        }
     }
 
-    private void OnTimedEvent(object source, ElapsedEventArgs e)
-    {
-        gameController.damageWall(1);
-    }
-
-    private void killTimer()
-    {
-        aTimer.Stop();
-        aTimer.Dispose();
-    }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -10,10 +11,18 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
-    public int wallHeath = 100;
+    
+
+    public Text scoretext;
+    private int score = 0;
+
+    public Text healthText;
+    private int wallHeath = 100;
 
     private void Start()
     {
+        scoretext.text = "Score : " + score;
+        healthText.text = "Health: " + wallHeath + "/100";
         StartCoroutine(SpawnWaves());
     }
 
@@ -40,7 +49,13 @@ public class GameController : MonoBehaviour
     public void damageWall(int damage)
     {
         wallHeath = wallHeath - damage;
-        print(wallHeath);
+        healthText.text = "Health: "+wallHeath + "/100";
+    }
+
+    public void updateScore()
+    {
+        score++;
+        scoretext.text = "Score : " + score;
     }
  
 }
