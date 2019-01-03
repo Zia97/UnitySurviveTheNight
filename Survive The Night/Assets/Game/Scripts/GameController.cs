@@ -19,17 +19,22 @@ public class GameController : MonoBehaviour
     public Text healthText;
     private int wallHeath = 100;
 
+    public Text gameOverText;
+
+    private bool _gameOver;
+
     private void Start()
     {
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
+        gameOverText.text = "";
         StartCoroutine(SpawnWaves());
     }
 
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
-        while (true)
+        while (!_gameOver)
         {
             for (int i = 0; i < hazardCount; i++)
             {
@@ -42,20 +47,40 @@ public class GameController : MonoBehaviour
             hazardCount = hazardCount + 5;
 
             yield return new WaitForSeconds(waveWait);
+
+            if (_gameOver)
+            {
+                break;
+            }
         }
       
     }
 
     public void damageWall(int damage)
     {
-        wallHeath = wallHeath - damage;
-        healthText.text = "Health: "+wallHeath + "/100";
+        if (!_gameOver)
+        { 
+            wallHeath = wallHeath - damage;
+            healthText.text = "Health: " + wallHeath + "/100";
+        }
+
+        if(wallHeath<=0)
+        {
+            healthText.text = "Health: 0/100";
+            gameOver();
+        }
     }
 
     public void updateScore()
     {
         score++;
         scoretext.text = "Score : " + score;
+    }
+
+    public void gameOver()
+    {
+        _gameOver = true;
+        gameOverText.text = "Game Over";
     }
  
 }
