@@ -71,9 +71,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void updateScore()
+    public void updateScore(int scoreValue)
     {
-        score++;
+        score = score + scoreValue;
         scoretext.text = "Score : " + score;
     }
 
