@@ -191,6 +191,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94135325}
   m_CullTransparentMesh: 0
+--- !u!1001 &128344831
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6199929418997795999, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_Name
+      value: MedEnem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.3659787
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.191423
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822533917021682686, guid: fcb4cd66f02313a43b55e9108d9106d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fcb4cd66f02313a43b55e9108d9106d3, type: 3}
 --- !u!1 &162810813
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,12 +368,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95103660ccc73e48b1a4fed75ff1618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 1131701345907200, guid: e0b53f999d66446428547f147ad0985a, type: 3}
+  basicEnemy: {fileID: 1131701345907200, guid: e0b53f999d66446428547f147ad0985a, type: 3}
+  mediumEnemy: {fileID: 6199929418997795999, guid: fcb4cd66f02313a43b55e9108d9106d3,
+    type: 3}
   spawnValues: {x: 13, y: 4, z: 0}
   hazardCount: 5
   spawnWait: 1
   startWait: 1
   waveWait: 10
+  roundWaveDifficulty: 7
   scoretext: {fileID: 94135327}
   healthText: {fileID: 373309879}
   gameOverText: {fileID: 162810815}
@@ -320,7 +392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &373309878
 GameObject:
@@ -514,7 +586,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &656693306
 MonoBehaviour:
@@ -665,7 +737,7 @@ Transform:
   m_LocalScale: {x: 1.117108, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &864712782
 CircleCollider2D:
@@ -890,7 +962,7 @@ Transform:
   m_LocalScale: {x: 0.08255562, y: 1.8074819, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1230300927
 MonoBehaviour:

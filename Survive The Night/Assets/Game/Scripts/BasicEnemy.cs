@@ -7,13 +7,14 @@ using UnityEngine;
 
 namespace Assets.Game.Scripts
 {
-    class BasicEnemy : EnemyScript
+    public class BasicEnemy : EnemyScript
     {
 
         private int damage = 1;
         private int health = 100;
         private float frequency = 1f;
         private int dropProb = 3;
+        private int _difficulty = 1;
 
         void Start()
         {
@@ -34,5 +35,11 @@ namespace Assets.Game.Scripts
             createDropProbability();
             setHealth(health);
         }
+
+        public int getDifficulty()
+        {
+            return _difficulty;
+        }
+
     }
 }

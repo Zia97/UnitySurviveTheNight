@@ -1,17 +1,23 @@
-﻿using System.Collections;
+﻿using Assets.Game.Scripts;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject hazard;
+    public GameObject basicEnemy;
+    public GameObject mediumEnemy;
     public Vector3 spawnValues;
+
+    public BasicEnemy basicEnemyObject;
+    public MediumEnemy mediumEnemyObject;
 
     public int hazardCount;
     public float spawnWait;
     public float startWait;
     public float waveWait;
-    
+
+    public int roundWaveDifficulty = 7;
 
     public Text scoretext;
     private int score = 0;
@@ -22,6 +28,8 @@ public class GameController : MonoBehaviour
     public Text gameOverText;
 
     private bool _gameOver;
+
+    private System.Random rnd = new System.Random();
 
     private void Start()
     {
@@ -36,15 +44,28 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(startWait);
         while (!_gameOver)
         {
-            for (int i = 0; i < hazardCount; i++)
+            int currentWaveDifficultyValue = 0;
+
+            while(currentWaveDifficultyValue<roundWaveDifficulty)
             {
                 Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(hazard, spawnPosition, spawnRotation);
+                if(rnd.Next(2)==0)
+                {
+                    Instantiate(basicEnemy, spawnPosition, spawnRotation);
+                    currentWaveDifficultyValue = currentWaveDifficultyValue + 1;
+
+                }
+                else
+                {
+                    Instantiate(mediumEnemy, spawnPosition, spawnRotation);
+                    currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
+                }
+                
                 yield return new WaitForSeconds(spawnWait);
             }
 
-            hazardCount = hazardCount + 5;
+            roundWaveDifficulty = roundWaveDifficulty + 3;
 
             yield return new WaitForSeconds(waveWait);
 

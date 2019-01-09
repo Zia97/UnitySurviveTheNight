@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
 
-    private float speed = 3.0f;
+    private float _speed = 3.0f;
     private bool isMoving = true;
     private double _health = 100;
     protected GameController gameController;
@@ -37,7 +37,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (isMoving)
         {
-            transform.position += -transform.right * speed * Time.deltaTime;
+            transform.position += -transform.right * _speed * Time.deltaTime;
         }
     }
 
@@ -52,6 +52,11 @@ public class EnemyScript : MonoBehaviour
     protected void setHealth(int health)
     {
         _health = health;
+    }
+
+    protected void setSpeed(float speed)
+    {
+        _speed = speed;
     }
 
     protected void setDamage(int damage)
