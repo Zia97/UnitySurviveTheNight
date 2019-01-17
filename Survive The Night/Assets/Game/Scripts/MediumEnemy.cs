@@ -30,7 +30,7 @@ namespace Assets.Game.Scripts
                 Debug.Log("Cannot find 'GameController' script");
             }
 
-            setScoreValue(3);
+            setScoreValue(2);
             setDamage(damage);
             setDropProbability(dropProb);
             createDropProbability();

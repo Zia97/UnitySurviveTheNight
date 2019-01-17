@@ -96,6 +96,7 @@ public class EnemyScript : MonoBehaviour
             if (_health <= 0)
             {
                 gameController.updateScore(_scoreValue);
+                gameController.increaseCurrentWaveScore(_scoreValue);
 
                 if(randomDrop)
                 {
