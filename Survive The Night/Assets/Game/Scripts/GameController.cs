@@ -31,16 +31,18 @@ public class GameController : MonoBehaviour
     private bool _gameOver;
     private bool _roundOver;
 
-    
-
-    public Canvas roundoverCanvas;
+    public Canvas roundOverCanvas;
+    public GameObject roundOverGameObject;
 
     private System.Random rnd = new System.Random();
 
     private void Start()
     {
-        roundoverCanvas.gameObject.SetActive(false);
-        roundoverCanvas.enabled = false;
+        roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
+        roundOverGameObject.SetActive(true);
+        roundOverCanvas = roundOverGameObject.GetComponent<Canvas>();
+        roundOverCanvas.enabled = false;
+
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
@@ -56,13 +58,13 @@ public class GameController : MonoBehaviour
             int currentWaveDifficultyValue = 0;
             currentWaveScore = 0;
 
-            while(currentWaveDifficultyValue<roundWaveDifficulty) //NEEDS FIX TO HAVE CONFIRMED FINAL SCORE AND NOT FALL SHORT 
+            while (currentWaveDifficultyValue < roundWaveDifficulty) //NEEDS FIX TO HAVE CONFIRMED FINAL SCORE AND NOT FALL SHORT 
             {
-                roundoverCanvas.enabled = false;
+                roundOverCanvas.enabled = false;
 
                 Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
-                if(rnd.Next(2)==0)
+                if (rnd.Next(2) == 0)
                 {
                     Instantiate(basicEnemy, spawnPosition, spawnRotation);
                     currentWaveDifficultyValue = currentWaveDifficultyValue + 1;
@@ -74,13 +76,13 @@ public class GameController : MonoBehaviour
                     currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
                 }
 
-                    
 
-                
+
+
                 yield return new WaitForSeconds(spawnWait);
             }
-     
-            
+
+
 
             yield return new WaitForSeconds(waveWait);
 
@@ -89,18 +91,18 @@ public class GameController : MonoBehaviour
                 break;
             }
         }
-      
+
     }
 
     public void damageWall(int damage)
     {
         if (!_gameOver)
-        { 
+        {
             wallHeath = wallHeath - damage;
             healthText.text = "Health: " + wallHeath + "/100";
         }
 
-        if(wallHeath<=0)
+        if (wallHeath <= 0)
         {
             healthText.text = "Health: 0/100";
             gameOver();
@@ -110,11 +112,17 @@ public class GameController : MonoBehaviour
     public void increaseCurrentWaveScore(int value)
     {
         currentWaveScore = currentWaveScore + value;
-        Debug.Log("currentWaveScore = " + currentWaveScore+"   rwd "+roundWaveDifficulty);
+        Debug.Log("currentWaveScore = " + currentWaveScore + "   rwd " + roundWaveDifficulty);
         if (currentWaveScore == roundWaveDifficulty)
         {
-            roundoverCanvas.gameObject.SetActive(true);
-            roundoverCanvas.enabled = true;
+            if (roundOverCanvas == null)
+            {
+                Debug.Log("canvas is null");
+            }
+            else
+            {
+                roundOverCanvas.enabled = true;
+            };
         }
     }
 
@@ -129,5 +137,5 @@ public class GameController : MonoBehaviour
         _gameOver = true;
         gameOverText.text = "Game Over";
     }
- 
+
 }
