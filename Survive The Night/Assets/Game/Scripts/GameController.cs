@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float waveWait;
 
-    public int roundWaveDifficulty = 7;
+    private int roundWaveDifficulty = 10;
 
     public Text scoretext;
     private int score = 0;
@@ -54,11 +54,14 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(startWait);
         while (!_gameOver && !_roundOver)
         {
-            roundWaveDifficulty = roundWaveDifficulty + 3;
+            roundWaveDifficulty = roundWaveDifficulty + 4;
             int currentWaveDifficultyValue = 0;
             currentWaveScore = 0;
+            
 
-            while (currentWaveDifficultyValue < roundWaveDifficulty) //NEEDS FIX TO HAVE CONFIRMED FINAL SCORE AND NOT FALL SHORT 
+            Debug.Log(roundWaveDifficulty + " @@@@@@");
+
+            while (currentWaveDifficultyValue < roundWaveDifficulty)
             {
                 roundOverCanvas.enabled = false;
 
@@ -72,18 +75,22 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(mediumEnemy, spawnPosition, spawnRotation);
-                    currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
+                    if (currentWaveDifficultyValue + 1 == roundWaveDifficulty)
+                    {
+                        Instantiate(basicEnemy, spawnPosition, spawnRotation);
+                        currentWaveDifficultyValue = currentWaveDifficultyValue + 1;
+                    }
+                    else
+                    {
+                        Instantiate(mediumEnemy, spawnPosition, spawnRotation);
+                        currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
+                    }
                 }
-
-
-
-
                 yield return new WaitForSeconds(spawnWait);
             }
 
 
-
+           
             yield return new WaitForSeconds(waveWait);
 
             if (_gameOver)

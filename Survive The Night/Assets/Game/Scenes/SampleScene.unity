@@ -309,13 +309,12 @@ MonoBehaviour:
   spawnWait: 1
   startWait: 1
   waveWait: 10
-  roundWaveDifficulty: 7
+  roundWaveDifficulty: 10
   scoretext: {fileID: 94135327}
   healthText: {fileID: 373309879}
   gameOverText: {fileID: 162810815}
-  roundoverCanvas: {fileID: 4825773445406967860, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
-    type: 3}
-  roundCanvasTest: {fileID: 0}
+  roundOverCanvas: {fileID: 0}
+  roundOverGameObject: {fileID: 0}
 --- !u!4 &278888284
 Transform:
   m_ObjectHideFlags: 0
@@ -933,7 +932,7 @@ PrefabInstance:
     - target: {fileID: 4825773445406967864, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
         type: 3}
       propertyPath: m_Name
-      value: RoundEndCanvasTest
+      value: RoundEndCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 4825773445406967864, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
         type: 3}
