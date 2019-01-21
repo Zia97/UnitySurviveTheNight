@@ -59,8 +59,6 @@ public class GameController : MonoBehaviour
             currentWaveScore = 0;
             
 
-            Debug.Log(roundWaveDifficulty + " @@@@@@");
-
             while (currentWaveDifficultyValue < roundWaveDifficulty)
             {
                 roundOverCanvas.enabled = false;
@@ -86,12 +84,16 @@ public class GameController : MonoBehaviour
                         currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
                     }
                 }
+                
                 yield return new WaitForSeconds(spawnWait);
             }
 
 
-           
-            yield return new WaitForSeconds(waveWait);
+            while (currentWaveScore != roundWaveDifficulty)
+            {
+                yield return new WaitForSeconds(waveWait);
+            }
+            
 
             if (_gameOver)
             {

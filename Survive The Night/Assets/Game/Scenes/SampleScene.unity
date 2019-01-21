@@ -309,7 +309,6 @@ MonoBehaviour:
   spawnWait: 1
   startWait: 1
   waveWait: 10
-  roundWaveDifficulty: 10
   scoretext: {fileID: 94135327}
   healthText: {fileID: 373309879}
   gameOverText: {fileID: 162810815}
@@ -1068,6 +1067,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: RoundEndCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825773444404853005, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825773444404853005, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -45.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825773444404853005, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825773444404853005, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -55.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e, type: 3}
