@@ -35,19 +35,21 @@ public class GameController : MonoBehaviour
     public Canvas roundOverCanvas;
     public GameObject roundOverGameObject;
 
-    public GameObject confirmButtonObject;
-    public Button _confirmButton;
+    public GameObject _playerGameObject;
+    public PlayerControls _player;
+
 
     private System.Random rnd = new System.Random();
 
     private void Start()
     {
+        _playerGameObject = GameObject.FindWithTag("Player");
+    
+        _player= _playerGameObject.GetComponent<PlayerControls>();
         roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
-        confirmButtonObject = GameObject.FindWithTag("ConfirmButton");
         roundOverGameObject.SetActive(true);
         roundOverCanvas = roundOverGameObject.GetComponent<Canvas>();
-        _confirmButton = confirmButtonObject.GetComponent<Button>();
-        _confirmButton.onClick.AddListener(ButtonTest);
+        
         roundOverCanvas.enabled = false;
 
         scoretext.text = "Score : " + score;
@@ -58,6 +60,8 @@ public class GameController : MonoBehaviour
 
     IEnumerator SpawnWaves()
     {
+        _player.AreControlsEnabled(true);
+
         while (!_gameOver && !_roundOver)
         {
             roundWaveDifficulty = roundWaveDifficulty + 4;
@@ -127,7 +131,7 @@ public class GameController : MonoBehaviour
     public void increaseCurrentWaveScore(int value)
     {
         currentWaveScore = currentWaveScore + value;
-        Debug.Log("currentWaveScore = " + currentWaveScore + "   rwd " + roundWaveDifficulty);
+
         if (currentWaveScore == roundWaveDifficulty)
         {
             if (roundOverCanvas == null)
@@ -136,6 +140,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
+                _player.AreControlsEnabled(false);
                 roundOverCanvas.enabled = true;
                 _roundOver = true;
             };
@@ -154,9 +159,8 @@ public class GameController : MonoBehaviour
         gameOverText.text = "Game Over";
     }
 
-    public void  ButtonTest()
+    public void StartNextWave()
     {
-        Debug.Log("Button clicked");
         _roundOver = false;
         StartCoroutine(SpawnWaves());
     }

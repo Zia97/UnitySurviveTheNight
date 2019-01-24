@@ -9,6 +9,7 @@ public class PlayerControls : MonoBehaviour {
     public GameObject bullet;
     Rigidbody2D rb;
     Vector2 bulletPos;
+    private bool controlsEnabled = true;
 
     // Use this for initialization
     void Start ()
@@ -19,7 +20,10 @@ public class PlayerControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        MoveCharacter();
+        if (controlsEnabled)
+        {
+            MoveCharacter();
+        }
     }
 
     void MoveCharacter()
@@ -52,6 +56,11 @@ public class PlayerControls : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         target = transform.position;
+    }
+
+    public void AreControlsEnabled(bool set)
+    {
+        controlsEnabled = set;
     }
 
 }
