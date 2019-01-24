@@ -11,7 +11,8 @@ MonoImporter:
   - scoretext: {instanceID: 0}
   - healthText: {instanceID: 0}
   - gameOverText: {instanceID: 0}
-  - roundoverCanvas: {fileID: 4825773445406967860, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
+  - roundOverCanvas: {instanceID: 0}
+  - roundOverGameObject: {fileID: 4825773445406967864, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
