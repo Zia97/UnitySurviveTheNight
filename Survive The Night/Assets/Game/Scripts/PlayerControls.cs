@@ -28,13 +28,13 @@ public class PlayerControls : MonoBehaviour {
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
-            if (target.x > -6)
+            if (target.x >= -5.5)
             {
                 fireBullet(target);
             };
         }
 
-        if (target.x < -6)
+        if (target.x < -5.5)
         {
             transform.position = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
         };
@@ -44,7 +44,7 @@ public class PlayerControls : MonoBehaviour {
     void fireBullet(Vector3 target)
     {
         bulletPos = transform.position;
-        bulletPos += new Vector2(1f, 0f);
+        bulletPos += new Vector2(1f, -0.4f);
         Instantiate(bullet,bulletPos,Quaternion.identity);
     }
 

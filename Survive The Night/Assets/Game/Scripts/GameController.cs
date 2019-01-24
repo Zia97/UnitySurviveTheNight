@@ -30,17 +30,24 @@ public class GameController : MonoBehaviour
 
     private bool _gameOver;
     private bool _roundOver;
+    private bool _beginNextRound;
 
     public Canvas roundOverCanvas;
     public GameObject roundOverGameObject;
+
+    public GameObject confirmButtonObject;
+    public Button _confirmButton;
 
     private System.Random rnd = new System.Random();
 
     private void Start()
     {
         roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
+        confirmButtonObject = GameObject.FindWithTag("ConfirmButton");
         roundOverGameObject.SetActive(true);
         roundOverCanvas = roundOverGameObject.GetComponent<Canvas>();
+        _confirmButton = confirmButtonObject.GetComponent<Button>();
+        _confirmButton.onClick.AddListener(ButtonTest);
         roundOverCanvas.enabled = false;
 
         scoretext.text = "Score : " + score;
@@ -51,13 +58,12 @@ public class GameController : MonoBehaviour
 
     IEnumerator SpawnWaves()
     {
-        yield return new WaitForSeconds(startWait);
         while (!_gameOver && !_roundOver)
         {
             roundWaveDifficulty = roundWaveDifficulty + 4;
             int currentWaveDifficultyValue = 0;
             currentWaveScore = 0;
-            
+
 
             while (currentWaveDifficultyValue < roundWaveDifficulty)
             {
@@ -84,16 +90,16 @@ public class GameController : MonoBehaviour
                         currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
                     }
                 }
-                
+
                 yield return new WaitForSeconds(spawnWait);
             }
 
 
             while (currentWaveScore != roundWaveDifficulty)
             {
-                yield return new WaitForSeconds(waveWait);
+                    yield return new WaitForSeconds(waveWait);
             }
-            
+
 
             if (_gameOver)
             {
@@ -131,6 +137,7 @@ public class GameController : MonoBehaviour
             else
             {
                 roundOverCanvas.enabled = true;
+                _roundOver = true;
             };
         }
     }
@@ -145,6 +152,13 @@ public class GameController : MonoBehaviour
     {
         _gameOver = true;
         gameOverText.text = "Game Over";
+    }
+
+    public void  ButtonTest()
+    {
+        Debug.Log("Button clicked");
+        _roundOver = false;
+        StartCoroutine(SpawnWaves());
     }
 
 }
