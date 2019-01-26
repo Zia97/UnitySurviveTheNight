@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator SpawnWaves()
     {
+        healthText.text = "Health: " + wallHeath + "/100";
         _player.AreControlsEnabled(true);
 
         while (!_gameOver && !_roundOver)
@@ -163,6 +164,15 @@ public class GameController : MonoBehaviour
     {
         _roundOver = false;
         StartCoroutine(SpawnWaves());
+    }
+
+    public void RepairBase(int value)
+    {
+        wallHeath = wallHeath + value;
+        if(wallHeath>100)
+        {
+            wallHeath = 100;
+        }
     }
 
 }

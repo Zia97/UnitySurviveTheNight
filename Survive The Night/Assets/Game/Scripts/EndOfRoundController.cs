@@ -81,6 +81,7 @@ public class EndOfRoundController : MonoBehaviour
 
     private void ConfirmButtonClicked()
     {
+        RepairBase();
         _gameController.StartNextWave();
     }
 
@@ -134,6 +135,11 @@ public class EndOfRoundController : MonoBehaviour
 
         _repairsHoursSelectedValue = 12 - _suppliesHoursSelectedValue;
         _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
+    }
+
+    private void RepairBase()
+    {
+        _gameController.RepairBase(_repairsHoursSelectedValue * 3);
     }
 }
 
