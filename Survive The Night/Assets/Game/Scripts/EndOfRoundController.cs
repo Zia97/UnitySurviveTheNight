@@ -20,11 +20,19 @@ public class EndOfRoundController : MonoBehaviour
     public GameObject _suppliesButtonDecreaseObject;
     private Button _suppliesButtonDecrease;
 
-
+    public GameObject _repairsHoursObject;
     public InputField _repairsHoursSelected;
+
+    public GameObject _suppliesHoursObject;
+    public InputField _suppliesHoursSelected;
+
 
     private GameObject _gameControllerObject;
     private GameController _gameController;
+
+    private int _suppliesHoursSelectedValue = 6;
+    private int _repairsHoursSelectedValue = 6;
+
 
 
 
@@ -38,6 +46,8 @@ public class EndOfRoundController : MonoBehaviour
         _repairButtonIncreaseObject = GameObject.FindWithTag("RepairButtonIncrease");
         _suppliesButtonIncreaseObject = GameObject.FindWithTag("SuppliesButtonIncrease");
         _suppliesButtonDecreaseObject = GameObject.FindWithTag("SuppliesButtonDecrease");
+        _suppliesHoursObject = GameObject.FindWithTag("SuppliesHoursSelected");
+        _repairsHoursObject = GameObject.FindWithTag("RepairHoursSelected");
 
 
         _confirmButton = _confirmButtonObject.GetComponent<Button>();
@@ -55,6 +65,11 @@ public class EndOfRoundController : MonoBehaviour
         _suppliesButtonDecrease = _suppliesButtonDecreaseObject.GetComponent<Button>();
         _suppliesButtonDecrease.onClick.AddListener(suppliesDecreaseButtonClicked);
 
+        _suppliesHoursSelected = _suppliesHoursObject.GetComponent<InputField>();
+        _repairsHoursSelected = _repairsHoursObject.GetComponent<InputField>();
+
+        _suppliesHoursSelected.text = _suppliesHoursSelectedValue.ToString();
+        _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
 
 
         if (_gameControllerObject != null)
@@ -71,22 +86,54 @@ public class EndOfRoundController : MonoBehaviour
 
     private void repairDecreaseButtonClicked()
     {
-        Debug.Log("repair decrease button clicked");
+        _repairsHoursSelectedValue = _repairsHoursSelectedValue - 1;
+        if(_repairsHoursSelectedValue<0)
+        {
+            _repairsHoursSelectedValue = 0;
+        }
+        _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
+
+        _suppliesHoursSelectedValue = 12 - _repairsHoursSelectedValue;
+        _suppliesHoursSelected.text = _suppliesHoursSelectedValue.ToString();
     }
 
     private void repairIncreaseButtonClicked()
     {
-        Debug.Log("repair Increase button clicked");
+        _repairsHoursSelectedValue = _repairsHoursSelectedValue + 1;
+        if (_repairsHoursSelectedValue > 12)
+        {
+            _repairsHoursSelectedValue = 12;
+        }
+        _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
+
+        _suppliesHoursSelectedValue = 12 - _repairsHoursSelectedValue;
+        _suppliesHoursSelected.text = _suppliesHoursSelectedValue.ToString();
     }
 
     private void suppliesIncreaseButtonClicked()
     {
-        Debug.Log("supplies Increase button clicked");
+        _suppliesHoursSelectedValue = _suppliesHoursSelectedValue + 1;
+        if (_suppliesHoursSelectedValue > 12)
+        {
+            _suppliesHoursSelectedValue = 12;
+        }
+        _suppliesHoursSelected.text = _suppliesHoursSelectedValue.ToString();
+
+        _repairsHoursSelectedValue = 12 - _suppliesHoursSelectedValue;
+        _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
     }
 
     private void suppliesDecreaseButtonClicked()
     {
-        Debug.Log("supplies Decrease button clicked");
+        _suppliesHoursSelectedValue = _suppliesHoursSelectedValue - 1;
+        if (_suppliesHoursSelectedValue < 0)
+        {
+            _suppliesHoursSelectedValue = 0;
+        }
+        _suppliesHoursSelected.text = _suppliesHoursSelectedValue.ToString();
+
+        _repairsHoursSelectedValue = 12 - _suppliesHoursSelectedValue;
+        _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
     }
 }
 

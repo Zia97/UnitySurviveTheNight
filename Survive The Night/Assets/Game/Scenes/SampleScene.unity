@@ -309,7 +309,10 @@ MonoBehaviour:
     type: 3}
   _suppliesButtonDecreaseObject: {fileID: 2391025999321932002, guid: d214eff1dc2fcd84e8fecd1cc9386512,
     type: 3}
+  _repairsHoursObject: {fileID: 0}
   _repairsHoursSelected: {fileID: 847637967}
+  _suppliesHoursObject: {fileID: 0}
+  _suppliesHoursSelected: {fileID: 0}
 --- !u!4 &172107956
 Transform:
   m_ObjectHideFlags: 0
@@ -2649,6 +2652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115572970326746842, guid: 8ea1628d6bc49834e98738a27d946339,
+        type: 3}
+      propertyPath: m_TagString
+      value: RepairHoursSelected
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ea1628d6bc49834e98738a27d946339, type: 3}
