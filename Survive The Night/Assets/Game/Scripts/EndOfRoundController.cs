@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class EndOfRoundController : MonoBehaviour
 {
-    public GameObject confirmButtonObject;
-    public Button _confirmButton;
+    public GameObject _confirmButtonObject;
+    private Button _confirmButton;
 
-    public GameObject _repairButtonObject;
-    public Button _repairButtonDecrease;
+    public GameObject _repairButtonDecreaseObject;
+    private Button _repairButtonDecrease;
+
+    public GameObject _repairButtonIncreaseObject;
+    private Button _repairButtonIncrease;
+
+    public GameObject _suppliesButtonIncreaseObject;
+    private Button _suppliesButtonIncrease;
+
+    public GameObject _suppliesButtonDecreaseObject;
+    private Button _suppliesButtonDecrease;
 
 
     public InputField _repairsHoursSelected;
-
 
     private GameObject _gameControllerObject;
     private GameController _gameController;
@@ -24,18 +32,30 @@ public class EndOfRoundController : MonoBehaviour
     private void Start()
     {
 
-        confirmButtonObject = GameObject.FindWithTag("ConfirmButton");
+        _confirmButtonObject = GameObject.FindWithTag("ConfirmButton");
         _gameControllerObject = GameObject.FindWithTag("GameController");
-        _repairButtonObject = GameObject.FindWithTag("RepairButtonDecrease");
+        _repairButtonDecreaseObject = GameObject.FindWithTag("RepairButtonDecrease");
+        _repairButtonIncreaseObject = GameObject.FindWithTag("RepairButtonIncrease");
+        _suppliesButtonIncreaseObject = GameObject.FindWithTag("SuppliesButtonIncrease");
+        _suppliesButtonDecreaseObject = GameObject.FindWithTag("SuppliesButtonDecrease");
 
 
-        _confirmButton = confirmButtonObject.GetComponent<Button>();
+        _confirmButton = _confirmButtonObject.GetComponent<Button>();
         _confirmButton.onClick.AddListener(ConfirmButtonClicked);
 
-        _repairButtonDecrease = _repairButtonObject.GetComponent<Button>();
+        _repairButtonDecrease = _repairButtonDecreaseObject.GetComponent<Button>();
         _repairButtonDecrease.onClick.AddListener(repairDecreaseButtonClicked);
 
-        
+        _repairButtonIncrease = _repairButtonIncreaseObject.GetComponent<Button>();
+        _repairButtonIncrease.onClick.AddListener(repairIncreaseButtonClicked);
+
+        _suppliesButtonIncrease = _suppliesButtonIncreaseObject.GetComponent<Button>();
+        _suppliesButtonIncrease.onClick.AddListener(suppliesIncreaseButtonClicked);
+
+        _suppliesButtonDecrease = _suppliesButtonDecreaseObject.GetComponent<Button>();
+        _suppliesButtonDecrease.onClick.AddListener(suppliesDecreaseButtonClicked);
+
+
 
         if (_gameControllerObject != null)
         {
@@ -51,7 +71,22 @@ public class EndOfRoundController : MonoBehaviour
 
     private void repairDecreaseButtonClicked()
     {
-        Debug.Log("decrease button clicked");
+        Debug.Log("repair decrease button clicked");
+    }
+
+    private void repairIncreaseButtonClicked()
+    {
+        Debug.Log("repair Increase button clicked");
+    }
+
+    private void suppliesIncreaseButtonClicked()
+    {
+        Debug.Log("supplies Increase button clicked");
+    }
+
+    private void suppliesDecreaseButtonClicked()
+    {
+        Debug.Log("supplies Decrease button clicked");
     }
 }
 

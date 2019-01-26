@@ -8,6 +8,11 @@ TagManager:
   - ConfirmButton
   - EndOfRoundController
   - RepairButtonDecrease
+  - RepairButtonIncrease
+  - SuppliesButtonDecrease
+  - SuppliesButtonIncrease
+  - RepairHoursSelected
+  - SuppliesHoursSelected
   layers:
   - Default
   - TransparentFX
