@@ -101,6 +101,7 @@ public class EnemyScript : MonoBehaviour
 
             if (_health <= 0)
             {
+                gameObject.GetComponent<Animator>().Play("die");
                 gameController.updateScore(_scoreValue);
                 gameController.increaseCurrentWaveScore(_scoreValue);
 

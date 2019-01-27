@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
 {
     public GameObject basicEnemy;
     public GameObject mediumEnemy;
+    public GameObject officerEnemy;
+    public GameObject dogEnemy;
     public Vector3 spawnValues;
 
     public BasicEnemy basicEnemyObject;
@@ -68,21 +70,40 @@ public class GameController : MonoBehaviour
             roundWaveDifficulty = roundWaveDifficulty + 4;
             int currentWaveDifficultyValue = 0;
             currentWaveScore = 0;
+            int randomValue = 0;
 
 
             while (currentWaveDifficultyValue < roundWaveDifficulty)
             {
                 roundOverCanvas.enabled = false;
 
+                if(roundWaveDifficulty-currentWaveDifficultyValue>=4)
+                {
+                   randomValue = rnd.Next(3);
+                }
+                else
+                {
+                    randomValue = rnd.Next(2);
+                }
+                
+
                 Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
-                if (rnd.Next(2) == 0)
+                if (randomValue == 0)
                 {
-                    Instantiate(basicEnemy, spawnPosition, spawnRotation);
+                    int easyRandom = rnd.Next(3);
+                    if (easyRandom <= 1)
+                    {
+                        Instantiate(basicEnemy, spawnPosition, spawnRotation);
+                    }
+                    else
+                    {
+                        Instantiate(dogEnemy, spawnPosition, spawnRotation);
+                    }
                     currentWaveDifficultyValue = currentWaveDifficultyValue + 1;
 
                 }
-                else
+                else if(randomValue ==1)
                 {
                     if (currentWaveDifficultyValue + 1 == roundWaveDifficulty)
                     {
@@ -94,6 +115,11 @@ public class GameController : MonoBehaviour
                         Instantiate(mediumEnemy, spawnPosition, spawnRotation);
                         currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
                     }
+                }
+                else if(randomValue==2)
+                {
+                    Instantiate(officerEnemy, spawnPosition, spawnRotation);
+                    currentWaveDifficultyValue = currentWaveDifficultyValue + 4;
                 }
 
                 yield return new WaitForSeconds(spawnWait);
@@ -163,6 +189,11 @@ public class GameController : MonoBehaviour
     public void StartNextWave()
     {
         _roundOver = false;
+        spawnWait = spawnWait - 0.05f;
+        if(spawnWait<=0.3)
+        {
+            spawnWait = 0.3f;
+        }
         StartCoroutine(SpawnWaves());
     }
 

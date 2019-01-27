@@ -7,20 +7,19 @@ using UnityEngine;
 
 namespace Assets.Game.Scripts
 {
-    public class BasicEnemy : EnemyScript
+    public class PoliceEnemy : EnemyScript
     {
 
-        private int damage = 1;
-        private int health = 100;
+        private int damage = 5;
+        private int health = 300;
         private float frequency = 1f;
-        private int dropProb = 3;
-        private int _difficulty = 1;
-        private float speed = 1.6f;
+        private int dropProb = 6;
+        private float speed = 1.3f;
+        private int _difficulty = 4;
 
         void Start()
         {
             GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-
 
             if (gameControllerObject != null)
             {
@@ -31,12 +30,11 @@ namespace Assets.Game.Scripts
                 Debug.Log("Cannot find 'GameController' script");
             }
 
-            setScoreValue(1);
+            setScoreValue(4);
             setDamage(damage);
-            setDropProbability(4);
+            setDropProbability(dropProb);
             createDropProbability();
             setHealth(health);
-
             setSpeed(speed);
         }
 
@@ -44,6 +42,5 @@ namespace Assets.Game.Scripts
         {
             return _difficulty;
         }
-
     }
 }
