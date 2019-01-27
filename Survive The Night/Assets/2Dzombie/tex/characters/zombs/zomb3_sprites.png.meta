@@ -1,0 +1,1282 @@
+fileFormatVersion: 2
+guid: 917ba1f64e9672a4090c2bbe9c84c7b2
+timeCreated: 1484067661
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: z3_0001
+    21300002: z3_0002
+    21300004: z3_0003
+    21300006: z3_0004
+    21300008: z3_0005
+    21300010: z3_0006
+    21300012: z3_0007
+    21300014: z3_0008
+    21300016: z3_0009
+    21300018: z3_0010
+    21300020: z3_0011
+    21300022: z3_0012
+    21300024: z3_0013
+    21300026: z3_0014
+    21300028: z3_0015
+    21300030: z3_0016
+    21300032: z3_0017
+    21300034: z3_0018
+    21300036: z3_0019
+    21300038: z3_0020
+    21300040: z3_0021
+    21300042: z3_0022
+    21300044: z3_0023
+    21300046: z3_0024
+    21300048: z3_0025
+    21300050: z3_0026
+    21300052: z3_0027
+    21300054: z3_0028
+    21300056: z3_0029
+    21300058: z3_0030
+    21300060: z3_0031
+    21300062: z3_0032
+    21300064: z3_0033
+    21300066: z3_0034
+    21300068: z3_0035
+    21300070: z3_0036
+    21300072: z3_0037
+    21300074: z3_0038
+    21300076: z3_0039
+    21300078: z3_0040
+    21300080: z3_0041
+    21300082: z3_0042
+    21300084: z3_0043
+    21300086: z3_0044
+    21300088: z3_0045
+    21300090: z3_0046
+    21300092: z3_0047
+    21300094: z3_0048
+    21300096: z3_0049
+    21300098: z3_0050
+    21300100: z3_0051
+    21300102: z3_0052
+    21300104: z3_0053
+    21300106: z3_0054
+    21300108: z3_0055
+    21300110: z3_0056
+    21300112: z3_0057
+    21300114: z3_0058
+    21300116: z3_0059
+    21300118: z3_0060
+    21300120: z3_0061
+    21300122: z3_0062
+    21300124: z3_0063
+    21300126: z3_0064
+    21300128: z3_0065
+    21300130: z3_0066
+    21300132: z3_0067
+    21300134: z3_0068
+    21300136: z3_0069
+    21300138: z3_0070
+    21300140: z3_0071
+    21300142: z3_0072
+    21300144: z3_0073
+    21300146: z3_0074
+    21300148: z3_0075
+    21300150: z3_0076
+    21300152: z3_0077
+    21300154: z3_0078
+    21300156: z3_0079
+    21300158: z3_0080
+    21300160: z3_0081
+    21300162: z3_0082
+    21300164: z3_0083
+    21300166: z3_0084
+    21300168: z3_0085
+    21300170: z3_0086
+    21300172: z3_0087
+    21300174: z3_0088
+    21300176: z3_0089
+    21300178: z3_0090
+    21300180: z3_0091
+    21300182: z3_0092
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: z3_0001
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1743
+        width: 242
+        height: 305
+      alignment: 9
+      pivot: {x: 0.47933885, y: 0.07540984}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0002
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 870
+        width: 199
+        height: 301
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07641196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0003
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1233
+        width: 202
+        height: 287
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.080139376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0004
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 917
+        width: 236
+        height: 293
+      alignment: 9
+      pivot: {x: 0.41949153, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0005
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 878
+        width: 255
+        height: 300
+      alignment: 9
+      pivot: {x: 0.4627451, y: 0.07666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0006
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 821
+        width: 211
+        height: 294
+      alignment: 9
+      pivot: {x: 0.46919432, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0007
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 527
+        width: 199
+        height: 291
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0790378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0008
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 820
+        width: 209
+        height: 295
+      alignment: 9
+      pivot: {x: 0.47368422, y: 0.0779661}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0009
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 1755
+        width: 199
+        height: 293
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0010
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 226
+        width: 199
+        height: 297
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.077441074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0011
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1460
+        width: 199
+        height: 293
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0012
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1173
+        width: 199
+        height: 285
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08070175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0013
+      rect:
+        serializedVersion: 2
+        x: 2061
+        y: 1498
+        width: 199
+        height: 294
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0014
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1454
+        width: 199
+        height: 298
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.077181205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0015
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1754
+        width: 199
+        height: 294
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0016
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 34
+        width: 199
+        height: 285
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08070175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0017
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 525
+        width: 204
+        height: 293
+      alignment: 9
+      pivot: {x: 0.50980395, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0018
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 573
+        width: 199
+        height: 297
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.077441074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0019
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 872
+        width: 199
+        height: 293
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0020
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1167
+        width: 199
+        height: 285
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08070175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0021
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 229
+        width: 202
+        height: 294
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0022
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 1454
+        width: 199
+        height: 298
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.077181205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0023
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 1754
+        width: 199
+        height: 294
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0024
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 131
+        width: 199
+        height: 285
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08070175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0025
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 418
+        width: 199
+        height: 276
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0026
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 978
+        width: 199
+        height: 272
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0027
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 1252
+        width: 199
+        height: 268
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0028
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 1522
+        width: 199
+        height: 264
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08712121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0029
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 1788
+        width: 199
+        height: 260
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0030
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 696
+        width: 199
+        height: 256
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08984375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0031
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 54
+        width: 199
+        height: 260
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0032
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 316
+        width: 199
+        height: 264
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08712121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0033
+      rect:
+        serializedVersion: 2
+        x: 2062
+        y: 954
+        width: 199
+        height: 268
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0034
+      rect:
+        serializedVersion: 2
+        x: 2061
+        y: 1224
+        width: 199
+        height: 272
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0035
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1512
+        width: 258
+        height: 279
+      alignment: 9
+      pivot: {x: 0.51937985, y: 0.08243728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0036
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1793
+        width: 275
+        height: 255
+      alignment: 9
+      pivot: {x: 0.5854545, y: 0.09019608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0037
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1180
+        width: 279
+        height: 278
+      alignment: 9
+      pivot: {x: 0.3548387, y: 0.08273381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0038
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 183
+        width: 305
+        height: 278
+      alignment: 9
+      pivot: {x: 0.32459018, y: 0.08273381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0039
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 183
+        width: 286
+        height: 278
+      alignment: 9
+      pivot: {x: 0.34615386, y: 0.08273381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0040
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 27
+        width: 231
+        height: 235
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.09787234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0041
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 66
+        width: 212
+        height: 503
+      alignment: 9
+      pivot: {x: 0.3726415, y: 0.035785288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0042
+      rect:
+        serializedVersion: 2
+        x: 2865
+        y: 1257
+        width: 152
+        height: 285
+      alignment: 9
+      pivot: {x: 0.18421052, y: -1.0666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0043
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 591
+        width: 170
+        height: 227
+      alignment: 9
+      pivot: {x: 0.25882354, y: -1.647577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0044
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 1532
+        width: 183
+        height: 209
+      alignment: 9
+      pivot: {x: 0.27322406, y: -1.722488}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0045
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 639
+        width: 252
+        height: 237
+      alignment: 9
+      pivot: {x: 0.4722222, y: -1.0632912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0046
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 264
+        width: 261
+        height: 343
+      alignment: 9
+      pivot: {x: 0.52873564, y: 0.052478135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0047
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1144
+        width: 292
+        height: 220
+      alignment: 9
+      pivot: {x: 0.33904108, y: 0.10454545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0048
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 463
+        width: 318
+        height: 276
+      alignment: 9
+      pivot: {x: 0.31132075, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0049
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 743
+        width: 299
+        height: 276
+      alignment: 9
+      pivot: {x: 0.33110368, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0050
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 321
+        width: 199
+        height: 250
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0051
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 406
+        width: 159
+        height: 505
+      alignment: 9
+      pivot: {x: 0.49685535, y: 0.035643563}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0052
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 913
+        width: 162
+        height: 286
+      alignment: 9
+      pivot: {x: 0.50617284, y: -1.0769231}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0053
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 1813
+        width: 159
+        height: 235
+      alignment: 9
+      pivot: {x: 0.49685535, y: -1.5744681}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0054
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 1201
+        width: 194
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: -1.2828685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0055
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 133
+        width: 158
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5, y: -0.8339483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0056
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 1117
+        width: 220
+        height: 346
+      alignment: 9
+      pivot: {x: 0.51363635, y: 0.05202312}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0057
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 609
+        width: 282
+        height: 233
+      alignment: 9
+      pivot: {x: 0.4929078, y: 0.098712444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0058
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 844
+        width: 289
+        height: 298
+      alignment: 9
+      pivot: {x: 0.4152249, y: 0.077181205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0059
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1212
+        width: 249
+        height: 298
+      alignment: 9
+      pivot: {x: 0.39759037, y: 0.077181205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0060
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1215
+        width: 199
+        height: 248
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.09274194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0061
+      rect:
+        serializedVersion: 2
+        x: 2865
+        y: 1544
+        width: 159
+        height: 504
+      alignment: 9
+      pivot: {x: 0.49685535, y: 0.035714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0062
+      rect:
+        serializedVersion: 2
+        x: 3019
+        y: 1268
+        width: 138
+        height: 274
+      alignment: 9
+      pivot: {x: 0.5072464, y: -1.160584}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0063
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 8
+        width: 146
+        height: 242
+      alignment: 9
+      pivot: {x: 0.48630136, y: -1.4917356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0064
+      rect:
+        serializedVersion: 2
+        x: 3006
+        y: 996
+        width: 143
+        height: 259
+      alignment: 9
+      pivot: {x: 0.4965035, y: -1.2046332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0065
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 933
+        width: 175
+        height: 266
+      alignment: 9
+      pivot: {x: 0.49714285, y: -0.86090225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0066
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 571
+        width: 235
+        height: 344
+      alignment: 9
+      pivot: {x: 0.54468083, y: 0.05232558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0067
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1460
+        width: 292
+        height: 233
+      alignment: 9
+      pivot: {x: 0.5273973, y: 0.098712444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0068
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1750
+        width: 289
+        height: 298
+      alignment: 9
+      pivot: {x: 0.46712804, y: 0.077181205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0069
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 271
+        width: 234
+        height: 298
+      alignment: 9
+      pivot: {x: 0.42307693, y: 0.077181205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0070
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 340
+        height: 325
+      alignment: 9
+      pivot: {x: 0.65882355, y: 0.07076923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0071
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1021
+        width: 393
+        height: 343
+      alignment: 9
+      pivot: {x: 0.72773534, y: 0.0670554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0072
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1695
+        width: 440
+        height: 353
+      alignment: 9
+      pivot: {x: 0.75, y: 0.065155804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0073
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1366
+        width: 437
+        height: 327
+      alignment: 9
+      pivot: {x: 0.81693363, y: 0.070336394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0074
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 453
+        width: 340
+        height: 286
+      alignment: 9
+      pivot: {x: 0.88529414, y: 0.08041958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0075
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 46
+        width: 257
+        height: 216
+      alignment: 9
+      pivot: {x: 0.9533074, y: 0.106481485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0076
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 741
+        width: 345
+        height: 155
+      alignment: 9
+      pivot: {x: 0.9942029, y: 0.14838709}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0077
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 898
+        width: 345
+        height: 121
+      alignment: 9
+      pivot: {x: 0.9942029, y: 0.2231405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0078
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 1794
+        width: 199
+        height: 254
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.09055118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0079
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 252
+        width: 199
+        height: 273
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08424909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0080
+      rect:
+        serializedVersion: 2
+        x: 2057
+        y: 582
+        width: 199
+        height: 286
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08041958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0081
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 1522
+        width: 209
+        height: 272
+      alignment: 9
+      pivot: {x: 0.47368422, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0082
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1465
+        width: 231
+        height: 276
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0083
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 1796
+        width: 221
+        height: 252
+      alignment: 9
+      pivot: {x: 0.4479638, y: 0.09126984}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0084
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 40
+        width: 216
+        height: 141
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0.16312057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0085
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1117
+        width: 199
+        height: 114
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.20175439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0086
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 199
+        height: 82
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.2804878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z3_0087
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1060
+        width: 199
+        height: 82
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.2804878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: one
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

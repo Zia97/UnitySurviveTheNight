@@ -15,10 +15,12 @@ namespace Assets.Game.Scripts
         private float frequency = 1f;
         private int dropProb = 3;
         private int _difficulty = 1;
+        private float speed = 2f;
 
         void Start()
         {
             GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+
 
             if (gameControllerObject != null)
             {
@@ -34,6 +36,8 @@ namespace Assets.Game.Scripts
             setDropProbability(4);
             createDropProbability();
             setHealth(health);
+
+            setSpeed(speed);
         }
 
         public int getDifficulty()

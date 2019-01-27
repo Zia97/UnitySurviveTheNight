@@ -1,0 +1,1445 @@
+fileFormatVersion: 2
+guid: 45b4850c73db17a4ab5e78d76e67a2c7
+timeCreated: 1484065390
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: z4_0001
+    21300002: z4_0002
+    21300004: z4_0003
+    21300006: z4_0004
+    21300008: z4_0005
+    21300010: z4_0006
+    21300012: z4_0007
+    21300014: z4_0008
+    21300016: z4_0009
+    21300018: z4_0010
+    21300020: z4_0011
+    21300022: z4_0012
+    21300024: z4_0013
+    21300026: z4_0014
+    21300028: z4_0015
+    21300030: z4_0016
+    21300032: z4_0017
+    21300034: z4_0018
+    21300036: z4_0019
+    21300038: z4_0020
+    21300040: z4_0021
+    21300042: z4_0022
+    21300044: z4_0023
+    21300046: z4_0024
+    21300048: z4_0025
+    21300050: z4_0026
+    21300052: z4_0027
+    21300054: z4_0028
+    21300056: z4_0029
+    21300058: z4_0030
+    21300060: z4_0031
+    21300062: z4_0032
+    21300064: z4_0033
+    21300066: z4_0034
+    21300068: z4_0035
+    21300070: z4_0036
+    21300072: z4_0037
+    21300074: z4_0038
+    21300076: z4_0039
+    21300078: z4_0040
+    21300080: z4_0041
+    21300082: z4_0042
+    21300084: z4_0043
+    21300086: z4_0044
+    21300088: z4_0045
+    21300090: z4_0046
+    21300092: z4_0047
+    21300094: z4_0048
+    21300096: z4_0049
+    21300098: z4_0050
+    21300100: z4_0051
+    21300102: z4_0052
+    21300104: z4_0053
+    21300106: z4_0054
+    21300108: z4_0055
+    21300110: z4_0056
+    21300112: z4_0057
+    21300114: z4_0058
+    21300116: z4_0059
+    21300118: z4_0060
+    21300120: z4_0061
+    21300122: z4_0062
+    21300124: z4_0063
+    21300126: z4_0064
+    21300128: z4_0065
+    21300130: z4_0066
+    21300132: z4_0067
+    21300134: z4_0068
+    21300136: z4_0069
+    21300138: z4_0070
+    21300140: z4_0071
+    21300142: z4_0072
+    21300144: z4_0073
+    21300146: z4_0074
+    21300148: z4_0075
+    21300150: z4_0076
+    21300152: z4_0077
+    21300154: z4_0078
+    21300156: z4_0079
+    21300158: z4_0080
+    21300160: z4_0081
+    21300162: z4_0082
+    21300164: z4_0083
+    21300166: z4_0084
+    21300168: z4_0085
+    21300170: z4_0086
+    21300172: z4_0087
+    21300174: z4_0088
+    21300176: z4_0089
+    21300178: z4_0090
+    21300180: z4_0091
+    21300182: z4_0092
+    21300184: z4_0093
+    21300186: z4_0094
+    21300188: z4_0095
+    21300190: z4_0096
+    21300192: z4_0097
+    21300194: z4_0098
+    21300196: z4_0099
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: z4_0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 326
+        height: 143
+      alignment: 9
+      pivot: {x: 0.5552147, y: 0.16083916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0002
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1906
+        width: 310
+        height: 142
+      alignment: 9
+      pivot: {x: 0.57741934, y: 0.16197184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0003
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 1735
+        width: 295
+        height: 140
+      alignment: 9
+      pivot: {x: 0.60338986, y: 0.16428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0004
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 149
+        width: 280
+        height: 139
+      alignment: 9
+      pivot: {x: 0.63214284, y: 0.16546762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0005
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 761
+        width: 276
+        height: 137
+      alignment: 9
+      pivot: {x: 0.6376812, y: 0.16788322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0006
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1193
+        width: 275
+        height: 139
+      alignment: 9
+      pivot: {x: 0.6363636, y: 0.16546762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0007
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1593
+        width: 273
+        height: 140
+      alignment: 9
+      pivot: {x: 0.63369966, y: 0.16428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0008
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 432
+        width: 284
+        height: 142
+      alignment: 9
+      pivot: {x: 0.6056338, y: 0.16197184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0009
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 4
+        width: 279
+        height: 143
+      alignment: 9
+      pivot: {x: 0.61290324, y: 0.16083916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0010
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 1767
+        width: 272
+        height: 142
+      alignment: 9
+      pivot: {x: 0.63235295, y: 0.16197184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0011
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 1451
+        width: 273
+        height: 140
+      alignment: 9
+      pivot: {x: 0.63369966, y: 0.16428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0012
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1052
+        width: 275
+        height: 139
+      alignment: 9
+      pivot: {x: 0.6363636, y: 0.16546762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0013
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1911
+        width: 276
+        height: 137
+      alignment: 9
+      pivot: {x: 0.6376812, y: 0.16788322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0014
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 900
+        width: 277
+        height: 139
+      alignment: 9
+      pivot: {x: 0.63898915, y: 0.16546762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0015
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 290
+        width: 283
+        height: 140
+      alignment: 9
+      pivot: {x: 0.6289753, y: 0.16428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0016
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1334
+        width: 305
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5868853, y: 0.16197184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0017
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 178
+        width: 155
+        height: 209
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.3110048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0018
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1677
+        width: 155
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.31428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0019
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 1073
+        width: 161
+        height: 209
+      alignment: 9
+      pivot: {x: 0.51552796, y: 0.3110048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0020
+      rect:
+        serializedVersion: 2
+        x: 1978
+        y: 380
+        width: 167
+        height: 207
+      alignment: 9
+      pivot: {x: 0.51497006, y: 0.3043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0021
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 28
+        width: 168
+        height: 206
+      alignment: 9
+      pivot: {x: 0.5, y: 0.30097088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0022
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 1284
+        width: 161
+        height: 205
+      alignment: 9
+      pivot: {x: 0.48447204, y: 0.297561}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0023
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1471
+        width: 155
+        height: 204
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.29411766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0024
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 389
+        width: 155
+        height: 202
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.28712872}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0025
+      rect:
+        serializedVersion: 2
+        x: 2467
+        y: 1847
+        width: 155
+        height: 201
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.2835821}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0026
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 1269
+        width: 155
+        height: 200
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0027
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 870
+        width: 159
+        height: 201
+      alignment: 9
+      pivot: {x: 0.48427674, y: 0.2835821}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0028
+      rect:
+        serializedVersion: 2
+        x: 1978
+        y: 1283
+        width: 167
+        height: 202
+      alignment: 9
+      pivot: {x: 0.49101797, y: 0.28712872}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0029
+      rect:
+        serializedVersion: 2
+        x: 1977
+        y: 1487
+        width: 167
+        height: 204
+      alignment: 9
+      pivot: {x: 0.50898206, y: 0.29411766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0030
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 593
+        width: 162
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5185185, y: 0.297561}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0031
+      rect:
+        serializedVersion: 2
+        x: 2309
+        y: 865
+        width: 157
+        height: 206
+      alignment: 9
+      pivot: {x: 0.50318474, y: 0.30097088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0032
+      rect:
+        serializedVersion: 2
+        x: 2467
+        y: 1638
+        width: 155
+        height: 207
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.3043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0033
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 10
+        width: 161
+        height: 176
+      alignment: 9
+      pivot: {x: 0.5031056, y: 0.3693182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0034
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 1491
+        width: 162
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5185185, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0035
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 980
+        width: 171
+        height: 186
+      alignment: 9
+      pivot: {x: 0.54385966, y: 0.4032258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0036
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 236
+        width: 182
+        height: 170
+      alignment: 9
+      pivot: {x: 0.53296703, y: 0.35882354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0037
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 416
+        width: 187
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5026738, y: 0.3121019}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0038
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 895
+        width: 190
+        height: 151
+      alignment: 9
+      pivot: {x: 0.49473685, y: 0.29139072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0039
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 594
+        width: 177
+        height: 150
+      alignment: 9
+      pivot: {x: 0.47457626, y: 0.29333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0040
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 1889
+        width: 166
+        height: 159
+      alignment: 9
+      pivot: {x: 0.4939759, y: 0.33962265}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0041
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 423
+        width: 161
+        height: 168
+      alignment: 9
+      pivot: {x: 0.49689442, y: 0.38690478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0042
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 188
+        width: 162
+        height: 190
+      alignment: 9
+      pivot: {x: 0.47530866, y: 0.4631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0043
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 800
+        width: 171
+        height: 178
+      alignment: 9
+      pivot: {x: 0.4502924, y: 0.4213483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0044
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 408
+        width: 182
+        height: 165
+      alignment: 9
+      pivot: {x: 0.46703297, y: 0.36969697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0045
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 1514
+        width: 186
+        height: 155
+      alignment: 9
+      pivot: {x: 0.49462366, y: 0.31612903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0046
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 742
+        width: 190
+        height: 151
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29139072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0047
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 1716
+        width: 177
+        height: 152
+      alignment: 9
+      pivot: {x: 0.519774, y: 0.28947368}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0048
+      rect:
+        serializedVersion: 2
+        x: 1978
+        y: 1885
+        width: 166
+        height: 163
+      alignment: 9
+      pivot: {x: 0.5060241, y: 0.33128834}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0049
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 23
+        width: 326
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5552147, y: 0.25438598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0050
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 28
+        width: 180
+        height: 206
+      alignment: 9
+      pivot: {x: 0.5388889, y: 0.28640777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0051
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1858
+        width: 196
+        height: 190
+      alignment: 9
+      pivot: {x: 0.39285713, y: 0.4631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0052
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 576
+        width: 294
+        height: 134
+      alignment: 9
+      pivot: {x: 0.5986394, y: 0.1716418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0053
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 1539
+        width: 295
+        height: 143
+      alignment: 9
+      pivot: {x: 0.5966102, y: 0.16083916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0054
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 408
+        height: 191
+      alignment: 9
+      pivot: {x: 0.43137255, y: 0.12041885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0055
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 999
+        width: 427
+        height: 208
+      alignment: 9
+      pivot: {x: 0.41217798, y: 0.11057692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0056
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1651
+        width: 441
+        height: 210
+      alignment: 9
+      pivot: {x: 0.39909297, y: 0.10952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0057
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1863
+        width: 452
+        height: 185
+      alignment: 9
+      pivot: {x: 0.38938054, y: 0.12432432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0058
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1041
+        width: 297
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5925926, y: 0.16911764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0059
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1014
+        width: 215
+        height: 204
+      alignment: 9
+      pivot: {x: 0.35813954, y: 0.27450982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0060
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1843
+        width: 234
+        height: 205
+      alignment: 9
+      pivot: {x: 0.32905984, y: 0.27317074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0061
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 618
+        width: 241
+        height: 280
+      alignment: 9
+      pivot: {x: 0.373444, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0062
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 83
+        width: 190
+        height: 293
+      alignment: 9
+      pivot: {x: 0.46842104, y: 0.19112629}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0063
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 1341
+        width: 209
+        height: 303
+      alignment: 9
+      pivot: {x: 0.430622, y: 0.18481848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0064
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 746
+        width: 187
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5561497, y: 0.18666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0065
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 663
+        width: 155
+        height: 200
+      alignment: 9
+      pivot: {x: 0.4967742, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0066
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1048
+        width: 215
+        height: 170
+      alignment: 9
+      pivot: {x: 0.6139535, y: 0.35882354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0067
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 1671
+        width: 208
+        height: 170
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.34117648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0068
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 575
+        width: 189
+        height: 165
+      alignment: 9
+      pivot: {x: 0.55026454, y: 0.33939394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0069
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 1693
+        width: 172
+        height: 175
+      alignment: 9
+      pivot: {x: 0.49418604, y: 0.37714285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0070
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1870
+        width: 184
+        height: 178
+      alignment: 9
+      pivot: {x: 0.45652175, y: 0.33707866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0071
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1646
+        width: 225
+        height: 195
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.30769232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0072
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 1341
+        width: 184
+        height: 171
+      alignment: 9
+      pivot: {x: 0.5380435, y: 0.3625731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0073
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 524
+        width: 326
+        height: 122
+      alignment: 9
+      pivot: {x: 0.5552147, y: 0.23770492}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0074
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 331
+        width: 347
+        height: 150
+      alignment: 9
+      pivot: {x: 0.52161384, y: 0.19333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0075
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 376
+        height: 161
+      alignment: 9
+      pivot: {x: 0.48138297, y: 0.18012422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0076
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 483
+        width: 401
+        height: 163
+      alignment: 9
+      pivot: {x: 0.45137158, y: 0.17791411}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0077
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 841
+        width: 422
+        height: 156
+      alignment: 9
+      pivot: {x: 0.42890996, y: 0.18589744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0078
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1209
+        width: 428
+        height: 142
+      alignment: 9
+      pivot: {x: 0.4228972, y: 0.20422535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0079
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1353
+        width: 428
+        height: 120
+      alignment: 9
+      pivot: {x: 0.4228972, y: 0.24166666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0080
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1475
+        width: 437
+        height: 92
+      alignment: 9
+      pivot: {x: 0.41418764, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0081
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1569
+        width: 437
+        height: 80
+      alignment: 9
+      pivot: {x: 0.41418764, y: 0.3625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0082
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 589
+        width: 170
+        height: 209
+      alignment: 9
+      pivot: {x: 0.48235294, y: 0.26794258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0083
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1220
+        width: 217
+        height: 237
+      alignment: 9
+      pivot: {x: 0.437788, y: 0.23628692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0084
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 40
+        width: 266
+        height: 248
+      alignment: 9
+      pivot: {x: 0.43233082, y: 0.22580644}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0085
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 712
+        width: 313
+        height: 250
+      alignment: 9
+      pivot: {x: 0.43769968, y: 0.224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0086
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 964
+        width: 346
+        height: 243
+      alignment: 9
+      pivot: {x: 0.43063584, y: 0.23045267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0087
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 100
+        width: 342
+        height: 229
+      alignment: 9
+      pivot: {x: 0.40643275, y: 0.24454148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0088
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1266
+        width: 344
+        height: 207
+      alignment: 9
+      pivot: {x: 0.4098837, y: 0.2705314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0089
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 139
+        width: 352
+        height: 179
+      alignment: 9
+      pivot: {x: 0.39772728, y: 0.31284916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0090
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1179
+        width: 302
+        height: 153
+      alignment: 9
+      pivot: {x: 0.29801324, y: 0.36601308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0091
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1168
+        width: 184
+        height: 171
+      alignment: 9
+      pivot: {x: 0.5380435, y: 0.3625731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0092
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1459
+        width: 218
+        height: 185
+      alignment: 9
+      pivot: {x: 0.45412844, y: 0.33513513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0093
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 378
+        width: 266
+        height: 196
+      alignment: 9
+      pivot: {x: 0.44360903, y: 0.31632653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0094
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 448
+        width: 313
+        height: 198
+      alignment: 9
+      pivot: {x: 0.44728434, y: 0.3131313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0095
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 648
+        width: 346
+        height: 191
+      alignment: 9
+      pivot: {x: 0.43930635, y: 0.32460734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0096
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1684
+        width: 342
+        height: 177
+      alignment: 9
+      pivot: {x: 0.41520467, y: 0.3502825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0097
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1478
+        width: 344
+        height: 171
+      alignment: 9
+      pivot: {x: 0.41860464, y: 0.3625731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0098
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 352
+        height: 171
+      alignment: 9
+      pivot: {x: 0.40625, y: 0.3625731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z4_0099
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 1877
+        width: 308
+        height: 171
+      alignment: 9
+      pivot: {x: 0.32142857, y: 0.3625731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: one
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

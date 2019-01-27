@@ -1,0 +1,1770 @@
+fileFormatVersion: 2
+guid: 5f5ce498a252fb141bcd275822faef48
+timeCreated: 1482161395
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: head1
+    21300002: idle1
+    21300004: zom1_0001
+    21300006: zom1_0002
+    21300008: zom1_0003
+    21300010: zom1_0004
+    21300012: zom1_0005
+    21300014: zom1_0006
+    21300016: zom1_0007
+    21300018: zom1_0008
+    21300020: zom1_0009
+    21300022: zom1_0010
+    21300024: zom1_0011
+    21300026: zom1_0012
+    21300028: zom1_0013
+    21300030: zom1_0014
+    21300032: zom1_0015
+    21300034: zom1_0016
+    21300036: zom1_0017
+    21300038: zom1_0018
+    21300040: zom1_0019
+    21300042: zom1_0020
+    21300044: zom1_0021
+    21300046: zom1_0022
+    21300048: zom1_0023
+    21300050: zom1_0024
+    21300052: zom1_0025
+    21300054: zom1_0026
+    21300056: zom1_0027
+    21300058: zom1_0028
+    21300060: zom1_0029
+    21300062: zom1_0030
+    21300064: zom1_0031
+    21300066: zom1_0032
+    21300068: zom1_0033
+    21300070: zom1_0034
+    21300072: zom1_0035
+    21300074: zom1_0036
+    21300076: zom1_0037
+    21300078: zom1_0038
+    21300080: zom1_0039
+    21300082: zom1_0040
+    21300084: zom1_0041
+    21300086: zom1_0042
+    21300088: zom1_0043
+    21300090: zom1_0044
+    21300092: zom1_0045
+    21300094: zom1_0046
+    21300096: zom1_0047
+    21300098: zom1_0048
+    21300100: zom1_0049
+    21300102: zom1_0050
+    21300104: zom1_0051
+    21300106: zom1_0052
+    21300108: zom1_0053
+    21300110: zom1_0054
+    21300112: zom1_0055
+    21300114: zom1_0056
+    21300116: zom1_0057
+    21300118: zom1_0058
+    21300120: zom1_0059
+    21300122: zom1_0060
+    21300124: zom1_0061
+    21300126: zom1_0062
+    21300128: zom1_0063
+    21300130: zom1_0064
+    21300132: zom1_0065
+    21300134: zom1_0066
+    21300136: zom1_0067
+    21300138: zom1_0068
+    21300140: zom1_0069
+    21300142: zom1_0070
+    21300144: zom1_0071
+    21300146: zom1_0072
+    21300148: zom1_0073
+    21300150: zom1_0074
+    21300152: zom1_0075
+    21300154: zom1_0076
+    21300156: zom1_0077
+    21300158: zom1_0078
+    21300160: zom1_0079
+    21300162: zom1_0080
+    21300164: zom1_0081
+    21300166: zom1_0082
+    21300168: zom1_0083
+    21300170: zom1_0084
+    21300172: zom1_0085
+    21300174: zom1_0086
+    21300176: zom1_0087
+    21300178: zom1_0088
+    21300180: zom1_0089
+    21300182: zom1_0090
+    21300184: zom1_0091
+    21300186: zom1_0092
+    21300188: zom1_0093
+    21300190: zom1_0094
+    21300192: zom1_0095
+    21300194: zom1_0096
+    21300196: zom1_0097
+    21300198: zom1_0098
+    21300200: zom1_0099
+    21300202: zom1_0100
+    21300204: zom1_0101
+    21300206: zom1_0102
+    21300208: zom1_0103
+    21300210: zom1_0104
+    21300212: zom1_0105
+    21300214: zom1_0106
+    21300216: zom1_0107
+    21300218: zom1_0108
+    21300220: zom1_0109
+    21300222: zom1_0110
+    21300224: zom1_0111
+    21300226: zom1_0112
+    21300228: zom1_0113
+    21300230: zom1_0114
+    21300232: zom1_0115
+    21300234: zom1_0116
+    21300236: zom1_0117
+    21300238: zom1_0118
+    21300240: zom1_0119
+    21300242: zom1_0120
+    21300244: zom1_0121
+    21300246: zomb1_head1b
+    21300248: zom1_0122
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zom1_0001
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 621
+        width: 206
+        height: 266
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.08646616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0002
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 1155
+        width: 206
+        height: 264
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.08712121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0003
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 1498
+        width: 206
+        height: 277
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0004
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 1777
+        width: 206
+        height: 271
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.084870845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0005
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 119
+        width: 206
+        height: 266
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.08646616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0006
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 889
+        width: 206
+        height: 264
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.08712121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0007
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 928
+        width: 206
+        height: 277
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0008
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 348
+        width: 206
+        height: 271
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.084870845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0009
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 1499
+        width: 199
+        height: 277
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0010
+      rect:
+        serializedVersion: 2
+        x: 3452
+        y: 1778
+        width: 199
+        height: 270
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.085185185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0011
+      rect:
+        serializedVersion: 2
+        x: 3448
+        y: 132
+        width: 199
+        height: 268
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0012
+      rect:
+        serializedVersion: 2
+        x: 3448
+        y: 402
+        width: 199
+        height: 277
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0013
+      rect:
+        serializedVersion: 2
+        x: 3448
+        y: 681
+        width: 199
+        height: 273
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08424909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0014
+      rect:
+        serializedVersion: 2
+        x: 3448
+        y: 956
+        width: 199
+        height: 270
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.085185185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0015
+      rect:
+        serializedVersion: 2
+        x: 3448
+        y: 1228
+        width: 199
+        height: 268
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0016
+      rect:
+        serializedVersion: 2
+        x: 3253
+        y: 1498
+        width: 199
+        height: 277
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0017
+      rect:
+        serializedVersion: 2
+        x: 3251
+        y: 1777
+        width: 199
+        height: 271
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.084870845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0018
+      rect:
+        serializedVersion: 2
+        x: 3247
+        y: 147
+        width: 199
+        height: 266
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08646616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0019
+      rect:
+        serializedVersion: 2
+        x: 3247
+        y: 415
+        width: 199
+        height: 268
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0020
+      rect:
+        serializedVersion: 2
+        x: 3247
+        y: 685
+        width: 199
+        height: 275
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0021
+      rect:
+        serializedVersion: 2
+        x: 3247
+        y: 962
+        width: 199
+        height: 271
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.084870845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0022
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 1235
+        width: 199
+        height: 266
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08646616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0023
+      rect:
+        serializedVersion: 2
+        x: 3050
+        y: 1503
+        width: 199
+        height: 268
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0024
+      rect:
+        serializedVersion: 2
+        x: 3050
+        y: 1773
+        width: 199
+        height: 275
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0025
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 100
+        width: 199
+        height: 275
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0026
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 377
+        width: 199
+        height: 275
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0027
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 654
+        width: 199
+        height: 276
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0028
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 932
+        width: 199
+        height: 277
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0029
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 1211
+        width: 199
+        height: 278
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08273381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0030
+      rect:
+        serializedVersion: 2
+        x: 2849
+        y: 1491
+        width: 199
+        height: 278
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08273381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0031
+      rect:
+        serializedVersion: 2
+        x: 2849
+        y: 1771
+        width: 199
+        height: 277
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0032
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 97
+        width: 199
+        height: 277
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08303249}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0033
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 1221
+        width: 199
+        height: 276
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0034
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 666
+        width: 199
+        height: 276
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0035
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 944
+        width: 199
+        height: 275
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0036
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 1221
+        width: 199
+        height: 275
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0037
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 1498
+        width: 199
+        height: 274
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08394161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0038
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 1774
+        width: 199
+        height: 274
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08394161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0039
+      rect:
+        serializedVersion: 2
+        x: 2644
+        y: 131
+        width: 199
+        height: 273
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08424909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0040
+      rect:
+        serializedVersion: 2
+        x: 2644
+        y: 406
+        width: 199
+        height: 272
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0041
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 680
+        width: 199
+        height: 272
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0042
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 954
+        width: 199
+        height: 272
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0043
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 1228
+        width: 199
+        height: 272
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0044
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 1502
+        width: 199
+        height: 273
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08424909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0045
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 259
+        width: 199
+        height: 273
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08424909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0046
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 669
+        width: 199
+        height: 274
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08394161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0047
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 945
+        width: 199
+        height: 274
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08394161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0048
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 822
+        width: 199
+        height: 274
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08394161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0049
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 87
+        width: 233
+        height: 181
+      alignment: 9
+      pivot: {x: 0.472103, y: 0.12707183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0050
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 349
+        width: 232
+        height: 180
+      alignment: 9
+      pivot: {x: 0.47413793, y: 0.12777779}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0051
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 804
+        width: 232
+        height: 179
+      alignment: 9
+      pivot: {x: 0.47413793, y: 0.12849163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0052
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 169
+        width: 231
+        height: 178
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0.12921348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0053
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 1685
+        width: 231
+        height: 179
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0.12849163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0054
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 531
+        width: 232
+        height: 179
+      alignment: 9
+      pivot: {x: 0.47413793, y: 0.12849163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0055
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1226
+        width: 232
+        height: 180
+      alignment: 9
+      pivot: {x: 0.47413793, y: 0.12777779}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0056
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 1866
+        width: 233
+        height: 182
+      alignment: 9
+      pivot: {x: 0.472103, y: 0.12637363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0057
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 985
+        width: 234
+        height: 185
+      alignment: 9
+      pivot: {x: 0.47008547, y: 0.12432432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0058
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 712
+        width: 235
+        height: 188
+      alignment: 9
+      pivot: {x: 0.4680851, y: 0.122340426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0059
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1584
+        width: 235
+        height: 190
+      alignment: 9
+      pivot: {x: 0.4680851, y: 0.12105263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0060
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1591
+        width: 234
+        height: 183
+      alignment: 9
+      pivot: {x: 0.47008547, y: 0.12568305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0061
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1408
+        width: 233
+        height: 181
+      alignment: 9
+      pivot: {x: 0.472103, y: 0.12707183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0062
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 381
+        width: 199
+        height: 286
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08041958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0063
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 376
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0064
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 612
+        width: 236
+        height: 288
+      alignment: 9
+      pivot: {x: 0.41949153, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0065
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1172
+        width: 285
+        height: 276
+      alignment: 9
+      pivot: {x: 0.34736842, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0066
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1777
+        width: 303
+        height: 271
+      alignment: 9
+      pivot: {x: 0.32673267, y: 0.084870845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0067
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 924
+        width: 325
+        height: 275
+      alignment: 9
+      pivot: {x: 0.30461538, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0068
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1201
+        width: 343
+        height: 275
+      alignment: 9
+      pivot: {x: 0.28862974, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0069
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1773
+        width: 357
+        height: 275
+      alignment: 9
+      pivot: {x: 0.27731094, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0070
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 270
+        width: 327
+        height: 275
+      alignment: 9
+      pivot: {x: 0.3027523, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0071
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 331
+        height: 275
+      alignment: 9
+      pivot: {x: 0.29909366, y: 0.083636366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0072
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 57
+        width: 200
+        height: 289
+      alignment: 9
+      pivot: {x: 0.5, y: 0.07958478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0073
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 1207
+        width: 206
+        height: 289
+      alignment: 9
+      pivot: {x: 0.5145631, y: 0.07958478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0074
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 534
+        width: 199
+        height: 286
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08041958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0075
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 932
+        width: 224
+        height: 268
+      alignment: 9
+      pivot: {x: 0.4419643, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0076
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 902
+        width: 246
+        height: 268
+      alignment: 9
+      pivot: {x: 0.40243903, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0077
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 1415
+        width: 227
+        height: 268
+      alignment: 9
+      pivot: {x: 0.43612334, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0078
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 1098
+        width: 199
+        height: 268
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0858209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0079
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 1777
+        width: 199
+        height: 271
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.084870845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0080
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1911
+        width: 225
+        height: 137
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.24817519}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0081
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 18
+        width: 225
+        height: 138
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.24637681}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0082
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 27
+        width: 232
+        height: 107
+      alignment: 9
+      pivot: {x: 0.46120688, y: 0.5981308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0083
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 989
+        width: 225
+        height: 141
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.34751773}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0084
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 2
+        width: 225
+        height: 165
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.3030303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0085
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 617
+        width: 225
+        height: 185
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.27027026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0086
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 929
+        width: 225
+        height: 201
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.2636816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0087
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 397
+        width: 225
+        height: 218
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.2293578}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0088
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 158
+        width: 225
+        height: 237
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.16877638}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0089
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 680
+        width: 225
+        height: 247
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.13765182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0090
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 1202
+        width: 225
+        height: 263
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.12927757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0091
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1761
+        width: 225
+        height: 287
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.1184669}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0092
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 387
+        width: 225
+        height: 291
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.116838485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0093
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 1467
+        width: 225
+        height: 292
+      alignment: 9
+      pivot: {x: 0.47555557, y: 0.11643836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0094
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 647
+        width: 199
+        height: 279
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08243728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0095
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 1132
+        width: 229
+        height: 274
+      alignment: 9
+      pivot: {x: 0.5633188, y: 0.08394161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0096
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1776
+        width: 268
+        height: 272
+      alignment: 9
+      pivot: {x: 0.75, y: 0.08455882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0097
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 270
+        width: 318
+        height: 312
+      alignment: 9
+      pivot: {x: 0.7264151, y: 0.07371795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0098
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 547
+        width: 333
+        height: 322
+      alignment: 9
+      pivot: {x: 0.8018018, y: 0.071428575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0099
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 871
+        width: 337
+        height: 328
+      alignment: 9
+      pivot: {x: 0.9109792, y: 0.07012195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0100
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1450
+        width: 323
+        height: 321
+      alignment: 9
+      pivot: {x: 1.0433437, y: 0.07165109}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0101
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1478
+        width: 346
+        height: 293
+      alignment: 9
+      pivot: {x: 1.0895953, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0102
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 584
+        width: 329
+        height: 285
+      alignment: 9
+      pivot: {x: 1.0942249, y: 0.08070175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0103
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 101
+        width: 329
+        height: 167
+      alignment: 9
+      pivot: {x: 1.0942249, y: 0.13772455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 329
+        height: 141
+      alignment: 9
+      pivot: {x: 1.0942249, y: 0.16312057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 329
+        height: 109
+      alignment: 9
+      pivot: {x: 1.0942249, y: 0.21100917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0106
+      rect:
+        serializedVersion: 2
+        x: 2063
+        y: 1791
+        width: 199
+        height: 257
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08949416}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0107
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 1636
+        width: 209
+        height: 269
+      alignment: 9
+      pivot: {x: 0.5215311, y: 0.08550186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0108
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 124
+        width: 220
+        height: 261
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.08812261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0109
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 127
+        width: 199
+        height: 219
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.10502283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0110
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 1421
+        width: 208
+        height: 213
+      alignment: 9
+      pivot: {x: 0.47596154, y: 0.10798122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0111
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 1368
+        width: 199
+        height: 213
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.10798122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0112
+      rect:
+        serializedVersion: 2
+        x: 2063
+        y: 1583
+        width: 199
+        height: 206
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.11165048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0113
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 423
+        width: 199
+        height: 196
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.11734694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0114
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 1586
+        width: 180
+        height: 189
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.12169312}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0115
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 1231
+        width: 180
+        height: 188
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.122340426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0116
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 351
+        width: 180
+        height: 181
+      alignment: 9
+      pivot: {x: 0.40555555, y: 0.12707183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0117
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 1907
+        width: 210
+        height: 141
+      alignment: 9
+      pivot: {x: 0.34761906, y: 0.16312057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0118
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 136
+        width: 251
+        height: 132
+      alignment: 9
+      pivot: {x: 0.29083666, y: 0.17424242}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0119
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1228
+        width: 277
+        height: 132
+      alignment: 9
+      pivot: {x: 0.2635379, y: 0.17424242}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0120
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1362
+        width: 293
+        height: 86
+      alignment: 9
+      pivot: {x: 0.24914676, y: 0.30232558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0121
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 24
+        width: 293
+        height: 75
+      alignment: 9
+      pivot: {x: 0.24914676, y: 0.34666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zom1_0122
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1484
+        width: 103
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5048544, y: 0.46938777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: one
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

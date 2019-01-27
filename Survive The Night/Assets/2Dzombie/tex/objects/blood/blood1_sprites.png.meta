@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 68868db2d398884409708809ce3605ba
+timeCreated: 1480067001
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bl_0001
+    21300002: bl_0002
+    21300004: bl_0003
+    21300006: bl_0004
+    21300008: bl_0005
+    21300010: bl_0006
+    21300012: bl_0007
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bl_0001
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 168
+        width: 128
+        height: 92
+      alignment: 9
+      pivot: {x: 0.71875, y: -0.36956522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bl_0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 163
+        height: 114
+      alignment: 9
+      pivot: {x: 0.68711656, y: -0.21052632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bl_0003
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 172
+        height: 128
+      alignment: 9
+      pivot: {x: 0.61627907, y: -0.1328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bl_0004
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 177
+        height: 125
+      alignment: 9
+      pivot: {x: 0.6497175, y: -0.096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bl_0005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 389
+        width: 190
+        height: 123
+      alignment: 9
+      pivot: {x: 0.6263158, y: -0.032520324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bl_0006
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 11
+        width: 143
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5804196, y: 0.025210084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bl_0007
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 304
+        width: 108
+        height: 83
+      alignment: 9
+      pivot: {x: 0.7037037, y: 0.04819277}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: one
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

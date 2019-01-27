@@ -1,0 +1,1025 @@
+fileFormatVersion: 2
+guid: e494373358a385d419d4fb01f612e5c5
+timeCreated: 1484063019
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: z5_0001
+    21300002: z5_0002
+    21300004: z5_0003
+    21300006: z5_0004
+    21300008: z5_0005
+    21300010: z5_0006
+    21300012: z5_0007
+    21300014: z5_0008
+    21300016: z5_0009
+    21300018: z5_0010
+    21300020: z5_0011
+    21300022: z5_0012
+    21300024: z5_0013
+    21300026: z5_0014
+    21300028: z5_0015
+    21300030: z5_0016
+    21300032: z5_0017
+    21300034: z5_0018
+    21300036: z5_0019
+    21300038: z5_0020
+    21300040: z5_0021
+    21300042: z5_0022
+    21300044: z5_0023
+    21300046: z5_0024
+    21300048: z5_0025
+    21300050: z5_0026
+    21300052: z5_0027
+    21300054: z5_0028
+    21300056: z5_0029
+    21300058: z5_0030
+    21300060: z5_0031
+    21300062: z5_0032
+    21300064: z5_0033
+    21300066: z5_0034
+    21300068: z5_0035
+    21300070: z5_0036
+    21300072: z5_0037
+    21300074: z5_0038
+    21300076: z5_0039
+    21300078: z5_0040
+    21300080: z5_0041
+    21300082: z5_0042
+    21300084: z5_0043
+    21300086: z5_0044
+    21300088: z5_0045
+    21300090: z5_0046
+    21300092: z5_0047
+    21300094: z5_0048
+    21300096: z5_0049
+    21300098: z5_0050
+    21300100: z5_0051
+    21300102: z5_0052
+    21300104: z5_0053
+    21300106: z5_0054
+    21300108: z5_0055
+    21300110: z5_0056
+    21300112: z5_0057
+    21300114: z5_0058
+    21300116: z5_0059
+    21300118: z5_0060
+    21300120: z5_0061
+    21300122: z5_0062
+    21300124: z5_0063
+    21300126: z5_0064
+    21300128: z5_0065
+    21300130: z5_0066
+    21300132: z5_0067
+    21300134: z5_0068
+    21300136: z5_0069
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: z5_0001
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 41
+        width: 202
+        height: 291
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.0790378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0002
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 590
+        width: 202
+        height: 293
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0003
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 1754
+        width: 202
+        height: 294
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0004
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 1756
+        width: 202
+        height: 292
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.07876712}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0005
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 871
+        width: 202
+        height: 289
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.07958478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0006
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 1162
+        width: 202
+        height: 292
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.07876712}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0007
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 5
+        width: 202
+        height: 294
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0008
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 1461
+        width: 202
+        height: 293
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0009
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 1175
+        width: 203
+        height: 291
+      alignment: 9
+      pivot: {x: 0.48768473, y: 0.0790378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0010
+      rect:
+        serializedVersion: 2
+        x: 2384
+        y: 1760
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0011
+      rect:
+        serializedVersion: 2
+        x: 2381
+        y: 1186
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08680555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0012
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 3
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0013
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 880
+        width: 199
+        height: 291
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0790378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0014
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 293
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0015
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 583
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08680555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0016
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 1476
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0017
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 290
+        width: 199
+        height: 298
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.110738255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0018
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 1456
+        width: 202
+        height: 296
+      alignment: 9
+      pivot: {x: 0.5049505, y: 0.0945946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0019
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 895
+        width: 199
+        height: 289
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08304498}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0020
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1173
+        width: 199
+        height: 286
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08041958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0021
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 873
+        width: 199
+        height: 298
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.110738255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0022
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 301
+        width: 199
+        height: 296
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0945946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0023
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 603
+        width: 199
+        height: 290
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08275862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0024
+      rect:
+        serializedVersion: 2
+        x: 2585
+        y: 1762
+        width: 199
+        height: 286
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08041958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0025
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 1209
+        width: 207
+        height: 291
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.0790378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0026
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 625
+        width: 206
+        height: 290
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.07931034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0027
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 1759
+        width: 205
+        height: 289
+      alignment: 9
+      pivot: {x: 0.48292682, y: 0.07958478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0028
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 44
+        width: 204
+        height: 288
+      alignment: 9
+      pivot: {x: 0.4852941, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0029
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 885
+        width: 203
+        height: 288
+      alignment: 9
+      pivot: {x: 0.48768473, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0030
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 301
+        width: 202
+        height: 287
+      alignment: 9
+      pivot: {x: 0.490099, y: 0.080139376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0031
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 1760
+        width: 203
+        height: 288
+      alignment: 9
+      pivot: {x: 0.48768473, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0032
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 1468
+        width: 204
+        height: 289
+      alignment: 9
+      pivot: {x: 0.4852941, y: 0.07958478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0033
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 334
+        width: 205
+        height: 289
+      alignment: 9
+      pivot: {x: 0.48292682, y: 0.07958478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0034
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 917
+        width: 206
+        height: 290
+      alignment: 9
+      pivot: {x: 0.48058254, y: 0.07931034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0035
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 175
+        width: 207
+        height: 291
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.0790378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0036
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 468
+        width: 208
+        height: 282
+      alignment: 9
+      pivot: {x: 0.47596154, y: 0.081560284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0037
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 752
+        width: 209
+        height: 273
+      alignment: 9
+      pivot: {x: 0.47368422, y: 0.08424909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0038
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 1783
+        width: 210
+        height: 265
+      alignment: 9
+      pivot: {x: 0.47142857, y: 0.086792454}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0039
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1502
+        width: 212
+        height: 256
+      alignment: 9
+      pivot: {x: 0.46698114, y: 0.08984375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0040
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 590
+        width: 199
+        height: 288
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0041
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 1766
+        width: 199
+        height: 282
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.081560284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0042
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 593
+        width: 199
+        height: 276
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0043
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 599
+        width: 199
+        height: 270
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.085185185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0044
+      rect:
+        serializedVersion: 2
+        x: 2384
+        y: 1494
+        width: 199
+        height: 264
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08712121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0045
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 1173
+        width: 199
+        height: 286
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08041958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0046
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 30
+        width: 199
+        height: 269
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.08550186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0047
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 337
+        width: 199
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.09163347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0048
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 54
+        width: 199
+        height: 234
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.0982906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0049
+      rect:
+        serializedVersion: 2
+        x: 2582
+        y: 1271
+        width: 199
+        height: 221
+      alignment: 9
+      pivot: {x: 0.49748743, y: 0.12669684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0050
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 858
+        width: 245
+        height: 294
+      alignment: 9
+      pivot: {x: 0.52244896, y: 0.07823129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0051
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 474
+        width: 302
+        height: 293
+      alignment: 9
+      pivot: {x: 0.5927152, y: 0.0784983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0052
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 128
+        width: 411
+        height: 314
+      alignment: 9
+      pivot: {x: 0.29440388, y: 0.07324841}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0053
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1154
+        width: 410
+        height: 329
+      alignment: 9
+      pivot: {x: 0.24146341, y: 0.06990881}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0054
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 110
+        width: 421
+        height: 332
+      alignment: 9
+      pivot: {x: 0.23515439, y: 0.06927711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0055
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 433
+        height: 323
+      alignment: 9
+      pivot: {x: 0.22863741, y: 0.071207434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0056
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 1760
+        width: 217
+        height: 288
+      alignment: 9
+      pivot: {x: 0.4562212, y: 0.07986111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0057
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1027
+        width: 213
+        height: 322
+      alignment: 9
+      pivot: {x: 0.46478873, y: 0.071428575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0058
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 93
+        width: 216
+        height: 323
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0.071207434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0059
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1351
+        width: 224
+        height: 338
+      alignment: 9
+      pivot: {x: 0.44642857, y: 0.06804734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0060
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 70
+        width: 254
+        height: 346
+      alignment: 9
+      pivot: {x: 0.48031497, y: 0.06647399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0061
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 418
+        width: 313
+        height: 353
+      alignment: 9
+      pivot: {x: 0.46964857, y: 0.065155804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0062
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1691
+        width: 355
+        height: 357
+      alignment: 9
+      pivot: {x: 0.53239435, y: 0.064425774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0063
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 773
+        width: 411
+        height: 357
+      alignment: 9
+      pivot: {x: 0.59610707, y: 0.064425774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0064
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 769
+        width: 436
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5619266, y: 0.08033241}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0065
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1132
+        width: 496
+        height: 351
+      alignment: 9
+      pivot: {x: 0.49395162, y: 0.08262108}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0066
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1485
+        width: 537
+        height: 343
+      alignment: 9
+      pivot: {x: 0.45623836, y: 0.08454811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0067
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1830
+        width: 573
+        height: 108
+      alignment: 9
+      pivot: {x: 0.42757416, y: 0.2685185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0068
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1940
+        width: 573
+        height: 108
+      alignment: 9
+      pivot: {x: 0.42757416, y: 0.2685185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z5_0069
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 1564
+        width: 116
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5086207, y: 0.528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

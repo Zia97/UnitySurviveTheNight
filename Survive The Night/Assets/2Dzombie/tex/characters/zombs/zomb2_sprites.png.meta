@@ -1,0 +1,1067 @@
+fileFormatVersion: 2
+guid: ad8d595113279774a9c2971d48fdbf40
+timeCreated: 1484069109
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: z2_0001
+    21300002: z2_0002
+    21300004: z2_0003
+    21300006: z2_0004
+    21300008: z2_0005
+    21300010: z2_0006
+    21300012: z2_0007
+    21300014: z2_0008
+    21300016: z2_0009
+    21300018: z2_0010
+    21300020: z2_0011
+    21300022: z2_0012
+    21300024: z2_0013
+    21300026: z2_0014
+    21300028: z2_0015
+    21300030: z2_0016
+    21300032: z2_0017
+    21300034: z2_0018
+    21300036: z2_0019
+    21300038: z2_0020
+    21300040: z2_0021
+    21300042: z2_0022
+    21300044: z2_0023
+    21300046: z2_0024
+    21300048: z2_0025
+    21300050: z2_0026
+    21300052: z2_0027
+    21300054: z2_0028
+    21300056: z2_0029
+    21300058: z2_0030
+    21300060: z2_0031
+    21300062: z2_0032
+    21300064: z2_0033
+    21300066: z2_0034
+    21300068: z2_0035
+    21300070: z2_0036
+    21300072: z2_0037
+    21300074: z2_0038
+    21300076: z2_0039
+    21300078: z2_0040
+    21300080: z2_0041
+    21300082: z2_0042
+    21300084: z2_0043
+    21300086: z2_0044
+    21300088: z2_0045
+    21300090: z2_0046
+    21300092: z2_0047
+    21300094: z2_0048
+    21300096: z2_0049
+    21300098: z2_0050
+    21300100: z2_0051
+    21300102: z2_0052
+    21300104: z2_0053
+    21300106: z2_0054
+    21300108: z2_0055
+    21300110: z2_0056
+    21300112: z2_0057
+    21300114: z2_0058
+    21300116: z2_0059
+    21300118: z2_0060
+    21300120: z2_0061
+    21300122: z2_0062
+    21300124: z2_0063
+    21300126: z2_0064
+    21300128: z2_0065
+    21300130: z2_0066
+    21300132: z2_0067
+    21300134: z2_0068
+    21300136: z2_0069
+    21300138: z2_0070
+    21300140: z2_0071
+    21300142: z2_0072
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: z2_0001
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 2999
+        width: 295
+        height: 373
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.061662197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0002
+      rect:
+        serializedVersion: 2
+        x: 2938
+        y: 1531
+        width: 295
+        height: 368
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0003
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 35
+        width: 295
+        height: 373
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.061662197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0004
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 410
+        width: 295
+        height: 378
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06084656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0005
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 790
+        width: 295
+        height: 373
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.061662197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0006
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 2610
+        width: 295
+        height: 368
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0007
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 2980
+        width: 295
+        height: 373
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.061662197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0008
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 3355
+        width: 295
+        height: 378
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06084656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0009
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 2990
+        width: 322
+        height: 366
+      alignment: 9
+      pivot: {x: 0.45652175, y: 0.06284153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0010
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 1400
+        width: 320
+        height: 368
+      alignment: 9
+      pivot: {x: 0.475, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0011
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 231
+        width: 323
+        height: 370
+      alignment: 9
+      pivot: {x: 0.501548, y: 0.06216216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0012
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 3358
+        width: 323
+        height: 368
+      alignment: 9
+      pivot: {x: 0.5232198, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0013
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 3353
+        width: 325
+        height: 368
+      alignment: 9
+      pivot: {x: 0.5446154, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0014
+      rect:
+        serializedVersion: 2
+        x: 1964
+        y: 3728
+        width: 323
+        height: 368
+      alignment: 9
+      pivot: {x: 0.5232198, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0015
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 936
+        width: 323
+        height: 370
+      alignment: 9
+      pivot: {x: 0.501548, y: 0.06216216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0016
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 1770
+        width: 320
+        height: 368
+      alignment: 9
+      pivot: {x: 0.475, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0017
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 2510
+        width: 349
+        height: 371
+      alignment: 9
+      pivot: {x: 0.4670487, y: 0.06199461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0018
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 2883
+        width: 351
+        height: 372
+      alignment: 9
+      pivot: {x: 0.4900285, y: 0.061827958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0019
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 3723
+        width: 354
+        height: 373
+      alignment: 9
+      pivot: {x: 0.51129943, y: 0.061662197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0020
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 220
+        width: 351
+        height: 379
+      alignment: 9
+      pivot: {x: 0.5356125, y: 0.08443272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0021
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 2140
+        width: 349
+        height: 368
+      alignment: 9
+      pivot: {x: 0.55873924, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0022
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 603
+        width: 351
+        height: 370
+      alignment: 9
+      pivot: {x: 0.5356125, y: 0.06216216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0023
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 3723
+        width: 354
+        height: 373
+      alignment: 9
+      pivot: {x: 0.51129943, y: 0.061662197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0024
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1308
+        width: 351
+        height: 381
+      alignment: 9
+      pivot: {x: 0.4900285, y: 0.0839895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0025
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 208
+        width: 295
+        height: 361
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06371191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0026
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 2264
+        width: 295
+        height: 360
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06388889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0027
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 3737
+        width: 295
+        height: 359
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06406685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0028
+      rect:
+        serializedVersion: 2
+        x: 2036
+        y: 2265
+        width: 295
+        height: 360
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06388889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0029
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 2627
+        width: 295
+        height: 361
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06371191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0030
+      rect:
+        serializedVersion: 2
+        x: 2341
+        y: 3374
+        width: 295
+        height: 361
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06371191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0031
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 2626
+        width: 295
+        height: 362
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063535914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0032
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 1532
+        width: 295
+        height: 363
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063360885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0033
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 571
+        width: 295
+        height: 363
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063360885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0034
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 666
+        width: 295
+        height: 364
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06318682}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0035
+      rect:
+        serializedVersion: 2
+        x: 2641
+        y: 1165
+        width: 295
+        height: 365
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063013695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0036
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 1032
+        width: 295
+        height: 366
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06284153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0037
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 2242
+        width: 295
+        height: 366
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06284153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0038
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 1897
+        width: 295
+        height: 365
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063013695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0039
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 2632
+        width: 295
+        height: 365
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063013695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0040
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 2266
+        width: 295
+        height: 364
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06318682}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0041
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 1901
+        width: 295
+        height: 363
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063360885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0042
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 302
+        width: 295
+        height: 362
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.063535914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0043
+      rect:
+        serializedVersion: 2
+        x: 2638
+        y: 3735
+        width: 295
+        height: 361
+      alignment: 9
+      pivot: {x: 0.49830508, y: 0.06371191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0044
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 1771
+        width: 337
+        height: 367
+      alignment: 9
+      pivot: {x: 0.45697328, y: 0.0626703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0045
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 3326
+        width: 381
+        height: 369
+      alignment: 9
+      pivot: {x: 0.5144357, y: 0.062330622}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0046
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 601
+        width: 481
+        height: 372
+      alignment: 9
+      pivot: {x: 0.33264032, y: 0.061827958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0047
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 3697
+        width: 529
+        height: 399
+      alignment: 9
+      pivot: {x: 0.27788278, y: 0.05764411}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0048
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 46
+        width: 564
+        height: 415
+      alignment: 9
+      pivot: {x: 0.2606383, y: 0.055421688}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0049
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 463
+        width: 584
+        height: 368
+      alignment: 9
+      pivot: {x: 0.25171232, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0050
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2265
+        width: 544
+        height: 361
+      alignment: 9
+      pivot: {x: 0.27022058, y: 0.06371191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0051
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 2832
+        width: 427
+        height: 423
+      alignment: 9
+      pivot: {x: 0.5644028, y: 0.05437352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0052
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 3257
+        width: 447
+        height: 438
+      alignment: 9
+      pivot: {x: 0.6263982, y: 0.052511416}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0053
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 2349
+        width: 460
+        height: 429
+      alignment: 9
+      pivot: {x: 0.67826086, y: 0.05361305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0054
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 66
+        width: 497
+        height: 395
+      alignment: 9
+      pivot: {x: 0.6639839, y: 0.05822785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0055
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1559
+        width: 558
+        height: 375
+      alignment: 9
+      pivot: {x: 0.6630824, y: 0.061333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0056
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1599
+        width: 629
+        height: 335
+      alignment: 9
+      pivot: {x: 0.6581876, y: 0.06865671}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0057
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1936
+        width: 639
+        height: 275
+      alignment: 9
+      pivot: {x: 0.69327074, y: 0.12727273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0058
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 833
+        width: 599
+        height: 266
+      alignment: 9
+      pivot: {x: 0.74958265, y: 0.14661655}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0059
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1346
+        width: 626
+        height: 251
+      alignment: 9
+      pivot: {x: 0.75559103, y: 0.18326694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0060
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1101
+        width: 604
+        height: 243
+      alignment: 9
+      pivot: {x: 0.73013246, y: 0.18930042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0061
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1691
+        width: 492
+        height: 572
+      alignment: 9
+      pivot: {x: 0.4593496, y: 0.2062937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0062
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 975
+        width: 492
+        height: 582
+      alignment: 9
+      pivot: {x: 0.50406504, y: 0.18213059}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0063
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 2780
+        width: 536
+        height: 544
+      alignment: 9
+      pivot: {x: 0.57462686, y: 0.16544117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0064
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 833
+        width: 570
+        height: 511
+      alignment: 9
+      pivot: {x: 0.6421053, y: 0.17221135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0065
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 339
+        width: 595
+        height: 492
+      alignment: 9
+      pivot: {x: 0.6739496, y: 0.20731707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0066
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2213
+        width: 666
+        height: 413
+      alignment: 9
+      pivot: {x: 0.6261261, y: 0.26150122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0067
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2628
+        width: 688
+        height: 387
+      alignment: 9
+      pivot: {x: 0.6380814, y: 0.35142118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0068
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3017
+        width: 700
+        height: 307
+      alignment: 9
+      pivot: {x: 0.64428574, y: 0.39739415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0069
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3667
+        width: 719
+        height: 271
+      alignment: 9
+      pivot: {x: 0.6536857, y: 0.4280443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0070
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3489
+        width: 719
+        height: 176
+      alignment: 9
+      pivot: {x: 0.6536857, y: 0.2159091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0071
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3326
+        width: 719
+        height: 161
+      alignment: 9
+      pivot: {x: 0.6536857, y: 0.23602484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: z2_0072
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3940
+        width: 719
+        height: 156
+      alignment: 9
+      pivot: {x: 0.6536857, y: 0.24358974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: one
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

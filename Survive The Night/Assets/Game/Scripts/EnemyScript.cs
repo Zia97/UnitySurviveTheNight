@@ -35,9 +35,15 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (isMoving)
         {
+            gameObject.GetComponent<Animator>().Play("walkSide");
             transform.position += -transform.right * _speed * Time.deltaTime;
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().Play("strike");
         }
     }
 
