@@ -13,6 +13,9 @@ TagManager:
   - SuppliesButtonIncrease
   - RepairHoursSelected
   - SuppliesHoursSelected
+  - zombie
+  - zombies
+  - Enemy
   layers:
   - Default
   - TransparentFX

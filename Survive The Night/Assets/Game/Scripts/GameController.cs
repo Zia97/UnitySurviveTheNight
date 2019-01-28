@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject mediumEnemy;
     public GameObject officerEnemy;
     public GameObject dogEnemy;
+    public GameObject runnerEnemy;
     public Vector3 spawnValues;
 
     public BasicEnemy basicEnemyObject;
@@ -105,6 +106,7 @@ public class GameController : MonoBehaviour
                 }
                 else if(randomValue ==1)
                 {
+                    int medRandom = rnd.Next(3);
                     if (currentWaveDifficultyValue + 1 == roundWaveDifficulty)
                     {
                         Instantiate(basicEnemy, spawnPosition, spawnRotation);
@@ -112,7 +114,14 @@ public class GameController : MonoBehaviour
                     }
                     else
                     {
-                        Instantiate(mediumEnemy, spawnPosition, spawnRotation);
+                        if (medRandom <= 1)
+                        {
+                            Instantiate(mediumEnemy, spawnPosition, spawnRotation);
+                        }
+                        else
+                        {
+                            Instantiate(runnerEnemy, spawnPosition, spawnRotation);
+                        }         
                         currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
                     }
                 }

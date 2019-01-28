@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 9037732650790045572}
   - component: {fileID: 9189924098292142146}
   - component: {fileID: 9063951825910718864}
-  - component: {fileID: 107152501672008897}
+  - component: {fileID: 3448233720980720911}
   - component: {fileID: 8398125514584672506}
   - component: {fileID: 9204091326397288898}
   m_Layer: 10
   m_Name: Runner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &107152501672008897
+--- !u!114 &3448233720980720911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9041273607135493488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77762822c0d640468ae01d67e9be2f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 69fb45f3853f0fa478ec330905b84882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &8398125514584672506

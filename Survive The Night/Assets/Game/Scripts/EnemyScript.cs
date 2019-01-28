@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-
     private float _speed = 3.0f;
     private bool isMoving = true;
     private double _health = 100;
@@ -14,12 +14,14 @@ public class EnemyScript : MonoBehaviour
     private bool randomDrop;
     private int _dropProbability = 3;
     private int _scoreValue = 1;
-
+    private bool isDead = false;
+    
     private System.Random rnd = new System.Random();
 
     // Use this for initialization
     void Start()
     {
+        
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
@@ -29,21 +31,27 @@ public class EnemyScript : MonoBehaviour
         {
             Debug.Log("Cannot find 'GameController' script");
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (isMoving)
+        if (!isDead)
         {
-            gameObject.GetComponent<Animator>().Play("walkSide");
-            transform.position += -transform.right * _speed * Time.deltaTime;
+            if (isMoving)
+            {
+                gameObject.GetComponent<Animator>().Play("walkSide");
+                transform.position += -transform.right * _speed * Time.deltaTime;
+            }
+            else
+            {
+                gameObject.GetComponent<Animator>().Play("strike");
+            }
         }
-        else
+        else if(isDead)
         {
-            gameObject.GetComponent<Animator>().Play("strike");
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 
@@ -87,7 +95,7 @@ public class EnemyScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
         if (collision.transform.gameObject.name == "wall")
         {
             isMoving = false;
@@ -97,23 +105,28 @@ public class EnemyScript : MonoBehaviour
 
         else if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
         {
-            _health = _health - 30;
-
-            if (_health <= 0)
+            if (!isDead)
             {
-                gameObject.GetComponent<Animator>().Play("die");
-                gameController.updateScore(_scoreValue);
-                gameController.increaseCurrentWaveScore(_scoreValue);
+                _health = _health - 30;
 
-                if(randomDrop)
+                if (_health <= 0)
                 {
-                    Debug.Log("Random drop");
-                }
+                    isDead = true;
+                    gameController.updateScore(_scoreValue);
+                    gameController.increaseCurrentWaveScore(_scoreValue);
 
-                Destroy(gameObject);
+                    gameObject.GetComponent<Animator>().Play("die");
+
+                    Destroy(gameObject, 7);
+
+                    if (randomDrop)
+                    {
+                        Debug.Log("Random drop");
+                    }
+                }
             }
         }
-        
+
         else
         {
             Debug.Log("Unidentified enemy collision");
@@ -125,7 +138,7 @@ public class EnemyScript : MonoBehaviour
         while (true)
         {
             gameController.damageWall(_wallDamagetick);
-            yield return new WaitForSeconds(_wallDamageFrequency); 
+            yield return new WaitForSeconds(_wallDamageFrequency);
         }
     }
 

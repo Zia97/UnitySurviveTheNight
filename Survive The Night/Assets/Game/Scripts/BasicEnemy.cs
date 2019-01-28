@@ -11,11 +11,11 @@ namespace Assets.Game.Scripts
     {
 
         private int damage = 1;
-        private int health = 100;
+        private int health = 120;
         private float frequency = 1f;
         private int dropProb = 3;
         private int _difficulty = 1;
-        private float speed = 1.6f;
+        private float speed = 1.7f;
 
         void Start()
         {

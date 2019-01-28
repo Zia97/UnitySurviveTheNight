@@ -7,15 +7,15 @@ using UnityEngine;
 
 namespace Assets.Game.Scripts
 {
-    public class DogEnemy : EnemyScript
+    public class RunnerEnemy : EnemyScript
     {
 
         private int damage = 1;
-        private int health = 90;
+        private int health = 110;
         private float frequency = 1f;
         private int dropProb = 6;
-        private float speed = 4f;
-        private int _difficulty = 1;
+        private float speed = 2.4f;
+        private int _difficulty = 2;
 
         void Start()
         {
@@ -30,7 +30,7 @@ namespace Assets.Game.Scripts
                 Debug.Log("Cannot find 'GameController' script");
             }
 
-            setScoreValue(1);
+            setScoreValue(2);
             setDamage(damage);
             setDropProbability(dropProb);
             createDropProbability();
