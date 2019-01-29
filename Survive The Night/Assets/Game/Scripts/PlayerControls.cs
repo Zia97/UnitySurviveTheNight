@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Game.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,10 +11,14 @@ public class PlayerControls : MonoBehaviour {
     Rigidbody2D rb;
     Vector2 bulletPos;
     private bool controlsEnabled = true;
+    public GameObject _weaponControllerObject;
+    private WeaponController weaponController;
 
     // Use this for initialization
     void Start ()
     {
+        _weaponControllerObject = GameObject.FindWithTag("WeaponController");
+        weaponController = _weaponControllerObject.GetComponent<WeaponController>();
         target = transform.position;
     }
 	
@@ -34,7 +39,7 @@ public class PlayerControls : MonoBehaviour {
             target.z = transform.position.z;
             if (target.x >= -5.5)
             {
-                fireBullet(target);
+                fireBullet();
             };
         }
 
@@ -45,11 +50,13 @@ public class PlayerControls : MonoBehaviour {
     }
 
 
-    void fireBullet(Vector3 target)
+    void fireBullet()
     {
+        
         bulletPos = transform.position;
         bulletPos += new Vector2(1f, -0.4f);
-        Instantiate(bullet,bulletPos,Quaternion.identity);
+        weaponController.Fire(bulletPos);
+        //Instantiate(bullet,bulletPos,Quaternion.identity);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

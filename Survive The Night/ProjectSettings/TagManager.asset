@@ -16,6 +16,7 @@ TagManager:
   - zombie
   - zombies
   - Enemy
+  - WeaponController
   layers:
   - Default
   - TransparentFX

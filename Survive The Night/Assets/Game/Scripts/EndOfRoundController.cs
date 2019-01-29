@@ -78,7 +78,6 @@ public class EndOfRoundController : MonoBehaviour
 
     private void ConfirmButtonClicked()
     {
-        Debug.Log("Confirm clicked");
         RepairBase();
         _gameController.StartNextWave();
     }
@@ -137,14 +136,13 @@ public class EndOfRoundController : MonoBehaviour
 
     private void RepairBase()
     {
-        //_gameController.RepairBase(_repairsHoursSelectedValue * 3);
         if (_gameController == null)
         {
             Debug.Log("Game controller is null");
         }
         else
         {
-            _gameController.RepairBase(5 * 3);
+            _gameController.RepairBase(_repairsHoursSelectedValue * 3);
         }
     }
 }

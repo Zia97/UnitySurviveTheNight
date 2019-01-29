@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
@@ -41,7 +39,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (isMoving)
             {
-                gameObject.GetComponent<Animator>().Play("walkSide");
+                this.gameObject.GetComponent<Animator>().Play("walkSide");
                 transform.position += -transform.right * _speed * Time.deltaTime;
             }
             else
@@ -137,7 +135,10 @@ public class EnemyScript : MonoBehaviour
     {
         while (true)
         {
-            gameController.damageWall(_wallDamagetick);
+            if (!isDead)
+            {
+                gameController.damageWall(_wallDamagetick);
+            }
             yield return new WaitForSeconds(_wallDamageFrequency);
         }
     }
