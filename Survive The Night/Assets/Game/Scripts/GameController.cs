@@ -176,11 +176,24 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                _player.AreControlsEnabled(false);
-                roundOverCanvas.enabled = true;
                 _roundOver = true;
+                _player.AreControlsEnabled(false);
+                StartCoroutine(endOfRoundDelay());
+
             };
         }
+    }
+
+    IEnumerator endOfRoundDelay()
+    {
+        yield return new WaitForSecondsRealtime(4);
+        InitiateEndOfRound();
+
+    }
+
+    private void InitiateEndOfRound()
+    {
+        roundOverCanvas.enabled = true;
     }
 
     public void updateScore(int scoreValue)
@@ -191,6 +204,7 @@ public class GameController : MonoBehaviour
 
     public void gameOver()
     {
+        _player.AreControlsEnabled(false);
         _gameOver = true;
         gameOverText.text = "Game Over";
     }

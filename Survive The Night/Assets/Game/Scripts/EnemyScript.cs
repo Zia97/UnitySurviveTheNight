@@ -115,7 +115,7 @@ public class EnemyScript : MonoBehaviour
 
                     gameObject.GetComponent<Animator>().Play("die");
 
-                    Destroy(gameObject, 7);
+                    Destroy(gameObject, 3);
 
                     if (randomDrop)
                     {
