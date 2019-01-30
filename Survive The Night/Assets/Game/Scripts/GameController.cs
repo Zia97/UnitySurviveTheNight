@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     private int wallHeath = 100;
 
     public Text gameOverText;
+    public Text waveText;
 
     private bool _gameOver;
     private bool _roundOver;
@@ -40,6 +41,8 @@ public class GameController : MonoBehaviour
 
     public GameObject _playerGameObject;
     public PlayerControls _player;
+
+    private int _waveCount = 1;
 
 
     private System.Random rnd = new System.Random();
@@ -58,6 +61,7 @@ public class GameController : MonoBehaviour
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
+        waveText.text = "Wave "+_waveCount.ToString();
         StartCoroutine(SpawnWaves());
     }
 
@@ -68,15 +72,18 @@ public class GameController : MonoBehaviour
 
         while (!_gameOver && !_roundOver)
         {
+            roundOverCanvas.enabled = false;
+            waveText.text = "Wave " + _waveCount.ToString();
             roundWaveDifficulty = roundWaveDifficulty + 4;
             int currentWaveDifficultyValue = 0;
             currentWaveScore = 0;
             int randomValue = 0;
 
+            yield return new WaitForSecondsRealtime(4);
+            waveText.text = "";
 
             while (currentWaveDifficultyValue < roundWaveDifficulty)
-            {
-                roundOverCanvas.enabled = false;
+            {             
 
                 if(roundWaveDifficulty-currentWaveDifficultyValue>=4)
                 {
@@ -211,6 +218,7 @@ public class GameController : MonoBehaviour
 
     public void StartNextWave()
     {
+        _waveCount = _waveCount + 1;
         _roundOver = false;
         spawnWait = spawnWait - 0.05f;
         if(spawnWait<=0.3)

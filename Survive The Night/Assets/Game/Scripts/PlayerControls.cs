@@ -20,6 +20,7 @@ public class PlayerControls : MonoBehaviour {
         _weaponControllerObject = GameObject.FindWithTag("WeaponController");
         weaponController = _weaponControllerObject.GetComponent<WeaponController>();
         target = transform.position;
+        rb = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -45,23 +46,22 @@ public class PlayerControls : MonoBehaviour {
 
         if (target.x < -5.5)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
+            Vector3 targetPosition = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
+            rb.MovePosition(targetPosition);
         };
     }
 
 
     void fireBullet()
     {
-        
         bulletPos = transform.position;
         bulletPos += new Vector2(1f, -0.4f);
         weaponController.Fire(bulletPos);
-        //Instantiate(bullet,bulletPos,Quaternion.identity);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         target = transform.position;
     }
 
