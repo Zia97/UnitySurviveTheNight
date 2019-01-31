@@ -15,6 +15,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
 		public void Start()
         {
+            gameObject.layer = 9;
             Destroy(gameObject, 5);
         }
 
@@ -31,9 +32,19 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             Bang(other.gameObject);
         }
 
-        public void OnCollisionEnter(Collision other)
+
+        void OnCollisionEnter2D(Collision2D collision)
         {
-            Bang(other.gameObject);
+            Bang(collision.gameObject);
+
+            if (collision.transform.gameObject.name != "wall")
+            {
+                Destroy(this.gameObject);
+            }
+            else if(collision.transform.gameObject.name == "wall")
+            {
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.transform.gameObject.GetComponent<Collider2D>());
+            }
         }
 
         private void Bang(GameObject other)

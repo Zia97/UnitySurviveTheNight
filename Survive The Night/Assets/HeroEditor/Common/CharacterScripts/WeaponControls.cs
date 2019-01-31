@@ -40,10 +40,15 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                     break;
                 case WeaponType.Firearms1H:
                 case WeaponType.Firearms2H:
-                    Character.Firearm.Fire.FireButtonDown = Input.GetKeyDown(FireButton);
-                    Character.Firearm.Fire.FireButtonPressed = Input.GetKey(FireButton);
-                    Character.Firearm.Fire.FireButtonUp = Input.GetKeyUp(FireButton);
-                    Character.Firearm.Reload.ReloadButtonDown = Input.GetKeyDown(ReloadButton);
+                    var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    if (target.x >= -5.5)
+                    {
+                        Character.Firearm.Fire.FireButtonDown = Input.GetKeyDown(FireButton);
+                        Character.Firearm.Fire.FireButtonPressed = Input.GetKey(FireButton);
+                        Character.Firearm.Fire.FireButtonUp = Input.GetKeyUp(FireButton);
+                        Character.Firearm.Reload.ReloadButtonDown = Input.GetKeyDown(ReloadButton);
+                    }
+                       
                     break;
 	            case WeaponType.Supplies:
 		            if (Input.GetKeyDown(FireButton))

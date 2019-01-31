@@ -38,10 +38,6 @@ public class PlayerControls : MonoBehaviour {
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
-            if (target.x >= -5.5)
-            {
-                fireBullet();
-            };
         }
 
         if (target.x < -5.5)
