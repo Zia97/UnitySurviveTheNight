@@ -17,12 +17,14 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 	    public bool FixHorizontal;
 
         private bool _locked;
+        private bool _areControlsEnabled = true;
 
         public void Update()
         {
             _locked = !Character.Animator.GetBool("Ready") || Character.Animator.GetInteger("Dead") > 0;
 
             if (_locked) return;
+            if (!_areControlsEnabled) return;
 
             switch (Character.WeaponType)
             {
@@ -41,8 +43,9 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 case WeaponType.Firearms1H:
                 case WeaponType.Firearms2H:
                     var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    LateUpdate();
                     if (target.x >= -5.5)
-                    {
+                    {                 
                         Character.Firearm.Fire.FireButtonDown = Input.GetKeyDown(FireButton);
                         Character.Firearm.Fire.FireButtonPressed = Input.GetKey(FireButton);
                         Character.Firearm.Fire.FireButtonUp = Input.GetKeyUp(FireButton);
@@ -65,6 +68,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         public void LateUpdate()
         {
             if (_locked) return;
+            if (!_areControlsEnabled) return;
 
             Transform arm;
             Transform weapon;
@@ -120,6 +124,11 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             }
 
             arm.transform.localEulerAngles = new Vector3(0, 0, angle);
+        }
+
+        public void areControlsEnabled(bool value)
+        {
+            _areControlsEnabled = value;
         }
     }
 }

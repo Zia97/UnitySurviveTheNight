@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts;
+using Assets.HeroEditor.Common.CharacterScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,11 +14,15 @@ public class PlayerControls : MonoBehaviour {
     private bool controlsEnabled = true;
     public GameObject _weaponControllerObject;
     private WeaponController weaponController;
+    private WeaponControls _weaponControls;
+   // private GameObject _weaponNew;
 
     // Use this for initialization
     void Start ()
     {
         _weaponControllerObject = GameObject.FindWithTag("WeaponController");
+        _weaponControls = gameObject.GetComponent<WeaponControls>();
+
         weaponController = _weaponControllerObject.GetComponent<WeaponController>();
         target = transform.position;
         rb = GetComponent<Rigidbody2D>();
@@ -64,6 +69,14 @@ public class PlayerControls : MonoBehaviour {
     public void AreControlsEnabled(bool set)
     {
         controlsEnabled = set;
+        if (_weaponControls != null)
+        {
+            _weaponControls.areControlsEnabled(set);
+        }
+        else
+        {
+            _weaponControls = gameObject.GetComponent<WeaponControls>();
+        }
     }
 
 }
