@@ -21,6 +21,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
         public void Update()
         {
+
             if (ReloadButtonDown && !Reloading && Character.Firearm.AmmoShooted > 0)
             {
                 StartCoroutine(Reload());
@@ -29,6 +30,8 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
         public IEnumerator Reload()
         {
+            Debug.Log(Character.Firearm.Params.MagazineCapacity + " reload triggered");
+
             var firearm = Character.Firearm;
             var clip = firearm.Params.ReloadAnimation;
             var duration = firearm.Params.MagazineType == MagazineType.Removable ? clip.length : clip.length * firearm.AmmoShooted;

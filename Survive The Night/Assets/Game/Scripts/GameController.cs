@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts;
+using Assets.HeroEditor.Common.CharacterScripts;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,8 @@ public class GameController : MonoBehaviour
     public Text gameOverText;
     public Text waveText;
 
+    public Text ammoText;
+
     private bool _gameOver;
     private bool _roundOver;
     private bool _beginNextRound;
@@ -41,6 +44,8 @@ public class GameController : MonoBehaviour
 
     public GameObject _playerGameObject;
     public PlayerControls _player;
+
+    private Character myCharacter;
 
     private int _waveCount = 1;
 
@@ -52,6 +57,7 @@ public class GameController : MonoBehaviour
         _playerGameObject = GameObject.FindWithTag("Player");
     
         _player= _playerGameObject.GetComponent<PlayerControls>();
+        myCharacter = _playerGameObject.GetComponent<Character>();
         roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
         roundOverGameObject.SetActive(true);
         roundOverCanvas = roundOverGameObject.GetComponent<Canvas>();
@@ -62,7 +68,13 @@ public class GameController : MonoBehaviour
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
         waveText.text = "Wave "+_waveCount.ToString();
+        ammoText.text = (myCharacter.Firearm.Params.MagazineCapacity - myCharacter.Firearm.AmmoShooted) + "/" + myCharacter.Firearm.Params.MagazineCapacity;
         StartCoroutine(SpawnWaves());
+    }
+
+    private void Update()
+    {
+        ammoText.text = (myCharacter.Firearm.Params.MagazineCapacity - myCharacter.Firearm.AmmoShooted) + "/" + myCharacter.Firearm.Params.MagazineCapacity;
     }
 
     IEnumerator SpawnWaves()
