@@ -15,6 +15,8 @@ public class PlayerControls : MonoBehaviour {
     public GameObject _weaponControllerObject;
     private WeaponController weaponController;
     private WeaponControls _weaponControls;
+
+    private bool _uiButtonClicked;
    // private GameObject _weaponNew;
 
     // Use this for initialization
@@ -31,7 +33,10 @@ public class PlayerControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        MoveCharacter();
+        if (!_uiButtonClicked)
+        {
+            MoveCharacter();
+        }
     }
 
     void MoveCharacter()
@@ -61,6 +66,11 @@ public class PlayerControls : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         target = transform.position;
+    }
+
+    public void uiButtonClicked(bool set)
+    {
+        _uiButtonClicked = set;
     }
 
 }

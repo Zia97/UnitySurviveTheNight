@@ -6,14 +6,24 @@ MonoImporter:
   defaultReferences:
   - basicEnemy: {instanceID: 0}
   - mediumEnemy: {instanceID: 0}
+  - officerEnemy: {instanceID: 0}
+  - dogEnemy: {instanceID: 0}
+  - runnerEnemy: {instanceID: 0}
+  - BasicPlayer: {fileID: 5676334091475545297, guid: 074f09c88310a0944b02a6b555d2e250,
+      type: 3}
   - basicEnemyObject: {instanceID: 0}
   - mediumEnemyObject: {instanceID: 0}
   - scoretext: {instanceID: 0}
   - healthText: {instanceID: 0}
   - gameOverText: {instanceID: 0}
+  - waveText: {instanceID: 0}
+  - ammoText: {instanceID: 0}
   - roundOverCanvas: {instanceID: 0}
   - roundOverGameObject: {fileID: 4825773445406967864, guid: 3ae07a29d5d182740ba7c5ca8c9a2b2e,
       type: 3}
+  - _playerGameObject: {instanceID: 0}
+  - _player: {instanceID: 0}
+  - _switchWeaponObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

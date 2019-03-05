@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts;
 using Assets.HeroEditor.Common.CharacterScripts;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,9 @@ public class GameController : MonoBehaviour
     public GameObject officerEnemy;
     public GameObject dogEnemy;
     public GameObject runnerEnemy;
+
+    public GameObject BasicPlayer;
+
     public Vector3 spawnValues;
 
     public BasicEnemy basicEnemyObject;
@@ -45,9 +49,15 @@ public class GameController : MonoBehaviour
     public GameObject _playerGameObject;
     public PlayerControls _player;
 
+    public GameObject _switchWeaponObject;
+    private Button _switchWeaponButton;
+
+
     private Character myCharacter;
 
     private int _waveCount = 1;
+
+    private bool _UIButtonClicked;
 
 
     private System.Random rnd = new System.Random();
@@ -55,9 +65,12 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         _playerGameObject = GameObject.FindWithTag("Player");
-    
-        _player= _playerGameObject.GetComponent<PlayerControls>();
+        _switchWeaponObject = GameObject.FindWithTag("SwitchWeapon");
+
+        _player = _playerGameObject.GetComponent<PlayerControls>();
         myCharacter = _playerGameObject.GetComponent<Character>();
+        _switchWeaponButton = _switchWeaponObject.GetComponent<Button>();
+        _switchWeaponButton.onClick.AddListener(SwitchWeaponClicked);
         roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
         roundOverGameObject.SetActive(true);
         roundOverCanvas = roundOverGameObject.GetComponent<Canvas>();
@@ -70,6 +83,17 @@ public class GameController : MonoBehaviour
         waveText.text = "Wave "+_waveCount.ToString();
         ammoText.text = (myCharacter.Firearm.Params.MagazineCapacity - myCharacter.Firearm.AmmoShooted) + "/" + myCharacter.Firearm.Params.MagazineCapacity;
         StartCoroutine(SpawnWaves());
+    }
+
+    private void SwitchWeaponClicked()
+    {
+        //UPDATE NEEDED
+        //_player.uiButtonClicked(true);
+        Debug.Log("weapon switched");
+        Destroy(myCharacter);
+        Destroy(_playerGameObject);
+        Instantiate(BasicPlayer, _player.transform.position, Quaternion.identity);
+        _playerGameObject = BasicPlayer;
     }
 
     private void Update()
@@ -106,7 +130,7 @@ public class GameController : MonoBehaviour
                 }
                 
 
-                Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+                Vector3 spawnPosition = new Vector3(spawnValues.x, UnityEngine.Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 if (randomValue == 0)
                 {
