@@ -31,10 +31,7 @@ public class PlayerControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (controlsEnabled)
-        {
-            MoveCharacter();
-        }
+        MoveCharacter();
     }
 
     void MoveCharacter()
@@ -64,19 +61,6 @@ public class PlayerControls : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         target = transform.position;
-    }
-
-    public void AreControlsEnabled(bool set)
-    {
-        controlsEnabled = set;
-        if (_weaponControls != null)
-        {
-            _weaponControls.areControlsEnabled(set);
-        }
-        else
-        {
-            _weaponControls = gameObject.GetComponent<WeaponControls>();
-        }
     }
 
 }

@@ -123,14 +123,18 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 angle += z;
             }
 
-            try
+            if(angle<180)
             {
-                arm.transform.localEulerAngles = new Vector3(0, 0, angle);
+                try
+                {
+                    arm.transform.localEulerAngles = new Vector3(0, 0, angle);
+                }
+                catch (Exception e)
+                {
+                    throw;
+                }
             }
-            catch(Exception e)
-            {
-                throw;
-            }
+
         }
 
         public void areControlsEnabled(bool value)

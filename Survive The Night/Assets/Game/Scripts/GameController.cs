@@ -80,7 +80,6 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnWaves()
     {
         healthText.text = "Health: " + wallHeath + "/100";
-        _player.AreControlsEnabled(true);
 
         while (!_gameOver && !_roundOver)
         {
@@ -196,7 +195,6 @@ public class GameController : MonoBehaviour
             else
             {
                 _roundOver = true;
-                _player.AreControlsEnabled(false);
                 StartCoroutine(endOfRoundDelay());
 
             };
@@ -213,6 +211,7 @@ public class GameController : MonoBehaviour
     private void InitiateEndOfRound()
     {
         roundOverCanvas.enabled = true;
+        _player.gameObject.active = false;
     }
 
     public void updateScore(int scoreValue)
@@ -223,13 +222,13 @@ public class GameController : MonoBehaviour
 
     public void gameOver()
     {
-        _player.AreControlsEnabled(false);
         _gameOver = true;
         gameOverText.text = "Game Over";
     }
 
     public void StartNextWave()
     {
+        _player.gameObject.active = true;
         _waveCount = _waveCount + 1;
         _roundOver = false;
         spawnWait = spawnWait - 0.05f;
