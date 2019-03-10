@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour
     public GameObject dogEnemy;
     public GameObject runnerEnemy;
 
-    public GameObject BasicPlayer;
+    public GameObject BasicPistolPlayer;
+    public GameObject BasicMP5Player;
 
     public Vector3 spawnValues;
 
@@ -59,44 +60,66 @@ public class GameController : MonoBehaviour
 
     private bool _UIButtonClicked;
 
+    private Vector3 _playerPos;
+
 
     private System.Random rnd = new System.Random();
 
     private void Start()
     {
         _playerGameObject = GameObject.FindWithTag("Player");
-        _switchWeaponObject = GameObject.FindWithTag("SwitchWeapon");
-
         _player = _playerGameObject.GetComponent<PlayerControls>();
         myCharacter = _playerGameObject.GetComponent<Character>();
+
+        _switchWeaponObject = GameObject.FindWithTag("SwitchWeapon");
         _switchWeaponButton = _switchWeaponObject.GetComponent<Button>();
         _switchWeaponButton.onClick.AddListener(SwitchWeaponClicked);
+
         roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
         roundOverGameObject.SetActive(true);
-        roundOverCanvas = roundOverGameObject.GetComponent<Canvas>();
-        
+        roundOverCanvas = roundOverGameObject.GetComponent<Canvas>(); 
         roundOverCanvas.enabled = false;
 
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
         waveText.text = "Wave "+_waveCount.ToString();
-        ammoText.text = (myCharacter.Firearm.Params.MagazineCapacity - myCharacter.Firearm.AmmoShooted) + "/" + myCharacter.Firearm.Params.MagazineCapacity;
         StartCoroutine(SpawnWaves());
     }
 
+
     private void SwitchWeaponClicked()
     {
-        //UPDATE NEEDED
-        //_player.uiButtonClicked(true);
-        Debug.Log("weapon switched");
-        Destroy(myCharacter);
-        Destroy(_playerGameObject);
-        Instantiate(BasicPlayer, _player.transform.position, Quaternion.identity);
-        _playerGameObject = BasicPlayer;
+          var temp = GameObject.FindWithTag("Player");
+         _playerPos = temp.gameObject.transform.position;
+
+  
+
+        Destroy(GameObject.FindWithTag("Player"));
+
+        if (myCharacter.Firearm.Params.Name.Equals("USP"))
+        {
+
+            Instantiate(BasicMP5Player, _playerPos, Quaternion.identity);
+            _playerGameObject = GameObject.FindWithTag("Player");
+            _player = BasicMP5Player.GetComponent<PlayerControls>();
+            myCharacter = BasicMP5Player.gameObject.GetComponent<Character>();
+            Debug.Log("new char");
+        }
+        else if (myCharacter.Firearm.Params.Name.Equals("MP-5"))
+        {
+
+            Instantiate(BasicPistolPlayer, _playerPos, Quaternion.identity);
+            _playerGameObject = GameObject.FindWithTag("Player");
+            _player = BasicPistolPlayer.GetComponent<PlayerControls>();
+            myCharacter = BasicPistolPlayer.gameObject.GetComponent<Character>();
+            Debug.Log("new char");
+        }
+
+    Debug.Log(myCharacter.Firearm.Params.Name + " AFTER SWITCH");
     }
 
-    private void Update()
+    void Update()
     {
         ammoText.text = (myCharacter.Firearm.Params.MagazineCapacity - myCharacter.Firearm.AmmoShooted) + "/" + myCharacter.Firearm.Params.MagazineCapacity;
     }

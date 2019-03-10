@@ -15,6 +15,10 @@ public class PlayerControls : MonoBehaviour {
     public GameObject _weaponControllerObject;
     private WeaponController weaponController;
     private WeaponControls _weaponControls;
+    private ArrayList _avaliableWeapons = new ArrayList();
+    private ArrayList _selectedWeapons = new ArrayList();
+
+    private Character myCharacter;
 
     private bool _uiButtonClicked;
    // private GameObject _weaponNew;
@@ -22,12 +26,19 @@ public class PlayerControls : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        myCharacter = this.GetComponent<Character>();
         _weaponControllerObject = GameObject.FindWithTag("WeaponController");
         _weaponControls = gameObject.GetComponent<WeaponControls>();
 
         weaponController = _weaponControllerObject.GetComponent<WeaponController>();
         target = transform.position;
         rb = GetComponent<Rigidbody2D>();
+
+    }
+
+    public void getCurrentWeapon()
+    {
+       Debug.Log(myCharacter.Firearm.Params.Name + "      349tuq349t");
     }
 	
 	// Update is called once per frame
