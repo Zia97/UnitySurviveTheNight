@@ -93,8 +93,6 @@ public class GameController : MonoBehaviour
           var temp = GameObject.FindWithTag("Player");
          _playerPos = temp.gameObject.transform.position;
 
-  
-
         Destroy(GameObject.FindWithTag("Player"));
 
         if (myCharacter.Firearm.Params.Name.Equals("USP"))
@@ -104,7 +102,7 @@ public class GameController : MonoBehaviour
             _playerGameObject = GameObject.FindWithTag("Player");
             _player = BasicMP5Player.GetComponent<PlayerControls>();
             myCharacter = BasicMP5Player.gameObject.GetComponent<Character>();
-            Debug.Log("new char");
+            
         }
         else if (myCharacter.Firearm.Params.Name.Equals("MP-5"))
         {
@@ -113,15 +111,13 @@ public class GameController : MonoBehaviour
             _playerGameObject = GameObject.FindWithTag("Player");
             _player = BasicPistolPlayer.GetComponent<PlayerControls>();
             myCharacter = BasicPistolPlayer.gameObject.GetComponent<Character>();
-            Debug.Log("new char");
         }
-
-    Debug.Log(myCharacter.Firearm.Params.Name + " AFTER SWITCH");
     }
 
     void Update()
     {
         ammoText.text = (myCharacter.Firearm.Params.MagazineCapacity - myCharacter.Firearm.AmmoShooted) + "/" + myCharacter.Firearm.Params.MagazineCapacity;
+        Debug.Log(myCharacter.Firearm.AmmoShooted+"  "+ myCharacter.Firearm);
     }
 
     IEnumerator SpawnWaves()
