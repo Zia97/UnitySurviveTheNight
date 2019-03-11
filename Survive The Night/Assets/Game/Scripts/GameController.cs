@@ -114,7 +114,10 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if (GameObject.FindWithTag("Player") != null)
+        {
             ammoText.text = (GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Params.MagazineCapacity - GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.AmmoShooted) + "/" + GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Params.MagazineCapacity;
+        }
     }
 
     IEnumerator SpawnWaves()
