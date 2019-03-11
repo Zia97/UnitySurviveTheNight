@@ -59,6 +59,9 @@ public class GameController : MonoBehaviour
     public GameObject _switchWeaponObject;
     private Button _switchWeaponButton;
 
+    private ArrayList _avaliableWeapons = new ArrayList();
+    private ArrayList _selectedWeapons = new ArrayList();
+
 
     private Character myCharacter;
 

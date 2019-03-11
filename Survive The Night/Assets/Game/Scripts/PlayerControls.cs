@@ -15,13 +15,10 @@ public class PlayerControls : MonoBehaviour {
     public GameObject _weaponControllerObject;
     private WeaponController weaponController;
     private WeaponControls _weaponControls;
-    private ArrayList _avaliableWeapons = new ArrayList();
-    private ArrayList _selectedWeapons = new ArrayList();
 
     private Character myCharacter;
 
     private bool _uiButtonClicked;
-   // private GameObject _weaponNew;
 
     // Use this for initialization
     void Start ()

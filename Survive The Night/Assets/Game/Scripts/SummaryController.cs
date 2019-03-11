@@ -11,7 +11,8 @@ public class SummaryController : MonoBehaviour
     private GameObject _gameControllerObject;
     private GameController _gameController;
 
-
+    private ArrayList _avaliableWeapons = new ArrayList();
+    private ArrayList _selectedWeapons = new ArrayList();
 
     private void Start()
     {
@@ -32,6 +33,11 @@ public class SummaryController : MonoBehaviour
     private void ConfirmButtonClicked()
     {
         _gameController.StartNextWave();
+    }
+
+    public void addWeaponToAvaliableWeapons(string weapon)
+    {
+        _avaliableWeapons.Add(weapon);
     }
 
 }
