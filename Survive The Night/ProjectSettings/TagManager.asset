@@ -18,6 +18,13 @@ TagManager:
   - Enemy
   - WeaponController
   - SwitchWeapon
+  - SummaryCanvas
+  - BaseRepairsText
+  - SuppliesFoundSummary
+  - WeaponOne
+  - WeaponOneDropDown
+  - WeaponTwoDropDown
+  - StartNextWave
   layers:
   - Default
   - TransparentFX
@@ -57,4 +64,7 @@ TagManager:
     locked: 0
   - name: RoundOver
     uniqueID: 2046423949
+    locked: 0
+  - name: Summary
+    uniqueID: 3114431839
     locked: 0

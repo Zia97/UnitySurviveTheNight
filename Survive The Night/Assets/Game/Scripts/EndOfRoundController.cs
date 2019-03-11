@@ -26,19 +26,21 @@ public class EndOfRoundController : MonoBehaviour
     public GameObject _suppliesHoursObject;
     public InputField _suppliesHoursSelected;
 
-
     private GameObject _gameControllerObject;
     private GameController _gameController;
 
+    private Canvas _summaryCanvas;
+    private GameObject _summaryCanvasController;
+
     private int _suppliesHoursSelectedValue = 6;
     private int _repairsHoursSelectedValue = 6;
-
 
     private void Start()
     {
 
         _confirmButtonObject = GameObject.FindWithTag("ConfirmButton");
         _gameControllerObject = GameObject.FindWithTag("GameController");
+        _summaryCanvasController = GameObject.FindWithTag("SummaryCanvas");
         _repairButtonDecreaseObject = GameObject.FindWithTag("RepairButtonDecrease");
         _repairButtonIncreaseObject = GameObject.FindWithTag("RepairButtonIncrease");
         _suppliesButtonIncreaseObject = GameObject.FindWithTag("SuppliesButtonIncrease");
@@ -68,6 +70,11 @@ public class EndOfRoundController : MonoBehaviour
         _suppliesHoursSelected.text = _suppliesHoursSelectedValue.ToString();
         _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
 
+        
+        _summaryCanvasController.SetActive(true);
+        _summaryCanvas = _summaryCanvasController.GetComponent<Canvas>();
+        _summaryCanvas.enabled = false;
+
 
         if (_gameControllerObject != null)
         {
@@ -78,8 +85,8 @@ public class EndOfRoundController : MonoBehaviour
 
     private void ConfirmButtonClicked()
     {
+        _summaryCanvas.enabled = true;
         RepairBase();
-        _gameController.StartNextWave();
     }
 
     private void repairDecreaseButtonClicked()

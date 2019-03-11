@@ -47,6 +47,9 @@ public class GameController : MonoBehaviour
     public Canvas roundOverCanvas;
     public GameObject roundOverGameObject;
 
+    public Canvas summaryCanvas;
+    public GameObject summaryObject;
+
     public GameObject _playerGameObject;
     public PlayerControls _player;
 
@@ -79,6 +82,11 @@ public class GameController : MonoBehaviour
         roundOverGameObject.SetActive(true);
         roundOverCanvas = roundOverGameObject.GetComponent<Canvas>(); 
         roundOverCanvas.enabled = false;
+
+        summaryObject = GameObject.FindWithTag("SummaryCanvas");
+        summaryObject.SetActive(true);
+        summaryCanvas = summaryObject.GetComponent<Canvas>();
+        summaryCanvas.enabled = false;
 
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
@@ -271,6 +279,8 @@ public class GameController : MonoBehaviour
 
     public void StartNextWave()
     {
+        roundOverCanvas.enabled = false;
+        summaryCanvas.enabled = false;
         _player.gameObject.active = true;
         _waveCount = _waveCount + 1;
         _roundOver = false;
