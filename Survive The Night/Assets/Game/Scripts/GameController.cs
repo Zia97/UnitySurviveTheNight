@@ -50,6 +50,9 @@ public class GameController : MonoBehaviour
     public Canvas summaryCanvas;
     public GameObject summaryObject;
 
+    public GameObject dropdownObject;
+    public Canvas dropdownCanvas;
+
     public GameObject _playerGameObject;
     public PlayerControls _player;
 
@@ -88,6 +91,11 @@ public class GameController : MonoBehaviour
         summaryCanvas = summaryObject.GetComponent<Canvas>();
         summaryCanvas.enabled = false;
 
+        dropdownObject = GameObject.FindWithTag("SummaryCanvas");
+        dropdownObject.SetActive(true);
+        dropdownCanvas = dropdownObject.GetComponent<Canvas>();
+        dropdownCanvas.enabled = false;
+
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
@@ -118,6 +126,11 @@ public class GameController : MonoBehaviour
             _player = BasicPistolPlayer.GetComponent<PlayerControls>();
             myCharacter = BasicPistolPlayer.gameObject.GetComponent<Character>();
         }
+    }
+
+    internal void disableEndOfRoundlayer()
+    {
+        roundOverCanvas.enabled = false;
     }
 
     void Update()
@@ -262,7 +275,6 @@ public class GameController : MonoBehaviour
     private void InitiateEndOfRound()
     {
         roundOverCanvas.enabled = true;
-        _player.gameObject.active = false;
     }
 
     public void updateScore(int scoreValue)
@@ -281,7 +293,7 @@ public class GameController : MonoBehaviour
     {
         roundOverCanvas.enabled = false;
         summaryCanvas.enabled = false;
-        _player.gameObject.active = true;
+        dropdownCanvas.enabled = false;
         _waveCount = _waveCount + 1;
         _roundOver = false;
         spawnWait = spawnWait - 0.05f;

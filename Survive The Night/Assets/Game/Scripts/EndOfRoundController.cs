@@ -32,6 +32,9 @@ public class EndOfRoundController : MonoBehaviour
     private Canvas _summaryCanvas;
     private GameObject _summaryCanvasController;
 
+    private Canvas _dropdownCanvas;
+    private GameObject _dropdownCanvasController;
+
     private int _suppliesHoursSelectedValue = 6;
     private int _repairsHoursSelectedValue = 6;
 
@@ -75,7 +78,6 @@ public class EndOfRoundController : MonoBehaviour
         _summaryCanvas = _summaryCanvasController.GetComponent<Canvas>();
         _summaryCanvas.enabled = false;
 
-
         if (_gameControllerObject != null)
         {
              _gameController = _gameControllerObject.GetComponent<GameController>();
@@ -85,6 +87,7 @@ public class EndOfRoundController : MonoBehaviour
 
     private void ConfirmButtonClicked()
     {
+        _gameController.disableEndOfRoundlayer();
         _summaryCanvas.enabled = true;
         RepairBase();
     }

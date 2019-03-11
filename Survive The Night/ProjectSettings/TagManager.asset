@@ -25,6 +25,7 @@ TagManager:
   - WeaponOneDropDown
   - WeaponTwoDropDown
   - StartNextWave
+  - DropDownCanvas
   layers:
   - Default
   - TransparentFX
