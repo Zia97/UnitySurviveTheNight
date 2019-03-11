@@ -59,6 +59,9 @@ public class GameController : MonoBehaviour
     public GameObject _switchWeaponObject;
     private Button _switchWeaponButton;
 
+    public GameObject _ReloadObject;
+    private Button _ReloadWeaponButton;
+
     private ArrayList _avaliableWeapons = new ArrayList();
     private ArrayList _selectedWeapons = new ArrayList();
 
@@ -84,6 +87,10 @@ public class GameController : MonoBehaviour
         _switchWeaponButton = _switchWeaponObject.GetComponent<Button>();
         _switchWeaponButton.onClick.AddListener(SwitchWeaponClicked);
 
+        _ReloadObject = GameObject.FindWithTag("ReloadButton");
+        _ReloadWeaponButton = _ReloadObject.GetComponent<Button>();
+        _ReloadWeaponButton.onClick.AddListener(ReloadWeaponClicked);
+
         roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
         roundOverGameObject.SetActive(true);
         roundOverCanvas = roundOverGameObject.GetComponent<Canvas>(); 
@@ -106,6 +113,10 @@ public class GameController : MonoBehaviour
         StartCoroutine(SpawnWaves());
     }
 
+    private void ReloadWeaponClicked()
+    {
+        StartCoroutine(GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Reload.Reload());
+    }
 
     private void SwitchWeaponClicked()
     {

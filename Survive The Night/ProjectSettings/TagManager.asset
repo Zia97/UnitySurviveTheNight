@@ -26,6 +26,7 @@ TagManager:
   - WeaponTwoDropDown
   - StartNextWave
   - DropDownCanvas
+  - ReloadButton
   layers:
   - Default
   - TransparentFX

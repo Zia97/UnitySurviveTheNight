@@ -30,7 +30,8 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
         public IEnumerator Reload()
         {
-            Debug.Log(Character.Firearm.Params.MagazineCapacity + " reload triggered");
+
+            Debug.Log("Reload pressed in reload");
 
             var firearm = Character.Firearm;
             var clip = firearm.Params.ReloadAnimation;
