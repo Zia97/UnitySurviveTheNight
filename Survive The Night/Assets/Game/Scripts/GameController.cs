@@ -164,22 +164,6 @@ public class GameController : MonoBehaviour
                 myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();       
         }
 
-        //ORGINIAL
-        //if (myCharacter.Firearm.Params.Name.Equals("USP"))
-        //{
-        //    Instantiate(BasicMP5Player, _playerPos, Quaternion.identity);
-        //    _playerGameObject = GameObject.FindWithTag("Player");
-        //    _player = BasicMP5Player.GetComponent<PlayerControls>();         
-        //    myCharacter = BasicMP5Player.gameObject.GetComponent<Character>();
-
-        //}
-        //else if (myCharacter.Firearm.Params.Name.Equals("MP-5"))
-        //{
-        //    Instantiate(BasicPistolPlayer, _playerPos, Quaternion.identity);
-        //    _playerGameObject = GameObject.FindWithTag("Player");
-        //    _player = BasicPistolPlayer.GetComponent<PlayerControls>();
-        //    myCharacter = BasicPistolPlayer.gameObject.GetComponent<Character>();
-        //}
     }
 
     internal void disableEndOfRoundlayer()

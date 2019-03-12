@@ -107,6 +107,7 @@ public class EndOfRoundController : MonoBehaviour
 
     private void SearchForSupplies()
     {
+        bool weaponFound = false;
         if (_summaryController == null)
         {
             _summaryController = _summaryControllerObject.GetComponent<SummaryController>();
@@ -119,11 +120,21 @@ public class EndOfRoundController : MonoBehaviour
 
         if (random1 < weaponProbability * _suppliesHoursSelectedValue)
         {
-            //int random2 = Random.Range(0, 100);
-            if (!_avaliableWeapons.Contains("MP-5"))
+            int random2 = Random.Range(0, 100);
+            if (random2 <= 35)
             {
-                _summaryController.addWeaponToAvaliableWeapons("MP-5");
+                if (!_avaliableWeapons.Contains("MP-5"))
+                {
+                    weaponFound = true;
+                    _summaryController.addWeaponToAvaliableWeapons("MP-5");
+                    _summaryController.updateSuppliesFoundSummary("MP-5 (Submachine gun)");
+                }
             }
+        }
+
+        if(!weaponFound)
+        {
+            _summaryController.updateSuppliesFoundSummary("Nothing of interest found");
         }
 
     }
