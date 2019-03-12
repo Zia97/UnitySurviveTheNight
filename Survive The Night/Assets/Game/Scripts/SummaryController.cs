@@ -37,6 +37,7 @@ public class SummaryController : MonoBehaviour
 
     public void addWeaponToAvaliableWeapons(string weapon)
     {
+        Debug.Log("Weapon added " + weapon);
         _avaliableWeapons.Add(weapon);
     }
 

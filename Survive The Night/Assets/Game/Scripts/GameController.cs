@@ -65,6 +65,9 @@ public class GameController : MonoBehaviour
     private ArrayList _avaliableWeapons = new ArrayList();
     private ArrayList _selectedWeapons = new ArrayList();
 
+    private string _primaryWeapon;
+    private string _secondaryWeapon;
+
 
     private Character myCharacter;
 
@@ -110,6 +113,10 @@ public class GameController : MonoBehaviour
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
         waveText.text = "Wave "+_waveCount.ToString();
+
+        _primaryWeapon = "USP";
+        _secondaryWeapon = "MP-5";
+
         StartCoroutine(SpawnWaves());
     }
 
@@ -125,21 +132,38 @@ public class GameController : MonoBehaviour
 
         Destroy(GameObject.FindWithTag("Player"));
 
-        if (myCharacter.Firearm.Params.Name.Equals("USP"))
+        if (myCharacter.Firearm.Params.Name.Equals(_primaryWeapon))
         {
-            Instantiate(BasicMP5Player, _playerPos, Quaternion.identity);
+            Instantiate(weaponNameToPrefab(_secondaryWeapon), _playerPos, Quaternion.identity);
             _playerGameObject = GameObject.FindWithTag("Player");
-            _player = BasicMP5Player.GetComponent<PlayerControls>();         
-            myCharacter = BasicMP5Player.gameObject.GetComponent<Character>();
+            _player = weaponNameToPrefab(_secondaryWeapon).GetComponent<PlayerControls>();
+            myCharacter = weaponNameToPrefab(_secondaryWeapon).gameObject.GetComponent<Character>();
 
         }
-        else if (myCharacter.Firearm.Params.Name.Equals("MP-5"))
+        else if (myCharacter.Firearm.Params.Name.Equals(_secondaryWeapon))
         {
-            Instantiate(BasicPistolPlayer, _playerPos, Quaternion.identity);
+            Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
             _playerGameObject = GameObject.FindWithTag("Player");
-            _player = BasicPistolPlayer.GetComponent<PlayerControls>();
-            myCharacter = BasicPistolPlayer.gameObject.GetComponent<Character>();
+            _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
+            myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
         }
+
+        //ORGINIAL
+        //if (myCharacter.Firearm.Params.Name.Equals("USP"))
+        //{
+        //    Instantiate(BasicMP5Player, _playerPos, Quaternion.identity);
+        //    _playerGameObject = GameObject.FindWithTag("Player");
+        //    _player = BasicMP5Player.GetComponent<PlayerControls>();         
+        //    myCharacter = BasicMP5Player.gameObject.GetComponent<Character>();
+
+        //}
+        //else if (myCharacter.Firearm.Params.Name.Equals("MP-5"))
+        //{
+        //    Instantiate(BasicPistolPlayer, _playerPos, Quaternion.identity);
+        //    _playerGameObject = GameObject.FindWithTag("Player");
+        //    _player = BasicPistolPlayer.GetComponent<PlayerControls>();
+        //    myCharacter = BasicPistolPlayer.gameObject.GetComponent<Character>();
+        //}
     }
 
     internal void disableEndOfRoundlayer()
@@ -325,6 +349,30 @@ public class GameController : MonoBehaviour
         {
             wallHeath = 100;
         }
+    }
+
+    public void updateSelectedWeapons(string weapon1, string weapon2)
+    {
+        _primaryWeapon = weapon1;
+        _secondaryWeapon = weapon2;
+    }
+
+    public void updateAllAvaliableWeapons(ArrayList allWeapons)
+    {
+        _avaliableWeapons = allWeapons;
+    }
+
+    public GameObject weaponNameToPrefab(string weaponName)
+    {
+        if(weaponName.Equals("USP"))
+        {
+            return BasicPistolPlayer;
+        }
+        if (weaponName.Equals("MP-5"))
+        {
+            return BasicMP5Player;
+        }
+        return null;
     }
 
 }

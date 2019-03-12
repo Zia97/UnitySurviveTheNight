@@ -30,7 +30,9 @@ public class EndOfRoundController : MonoBehaviour
     private GameController _gameController;
 
     private Canvas _summaryCanvas;
-    private GameObject _summaryCanvasController;
+    public GameObject _summaryCanvasController;
+
+    private GameObject _summaryControllerObject;
     private SummaryController _summaryController;
 
 
@@ -43,6 +45,7 @@ public class EndOfRoundController : MonoBehaviour
         _confirmButtonObject = GameObject.FindWithTag("ConfirmButton");
         _gameControllerObject = GameObject.FindWithTag("GameController");
         _summaryCanvasController = GameObject.FindWithTag("SummaryCanvas");
+        _summaryControllerObject = GameObject.FindWithTag("SummaryController");
         _repairButtonDecreaseObject = GameObject.FindWithTag("RepairButtonDecrease");
         _repairButtonIncreaseObject = GameObject.FindWithTag("RepairButtonIncrease");
         _suppliesButtonIncreaseObject = GameObject.FindWithTag("SuppliesButtonIncrease");
@@ -76,7 +79,11 @@ public class EndOfRoundController : MonoBehaviour
         _summaryCanvasController.SetActive(true);
         _summaryCanvas = _summaryCanvasController.GetComponent<Canvas>();
         _summaryCanvas.enabled = false;
-        _summaryController = _summaryCanvasController.GetComponent<SummaryController>();
+        _summaryControllerObject.SetActive(true);
+        if (_summaryController != null)
+        {
+            _summaryController = _summaryControllerObject.GetComponent<SummaryController>();
+        }
 
         if (_gameControllerObject != null)
         {
@@ -95,7 +102,12 @@ public class EndOfRoundController : MonoBehaviour
 
     private void SearchForSupplies()
     {
-        Debug.Log("Repairs hours selected" + _suppliesHoursSelectedValue);
+        if (_summaryController==null)
+        {
+            _summaryController = _summaryControllerObject.GetComponent<SummaryController>();
+        }
+
+            _summaryController.addWeaponToAvaliableWeapons("Qasim test");
     }
 
     private void repairDecreaseButtonClicked()

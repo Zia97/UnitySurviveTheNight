@@ -27,6 +27,7 @@ TagManager:
   - StartNextWave
   - DropDownCanvas
   - ReloadButton
+  - SummaryController
   layers:
   - Default
   - TransparentFX
