@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
     public GameObject BasicPistolPlayer;
     public GameObject BasicMP5Player;
+    public GameObject ShotgunPlayer;
 
     public Vector3 spawnValues;
 
@@ -371,6 +372,10 @@ public class GameController : MonoBehaviour
         if (weaponName.Equals("MP-5"))
         {
             return BasicMP5Player;
+        }
+        if (weaponName.Equals("Shotgun"))
+        {
+            return ShotgunPlayer;
         }
         return null;
     }

@@ -130,6 +130,15 @@ public class EndOfRoundController : MonoBehaviour
                     _summaryController.updateSuppliesFoundSummary("MP-5 (Submachine gun)");
                 }
             }
+            if (random2 > 35 && random2 <= 55)
+            {
+                if (!_avaliableWeapons.Contains("Shotgun"))
+                {
+                    weaponFound = true;
+                    _summaryController.addWeaponToAvaliableWeapons("Shotgun");
+                    _summaryController.updateSuppliesFoundSummary("Shotgun");
+                }
+            }
         }
 
         if(!weaponFound)
