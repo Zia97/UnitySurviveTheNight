@@ -170,7 +170,11 @@ public class EndOfRoundController : MonoBehaviour
         }
         else
         {
+            int previousHealth = _gameController.getWallHealth();
             _gameController.RepairBase(_repairsHoursSelectedValue * 3);
+            int newHealth = _gameController.getWallHealth();
+
+            _summaryController.updateBaseRepairsText("Your base was repaired from " + previousHealth + "% -> " + newHealth + "%");
         }
     }
 }

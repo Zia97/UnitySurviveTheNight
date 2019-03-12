@@ -115,9 +115,14 @@ public class GameController : MonoBehaviour
         waveText.text = "Wave "+_waveCount.ToString();
 
         _primaryWeapon = "USP";
-        _secondaryWeapon = "MP-5";
+        _secondaryWeapon = null;
 
         StartCoroutine(SpawnWaves());
+    }
+
+    public int getWallHealth()
+    {
+        return wallHeath;
     }
 
     private void ReloadWeaponClicked()
@@ -134,18 +139,29 @@ public class GameController : MonoBehaviour
 
         if (myCharacter.Firearm.Params.Name.Equals(_primaryWeapon))
         {
-            Instantiate(weaponNameToPrefab(_secondaryWeapon), _playerPos, Quaternion.identity);
-            _playerGameObject = GameObject.FindWithTag("Player");
-            _player = weaponNameToPrefab(_secondaryWeapon).GetComponent<PlayerControls>();
-            myCharacter = weaponNameToPrefab(_secondaryWeapon).gameObject.GetComponent<Character>();
+            if (_secondaryWeapon != null)
+            {
+                Instantiate(weaponNameToPrefab(_secondaryWeapon), _playerPos, Quaternion.identity);
+                _playerGameObject = GameObject.FindWithTag("Player");
+                _player = weaponNameToPrefab(_secondaryWeapon).GetComponent<PlayerControls>();
+                myCharacter = weaponNameToPrefab(_secondaryWeapon).gameObject.GetComponent<Character>();
+            }
+            else
+            {
+                Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
+                _playerGameObject = GameObject.FindWithTag("Player");
+                _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
+                myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
+            }
+
 
         }
         else if (myCharacter.Firearm.Params.Name.Equals(_secondaryWeapon))
         {
-            Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
-            _playerGameObject = GameObject.FindWithTag("Player");
-            _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
-            myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
+                 Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
+                _playerGameObject = GameObject.FindWithTag("Player");
+                _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
+                myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();       
         }
 
         //ORGINIAL

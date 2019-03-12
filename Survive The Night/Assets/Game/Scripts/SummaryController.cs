@@ -12,11 +12,15 @@ public class SummaryController : MonoBehaviour
     private GameController _gameController;
 
     private ArrayList _avaliableWeapons = new ArrayList();
-    private ArrayList _selectedWeapons = new ArrayList();
+
+    private string _primaryWeapon;
+    private string _secondaryWeapon;
+
+    public Text baseRepairsText;
+    public Text suppliesFoundSummary;
 
     private void Start()
     {
-
         _startNextWaveObject = GameObject.FindWithTag("StartNextWave");
         _gameControllerObject = GameObject.FindWithTag("GameController");
 
@@ -32,6 +36,7 @@ public class SummaryController : MonoBehaviour
 
     private void ConfirmButtonClicked()
     {
+        _gameController.updateSelectedWeapons(_primaryWeapon,_secondaryWeapon);
         _gameController.StartNextWave();
     }
 
@@ -39,6 +44,17 @@ public class SummaryController : MonoBehaviour
     {
         Debug.Log("Weapon added " + weapon);
         _avaliableWeapons.Add(weapon);
+        _gameController.updateAllAvaliableWeapons(_avaliableWeapons);
+    }
+
+    public void updateBaseRepairsText(string newText)
+    {
+        baseRepairsText.text = newText;
+    }
+
+    public void updateSuppliesFoundSummary(string newText)
+    {
+        suppliesFoundSummary.text = newText;
     }
 
 }

@@ -5821,7 +5821,7 @@ GameObject:
   - component: {fileID: 2065846520}
   m_Layer: 5
   m_Name: BaseRepairsText
-  m_TagString: Untagged
+  m_TagString: BaseRepairsText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5842,8 +5842,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.17, y: 111}
-  m_SizeDelta: {x: 337.67, y: 30}
+  m_AnchoredPosition: {x: -2.6025, y: 111}
+  m_SizeDelta: {x: 440.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065846520
 MonoBehaviour:
@@ -6034,6 +6034,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3701475597870439375, guid: a03be5eb31c23364fbed0d6d92f64fdc,
+        type: 3}
+      propertyPath: suppliesFoundSummary
+      value: 
+      objectReference: {fileID: 1970339}
+    - target: {fileID: 3701475597870439375, guid: a03be5eb31c23364fbed0d6d92f64fdc,
+        type: 3}
+      propertyPath: baseRepairsText
+      value: 
+      objectReference: {fileID: 2065846520}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03be5eb31c23364fbed0d6d92f64fdc, type: 3}
 --- !u!1001 &1341478769277774873

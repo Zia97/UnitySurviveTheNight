@@ -30,9 +30,6 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
         public IEnumerator Reload()
         {
-
-            Debug.Log("Reload pressed in reload");
-
             var firearm = Character.Firearm;
             var clip = firearm.Params.ReloadAnimation;
             var duration = firearm.Params.MagazineType == MagazineType.Removable ? clip.length : clip.length * firearm.AmmoShooted;
