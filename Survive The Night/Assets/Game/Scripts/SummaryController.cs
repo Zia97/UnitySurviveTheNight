@@ -1,5 +1,7 @@
 ﻿using Assets.Game.Scripts;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +18,9 @@ public class SummaryController : MonoBehaviour
     private string _primaryWeapon;
     private string _secondaryWeapon;
 
+    public Dropdown primaryWeaponDropdown;
+    public Dropdown secondaryWeaponDropdown;
+
     public Text baseRepairsText;
     public Text suppliesFoundSummary;
 
@@ -30,19 +35,21 @@ public class SummaryController : MonoBehaviour
         if (_gameControllerObject != null)
         {
              _gameController = _gameControllerObject.GetComponent<GameController>();
+            _avaliableWeapons = _gameController.getAllAvaliableWeapons();
         }
 
     }
 
     private void ConfirmButtonClicked()
     {
+        _primaryWeapon = primaryWeaponDropdown.options[primaryWeaponDropdown.value].text;
+        _secondaryWeapon = secondaryWeaponDropdown.options[secondaryWeaponDropdown.value].text;
         _gameController.updateSelectedWeapons(_primaryWeapon,_secondaryWeapon);
         _gameController.StartNextWave();
     }
 
     public void addWeaponToAvaliableWeapons(string weapon)
     {
-        Debug.Log("Weapon added " + weapon);
         _avaliableWeapons.Add(weapon);
         _gameController.updateAllAvaliableWeapons(_avaliableWeapons);
     }
@@ -55,6 +62,16 @@ public class SummaryController : MonoBehaviour
     public void updateSuppliesFoundSummary(string newText)
     {
         suppliesFoundSummary.text = newText;
+    }
+
+    public void updateDropdownWeaponList()
+    {
+        _avaliableWeapons = _gameController.getAllAvaliableWeapons();
+        List<string> results = _avaliableWeapons.Cast<string>().Distinct().ToList();
+        primaryWeaponDropdown.ClearOptions();
+        secondaryWeaponDropdown.ClearOptions();
+        primaryWeaponDropdown.AddOptions(results);
+        secondaryWeaponDropdown.AddOptions(results);
     }
 
 }

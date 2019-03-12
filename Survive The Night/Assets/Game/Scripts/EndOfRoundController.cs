@@ -35,6 +35,8 @@ public class EndOfRoundController : MonoBehaviour
     private GameObject _summaryControllerObject;
     private SummaryController _summaryController;
 
+    private ArrayList _avaliableWeapons = new ArrayList();
+
 
     private int _suppliesHoursSelectedValue = 6;
     private int _repairsHoursSelectedValue = 6;
@@ -75,7 +77,7 @@ public class EndOfRoundController : MonoBehaviour
         _suppliesHoursSelected.text = _suppliesHoursSelectedValue.ToString();
         _repairsHoursSelected.text = _repairsHoursSelectedValue.ToString();
 
-        
+
         _summaryCanvasController.SetActive(true);
         _summaryCanvas = _summaryCanvasController.GetComponent<Canvas>();
         _summaryCanvas.enabled = false;
@@ -87,33 +89,49 @@ public class EndOfRoundController : MonoBehaviour
 
         if (_gameControllerObject != null)
         {
-             _gameController = _gameControllerObject.GetComponent<GameController>();
+            _gameController = _gameControllerObject.GetComponent<GameController>();
         }
 
     }
 
     private void ConfirmButtonClicked()
     {
+        _avaliableWeapons =_gameController.getAllAvaliableWeapons();
         SearchForSupplies();
         _gameController.disableEndOfRoundlayer();
-        _summaryCanvas.enabled = true;
         RepairBase();
+        _summaryController.updateDropdownWeaponList();
+        _summaryCanvas.enabled = true;
+       
     }
 
     private void SearchForSupplies()
     {
-        if (_summaryController==null)
+        if (_summaryController == null)
         {
             _summaryController = _summaryControllerObject.GetComponent<SummaryController>();
         }
 
-            _summaryController.addWeaponToAvaliableWeapons("Qasim test");
+        int weaponProbability = 72 / 12;
+
+
+        int random1 = Random.Range(0, 100);
+
+        if (random1 < weaponProbability * _suppliesHoursSelectedValue)
+        {
+            //int random2 = Random.Range(0, 100);
+            if (!_avaliableWeapons.Contains("MP-5"))
+            {
+                _summaryController.addWeaponToAvaliableWeapons("MP-5");
+            }
+        }
+
     }
 
     private void repairDecreaseButtonClicked()
     {
         _repairsHoursSelectedValue = _repairsHoursSelectedValue - 1;
-        if(_repairsHoursSelectedValue<0)
+        if (_repairsHoursSelectedValue < 0)
         {
             _repairsHoursSelectedValue = 0;
         }
@@ -179,4 +197,3 @@ public class EndOfRoundController : MonoBehaviour
     }
 }
 
-   

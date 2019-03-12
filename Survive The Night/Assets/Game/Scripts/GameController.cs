@@ -63,7 +63,6 @@ public class GameController : MonoBehaviour
     private Button _ReloadWeaponButton;
 
     private ArrayList _avaliableWeapons = new ArrayList();
-    private ArrayList _selectedWeapons = new ArrayList();
 
     private string _primaryWeapon;
     private string _secondaryWeapon;
@@ -82,6 +81,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        _avaliableWeapons.Add("USP");
         _playerGameObject = GameObject.FindWithTag("Player");
         _player = _playerGameObject.GetComponent<PlayerControls>();
         myCharacter = _playerGameObject.GetComponent<Character>();
@@ -389,6 +389,11 @@ public class GameController : MonoBehaviour
             return BasicMP5Player;
         }
         return null;
+    }
+
+    public ArrayList getAllAvaliableWeapons()
+    {
+        return _avaliableWeapons;
     }
 
 }
