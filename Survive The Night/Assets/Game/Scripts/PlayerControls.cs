@@ -67,7 +67,7 @@ public class PlayerControls : MonoBehaviour {
     {
         bulletPos = transform.position;
         bulletPos += new Vector2(1f, -0.4f);
-        weaponController.Fire(bulletPos);
+        //weaponController.Fire(bulletPos);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

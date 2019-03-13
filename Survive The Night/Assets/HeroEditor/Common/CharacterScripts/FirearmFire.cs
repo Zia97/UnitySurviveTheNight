@@ -190,6 +190,11 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             for (var i = 0; i < iterations; i++)
             {
                 var bullet = Instantiate(Character.Firearm.Params.ProjectilePrefab, Character.Firearm.FireTransform);
+                
+                if(Character.Firearm.Params.Name.Equals("Scout"))
+                {
+                    bullet.name = "SniperBullet";
+                }
                 var spread = Character.Firearm.FireTransform.up * Random.Range(-1f, 1f) * (1 - Character.Firearm.Params.Accuracy);
 
                 bullet.transform.localPosition = Vector3.zero;
@@ -197,7 +202,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 bullet.transform.SetParent(null);
                 bullet.GetComponent<SpriteRenderer>().sprite = Character.Firearms.Single(j => j.name == "Bullet");
                 bullet.GetComponent<Rigidbody2D>().velocity = Character.Firearm.Params.MuzzleVelocity * (Character.Firearm.FireTransform.right + spread)
-                    * Mathf.Sign(Character.transform.lossyScale.x) * Random.Range(0.85f, 1.15f);
+                    * Mathf.Sign(Character.transform.lossyScale.x) * Random.Range(2f,3f);
 
                 var sortingOrder = Character.FirearmsRenderers.Single(j => j.name == "Rifle").sortingOrder;
 

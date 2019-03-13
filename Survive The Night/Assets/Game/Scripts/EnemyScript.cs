@@ -124,6 +124,29 @@ public class EnemyScript : MonoBehaviour
                 }
             }
         }
+        else if (collision.transform.gameObject.name == "SniperBullet" || collision.transform.gameObject.name == "SniperBullet(Clone)")
+        {
+            if (!isDead)
+            {
+                _health = _health - 150;
+
+                if (_health <= 0)
+                {
+                    isDead = true;
+                    gameController.updateScore(_scoreValue);
+                    gameController.increaseCurrentWaveScore(_scoreValue);
+
+                    gameObject.GetComponent<Animator>().Play("die");
+
+                    Destroy(gameObject, 3);
+
+                    if (randomDrop)
+                    {
+                        Debug.Log("Random drop");
+                    }
+                }
+            }
+        }
 
         else
         {

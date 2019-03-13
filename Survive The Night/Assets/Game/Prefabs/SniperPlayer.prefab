@@ -1263,12 +1263,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4092846777760148}
   - component: {fileID: 114189777033721974}
-  - component: {fileID: 114169061363593260}
   - component: {fileID: 114020288807855842}
-  - component: {fileID: 114776506864096632}
+  - component: {fileID: 8834518906111659957}
+  - component: {fileID: 8226642032783294981}
+  - component: {fileID: 6318157058084252905}
   m_Layer: 0
   m_Name: SniperPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1281,8 +1282,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168892492390734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 0.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 4945144938486724}
   m_Father: {fileID: 0}
@@ -1454,19 +1455,7 @@ MonoBehaviour:
   MeleeWeapon: {fileID: 114993617477293834}
   Firearm: {fileID: 114190225336769526}
   BowShooting: {fileID: 114298341660479430}
-  LayerManager: {fileID: 114776506864096632}
---- !u!114 &114169061363593260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168892492390734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7655dbdbae96492abedad7bdc555301d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  LayerManager: {fileID: 0}
 --- !u!114 &114020288807855842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,10 +1471,57 @@ MonoBehaviour:
   Character: {fileID: 114189777033721974}
   ArmL: {fileID: 4485917816442870}
   ArmR: {fileID: 4280409540652734}
-  FireButton: 324
+  FireButton: 323
   ReloadButton: 114
   FixHorizontal: 0
---- !u!114 &114776506864096632
+--- !u!61 &8834518906111659957
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168892492390734}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &8226642032783294981
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168892492390734}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &6318157058084252905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1494,96 +1530,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1168892492390734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6dbda98e8614ec8a935809c1a0ace8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c40f31e7cebf2a44a52418c1142b4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites:
-  - {fileID: 212984409457669702}
-  - {fileID: 212486728365666574}
-  - {fileID: 212333180277217820}
-  - {fileID: 212166882563090612}
-  - {fileID: 212209653372531498}
-  - {fileID: 212339675897856328}
-  - {fileID: 212643492576548668}
-  - {fileID: 212465790046375510}
-  - {fileID: 212804860495252974}
-  - {fileID: 212186078390921598}
-  - {fileID: 212524624709883102}
-  - {fileID: 212803583914949806}
-  - {fileID: 212797102435536062}
-  - {fileID: 212758725016924936}
-  - {fileID: 212883712214043640}
-  - {fileID: 212607268192208742}
-  - {fileID: 212691380196920940}
-  - {fileID: 212936100946011396}
-  - {fileID: 212472541612464846}
-  - {fileID: 212188580184316490}
-  - {fileID: 212379485033197654}
-  - {fileID: 212744073130836712}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 212239052434454594}
-  - {fileID: 212314673626345210}
-  - {fileID: 212845926747974404}
-  - {fileID: 212515533275698604}
-  - {fileID: 212692443748932720}
-  - {fileID: 212907196796807602}
-  - {fileID: 212612632568705728}
-  - {fileID: 212597115961449898}
-  - {fileID: 212369818447050486}
-  - {fileID: 0}
-  - {fileID: 212704029585730372}
-  - {fileID: 212250085548006994}
-  - {fileID: 212346619489031182}
-  - {fileID: 212776520854337854}
-  - {fileID: 212670595199692488}
-  - {fileID: 212956710879105316}
-  - {fileID: 212031808780368864}
-  - {fileID: 212489250547859572}
-  - {fileID: 212766715309022380}
-  - {fileID: 212332184236830078}
-  - {fileID: 212278999598535858}
-  - {fileID: 212459600829180518}
-  - {fileID: 212083564230189838}
-  - {fileID: 212600590651044904}
-  - {fileID: 212470859108181826}
-  - {fileID: 212796711500672306}
-  - {fileID: 212659516993644956}
-  - {fileID: 212581288862801230}
-  - {fileID: 212913416709468820}
-  - {fileID: 212227856571864972}
-  - {fileID: 212220310615854622}
-  - {fileID: 212846214490668248}
-  - {fileID: 212102625439361294}
-  - {fileID: 212237228246397166}
-  - {fileID: 212415433082073034}
-  - {fileID: 212352066995693000}
-  - {fileID: 212361830859373348}
-  - {fileID: 212259153959717146}
-  - {fileID: 212478935731278702}
-  - {fileID: 212296052785319322}
-  - {fileID: 212146129455792628}
-  - {fileID: 212622817182495618}
-  - {fileID: 212825027066893800}
-  - {fileID: 212650131815592964}
-  - {fileID: 212961145882223968}
-  - {fileID: 212063705547870464}
-  - {fileID: 212654495386633442}
-  - {fileID: 212004748348396420}
-  - {fileID: 212770428806771238}
-  - {fileID: 212619854145452926}
-  - {fileID: 212234213131142066}
-  - {fileID: 212676919197376650}
-  - {fileID: 212149737417032400}
-  - {fileID: 212694427192424524}
-  - {fileID: 212645031129505778}
-  - {fileID: 212319317268201638}
-  - {fileID: 212614918239205322}
-  - {fileID: 212376342419814552}
-  SortingGroup: {fileID: 210248878303901118}
-  SortingOrderOffset: 0
-  SortingOrderStep: 5
-  ZStep: 0.00001
+  playerSpeed: 7
+  bullet: {fileID: 4120064795311761253, guid: e37df6b6a0a864b4083df716b035cdd4, type: 3}
+  _weaponControllerObject: {fileID: 0}
 --- !u!1 &1179323946161564
 GameObject:
   m_ObjectHideFlags: 0

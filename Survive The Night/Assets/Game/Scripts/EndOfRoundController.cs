@@ -139,6 +139,15 @@ public class EndOfRoundController : MonoBehaviour
                     _summaryController.updateSuppliesFoundSummary("Shotgun");
                 }
             }
+            if (random2 > 56 && random2 <= 76)
+            {
+                if (!_avaliableWeapons.Contains("Scout"))
+                {
+                    weaponFound = true;
+                    _summaryController.addWeaponToAvaliableWeapons("Scout");
+                    _summaryController.updateSuppliesFoundSummary("Scout (Sniper Rifle)");
+                }
+            }
         }
 
         if(!weaponFound)

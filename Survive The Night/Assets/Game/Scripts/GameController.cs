@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public GameObject BasicPistolPlayer;
     public GameObject BasicMP5Player;
     public GameObject ShotgunPlayer;
+    public GameObject SniperPlayer;
 
     public Vector3 spawnValues;
 
@@ -116,7 +117,7 @@ public class GameController : MonoBehaviour
         waveText.text = "Wave "+_waveCount.ToString();
 
         _primaryWeapon = "USP";
-        _secondaryWeapon = null;
+        _secondaryWeapon = "Scout";
 
         StartCoroutine(SpawnWaves());
     }
@@ -376,6 +377,10 @@ public class GameController : MonoBehaviour
         if (weaponName.Equals("Shotgun"))
         {
             return ShotgunPlayer;
+        }
+        if (weaponName.Equals("Scout"))
+        {
+            return SniperPlayer;
         }
         return null;
     }

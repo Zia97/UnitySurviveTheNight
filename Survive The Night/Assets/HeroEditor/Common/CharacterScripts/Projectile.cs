@@ -12,6 +12,8 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         public GameObject Trail;
         public GameObject Impact;
 	    public Rigidbody Rigidbody;
+        private int health = 100;
+
 
 		public void Start()
         {
@@ -39,7 +41,15 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
             if (collision.transform.gameObject.name != "wall")
             {
-                Destroy(this.gameObject);
+                if(gameObject.name.Equals("SniperBullet"))
+                {
+                    health = health - 30;
+                }
+                if(health<=0)
+                {
+                    Destroy(this.gameObject);
+                }
+               
             }
             else if(collision.transform.gameObject.name == "wall")
             {

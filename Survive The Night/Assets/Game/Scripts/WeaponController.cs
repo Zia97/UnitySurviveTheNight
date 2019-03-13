@@ -26,7 +26,7 @@ namespace Assets.Game.Scripts
         public void Fire(Vector2 direction)
         {
             Debug.Log("Fired from weapon controller");
-            Instantiate(bullet, direction, Quaternion.identity);
+           // Instantiate(bullet, direction, Quaternion.identity);
             //audioSource.Play();
         }
 
