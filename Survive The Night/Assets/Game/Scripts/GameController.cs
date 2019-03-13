@@ -117,7 +117,7 @@ public class GameController : MonoBehaviour
         waveText.text = "Wave "+_waveCount.ToString();
 
         _primaryWeapon = "USP";
-        _secondaryWeapon = "Scout";
+        _secondaryWeapon = null;
 
         StartCoroutine(SpawnWaves());
     }

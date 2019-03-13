@@ -118,6 +118,7 @@ public class EndOfRoundController : MonoBehaviour
 
         int random1 = Random.Range(0, 100);
 
+
         if (random1 < weaponProbability * _suppliesHoursSelectedValue)
         {
             int random2 = Random.Range(0, 100);
@@ -150,7 +151,7 @@ public class EndOfRoundController : MonoBehaviour
             }
         }
 
-        if(!weaponFound)
+        if (!weaponFound)
         {
             _summaryController.updateSuppliesFoundSummary("Nothing of interest found");
         }
