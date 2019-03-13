@@ -145,6 +145,12 @@ public class GameController : MonoBehaviour
 
         Destroy(GameObject.FindWithTag("Player"));
 
+        InstantiatePlayer();
+
+    }
+
+    private void InstantiatePlayer()
+    {
         if (myCharacter.Firearm.Params.Name.Equals(_primaryWeapon))
         {
             if (_secondaryWeapon != null)
@@ -166,12 +172,11 @@ public class GameController : MonoBehaviour
         }
         else if (myCharacter.Firearm.Params.Name.Equals(_secondaryWeapon))
         {
-                 Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
-                _playerGameObject = GameObject.FindWithTag("Player");
-                _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
-                myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();       
+            Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
+            _playerGameObject = GameObject.FindWithTag("Player");
+            _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
+            myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
         }
-
     }
 
     internal void disableEndOfRoundlayer()
@@ -342,6 +347,7 @@ public class GameController : MonoBehaviour
 
     private void InitiateEndOfRound()
     {
+        Destroy(GameObject.FindWithTag("Player"));
         roundOverCanvas.enabled = true;
     }
 
@@ -362,6 +368,12 @@ public class GameController : MonoBehaviour
         roundOverCanvas.enabled = false;
         summaryCanvas.enabled = false;
         dropdownCanvas.enabled = false;
+
+        Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
+        _playerGameObject = GameObject.FindWithTag("Player");
+        _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
+        myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
+
         _waveCount = _waveCount + 1;
         _roundOver = false;
         spawnWait = spawnWait - 0.05f;
