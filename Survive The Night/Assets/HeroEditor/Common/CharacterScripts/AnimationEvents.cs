@@ -39,6 +39,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 	    /// </summary>
 	    public void CustomEvent(string eventName)
 	    {
+            Debug.Log(eventName+"  @@");
 		    OnCustomEvent(eventName);
 	    }
 

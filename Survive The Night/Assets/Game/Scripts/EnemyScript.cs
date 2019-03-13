@@ -14,6 +14,8 @@ public class EnemyScript : MonoBehaviour
     private int _dropProbability = 3;
     private int _scoreValue = 1;
     private bool isDead = false;
+    private bool reachedPlayer = false;
+    private bool collidedWithPlayer = false;
     Rigidbody2D rb;
 
     private GameObject _gameController;
@@ -39,7 +41,15 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isDead)
+        if(gameController.isPlayerDead())
+        {
+            if(collidedWithPlayer)
+            {
+                gameObject.GetComponent<Animator>().Play("strike");
+            }       
+            gameObject.GetComponent<Collider2D>().enabled = false;
+        }
+        else if (!isDead)
         {
             if (isMovingTowardsBase)
             {
@@ -50,8 +60,10 @@ public class EnemyScript : MonoBehaviour
             {
                 this.gameObject.GetComponent<Animator>().Play("walkSide");
                 transform.position += gameController.getPlayerPosition() * _speed/10 * Time.deltaTime;
-                //Vector3 targetPosition = Vector3.MoveTowards(transform.position, gameController.getPlayerPosition(), _speed * Time.deltaTime);
-                //rb.MovePosition(targetPosition);
+            }
+            else if(reachedPlayer)
+            {
+                gameObject.GetComponent<Animator>().Play("strike");
             }
             else
             {
@@ -108,6 +120,7 @@ public class EnemyScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.name);
         
         if (collision.transform.gameObject.name == "wall")
         {
@@ -163,9 +176,14 @@ public class EnemyScript : MonoBehaviour
             }
         }
 
-        else
+        else if (collision.gameObject.name == "BasicPlayer" || collision.gameObject.name == "MP5Player" || collision.gameObject.name == "ShotgunPlayer" || collision.gameObject.name == "SniperPlayer")
         {
-            Debug.Log("Unidentified enemy collision");
+            gameObject.GetComponent<Animator>().Play("strike");
+            collidedWithPlayer = true;
+            isMovingTowardsPlayer = false;
+            isMovingTowardsBase = false;
+            reachedPlayer = true;
+            gameController.PlayerDead();
         }
     }
 

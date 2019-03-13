@@ -81,6 +81,7 @@ public class GameController : MonoBehaviour
 
     private Vector3 _playerPos;
 
+    private bool _isPlayerDead = false;
 
     private System.Random rnd = new System.Random();
 
@@ -276,6 +277,16 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void PlayerDead()
+    {
+        _isPlayerDead = true;
+    }
+
+    public bool isPlayerDead()
+    {
+        return _isPlayerDead;
+    }
+
     public void damageWall(int damage)
     {
         if (!_gameOver)
@@ -289,7 +300,7 @@ public class GameController : MonoBehaviour
             healthText.text = "Health: 0/100";
             wallDestoryed = true;
             Destroy(BaseWall);
-           // gameOver();
+            gameOver();
         }
     }
 
