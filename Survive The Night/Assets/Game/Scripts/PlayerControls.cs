@@ -53,6 +53,7 @@ public class PlayerControls : MonoBehaviour {
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
+            myCharacter.Animator.Play("Die");
         }
 
         if (target.x < -5.5)

@@ -4,7 +4,8 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     private float _speed = 3.0f;
-    private bool isMoving = true;
+    private bool isMovingTowardsBase = true;
+    private bool isMovingTowardsPlayer = false;
     private double _health = 100;
     protected GameController gameController;
     private int _wallDamagetick = 1;
@@ -13,17 +14,20 @@ public class EnemyScript : MonoBehaviour
     private int _dropProbability = 3;
     private int _scoreValue = 1;
     private bool isDead = false;
+    Rigidbody2D rb;
+
+    private GameObject _gameController;
     
     private System.Random rnd = new System.Random();
 
     // Use this for initialization
     void Start()
     {
-        
-        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-        if (gameControllerObject != null)
+        rb = GetComponent<Rigidbody2D>();
+        _gameController = GameObject.FindWithTag("GameController");
+        if (_gameController != null)
         {
-            gameController = gameControllerObject.GetComponent<GameController>();
+            gameController = _gameController.GetComponent<GameController>();
         }
         if (gameController == null)
         {
@@ -37,14 +41,25 @@ public class EnemyScript : MonoBehaviour
     {
         if (!isDead)
         {
-            if (isMoving)
+            if (isMovingTowardsBase)
             {
                 this.gameObject.GetComponent<Animator>().Play("walkSide");
                 transform.position += -transform.right * _speed * Time.deltaTime;
             }
+            else if(isMovingTowardsPlayer)
+            {
+                this.gameObject.GetComponent<Animator>().Play("walkSide");
+                transform.position += gameController.getPlayerPosition() * _speed/10 * Time.deltaTime;
+                //Vector3 targetPosition = Vector3.MoveTowards(transform.position, gameController.getPlayerPosition(), _speed * Time.deltaTime);
+                //rb.MovePosition(targetPosition);
+            }
             else
             {
                 gameObject.GetComponent<Animator>().Play("strike");
+                if(gameController.isWallDestroyed())
+                {
+                    isMovingTowardsPlayer = true;
+                }
             }
         }
         else if(isDead)
@@ -96,7 +111,7 @@ public class EnemyScript : MonoBehaviour
         
         if (collision.transform.gameObject.name == "wall")
         {
-            isMoving = false;
+            isMovingTowardsBase = false;
             StartCoroutine("beginWallDamage");
             beginWallDamage();
         }

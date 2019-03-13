@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
     private bool _gameOver;
     private bool _roundOver;
     private bool _beginNextRound;
+    private bool wallDestoryed = false;
 
     public Canvas roundOverCanvas;
     public GameObject roundOverGameObject;
@@ -54,6 +55,8 @@ public class GameController : MonoBehaviour
 
     public GameObject dropdownObject;
     public Canvas dropdownCanvas;
+
+    public GameObject BaseWall;
 
     public GameObject _playerGameObject;
     public PlayerControls _player;
@@ -88,6 +91,8 @@ public class GameController : MonoBehaviour
         _player = _playerGameObject.GetComponent<PlayerControls>();
         myCharacter = _playerGameObject.GetComponent<Character>();
 
+        BaseWall = GameObject.FindWithTag("BaseWall");
+
         _switchWeaponObject = GameObject.FindWithTag("SwitchWeapon");
         _switchWeaponButton = _switchWeaponObject.GetComponent<Button>();
         _switchWeaponButton.onClick.AddListener(SwitchWeaponClicked);
@@ -117,7 +122,7 @@ public class GameController : MonoBehaviour
         waveText.text = "Wave "+_waveCount.ToString();
 
         _primaryWeapon = "USP";
-        _secondaryWeapon = null;
+        _secondaryWeapon = "MP-5";
 
         StartCoroutine(SpawnWaves());
     }
@@ -282,8 +287,20 @@ public class GameController : MonoBehaviour
         if (wallHeath <= 0)
         {
             healthText.text = "Health: 0/100";
-            gameOver();
+            wallDestoryed = true;
+            Destroy(BaseWall);
+           // gameOver();
         }
+    }
+
+    public bool isWallDestroyed()
+    {
+        return wallDestoryed;
+    }
+
+    public Vector3 getPlayerPosition()
+    {
+        return GameObject.FindWithTag("Player").gameObject.transform.position;
     }
 
     public void increaseCurrentWaveScore(int value)

@@ -22,6 +22,9 @@ public class WallScript : MonoBehaviour {
     void decreaseHealth(int damage)
     {
         health = health - damage;
-        Debug.Log(health);
+        if(health==0)
+        {
+            Debug.Log("Wall destroyed");
+        }
     }
 }

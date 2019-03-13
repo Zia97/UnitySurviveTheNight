@@ -28,6 +28,7 @@ TagManager:
   - DropDownCanvas
   - ReloadButton
   - SummaryController
+  - BaseWall
   layers:
   - Default
   - TransparentFX
