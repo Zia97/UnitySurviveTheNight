@@ -124,7 +124,6 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
         { 
-            Debug.Log(collision.gameObject.GetComponent<Projectile>().getHealth());
             if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
             {
                 if (!isDead)

@@ -94,7 +94,6 @@ public class PlayerControls : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         target = transform.position;
-        Debug.Log(collision.gameObject.name);
         if (!collision.gameObject.name.Equals("wall") && !collision.gameObject.name.Equals("borderwall"))
         {
             isAlive = false;

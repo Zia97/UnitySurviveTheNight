@@ -140,7 +140,6 @@ public class GameController : MonoBehaviour
 
         StartCoroutine(SpawnWaves());
         var temp = GameObject.FindWithTag("Player");
-        Debug.Log(temp.gameObject.transform.position);
     }
 
     public int getWallHealth()
