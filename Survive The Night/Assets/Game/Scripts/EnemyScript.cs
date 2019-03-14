@@ -123,29 +123,32 @@ public class EnemyScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
-        {
-            collision.gameObject.GetComponent<Projectile>().Bang(gameObject);
-            Destroy(collision.gameObject);
-            if (!isDead)
+        { 
+            Debug.Log(collision.gameObject.GetComponent<Projectile>().getHealth());
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
             {
-                _health = _health - 30;
-
-                if (_health <= 0)
+                if (!isDead)
                 {
-                    isDead = true;
-                    gameController.updateScore(_scoreValue);
-                    gameController.increaseCurrentWaveScore(_scoreValue);
+                    _health = _health - 30;
 
-                    gameObject.GetComponent<Animator>().Play("die");
-
-                    Destroy(gameObject, 3);
-
-                    if (randomDrop)
+                    if (_health <= 0)
                     {
-                        Debug.Log("Random drop");
+                        isDead = true;
+                        gameController.updateScore(_scoreValue);
+                        gameController.increaseCurrentWaveScore(_scoreValue);
+
+                        gameObject.GetComponent<Animator>().Play("die");
+
+                        Destroy(gameObject, 3);
+
+                        if (randomDrop)
+                        {
+                            Debug.Log("Random drop");
+                        }
                     }
                 }
             }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
         }
         else if (collision.transform.gameObject.name == "SniperBullet" || collision.transform.gameObject.name == "SniperBullet(Clone)")
         {
@@ -174,9 +177,7 @@ public class EnemyScript : MonoBehaviour
 
 
     void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        
+    {   
         if (collision.transform.gameObject.name == "wall")
         {
             isMovingTowardsBase = false;

@@ -32,33 +32,33 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         public void OnTriggerEnter(Collider other)
         {
             Bang(other.gameObject);
+           
         }
 
 
         void OnCollisionEnter2D(Collision2D collision)
         {
             Bang(collision.gameObject);
+        }
 
-            if (collision.transform.gameObject.name != "wall")
-            {
-                if(gameObject.name.Equals("SniperBullet"))
+        public void Bang(GameObject other, GameObject bullet=null)
+        {
+                if (bullet.name.Equals("SniperBullet") || bullet.name.Equals("SniperBullet(Clone)"))
                 {
                     health = health - 30;
                 }
-                if(health<=0)
+                if (health <= 0)
                 {
                     Destroy(this.gameObject);
                 }
-               
-            }
-            else if(collision.transform.gameObject.name == "wall")
-            {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.transform.gameObject.GetComponent<Collider2D>());
-            }
-        }
 
-        public void Bang(GameObject other)
-        {
+                if (bullet.name.Equals("Bullet(Clone)") || bullet.name.Equals("Bullet"))
+                {
+                    health = 0;
+                }
+
+            
+
             ReplaceImpactSound(other);
             Impact.SetActive(true);
             Destroy(GetComponent<SpriteRenderer>());
@@ -85,6 +85,11 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             {
                 Impact.GetComponent<AudioSource>().clip = sound.clip;
             }
+        }
+
+        public int getHealth()
+        {
+            return health;
         }
     }
 }

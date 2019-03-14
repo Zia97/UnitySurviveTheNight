@@ -88,8 +88,14 @@ public class GameController : MonoBehaviour
 
     private System.Random rnd = new System.Random();
 
+    private Vector3 defaultPos;
+
+
     private void Start()
     {
+        defaultPos.x = -8;
+        defaultPos.y = -0;
+        defaultPos.z = 1;
         _avaliableWeapons.Add("USP");
         _playerGameObject = GameObject.FindWithTag("Player");
         _player = _playerGameObject.GetComponent<PlayerControls>();
@@ -133,6 +139,8 @@ public class GameController : MonoBehaviour
         _secondaryWeapon = "MP-5";
 
         StartCoroutine(SpawnWaves());
+        var temp = GameObject.FindWithTag("Player");
+        Debug.Log(temp.gameObject.transform.position);
     }
 
     public int getWallHealth()
@@ -158,6 +166,10 @@ public class GameController : MonoBehaviour
 
     private void InstantiatePlayer()
     {
+        if(_playerPos==null)
+        {
+            _playerPos = defaultPos;
+        }
         if (myCharacter.Firearm.Params.Name.Equals(_primaryWeapon))
         {
             if (_secondaryWeapon != null)
