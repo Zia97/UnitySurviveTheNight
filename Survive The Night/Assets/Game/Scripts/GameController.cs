@@ -345,11 +345,16 @@ public class GameController : MonoBehaviour
         }
     }
 
+    IEnumerator endOfGameDelay()
+    {
+        yield return new WaitForSecondsRealtime(4);
+        gameOverCanvas.enabled = true;
+    }
+
     IEnumerator endOfRoundDelay()
     {
         yield return new WaitForSecondsRealtime(4);
         InitiateEndOfRound();
-
     }
 
     private void InitiateEndOfRound()
@@ -369,7 +374,7 @@ public class GameController : MonoBehaviour
         _gameOver = true;
         gameOverText.text = "Game Over";
         gameOverObject.GetComponent<GameOverController>().updateWaveReachedAndScore(_waveCount-1, score);
-        gameOverCanvas.enabled = true;
+        StartCoroutine(endOfGameDelay());
     }
 
     public void StartNextWave()
