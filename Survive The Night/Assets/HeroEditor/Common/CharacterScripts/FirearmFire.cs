@@ -195,6 +195,9 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 {
                     bullet.name = "SniperBullet";
                 }
+
+                bullet.GetComponent<Collider2D>().isTrigger = true;
+
                 var spread = Character.Firearm.FireTransform.up * Random.Range(-1f, 1f) * (1 - Character.Firearm.Params.Accuracy);
 
                 bullet.transform.localPosition = Vector3.zero;

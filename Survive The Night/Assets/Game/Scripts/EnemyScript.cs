@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.HeroEditor.Common.CharacterScripts;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
@@ -26,6 +27,7 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GetComponent<Collider2D>().isTrigger = true;
         _gameController = GameObject.FindWithTag("GameController");
         if (_gameController != null)
         {
@@ -118,19 +120,12 @@ public class EnemyScript : MonoBehaviour
         _scoreValue = _score;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        
-        if (collision.transform.gameObject.name == "wall")
+        if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
         {
-            isMovingTowardsBase = false;
-            StartCoroutine("beginWallDamage");
-            beginWallDamage();
-        }
-
-        else if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
-        {
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject);
+            Destroy(collision.gameObject);
             if (!isDead)
             {
                 _health = _health - 30;
@@ -174,6 +169,19 @@ public class EnemyScript : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        
+        if (collision.transform.gameObject.name == "wall")
+        {
+            isMovingTowardsBase = false;
+            StartCoroutine("beginWallDamage");
+            beginWallDamage();
         }
 
         else if (collision.gameObject.name == "BasicPlayer" || collision.gameObject.name == "MP5Player" || collision.gameObject.name == "ShotgunPlayer" || collision.gameObject.name == "SniperPlayer")

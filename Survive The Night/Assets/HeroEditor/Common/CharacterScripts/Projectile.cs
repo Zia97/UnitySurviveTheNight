@@ -57,7 +57,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             }
         }
 
-        private void Bang(GameObject other)
+        public void Bang(GameObject other)
         {
             ReplaceImpactSound(other);
             Impact.SetActive(true);

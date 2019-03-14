@@ -53,6 +53,9 @@ public class GameController : MonoBehaviour
     public Canvas summaryCanvas;
     public GameObject summaryObject;
 
+    public Canvas gameOverCanvas;
+    public GameObject gameOverObject;
+
     public GameObject dropdownObject;
     public Canvas dropdownCanvas;
 
@@ -117,10 +120,14 @@ public class GameController : MonoBehaviour
         dropdownCanvas = dropdownObject.GetComponent<Canvas>();
         dropdownCanvas.enabled = false;
 
+        gameOverObject = GameObject.FindWithTag("GameOverController");
+        gameOverObject.SetActive(true);
+        gameOverCanvas.enabled = false;
+
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
-        waveText.text = "Wave "+_waveCount.ToString();
+        waveText.text = "Night "+_waveCount.ToString();
 
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
@@ -199,7 +206,7 @@ public class GameController : MonoBehaviour
         while (!_gameOver && !_roundOver)
         {
             roundOverCanvas.enabled = false;
-            waveText.text = "Wave " + _waveCount.ToString();
+            waveText.text = "Night " + _waveCount.ToString();
             roundWaveDifficulty = roundWaveDifficulty + 4;
             int currentWaveDifficultyValue = 0;
             currentWaveScore = 0;
@@ -361,6 +368,8 @@ public class GameController : MonoBehaviour
     {
         _gameOver = true;
         gameOverText.text = "Game Over";
+        gameOverObject.GetComponent<GameOverController>().updateWaveReachedAndScore(_waveCount-1, score);
+        gameOverCanvas.enabled = true;
     }
 
     public void StartNextWave()

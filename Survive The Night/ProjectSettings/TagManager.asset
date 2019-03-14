@@ -29,6 +29,11 @@ TagManager:
   - ReloadButton
   - SummaryController
   - BaseWall
+  - GameOverCanvas
+  - GameSummaryText
+  - QuitGameButton
+  - PlayAgainButton
+  - GameOverController
   layers:
   - Default
   - TransparentFX
@@ -71,4 +76,7 @@ TagManager:
     locked: 0
   - name: Summary
     uniqueID: 3114431839
+    locked: 0
+  - name: GameOver
+    uniqueID: 2979420943
     locked: 0
