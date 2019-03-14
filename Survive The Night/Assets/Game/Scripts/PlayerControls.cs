@@ -19,6 +19,7 @@ public class PlayerControls : MonoBehaviour {
     private GameController _gameController;
     private bool isAlive = true;
 
+    private Vector3 targetPos;
     private Character myCharacter;
 
     private bool _uiButtonClicked;
@@ -50,6 +51,15 @@ public class PlayerControls : MonoBehaviour {
         if (!_uiButtonClicked)
         {
             MoveCharacter();
+            if (transform.position != targetPos)
+            {
+                myCharacter.Animator.SetBool("Run", true);
+            }
+            else
+            {
+                myCharacter.Animator.SetBool("Run", false);
+            }
+        
         }
     }
 
@@ -61,12 +71,13 @@ public class PlayerControls : MonoBehaviour {
             {
                 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 target.z = transform.position.z;
+                
             }
 
             if (target.x < -5.5)
             {
-                Vector3 targetPosition = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
-                rb.MovePosition(targetPosition);
+               targetPos = Vector3.MoveTowards(transform.position, target, playerSpeed * Time.deltaTime);
+                rb.MovePosition(targetPos);
             }
         }
         
