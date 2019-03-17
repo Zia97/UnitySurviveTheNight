@@ -12,11 +12,14 @@ public class EnemyScript : MonoBehaviour
     private int _wallDamagetick = 1;
     private float _wallDamageFrequency = 1f;
     private bool randomDrop;
-    private int _dropProbability = 3;
+    private int _dropProbability = 2;
     private int _scoreValue = 1;
     private bool isDead = false;
     private bool reachedPlayer = false;
     private bool collidedWithPlayer = false;
+    private int minMaterials = 0;
+    private int maxMaterials = 0;
+    private int noOfMaterials = 0;
     Rigidbody2D rb;
 
     private GameObject _gameController;
@@ -87,6 +90,7 @@ public class EnemyScript : MonoBehaviour
         if (rnd.Next(11) <= _dropProbability)
         {
             randomDrop = true;
+            noOfMaterials = rnd.Next(minMaterials,maxMaterials);
         }
     }
 
@@ -142,7 +146,8 @@ public class EnemyScript : MonoBehaviour
 
                         if (randomDrop)
                         {
-                            Debug.Log("Random drop");
+                            Debug.Log("materials added "+noOfMaterials);
+                            gameController.addBuildingMaterials(noOfMaterials);
                         }
                     }
                 }
@@ -167,7 +172,32 @@ public class EnemyScript : MonoBehaviour
 
                     if (randomDrop)
                     {
-                        Debug.Log("Random drop");
+                        Debug.Log("materials added " + noOfMaterials);
+                        gameController.addBuildingMaterials(noOfMaterials);
+                    }
+                }
+            }
+        }
+        else if (collision.transform.gameObject.name == "TurretBullet" || collision.transform.gameObject.name == "TurretBullet(Clone)")
+        {
+            if (!isDead)
+            {
+                _health = _health - 20;
+
+                if (_health <= 0)
+                {
+                    isDead = true;
+                    gameController.updateScore(_scoreValue);
+                    gameController.increaseCurrentWaveScore(_scoreValue);
+
+                    gameObject.GetComponent<Animator>().Play("die");
+
+                    Destroy(gameObject, 3);
+
+                    if (randomDrop)
+                    {
+                        Debug.Log("materials added " + noOfMaterials);
+                        gameController.addBuildingMaterials(noOfMaterials);
                     }
                 }
             }
@@ -193,6 +223,12 @@ public class EnemyScript : MonoBehaviour
             reachedPlayer = true;
             gameController.PlayerDead();
         }
+    }
+
+    protected void updateMaterialRange(int min, int max)
+    {
+        minMaterials = min;
+        maxMaterials = max;
     }
 
     private IEnumerator beginWallDamage()

@@ -31,6 +31,7 @@ namespace Assets.Game.Scripts
                 Debug.Log("Cannot find 'GameController' script");
             }
 
+            updateMaterialRange(3, 7);
             setScoreValue(1);
             setDamage(damage);
             setDropProbability(4);

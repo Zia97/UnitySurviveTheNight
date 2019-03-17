@@ -7,15 +7,15 @@ using UnityEngine;
 
 namespace Assets.Game.Scripts
 {
-    public class PoliceEnemy : EnemyScript
+    public class CrawlerEnemy : EnemyScript
     {
 
-        private int damage = 5;
-        private int health = 300;
+        private int damage = 1;
+        private int health = 90;
         private float frequency = 1f;
         private int dropProb = 6;
-        private float speed = 1.3f;
-        private int _difficulty = 4;
+        private float speed = 2.5f;
+        private int _difficulty = 1;
 
         void Start()
         {
@@ -30,8 +30,8 @@ namespace Assets.Game.Scripts
                 Debug.Log("Cannot find 'GameController' script");
             }
 
-            updateMaterialRange(15, 25);
-            setScoreValue(4);
+            updateMaterialRange(3, 7);
+            setScoreValue(1);
             setDamage(damage);
             setDropProbability(dropProb);
             createDropProbability();

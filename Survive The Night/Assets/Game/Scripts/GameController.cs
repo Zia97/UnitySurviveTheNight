@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameObject officerEnemy;
     public GameObject dogEnemy;
     public GameObject runnerEnemy;
+    public GameObject crawlerEnemy;
 
     public GameObject BasicPistolPlayer;
     public GameObject BasicMP5Player;
@@ -33,6 +34,8 @@ public class GameController : MonoBehaviour
     public Text scoretext;
     private int score = 0;
     private int currentWaveScore = 0;
+
+    private int _buildingMaterials = 0;
 
     public Text healthText;
     private int wallHeath = 100;
@@ -243,14 +246,18 @@ public class GameController : MonoBehaviour
                 Quaternion spawnRotation = Quaternion.identity;
                 if (randomValue == 0)
                 {
-                    int easyRandom = rnd.Next(3);
+                    int easyRandom = rnd.Next(6);
                     if (easyRandom <= 1)
                     {
                         Instantiate(basicEnemy, spawnPosition, spawnRotation);
                     }
-                    else
+                    else if(easyRandom >= 2 && easyRandom <=4 )
                     {
                         Instantiate(dogEnemy, spawnPosition, spawnRotation);
+                    }
+                    else
+                    {
+                        Instantiate(crawlerEnemy, spawnPosition, spawnRotation);
                     }
                     currentWaveDifficultyValue = currentWaveDifficultyValue + 1;
 
@@ -380,6 +387,11 @@ public class GameController : MonoBehaviour
         scoretext.text = "Score : " + score;
     }
 
+    public void addBuildingMaterials(int noOfMaterials)
+    {
+        _buildingMaterials = _buildingMaterials + noOfMaterials;
+    }
+
     public void gameOver()
     {
         _gameOver = true;
@@ -394,7 +406,7 @@ public class GameController : MonoBehaviour
         summaryCanvas.enabled = false;
         dropdownCanvas.enabled = false;
 
-        Instantiate(weaponNameToPrefab(_primaryWeapon), _playerPos, Quaternion.identity);
+        Instantiate(weaponNameToPrefab(_primaryWeapon), defaultPos, Quaternion.identity);
         _playerGameObject = GameObject.FindWithTag("Player");
         _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
         myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
