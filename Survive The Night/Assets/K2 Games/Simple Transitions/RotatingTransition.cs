@@ -43,16 +43,16 @@ namespace TransitionalObjects
         }
 #endif
 
-        //public override void Clone(BaseTransition other)
-        //{
-        //    base.Clone(other);
+        public override void Clone(BaseTransition other)
+        {
+            base.Clone(other);
 
-        //    RotatingTransition converted = (RotatingTransition)other;
+            RotatingTransition converted = (RotatingTransition)other;
 
-        //    reverseNegativeRotations = converted.reverseNegativeRotations;
-        //    startPoint = converted.startPoint;
-        //    endPoint = converted.endPoint;
-        //}
+            reverseNegativeRotations = converted.reverseNegativeRotations;
+            startPoint = converted.startPoint;
+            endPoint = converted.endPoint;
+        }
 
         #region Editor Externals
 #if(UNITY_EDITOR)
@@ -71,13 +71,13 @@ namespace TransitionalObjects
         /// Called by the editor to update the start and end points based on the current position
         /// </summary>
         /// <param name="isStartPoint"></param>
-        //public override void UpdatePosition(TransitionalObject.MovingDataType movingType)
-        //{
-        //    if(movingType == TransitionalObject.MovingDataType.StartPoint)
-        //        startPoint = parent.transform.rotation.eulerAngles;
-        //    else
-        //        endPoint = parent.transform.rotation.eulerAngles;
-        //}
+        public override void UpdatePosition(TransitionalObject.MovingDataType movingType)
+        {
+            if (movingType == TransitionalObject.MovingDataType.StartPoint)
+                startPoint = parent.transform.rotation.eulerAngles;
+            else
+                endPoint = parent.transform.rotation.eulerAngles;
+        }
 #endif
         #endregion
     }

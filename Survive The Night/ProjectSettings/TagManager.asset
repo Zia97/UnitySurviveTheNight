@@ -34,6 +34,16 @@ TagManager:
   - QuitGameButton
   - PlayAgainButton
   - GameOverController
+  - WorkshopCanvas
+  - AvaliableMaterialText
+  - Turret1Button
+  - Turret2Button
+  - Turret3Button
+  - Turret4Button
+  - Turret1Dropdown
+  - Turret2Dropdown
+  - Turret3Dropdown
+  - WorkshopButton
   layers:
   - Default
   - TransparentFX
@@ -47,7 +57,7 @@ TagManager:
   - Bullet
   - Enemy
   - Player
-  - 
+  - Turret
   - 
   - 
   - 
@@ -79,4 +89,7 @@ TagManager:
     locked: 0
   - name: GameOver
     uniqueID: 2979420943
+    locked: 0
+  - name: WorkShop
+    uniqueID: 719778889
     locked: 0

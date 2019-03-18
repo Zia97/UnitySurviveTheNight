@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ public class SummaryController : MonoBehaviour
 {
     public GameObject _startNextWaveObject;
     private Button _startNextWaveButton;
+
+    public GameObject _workshopButtonObject;
+    public Button _workshopButton;
 
     private GameObject _gameControllerObject;
     private GameController _gameController;
@@ -21,6 +25,11 @@ public class SummaryController : MonoBehaviour
     public Dropdown primaryWeaponDropdown;
     public Dropdown secondaryWeaponDropdown;
 
+    public Canvas workshopCanvas;
+    public GameObject workshopObject;
+
+    public Canvas summaryCanvas;
+
     public Text baseRepairsText;
     public Text suppliesFoundSummary;
 
@@ -28,9 +37,13 @@ public class SummaryController : MonoBehaviour
     {
         _startNextWaveObject = GameObject.FindWithTag("StartNextWave");
         _gameControllerObject = GameObject.FindWithTag("GameController");
+        _workshopButtonObject = GameObject.FindWithTag("WorkshopButton");
 
         _startNextWaveButton = _startNextWaveObject.GetComponent<Button>();
         _startNextWaveButton.onClick.AddListener(ConfirmButtonClicked);
+
+        _workshopButton = _workshopButtonObject.GetComponent<Button>();
+        _workshopButton.onClick.AddListener(WorkshopButtonClicked);
 
         if (_gameControllerObject != null)
         {
@@ -38,6 +51,18 @@ public class SummaryController : MonoBehaviour
             _avaliableWeapons = _gameController.getAllAvaliableWeapons();
         }
 
+        workshopObject = GameObject.FindWithTag("WorkshopCanvas");
+        workshopObject.SetActive(true);
+        workshopCanvas = workshopObject.GetComponent<Canvas>();
+
+
+    }
+
+    private void WorkshopButtonClicked()
+    {
+        summaryCanvas.enabled = false;
+        Debug.Log("Workshop button clicked");
+        workshopCanvas.enabled = true;
     }
 
     private void ConfirmButtonClicked()

@@ -59,6 +59,9 @@ public class GameController : MonoBehaviour
     public Canvas gameOverCanvas;
     public GameObject gameOverObject;
 
+    public Canvas workshopCanvas;
+    public GameObject workshopObject;
+
     public GameObject dropdownObject;
     public Canvas dropdownCanvas;
 
@@ -118,6 +121,11 @@ public class GameController : MonoBehaviour
         roundOverGameObject.SetActive(true);
         roundOverCanvas = roundOverGameObject.GetComponent<Canvas>(); 
         roundOverCanvas.enabled = false;
+
+        workshopObject = GameObject.FindWithTag("WorkshopCanvas");
+        workshopObject.SetActive(true);
+        workshopCanvas = workshopObject.GetComponent<Canvas>();
+        workshopCanvas.enabled = false;
 
         summaryObject = GameObject.FindWithTag("SummaryCanvas");
         summaryObject.SetActive(true);
