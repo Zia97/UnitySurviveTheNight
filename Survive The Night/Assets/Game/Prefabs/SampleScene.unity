@@ -6577,6 +6577,10 @@ MonoBehaviour:
   turret2: {fileID: 169252, guid: 3dbddd9773b6a5b4280145fede5db178, type: 3}
   turret3: {fileID: 122802, guid: f88cb4ee5d1d53546aae5651035f8771, type: 3}
   turret6: {fileID: 170256, guid: 5a5e0ba07d5d79e48b6a1dc9a7aeb82d, type: 3}
+  turret1Ref: {fileID: 0}
+  turret2Ref: {fileID: 0}
+  turret3Ref: {fileID: 0}
+  turret6Ref: {fileID: 0}
   primaryWeaponDropdown: {fileID: 0}
   secondaryWeaponDropdown: {fileID: 0}
   workshopCanvas: {fileID: 1203019932}

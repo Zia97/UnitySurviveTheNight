@@ -19,6 +19,10 @@ public class WorkshopController : MonoBehaviour
     public GameObject turret3;
     public GameObject turret6;
 
+    public GameObject turret1Ref;
+    public GameObject turret2Ref;
+    public GameObject turret3Ref;
+    public GameObject turret6Ref;
 
     private ArrayList _avaliableWeapons = new ArrayList();
 
@@ -57,6 +61,11 @@ public class WorkshopController : MonoBehaviour
 
     public void InstantiateTurrets()
     {
+        turret1Ref = turret1;
+        turret2Ref = turret2;
+        turret3Ref = turret3;
+        turret6Ref = turret6;
+
         Vector3 turret1Vector = new Vector3(-260, 80, -4647);
         Vector3 turret2Vector = new Vector3(-260, -180, -4647);
         Vector3 turret3Vector = new Vector3(-260, -90, -4647);
@@ -65,31 +74,32 @@ public class WorkshopController : MonoBehaviour
         var panel = GameObject.Find("WorkshopPanel");
         if (panel != null) 
         {
-            GameObject a = Instantiate(turret1, turret1Vector, Quaternion.identity);
+            GameObject a = Instantiate(turret1Ref, turret1Vector, Quaternion.identity);
             a.transform.SetParent(panel.transform, false);
             a.gameObject.transform.position.Set(-260, 80, a.gameObject.transform.position.z);
 
-            GameObject b = Instantiate(turret2, turret2Vector, Quaternion.identity);
+            GameObject b = Instantiate(turret2Ref, turret2Vector, Quaternion.identity);
             b.transform.SetParent(panel.transform, false);
             b.gameObject.transform.position.Set(-260, -180, b.gameObject.transform.position.z);
 
-            GameObject c = Instantiate(turret3, turret3Vector, Quaternion.identity);
+            GameObject c = Instantiate(turret3Ref, turret3Vector, Quaternion.identity);
             c.transform.SetParent(panel.transform, false);
             c.gameObject.transform.position.Set(-260, -90, c.gameObject.transform.position.z);
 
-            GameObject d = Instantiate(turret6, turret6Vector, Quaternion.identity);
+            GameObject d = Instantiate(turret6Ref, turret6Vector, Quaternion.identity);
             d.transform.SetParent(panel.transform, false);
             d.gameObject.transform.position.Set(-260, 0, d.gameObject.transform.position.z);
+
         }
 
     }
 
     public void DestroyTurrets()
     {
-        Destroy(turret1);
-        Destroy(turret2);
-        Destroy(turret3);
-        Destroy(turret6);
+        Destroy(GameObject.FindWithTag("Turret1"));
+        Destroy(GameObject.FindWithTag("Turret2"));
+        Destroy(GameObject.FindWithTag("Turret3"));
+        Destroy(GameObject.FindWithTag("Turret6"));
     }
 
     private void WorkshopBackButtonClicked()

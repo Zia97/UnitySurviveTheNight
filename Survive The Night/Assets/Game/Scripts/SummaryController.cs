@@ -76,6 +76,8 @@ public class SummaryController : MonoBehaviour
 
     private void ConfirmButtonClicked()
     {
+        workshopCanvas.enabled = false;
+        mainGameCanvas.enabled = true;
         _primaryWeapon = primaryWeaponDropdown.options[primaryWeaponDropdown.value].text;
         _secondaryWeapon = secondaryWeaponDropdown.options[secondaryWeaponDropdown.value].text;
         _gameController.updateSelectedWeapons(_primaryWeapon,_secondaryWeapon);

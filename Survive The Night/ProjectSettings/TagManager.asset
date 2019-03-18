@@ -48,6 +48,10 @@ TagManager:
   - WorkshopController
   - MainGameCanvas
   - WorkshopPanel
+  - Turret1
+  - Turret2
+  - Turret3
+  - Turret6
   layers:
   - Default
   - TransparentFX
