@@ -6,18 +6,19 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SummaryController : MonoBehaviour
+public class WorkshopController : MonoBehaviour
 {
-    public GameObject _startNextWaveObject;
-    private Button _startNextWaveButton;
-
-    public GameObject _workshopButtonObject;
-    public GameObject _workshopController;
-    public Button _workshopButton;
+    public GameObject _workshopBackButtonObject;
+    public Button _workshopBackButton;
 
     private GameObject _gameControllerObject;
-
     private GameController _gameController;
+
+    public GameObject turret1;
+    public GameObject turret2;
+    public GameObject turret3;
+    public GameObject turret6;
+
 
     private ArrayList _avaliableWeapons = new ArrayList();
 
@@ -30,8 +31,6 @@ public class SummaryController : MonoBehaviour
     public Canvas workshopCanvas;
     public GameObject workshopObject;
 
-    public Canvas mainGameCanvas;
-
     public Canvas summaryCanvas;
 
     public Text baseRepairsText;
@@ -39,16 +38,11 @@ public class SummaryController : MonoBehaviour
 
     private void Start()
     {
-        _startNextWaveObject = GameObject.FindWithTag("StartNextWave");
         _gameControllerObject = GameObject.FindWithTag("GameController");
-        _workshopController = GameObject.FindWithTag("WorkshopController");
-        _workshopButtonObject = GameObject.FindWithTag("WorkshopButton");
+        _workshopBackButtonObject = GameObject.FindWithTag("WorkshopBackButton");
 
-        _startNextWaveButton = _startNextWaveObject.GetComponent<Button>();
-        _startNextWaveButton.onClick.AddListener(ConfirmButtonClicked);
-
-        _workshopButton = _workshopButtonObject.GetComponent<Button>();
-        _workshopButton.onClick.AddListener(WorkshopButtonClicked);
+        _workshopBackButton = _workshopBackButtonObject.GetComponent<Button>();
+        _workshopBackButton.onClick.AddListener(WorkshopBackButtonClicked);
 
         if (_gameControllerObject != null)
         {
@@ -59,29 +53,39 @@ public class SummaryController : MonoBehaviour
         workshopObject = GameObject.FindWithTag("WorkshopCanvas");
         workshopObject.SetActive(true);
         workshopCanvas = workshopObject.GetComponent<Canvas>();
-
-        workshopObject = GameObject.FindWithTag("WorkshopCanvas");
-        workshopObject.SetActive(true);
-        workshopCanvas = workshopObject.GetComponent<Canvas>();
     }
 
-    private void WorkshopButtonClicked()
+    public void InstantiateTurrets()
     {
-        mainGameCanvas.enabled = false;
-        workshopCanvas.enabled = true;
-        summaryCanvas.enabled = false;
-        _workshopController.GetComponent<WorkshopController>().InstantiateTurrets();
-       
+        Vector3 turret1Vector = new Vector3(-260, 80, -4647);
+        Vector3 turret2Vector = new Vector3(-260, -180, -4647);
+        Vector3 turret3Vector = new Vector3(-260, -90, -4647);
+        Vector3 turret6Vector = new Vector3(-260, 0, -4647);
+
+        var panel = GameObject.Find("WorkshopPanel");
+        if (panel != null)  // make sure you actually found it!
+        {
+            GameObject a = (GameObject)Instantiate(turret1, turret1Vector, Quaternion.identity);
+            a.transform.SetParent(panel.transform, false);
+            a.gameObject.transform.position.Set(-260, 80, a.gameObject.transform.position.z);
+        }
+
     }
 
-    private void ConfirmButtonClicked()
+    public void DestroyTurrets()
     {
-        _primaryWeapon = primaryWeaponDropdown.options[primaryWeaponDropdown.value].text;
-        _secondaryWeapon = secondaryWeaponDropdown.options[secondaryWeaponDropdown.value].text;
-        _gameController.updateSelectedWeapons(_primaryWeapon,_secondaryWeapon);
-        _gameController.StartNextWave();
+        Destroy(turret1);
+        Destroy(turret2);
+        Destroy(turret3);
+        Destroy(turret6);
     }
 
+    private void WorkshopBackButtonClicked()
+    {
+        DestroyTurrets();
+        workshopCanvas.enabled = false;
+        summaryCanvas.enabled = true;        
+    }
     public void addWeaponToAvaliableWeapons(string weapon)
     {
         _avaliableWeapons.Add(weapon);

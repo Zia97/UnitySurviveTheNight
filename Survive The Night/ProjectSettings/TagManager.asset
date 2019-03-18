@@ -44,6 +44,10 @@ TagManager:
   - Turret2Dropdown
   - Turret3Dropdown
   - WorkshopButton
+  - WorkshopBackButton
+  - WorkshopController
+  - MainGameCanvas
+  - WorkshopPanel
   layers:
   - Default
   - TransparentFX
