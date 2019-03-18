@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour
 
     public Canvas workshopCanvas;
     public GameObject workshopObject;
+    public GameObject workshopController;
 
     public GameObject dropdownObject;
     public Canvas dropdownCanvas;
@@ -126,6 +127,8 @@ public class GameController : MonoBehaviour
         workshopObject.SetActive(true);
         workshopCanvas = workshopObject.GetComponent<Canvas>();
         workshopCanvas.enabled = false;
+        workshopController = GameObject.FindWithTag("WorkshopController");
+        workshopController.SetActive(true);
 
         summaryObject = GameObject.FindWithTag("SummaryCanvas");
         summaryObject.SetActive(true);
@@ -398,6 +401,12 @@ public class GameController : MonoBehaviour
     public void addBuildingMaterials(int noOfMaterials)
     {
         _buildingMaterials = _buildingMaterials + noOfMaterials;
+        workshopController.GetComponent<WorkshopController>().setNumberOfAvaliableMaterials(_buildingMaterials);
+    }
+
+    public void updateBuildingMaterials(int noOfMaterials)
+    {
+        _buildingMaterials = noOfMaterials;
     }
 
     public void gameOver()

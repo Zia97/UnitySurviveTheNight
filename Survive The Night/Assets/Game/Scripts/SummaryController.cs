@@ -70,6 +70,7 @@ public class SummaryController : MonoBehaviour
         mainGameCanvas.enabled = false;
         workshopCanvas.enabled = true;
         summaryCanvas.enabled = false;
+        _workshopController.GetComponent<WorkshopController>().updateAvaliableMaterialsText();
         _workshopController.GetComponent<WorkshopController>().InstantiateTurrets();
        
     }

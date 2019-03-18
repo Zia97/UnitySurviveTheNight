@@ -29,16 +29,18 @@ public class WorkshopController : MonoBehaviour
     private string _primaryWeapon;
     private string _secondaryWeapon;
 
-    public Dropdown primaryWeaponDropdown;
-    public Dropdown secondaryWeaponDropdown;
+    private int avaliableMaterials;
+
+    public Dropdown turret1Dropdown;
+    public Dropdown turret2Dropdown;
+    public Dropdown turret3Dropdown;
 
     public Canvas workshopCanvas;
     public GameObject workshopObject;
 
     public Canvas summaryCanvas;
 
-    public Text baseRepairsText;
-    public Text suppliesFoundSummary;
+    public Text avaliableMaterialsText;
 
     private void Start()
     {
@@ -114,25 +116,37 @@ public class WorkshopController : MonoBehaviour
         _gameController.updateAllAvaliableWeapons(_avaliableWeapons);
     }
 
-    public void updateBaseRepairsText(string newText)
+    public void updateAvaliableMaterialsText()
     {
-        baseRepairsText.text = newText;
+        avaliableMaterialsText.text = "Avaliable materials: "+avaliableMaterials;
     }
 
-    public void updateSuppliesFoundSummary(string newText)
+    public void setNumberOfAvaliableMaterials(int numbOfMaterials)
     {
-        suppliesFoundSummary.text = newText;
+        avaliableMaterials = numbOfMaterials;
     }
 
-    public void updateDropdownWeaponList()
+    public void decreaseAvaliableMaterials(int numbOfMaterials)
     {
-        _avaliableWeapons = _gameController.getAllAvaliableWeapons();
-        List<string> results = _avaliableWeapons.Cast<string>().Distinct().ToList();
-        primaryWeaponDropdown.ClearOptions();
-        secondaryWeaponDropdown.ClearOptions();
-        primaryWeaponDropdown.AddOptions(results);
-        secondaryWeaponDropdown.AddOptions(results);
+        avaliableMaterials = avaliableMaterials -numbOfMaterials;
     }
+
+    public void increaseAvaliableMaterials(int numbOfMaterials)
+    {
+        avaliableMaterials = avaliableMaterials + numbOfMaterials;
+    }
+
+
+
+    //public void updateDropdownWeaponList()
+    //{
+    //    _avaliableWeapons = _gameController.getAllAvaliableWeapons();
+    //    List<string> results = _avaliableWeapons.Cast<string>().Distinct().ToList();
+    //    primaryWeaponDropdown.ClearOptions();
+    //    secondaryWeaponDropdown.ClearOptions();
+    //    primaryWeaponDropdown.AddOptions(results);
+    //    secondaryWeaponDropdown.AddOptions(results);
+    //}
 
 }
 
