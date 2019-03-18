@@ -63,11 +63,23 @@ public class WorkshopController : MonoBehaviour
         Vector3 turret6Vector = new Vector3(-260, 0, -4647);
 
         var panel = GameObject.Find("WorkshopPanel");
-        if (panel != null)  // make sure you actually found it!
+        if (panel != null) 
         {
-            GameObject a = (GameObject)Instantiate(turret1, turret1Vector, Quaternion.identity);
+            GameObject a = Instantiate(turret1, turret1Vector, Quaternion.identity);
             a.transform.SetParent(panel.transform, false);
             a.gameObject.transform.position.Set(-260, 80, a.gameObject.transform.position.z);
+
+            GameObject b = Instantiate(turret2, turret2Vector, Quaternion.identity);
+            b.transform.SetParent(panel.transform, false);
+            b.gameObject.transform.position.Set(-260, -180, b.gameObject.transform.position.z);
+
+            GameObject c = Instantiate(turret3, turret3Vector, Quaternion.identity);
+            c.transform.SetParent(panel.transform, false);
+            c.gameObject.transform.position.Set(-260, -90, c.gameObject.transform.position.z);
+
+            GameObject d = Instantiate(turret6, turret6Vector, Quaternion.identity);
+            d.transform.SetParent(panel.transform, false);
+            d.gameObject.transform.position.Set(-260, 0, d.gameObject.transform.position.z);
         }
 
     }
