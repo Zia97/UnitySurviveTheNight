@@ -49,6 +49,12 @@ public class WorkshopController : MonoBehaviour
     public Dropdown turret2Dropdown;
     public Dropdown turret3Dropdown;
 
+    private int turret1Count = 0;
+    private int turret2Count = 0;
+    private int turret3Count = 0;
+    private int turret6Count = 0;
+
+
     public Canvas workshopCanvas;
     public GameObject workshopObject;
 
@@ -56,6 +62,9 @@ public class WorkshopController : MonoBehaviour
 
     public Text avaliableMaterialsText;
     public Text workshopText;
+    private object turret1Value;
+    private object turret2Value;
+    private object turret3Value;
 
     private void Start()
     {
@@ -91,15 +100,41 @@ public class WorkshopController : MonoBehaviour
         workshopObject.SetActive(true);
         workshopCanvas = workshopObject.GetComponent<Canvas>();
 
+        turret1Dropdown.onValueChanged.AddListener(delegate {
+            turret1DropdownValueChanged(turret1Value);
+        });
+
+        turret2Dropdown.onValueChanged.AddListener(delegate {
+            turret2DropdownValueChanged(turret2Value);
+        });
+
+        turret3Dropdown.onValueChanged.AddListener(delegate {
+            turret3DropdownValueChanged(turret3Value);
+        });
+
         updateDropdownTurretList();
     }
 
+    private void turret3DropdownValueChanged(object turret3Value)
+    {
+        Debug.Log("Turret 3 dropdown changed "+turret3Dropdown.options[turret3Dropdown.value].text);
+    }
+
+    private void turret2DropdownValueChanged(object turret2Value)
+    {
+        Debug.Log("Turret 2 dropdown changed");
+    }
+
+    private void turret1DropdownValueChanged(object turret1Value)
+    {
+        Debug.Log("Turret 1 dropdown changed");
+    }
 
     private void BuildTurret6ButtonClicked()
     {
-        if(avaliableMaterials>=5000)
+        if(avaliableMaterials>=1)
         {
-            avaliableMaterials = avaliableMaterials - 5000;
+            //avaliableMaterials = avaliableMaterials - 5000;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 6");
             workshopText.text = "Super turret built!";
@@ -116,9 +151,9 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret3ButtonClicked()
     {
-        if (avaliableMaterials >= 3500)
+        if (avaliableMaterials >= 1)
         {
-            avaliableMaterials = avaliableMaterials - 3500;
+            //avaliableMaterials = avaliableMaterials - 3500;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 3");
             workshopText.text = "Heavy turret built!";
@@ -135,9 +170,9 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret2ButtonClicked()
     {
-        if (avaliableMaterials >= 2000)
+        if (avaliableMaterials >= 1)
         {
-            avaliableMaterials = avaliableMaterials - 2000;
+            //avaliableMaterials = avaliableMaterials - 2000;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 2");
             workshopText.text = "Medium turret built!";
@@ -154,9 +189,9 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret1ButtonClicked()
     {
-        if (avaliableMaterials >= 1000)
+        if (avaliableMaterials >= 1)
         {
-            avaliableMaterials = avaliableMaterials - 1000;
+            //avaliableMaterials = avaliableMaterials - 1000;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 1");
             workshopText.text = "Basic turret built!";
@@ -270,11 +305,29 @@ public class WorkshopController : MonoBehaviour
 
         List<string> results = new List<string>();
 
+        results.Add("None");
+
         foreach (KeyValuePair<string, int> entry in avaliableTurrets)
         {
             if(entry.Value>0)
             {
-                results.Add(entry.Key);
+                if(entry.Key.Equals("Turret 1"))
+                {
+                    results.Add("Basic Turret");
+                }
+                if (entry.Key.Equals("Turret 2"))
+                {
+                    results.Add("Medium Turret");
+                }
+                if (entry.Key.Equals("Turret 3"))
+                {
+                    results.Add("Heavy Turret");
+                }
+                if (entry.Key.Equals("Turret 6"))
+                {
+                    results.Add("Super Turret");
+                }
+
             }
         }
    
