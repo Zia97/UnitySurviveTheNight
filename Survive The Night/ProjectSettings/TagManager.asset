@@ -52,6 +52,7 @@ TagManager:
   - Turret2
   - Turret3
   - Turret6
+  - MainGamePanel
   layers:
   - Default
   - TransparentFX

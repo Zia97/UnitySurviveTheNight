@@ -19,6 +19,20 @@ public class GameController : MonoBehaviour
     public GameObject ShotgunPlayer;
     public GameObject SniperPlayer;
 
+    public GameObject turret1;
+    public GameObject turret2;
+    public GameObject turret3;
+    public GameObject turret6;
+
+    private GameObject turret1Ref;
+    private GameObject turret2Ref;
+    private GameObject turret3Ref;
+    private GameObject turret6Ref;
+
+    private string selectedTurret1;
+    private string selectedTurret2;
+    private string selectedTurret3;
+
     public Vector3 spawnValues;
 
     public BasicEnemy basicEnemyObject;
@@ -151,9 +165,10 @@ public class GameController : MonoBehaviour
 
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
-
+        InstantiateTurrets();
         StartCoroutine(SpawnWaves());
         var temp = GameObject.FindWithTag("Player");
+        
     }
 
     public int getWallHealth()
@@ -389,6 +404,7 @@ public class GameController : MonoBehaviour
     private void InitiateEndOfRound()
     {
         Destroy(GameObject.FindWithTag("Player"));
+        DestroyTurrets();
         roundOverCanvas.enabled = true;
     }
 
@@ -422,6 +438,8 @@ public class GameController : MonoBehaviour
         roundOverCanvas.enabled = false;
         summaryCanvas.enabled = false;
         dropdownCanvas.enabled = false;
+
+        InstantiateTurrets();
 
         Instantiate(weaponNameToPrefab(_primaryWeapon), defaultPos, Quaternion.identity);
         _playerGameObject = GameObject.FindWithTag("Player");
@@ -479,9 +497,72 @@ public class GameController : MonoBehaviour
         return null;
     }
 
+
+    public GameObject turretToPrefab(string weaponName)
+    {
+        if (weaponName.Equals("Turret 1"))
+        {
+            return BasicPistolPlayer;
+        }
+        if (weaponName.Equals("Turret 2"))
+        {
+            return BasicMP5Player;
+        }
+        if (weaponName.Equals("Turret 3"))
+        {
+            return ShotgunPlayer;
+        }
+        if (weaponName.Equals("Turret 6"))
+        {
+            return SniperPlayer;
+        }
+        return null;
+    }
+
     public ArrayList getAllAvaliableWeapons()
     {
         return _avaliableWeapons;
+    }
+
+    public void selectTurrets(string t1, string t2, string t3)
+    {
+        selectedTurret1 = t1;
+        selectedTurret2 = t2;
+        selectedTurret3 = t3;
+    }
+
+    public void InstantiateTurrets()
+    {
+        turret1Ref = turret1;
+        turret2Ref = turret2;
+        turret3Ref = turret3;
+        turret6Ref = turret6;
+
+        Vector3 topTurret = new Vector3(-355, 140, -40);
+        Vector3 centerTurret = new Vector3(-355, 0, -40);
+        Vector3 bottomTurret = new Vector3(-355, -140, -40);
+
+        var panel = GameObject.Find("MainGamePanel");
+        if (panel != null) 
+        {
+            GameObject a = Instantiate(turret1Ref, topTurret, Quaternion.identity);
+            a.transform.SetParent(panel.transform, false);
+
+            GameObject b = Instantiate(turret2Ref, centerTurret, Quaternion.identity);
+            b.transform.SetParent(panel.transform, false);
+
+            GameObject c = Instantiate(turret3Ref, bottomTurret, Quaternion.identity);
+            c.transform.SetParent(panel.transform, false);
+        }
+
+    }
+
+    public void DestroyTurrets()
+    {
+        Destroy(GameObject.FindWithTag("Turret1"));
+        Destroy(GameObject.FindWithTag("Turret2"));
+        Destroy(GameObject.FindWithTag("Turret3"));
+        Destroy(GameObject.FindWithTag("Turret6"));
     }
 
 }
