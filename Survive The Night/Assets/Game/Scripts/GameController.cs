@@ -2,6 +2,7 @@
 using Assets.HeroEditor.Common.CharacterScripts;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -95,7 +96,7 @@ public class GameController : MonoBehaviour
 
     private string _primaryWeapon;
     private string _secondaryWeapon;
-
+    private Dictionary<string, int> avaliableTurrets = new Dictionary<string, int>();
 
     private Character myCharacter;
 
@@ -162,6 +163,11 @@ public class GameController : MonoBehaviour
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
         waveText.text = "Night "+_waveCount.ToString();
+
+        avaliableTurrets.Add("Turret 1", 0);
+        avaliableTurrets.Add("Turret 2", 0);
+        avaliableTurrets.Add("Turret 3", 0);
+        avaliableTurrets.Add("Turret 6", 0);
 
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
@@ -517,6 +523,21 @@ public class GameController : MonoBehaviour
             return SniperPlayer;
         }
         return null;
+    }
+
+    public Dictionary<string,int> getTurrets()
+    {
+        return avaliableTurrets;
+    }
+
+    public void addTurret(string turret)
+    {
+        if(avaliableTurrets.ContainsKey(turret))
+        {
+            int oldValue = avaliableTurrets[turret];
+            avaliableTurrets[turret] = oldValue + 1;
+            Debug.Log(turret + " : " + avaliableTurrets[turret]);
+        }
     }
 
     public ArrayList getAllAvaliableWeapons()

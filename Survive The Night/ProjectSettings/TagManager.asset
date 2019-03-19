@@ -53,6 +53,7 @@ TagManager:
   - Turret3
   - Turret6
   - MainGamePanel
+  - Turret6Button
   layers:
   - Default
   - TransparentFX

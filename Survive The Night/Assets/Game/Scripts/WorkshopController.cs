@@ -11,6 +11,18 @@ public class WorkshopController : MonoBehaviour
     public GameObject _workshopBackButtonObject;
     public Button _workshopBackButton;
 
+    public GameObject _buildTurret1Object;
+    public Button _buildTurret1Button;
+
+    public GameObject _buildTurret2Object;
+    public Button _buildTurret2Button;
+
+    public GameObject _buildTurret3Object;
+    public Button _buildTurret3Button;
+
+    public GameObject _buildTurret6Object;
+    public Button _buildTurret6Button;
+
     private GameObject _gameControllerObject;
     private GameController _gameController;
 
@@ -25,6 +37,8 @@ public class WorkshopController : MonoBehaviour
     public GameObject turret6Ref;
 
     private ArrayList _avaliableWeapons = new ArrayList();
+
+    private Dictionary<string, int> avaliableTurrets = new Dictionary<string, int>();
 
     private string _primaryWeapon;
     private string _secondaryWeapon;
@@ -45,10 +59,26 @@ public class WorkshopController : MonoBehaviour
     private void Start()
     {
         _gameControllerObject = GameObject.FindWithTag("GameController");
-        _workshopBackButtonObject = GameObject.FindWithTag("WorkshopBackButton");
 
+        _workshopBackButtonObject = GameObject.FindWithTag("WorkshopBackButton");
         _workshopBackButton = _workshopBackButtonObject.GetComponent<Button>();
         _workshopBackButton.onClick.AddListener(WorkshopBackButtonClicked);
+
+        _buildTurret1Object = GameObject.FindWithTag("Turret1Button");
+        _buildTurret1Button = _buildTurret1Object.GetComponent<Button>();
+        _buildTurret1Button.onClick.AddListener(BuildTurret1ButtonClicked);
+
+        _buildTurret2Object = GameObject.FindWithTag("Turret2Button");
+        _buildTurret2Button = _buildTurret2Object.GetComponent<Button>();
+        _buildTurret2Button.onClick.AddListener(BuildTurret2ButtonClicked);
+
+        _buildTurret3Object = GameObject.FindWithTag("Turret3Button");
+        _buildTurret3Button = _buildTurret3Object.GetComponent<Button>();
+        _buildTurret3Button.onClick.AddListener(BuildTurret3ButtonClicked);
+
+        _buildTurret6Object = GameObject.FindWithTag("Turret6Button");
+        _buildTurret6Button = _buildTurret6Object.GetComponent<Button>();
+        _buildTurret6Button.onClick.AddListener(BuildTurret6ButtonClicked);
 
         if (_gameControllerObject != null)
         {
@@ -61,6 +91,35 @@ public class WorkshopController : MonoBehaviour
         workshopCanvas = workshopObject.GetComponent<Canvas>();
     }
 
+    private void BuildTurret6ButtonClicked()
+    {
+        _gameController.addTurret("Turret 6");
+        Debug.Log("turret 6 clicked");
+    }
+
+    private void BuildTurret3ButtonClicked()
+    {
+        _gameController.addTurret("Turret 3");
+        Debug.Log("turret 3 clicked");
+    }
+
+    private void BuildTurret2ButtonClicked()
+    {
+        _gameController.addTurret("Turret 2");
+        Debug.Log("turret 2 clicked");
+    }
+
+    private void BuildTurret1ButtonClicked()
+    {
+        _gameController.addTurret("Turret 1");
+        Debug.Log("turret 1 clicked");
+    }
+
+    private void getTurrets()
+    {
+        avaliableTurrets = _gameController.getTurrets();
+    }
+
     public void InstantiateTurrets()
     {
         turret1Ref = turret1;
@@ -68,10 +127,10 @@ public class WorkshopController : MonoBehaviour
         turret3Ref = turret3;
         turret6Ref = turret6;
 
-        Vector3 turret1Vector = new Vector3(-260, 80, -4647);
-        Vector3 turret2Vector = new Vector3(-260, -180, -4647);
-        Vector3 turret3Vector = new Vector3(-260, -90, -4647);
-        Vector3 turret6Vector = new Vector3(-260, 0, -4647);
+        Vector3 turret1Vector = new Vector3(-260, 80, -400);
+        Vector3 turret2Vector = new Vector3(-260, -180, -400);
+        Vector3 turret3Vector = new Vector3(-260, -90, -400);
+        Vector3 turret6Vector = new Vector3(-260, 0, -400);
 
         var panel = GameObject.Find("WorkshopPanel");
         if (panel != null) 
