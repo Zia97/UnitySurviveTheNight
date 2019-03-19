@@ -55,6 +55,7 @@ public class WorkshopController : MonoBehaviour
     public Canvas summaryCanvas;
 
     public Text avaliableMaterialsText;
+    public Text workshopText;
 
     private void Start()
     {
@@ -89,35 +90,96 @@ public class WorkshopController : MonoBehaviour
         workshopObject = GameObject.FindWithTag("WorkshopCanvas");
         workshopObject.SetActive(true);
         workshopCanvas = workshopObject.GetComponent<Canvas>();
+
+        updateDropdownTurretList();
     }
+
 
     private void BuildTurret6ButtonClicked()
     {
-        _gameController.addTurret("Turret 6");
-        Debug.Log("turret 6 clicked");
+        if(avaliableMaterials>=5000)
+        {
+            avaliableMaterials = avaliableMaterials - 5000;
+            _gameController.updateBuildingMaterials(avaliableMaterials);
+            _gameController.addTurret("Turret 6");
+            workshopText.text = "Super turret built!";
+            workshopText.color = Color.green;
+            updateDropdownTurretList();
+        }
+        else
+        {
+            workshopText.text = "Not enough materials!";
+            workshopText.color = Color.red;
+        }
+        
     }
 
     private void BuildTurret3ButtonClicked()
     {
-        _gameController.addTurret("Turret 3");
-        Debug.Log("turret 3 clicked");
+        if (avaliableMaterials >= 3500)
+        {
+            avaliableMaterials = avaliableMaterials - 3500;
+            _gameController.updateBuildingMaterials(avaliableMaterials);
+            _gameController.addTurret("Turret 3");
+            workshopText.text = "Heavy turret built!";
+            workshopText.color = Color.green;
+            updateDropdownTurretList();
+        }
+        else
+        {
+            workshopText.text = "Not enough materials!";
+            workshopText.color = Color.red;
+        }
+      
     }
 
     private void BuildTurret2ButtonClicked()
     {
-        _gameController.addTurret("Turret 2");
-        Debug.Log("turret 2 clicked");
+        if (avaliableMaterials >= 2000)
+        {
+            avaliableMaterials = avaliableMaterials - 2000;
+            _gameController.updateBuildingMaterials(avaliableMaterials);
+            _gameController.addTurret("Turret 2");
+            workshopText.text = "Medium turret built!";
+            workshopText.color = Color.green;
+            updateDropdownTurretList();
+        }
+        else
+        {
+            workshopText.text = "Not enough materials!";
+            workshopText.color = Color.red;
+        }
+        
     }
 
     private void BuildTurret1ButtonClicked()
     {
-        _gameController.addTurret("Turret 1");
-        Debug.Log("turret 1 clicked");
+        if (avaliableMaterials >= 1000)
+        {
+            avaliableMaterials = avaliableMaterials - 1000;
+            _gameController.updateBuildingMaterials(avaliableMaterials);
+            _gameController.addTurret("Turret 1");
+            workshopText.text = "Basic turret built!";
+            workshopText.color = Color.green;
+            updateDropdownTurretList();
+        }
+        else
+        {
+            workshopText.text = "Not enough materials!";
+            workshopText.color = Color.red;
+        }
+ 
     }
 
     private void getTurrets()
     {
         avaliableTurrets = _gameController.getTurrets();
+    }
+
+    IEnumerator clearTextDelay()
+    {
+        yield return new WaitForSecondsRealtime(5);
+        workshopText.text = "";
     }
 
     public void InstantiateTurrets()
@@ -169,6 +231,7 @@ public class WorkshopController : MonoBehaviour
         workshopCanvas.enabled = false;
         summaryCanvas.enabled = true;        
     }
+
     public void addWeaponToAvaliableWeapons(string weapon)
     {
         _avaliableWeapons.Add(weapon);
@@ -197,15 +260,28 @@ public class WorkshopController : MonoBehaviour
 
 
 
-    //public void updateDropdownWeaponList()
-    //{
-    //    _avaliableWeapons = _gameController.getAllAvaliableWeapons();
-    //    List<string> results = _avaliableWeapons.Cast<string>().Distinct().ToList();
-    //    primaryWeaponDropdown.ClearOptions();
-    //    secondaryWeaponDropdown.ClearOptions();
-    //    primaryWeaponDropdown.AddOptions(results);
-    //    secondaryWeaponDropdown.AddOptions(results);
-    //}
+    public void updateDropdownTurretList()
+    {
+        turret1Dropdown.ClearOptions();
+        turret2Dropdown.ClearOptions();
+        turret3Dropdown.ClearOptions();
+
+        avaliableTurrets = _gameController.getTurrets();
+
+        List<string> results = new List<string>();
+
+        foreach (KeyValuePair<string, int> entry in avaliableTurrets)
+        {
+            if(entry.Value>0)
+            {
+                results.Add(entry.Key);
+            }
+        }
+   
+        turret1Dropdown.AddOptions(results);
+        turret2Dropdown.AddOptions(results);
+        turret3Dropdown.AddOptions(results);
+    }
 
 }
 

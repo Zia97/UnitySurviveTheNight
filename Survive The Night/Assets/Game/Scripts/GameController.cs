@@ -536,7 +536,6 @@ public class GameController : MonoBehaviour
         {
             int oldValue = avaliableTurrets[turret];
             avaliableTurrets[turret] = oldValue + 1;
-            Debug.Log(turret + " : " + avaliableTurrets[turret]);
         }
     }
 
