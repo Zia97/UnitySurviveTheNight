@@ -169,6 +169,8 @@ public class WorkshopController : MonoBehaviour
                     if(option.text.Equals("Basic Turret"))
                     {
                         turret3Dropdown.value = 0;
+                        workshopText.text = "Build more basic turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
@@ -190,6 +192,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Medium Turret"))
                     {
                         turret3Dropdown.value = 0;
+                        workshopText.text = "Build more medium turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
@@ -211,6 +215,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Heavy Turret"))
                     {
                         turret3Dropdown.value = 0;
+                        workshopText.text = "Build more heavy turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
@@ -232,6 +238,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Super Turret"))
                     {
                         turret3Dropdown.value = 0;
+                        workshopText.text = "Build more super turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
@@ -297,6 +305,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Basic Turret"))
                     {
                         turret2Dropdown.value = 0;
+                        workshopText.text = "Build more basic turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
                
@@ -318,6 +328,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Medium Turret"))
                     {
                         turret2Dropdown.value = 0;
+                        workshopText.text = "Build more medium turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
 
@@ -339,6 +351,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Heavy Turret"))
                     {
                         turret2Dropdown.value = 0;
+                        workshopText.text = "Build more heavy turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
 
@@ -360,6 +374,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Super Turret"))
                     {
                         turret2Dropdown.value = 0;
+                        workshopText.text = "Build more super turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
 
@@ -424,6 +440,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Basic Turret"))
                     {
                         turret1Dropdown.value = 0;
+                        workshopText.text = "Build more basic turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
@@ -445,6 +463,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Medium Turret"))
                     {
                         turret1Dropdown.value = 0;
+                        workshopText.text = "Build more medium turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
@@ -466,6 +486,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Heavy Turret"))
                     {
                         turret1Dropdown.value = 0;
+                        workshopText.text = "Build more heavy turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
@@ -487,6 +509,8 @@ public class WorkshopController : MonoBehaviour
                     if (option.text.Equals("Super Turret"))
                     {
                         turret1Dropdown.value = 0;
+                        workshopText.text = "Build more super turrets!";
+                        workshopText.color = Color.red;
                     }
                 }
             }
