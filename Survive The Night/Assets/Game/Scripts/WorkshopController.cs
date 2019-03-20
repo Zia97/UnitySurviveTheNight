@@ -249,6 +249,7 @@ public class WorkshopController : MonoBehaviour
             }
 
         }
+        _gameController.selectTurrets(turret1Dropdown.options[turret1Dropdown.value].text, turret2Dropdown.options[turret2Dropdown.value].text, turret3Dropdown.options[turret3Dropdown.value].text);
     }
 
     private void turret2DropdownValueChanged(object turret2Value)
@@ -385,6 +386,7 @@ public class WorkshopController : MonoBehaviour
                 turret6Count++;
             }
         }
+        _gameController.selectTurrets(turret1Dropdown.options[turret1Dropdown.value].text, turret2Dropdown.options[turret2Dropdown.value].text, turret3Dropdown.options[turret3Dropdown.value].text);
     }
 
     private void turret1DropdownValueChanged(object turret1Value)
@@ -520,6 +522,7 @@ public class WorkshopController : MonoBehaviour
             }
 
         }
+        _gameController.selectTurrets(turret1Dropdown.options[turret1Dropdown.value].text, turret2Dropdown.options[turret2Dropdown.value].text, turret3Dropdown.options[turret3Dropdown.value].text);
     }
 
     private void BuildTurret6ButtonClicked()

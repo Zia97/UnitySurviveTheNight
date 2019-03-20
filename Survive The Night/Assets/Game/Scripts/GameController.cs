@@ -93,6 +93,7 @@ public class GameController : MonoBehaviour
     private Button _ReloadWeaponButton;
 
     private ArrayList _avaliableWeapons = new ArrayList();
+    private ArrayList _turretList = new ArrayList();
 
     private string _primaryWeapon;
     private string _secondaryWeapon;
@@ -115,6 +116,10 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        _turretList.Add(selectedTurret1);
+        _turretList.Add(selectedTurret2);
+        _turretList.Add(selectedTurret3);
+
         defaultPos.x = -8;
         defaultPos.y = -0;
         defaultPos.z = 1;
@@ -171,7 +176,6 @@ public class GameController : MonoBehaviour
 
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
-        InstantiateTurrets();
         StartCoroutine(SpawnWaves());
         var temp = GameObject.FindWithTag("Player");
         
@@ -504,23 +508,27 @@ public class GameController : MonoBehaviour
     }
 
 
-    public GameObject turretToPrefab(string weaponName)
+    public GameObject turretToPrefab(string selectedTurret)
     {
-        if (weaponName.Equals("Turret 1"))
+        if(selectedTurret==null)
         {
-            return BasicPistolPlayer;
+            return null;
         }
-        if (weaponName.Equals("Turret 2"))
+        if (selectedTurret.Equals("Basic Turret"))
         {
-            return BasicMP5Player;
+            return turret1;
         }
-        if (weaponName.Equals("Turret 3"))
+        if (selectedTurret.Equals("Medium Turret"))
         {
-            return ShotgunPlayer;
+            return turret2;
         }
-        if (weaponName.Equals("Turret 6"))
+        if (selectedTurret.Equals("Heavy Turret"))
         {
-            return SniperPlayer;
+            return turret3;
+        }
+        if (selectedTurret.Equals("Super Turret"))
+        {
+            return turret6;
         }
         return null;
     }
@@ -553,26 +561,53 @@ public class GameController : MonoBehaviour
 
     public void InstantiateTurrets()
     {
-        turret1Ref = turret1;
-        turret2Ref = turret2;
-        turret3Ref = turret3;
-        turret6Ref = turret6;
+        //turret1Ref = turret1;
+        //turret2Ref = turret2;
+        //turret3Ref = turret3;
+        //turret6Ref = turret6;
 
-        Vector3 topTurret = new Vector3(-355, 140, -40);
-        Vector3 centerTurret = new Vector3(-355, 0, -40);
-        Vector3 bottomTurret = new Vector3(-355, -140, -40);
+        var topTurret = turretToPrefab(selectedTurret1);
+        var centreTurret = turretToPrefab(selectedTurret2);
+        var bottomTurret = turretToPrefab(selectedTurret3);
+
+        if(topTurret == null)
+        {
+            Debug.Log("Top turret null");
+        }
+        if (centreTurret == null)
+        {
+            Debug.Log("centre turret null");
+        }
+        if (bottomTurret == null)
+        {
+            Debug.Log("bottom turret null");
+        }
+
+        Vector3 topTurretLoc = new Vector3(-355, 140, -40);
+        Vector3 centerTurretLoc = new Vector3(-355, 0, -40);
+        Vector3 bottomTurretLoc = new Vector3(-355, -140, -40);
 
         var panel = GameObject.Find("MainGamePanel");
         if (panel != null) 
         {
-            GameObject a = Instantiate(turret1Ref, topTurret, Quaternion.identity);
-            a.transform.SetParent(panel.transform, false);
+            if (topTurret != null)
+            {
+                GameObject a = Instantiate(topTurret, topTurretLoc, Quaternion.identity);
+                a.transform.SetParent(panel.transform, false);
+            }
 
-            GameObject b = Instantiate(turret2Ref, centerTurret, Quaternion.identity);
-            b.transform.SetParent(panel.transform, false);
+            if (centreTurret != null)
+            {
+                GameObject b = Instantiate(centreTurret, centerTurretLoc, Quaternion.identity);
+                b.transform.SetParent(panel.transform, false);
+            }
 
-            GameObject c = Instantiate(turret3Ref, bottomTurret, Quaternion.identity);
-            c.transform.SetParent(panel.transform, false);
+            if(bottomTurret != null)
+            {
+                GameObject c = Instantiate(bottomTurret, bottomTurretLoc, Quaternion.identity);
+                c.transform.SetParent(panel.transform, false);
+            }
+           
         }
 
     }
