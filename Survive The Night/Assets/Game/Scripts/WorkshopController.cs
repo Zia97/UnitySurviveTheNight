@@ -117,6 +117,44 @@ public class WorkshopController : MonoBehaviour
 
     private void turret3DropdownValueChanged(object turret3Value)
     {
+        int turret1temp = 0;
+        int turret2temp = 0;
+        int turret3temp = 0;
+        int turret6temp = 0;
+
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Basic Turret"))
+        {
+            turret1temp++;
+        }
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Medium Turret"))
+        {
+            turret2temp++;
+        }
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            turret3temp++;
+        }
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Super Turret"))
+        {
+            turret6temp++;
+        }
+
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Basic Turret"))
+        {
+            turret1temp++;
+        }
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Medium Turret"))
+        {
+            turret2temp++;
+        }
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            turret3temp++;
+        }
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Super Turret"))
+        {
+            turret6temp++;
+        }
         avaliableTurrets = _gameController.getTurrets();
 
         if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Basic Turret"))
@@ -124,7 +162,7 @@ public class WorkshopController : MonoBehaviour
             var tempOptions = turret3Dropdown.options;
 
             Debug.Log(avaliableTurrets["Turret 1"] + "    count = " + turret1Count);
-            if (avaliableTurrets["Turret 1"] <= turret1Count)
+            if (avaliableTurrets["Turret 1"] <= turret1temp)
             {
                 foreach(var option in tempOptions)
                 {
@@ -145,7 +183,7 @@ public class WorkshopController : MonoBehaviour
         {
             var tempOptions = turret3Dropdown.options;
 
-            if (avaliableTurrets["Turret 2"] <= turret2Count)
+            if (avaliableTurrets["Turret 2"] <= turret2temp)
             {
                 foreach (var option in tempOptions)
                 {
@@ -166,7 +204,7 @@ public class WorkshopController : MonoBehaviour
         {
             var tempOptions = turret3Dropdown.options;
 
-            if (avaliableTurrets["Turret 3"] <= turret3Count)
+            if (avaliableTurrets["Turret 3"] <= turret3temp)
             {
                 foreach (var option in tempOptions)
                 {
@@ -187,7 +225,7 @@ public class WorkshopController : MonoBehaviour
         {
             var tempOptions = turret3Dropdown.options;
 
-            if (avaliableTurrets["Turret 6"] <= turret3Count)
+            if (avaliableTurrets["Turret 6"] <= turret6temp)
             {
                 foreach (var option in tempOptions)
                 {
@@ -207,11 +245,50 @@ public class WorkshopController : MonoBehaviour
 
     private void turret2DropdownValueChanged(object turret2Value)
     {
+        int turret1temp = 0;
+        int turret2temp = 0;
+        int turret3temp = 0;
+        int turret6temp = 0;
+
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Basic Turret"))
+        {
+            turret1temp++;
+        }
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Medium Turret"))
+        {
+            turret2temp++;
+        }
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            turret3temp++;
+        }
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Super Turret"))
+        {
+            turret6temp++;
+        }
+
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Basic Turret"))
+        {
+            turret1temp++;
+        }
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Medium Turret"))
+        {
+            turret2temp++;
+        }
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            turret3temp++;
+        }
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Super Turret"))
+        {
+            turret6temp++;
+        }
+
         avaliableTurrets = _gameController.getTurrets();
         if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Basic Turret"))
         {
             Debug.Log(avaliableTurrets["Turret 1"] + "    count = " + turret1Count);
-            if (avaliableTurrets["Turret 1"] <= turret1Count)
+            if (avaliableTurrets["Turret 1"] <= turret1temp)
             {
                 var tempOptions = turret2Dropdown.options;
 
@@ -232,7 +309,7 @@ public class WorkshopController : MonoBehaviour
 
         if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Medium Turret"))
         {
-            if (avaliableTurrets["Turret 2"] <= turret2Count)
+            if (avaliableTurrets["Turret 2"] <= turret2temp)
             {
                 var tempOptions = turret2Dropdown.options;
 
@@ -253,7 +330,7 @@ public class WorkshopController : MonoBehaviour
 
         if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Heavy Turret"))
         {
-            if (avaliableTurrets["Turret 3"] <= turret3Count)
+            if (avaliableTurrets["Turret 3"] <= turret3temp)
             {
                 var tempOptions = turret2Dropdown.options;
 
@@ -274,7 +351,7 @@ public class WorkshopController : MonoBehaviour
 
         if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Super Turret"))
         {
-            if (avaliableTurrets["Turret 6"] <= turret6Count)
+            if (avaliableTurrets["Turret 6"] <= turret6temp)
             {
                 var tempOptions = turret2Dropdown.options;
 
@@ -296,12 +373,51 @@ public class WorkshopController : MonoBehaviour
 
     private void turret1DropdownValueChanged(object turret1Value)
     {
+
+        int turret1temp = 0;
+        int turret2temp = 0;
+        int turret3temp = 0;
+        int turret6temp = 0;
+
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Basic Turret"))
+        {
+            turret1temp++;
+        }
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Medium Turret"))
+        {
+            turret2temp++;
+        }
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            turret3temp++;
+        }
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Super Turret"))
+        {
+            turret6temp++;
+        }
+
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Basic Turret"))
+        {
+            turret1temp++;
+        }
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Medium Turret"))
+        {
+            turret2temp++;
+        }
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            turret3temp++;
+        }
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Super Turret"))
+        {
+            turret6temp++;
+        }
         avaliableTurrets = _gameController.getTurrets();
         if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Basic Turret"))
         {
             var tempOptions = turret1Dropdown.options;
            
-            if (avaliableTurrets["Turret 1"] <= turret1Count)
+            if (avaliableTurrets["Turret 1"] <= turret1temp)
             {
                 foreach (var option in tempOptions)
                 {
@@ -322,7 +438,7 @@ public class WorkshopController : MonoBehaviour
         {
             var tempOptions = turret1Dropdown.options;
 
-            if (avaliableTurrets["Turret 2"] <= turret2Count)
+            if (avaliableTurrets["Turret 2"] <= turret2temp)
             {
                 foreach (var option in tempOptions)
                 {
@@ -343,7 +459,7 @@ public class WorkshopController : MonoBehaviour
         {
             var tempOptions = turret1Dropdown.options;
 
-            if (avaliableTurrets["Turret 3"] <= turret3Count)
+            if (avaliableTurrets["Turret 3"] <= turret3temp)
             {
                 foreach (var option in tempOptions)
                 {
@@ -364,7 +480,7 @@ public class WorkshopController : MonoBehaviour
         {
             var tempOptions = turret1Dropdown.options;
 
-            if (avaliableTurrets["Turret 6"] <= turret6Count)
+            if (avaliableTurrets["Turret 6"] <= turret6temp)
             {
                 foreach (var option in tempOptions)
                 {
