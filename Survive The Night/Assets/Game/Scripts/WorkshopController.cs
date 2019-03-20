@@ -117,17 +117,269 @@ public class WorkshopController : MonoBehaviour
 
     private void turret3DropdownValueChanged(object turret3Value)
     {
-        Debug.Log("Turret 3 dropdown changed "+turret3Dropdown.options[turret3Dropdown.value].text);
+        avaliableTurrets = _gameController.getTurrets();
+
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Basic Turret"))
+        {
+            var tempOptions = turret3Dropdown.options;
+
+            Debug.Log(avaliableTurrets["Turret 1"] + "    count = " + turret1Count);
+            if (avaliableTurrets["Turret 1"] <= turret1Count)
+            {
+                foreach(var option in tempOptions)
+                {
+                    if(option.text.Equals("Basic Turret"))
+                    {
+                        turret3Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret1Count++;
+            }
+            
+        }
+
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Medium Turret"))
+        {
+            var tempOptions = turret3Dropdown.options;
+
+            if (avaliableTurrets["Turret 2"] <= turret2Count)
+            {
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Medium Turret"))
+                    {
+                        turret3Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret2Count++;
+            }
+
+        }
+
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            var tempOptions = turret3Dropdown.options;
+
+            if (avaliableTurrets["Turret 3"] <= turret3Count)
+            {
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Heavy Turret"))
+                    {
+                        turret3Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret3Count++;
+            }
+
+        }
+
+        if (turret3Dropdown.options[turret3Dropdown.value].text.Equals("Super Turret"))
+        {
+            var tempOptions = turret3Dropdown.options;
+
+            if (avaliableTurrets["Turret 6"] <= turret3Count)
+            {
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Super Turret"))
+                    {
+                        turret3Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret6Count++;
+            }
+
+        }
     }
 
     private void turret2DropdownValueChanged(object turret2Value)
     {
-        Debug.Log("Turret 2 dropdown changed");
+        avaliableTurrets = _gameController.getTurrets();
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Basic Turret"))
+        {
+            Debug.Log(avaliableTurrets["Turret 1"] + "    count = " + turret1Count);
+            if (avaliableTurrets["Turret 1"] <= turret1Count)
+            {
+                var tempOptions = turret2Dropdown.options;
+
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Basic Turret"))
+                    {
+                        turret2Dropdown.value = 0;
+                    }
+                }
+               
+            }
+            else
+            {
+                turret1Count++;
+            }
+        }
+
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Medium Turret"))
+        {
+            if (avaliableTurrets["Turret 2"] <= turret2Count)
+            {
+                var tempOptions = turret2Dropdown.options;
+
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Medium Turret"))
+                    {
+                        turret2Dropdown.value = 0;
+                    }
+                }
+
+            }
+            else
+            {
+                turret2Count++;
+            }
+        }
+
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            if (avaliableTurrets["Turret 3"] <= turret3Count)
+            {
+                var tempOptions = turret2Dropdown.options;
+
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Heavy Turret"))
+                    {
+                        turret2Dropdown.value = 0;
+                    }
+                }
+
+            }
+            else
+            {
+                turret3Count++;
+            }
+        }
+
+        if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Super Turret"))
+        {
+            if (avaliableTurrets["Turret 6"] <= turret6Count)
+            {
+                var tempOptions = turret2Dropdown.options;
+
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Super Turret"))
+                    {
+                        turret2Dropdown.value = 0;
+                    }
+                }
+
+            }
+            else
+            {
+                turret6Count++;
+            }
+        }
     }
 
     private void turret1DropdownValueChanged(object turret1Value)
     {
-        Debug.Log("Turret 1 dropdown changed");
+        avaliableTurrets = _gameController.getTurrets();
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Basic Turret"))
+        {
+            var tempOptions = turret1Dropdown.options;
+           
+            if (avaliableTurrets["Turret 1"] <= turret1Count)
+            {
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Basic Turret"))
+                    {
+                        turret1Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret1Count++;
+            }
+           
+        }
+
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Medium Turret"))
+        {
+            var tempOptions = turret1Dropdown.options;
+
+            if (avaliableTurrets["Turret 2"] <= turret2Count)
+            {
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Medium Turret"))
+                    {
+                        turret1Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret2Count++;
+            }
+
+        }
+
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Heavy Turret"))
+        {
+            var tempOptions = turret1Dropdown.options;
+
+            if (avaliableTurrets["Turret 3"] <= turret3Count)
+            {
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Heavy Turret"))
+                    {
+                        turret1Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret3Count++;
+            }
+
+        }
+
+        if (turret1Dropdown.options[turret1Dropdown.value].text.Equals("Super Turret"))
+        {
+            var tempOptions = turret1Dropdown.options;
+
+            if (avaliableTurrets["Turret 6"] <= turret6Count)
+            {
+                foreach (var option in tempOptions)
+                {
+                    if (option.text.Equals("Super Turret"))
+                    {
+                        turret1Dropdown.value = 0;
+                    }
+                }
+            }
+            else
+            {
+                turret6Count++;
+            }
+
+        }
     }
 
     private void BuildTurret6ButtonClicked()
