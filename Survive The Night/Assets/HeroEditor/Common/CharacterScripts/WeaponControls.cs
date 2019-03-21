@@ -15,6 +15,8 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         public KeyCode FireButton;
         public KeyCode ReloadButton;
 	    public bool FixHorizontal;
+        public bool isNpc;
+        public string location;
 
         private bool _locked;
         private bool _areControlsEnabled = true;
@@ -88,7 +90,40 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                     return;
             }
 
-            RotateArm(arm, weapon, FixHorizontal ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), -40, 40);
+            if(isNpc)
+            {
+                Vector3 newVector = new Vector3(0, 0, 0);
+
+                if (location.Equals("Top"))
+                {
+                    newVector = new Vector3(6.4f, 3.3f, -10);
+                }
+                else if(location.Equals("Mid"))
+                {
+                    newVector = new Vector3(1f, 1.1f, -10);
+                }
+                else if (location.Equals("Bot"))
+                {
+                    newVector = new Vector3(0.5f, -2.5f, -10);
+                }
+
+                RotateArm(arm, weapon, newVector, -40, 40);
+
+            }
+            else
+            {
+                RotateArm(arm, weapon, FixHorizontal ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition),-40, 40);
+            }            
+        }
+
+        public void setLocation(String loc)
+        {
+            location = loc;
+        }
+
+        public void isNPC()
+        {
+            isNpc = true;
         }
 
         /// <summary>

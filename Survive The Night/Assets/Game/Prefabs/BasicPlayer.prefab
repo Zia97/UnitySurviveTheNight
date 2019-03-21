@@ -14852,6 +14852,8 @@ MonoBehaviour:
   FireButton: 323
   ReloadButton: 114
   FixHorizontal: 0
+  isNpc: 0
+  location: 
 --- !u!50 &5676334091475545320
 Rigidbody2D:
   serializedVersion: 4

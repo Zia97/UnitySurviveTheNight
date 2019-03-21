@@ -20,6 +20,10 @@ public class GameController : MonoBehaviour
     public GameObject ShotgunPlayer;
     public GameObject SniperPlayer;
 
+    public GameObject test1;
+    public GameObject test2;
+    public GameObject test3;
+
     public GameObject turret1;
     public GameObject turret2;
     public GameObject turret3;
@@ -173,7 +177,10 @@ public class GameController : MonoBehaviour
         avaliableTurrets.Add("Turret 2", 0);
         avaliableTurrets.Add("Turret 3", 0);
         avaliableTurrets.Add("Turret 6", 0);
+
         InstantiateTurrets();
+        InstantiateNPCS();
+
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
         StartCoroutine(SpawnWaves());
@@ -550,6 +557,26 @@ public class GameController : MonoBehaviour
     public ArrayList getAllAvaliableWeapons()
     {
         return _avaliableWeapons;
+    }
+
+    public void InstantiateNPCS()
+    {
+        Vector3 pos1 = new Vector3(-6.4f, 2.4f, 0);
+        Vector3 pos2 = new Vector3(-6.4f, 0.5f, 0);
+        Vector3 pos3 = new Vector3(-6.4f, -3f, 0);
+
+        Instantiate(test1, pos1, Quaternion.identity);
+        Instantiate(test2, pos2, Quaternion.identity);
+        Instantiate(test3, pos3, Quaternion.identity);
+
+        test1.GetComponent<WeaponControls>().isNPC();
+        test1.GetComponent<WeaponControls>().setLocation("Top");
+
+        test2.GetComponent<WeaponControls>().isNPC();
+        test2.GetComponent<WeaponControls>().setLocation("Mid");
+
+        test3.GetComponent<WeaponControls>().isNPC();
+        test3.GetComponent<WeaponControls>().setLocation("Bot");
     }
 
     public void selectTurrets(string t1, string t2, string t3)

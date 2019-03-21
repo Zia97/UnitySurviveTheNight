@@ -1474,6 +1474,8 @@ MonoBehaviour:
   FireButton: 323
   ReloadButton: 114
   FixHorizontal: 0
+  isNpc: 0
+  location: 
 --- !u!61 &8834518906111659957
 BoxCollider2D:
   m_ObjectHideFlags: 0

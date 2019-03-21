@@ -1731,11 +1731,14 @@ MonoBehaviour:
     type: 3}
   SniperPlayer: {fileID: 1168892492390734, guid: 82425686b4dd455429177d58936696c5,
     type: 3}
+  test1: {fileID: 1168892492390734, guid: 798cd3f9f85a0ec409f8498b3d345fae, type: 3}
+  test2: {fileID: 1168892492390734, guid: 86ac907c40a2a364c977b9f81f8d0642, type: 3}
+  test3: {fileID: 1168892492390734, guid: e0b1731ab2296a145af3e713489db705, type: 3}
   turret1: {fileID: 145974, guid: d61b8af932fc5eb4fbf5caa18c7dd540, type: 3}
   turret2: {fileID: 169252, guid: 3dbddd9773b6a5b4280145fede5db178, type: 3}
   turret3: {fileID: 122802, guid: f88cb4ee5d1d53546aae5651035f8771, type: 3}
   turret6: {fileID: 170256, guid: 5a5e0ba07d5d79e48b6a1dc9a7aeb82d, type: 3}
-  spawnValues: {x: 13, y: 2.8, z: 0}
+  spawnValues: {x: 13, y: 3.5, z: 0}
   basicEnemyObject: {fileID: 0}
   mediumEnemyObject: {fileID: 0}
   hazardCount: 5
@@ -8662,6 +8665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BasicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676334091475545297, guid: 074f09c88310a0944b02a6b555d2e250,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5676334091475545302, guid: 074f09c88310a0944b02a6b555d2e250,
         type: 3}

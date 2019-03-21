@@ -529,7 +529,8 @@ public class WorkshopController : MonoBehaviour
     {
         if(avaliableMaterials>=1)
         {
-            //avaliableMaterials = avaliableMaterials - 5000;
+            //avaliableMaterials = avaliableMaterials - 7000;
+            avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 6");
             workshopText.text = "Super turret built!";
@@ -546,9 +547,10 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret3ButtonClicked()
     {
-        if (avaliableMaterials >= 1)
+        if (avaliableMaterials >= 5000)
         {
-            //avaliableMaterials = avaliableMaterials - 3500;
+            avaliableMaterials = avaliableMaterials - 5000;
+            avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 3");
             workshopText.text = "Heavy turret built!";
@@ -565,9 +567,10 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret2ButtonClicked()
     {
-        if (avaliableMaterials >= 1)
+        if (avaliableMaterials >= 3000)
         {
-            //avaliableMaterials = avaliableMaterials - 2000;
+            avaliableMaterials = avaliableMaterials - 3000;
+            avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 2");
             workshopText.text = "Medium turret built!";
@@ -584,9 +587,10 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret1ButtonClicked()
     {
-        if (avaliableMaterials >= 1)
+        if (avaliableMaterials >= 1500)
         {
-            //avaliableMaterials = avaliableMaterials - 1000;
+            avaliableMaterials = avaliableMaterials - 1500;
+            avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 1");
             workshopText.text = "Basic turret built!";
