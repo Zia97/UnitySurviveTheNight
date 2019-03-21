@@ -50,7 +50,10 @@ public class ExampleWeapon : MonoBehaviour
 
     void OnEnable()
     {
-        SetState(State.Firing);
+        if (state != State.Waiting)
+        {
+            SetState(State.Firing);
+        }
     }
 
     public virtual void SetState(State state)
@@ -90,7 +93,11 @@ public class ExampleWeapon : MonoBehaviour
     {
         yield return new WaitForSeconds(firingSpeed);
 
-        FireBullet();
+        if(state != State.Waiting)
+        {
+            FireBullet();
+        }
+        
 
         if(shotsFired != 0)//if we are not reloading 
             StartCoroutine(Fire());//continue to fire

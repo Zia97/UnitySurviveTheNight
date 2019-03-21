@@ -30,13 +30,13 @@ namespace TransitionalObjects
 #if StoreVersion
         public static Vector3 FixRotations(Vector3 eulerInput)
         {
-            if(eulerInput.x < 0)// || eulerInput.x > 180)
+            if(eulerInput.x < 0  || eulerInput.x > 180)
                 eulerInput.x = 360 + eulerInput.x;
 
-            if(eulerInput.y < 0)// || eulerInput.y > 180)
+            if(eulerInput.y < 0 || eulerInput.y > 180)
                 eulerInput.y = 360 + eulerInput.y;
 
-            if(eulerInput.z < 0)// || eulerInput.z > 180)
+            if(eulerInput.z < 0 || eulerInput.z > 180)
                 eulerInput.z = 360 + eulerInput.z;
 
             return eulerInput;

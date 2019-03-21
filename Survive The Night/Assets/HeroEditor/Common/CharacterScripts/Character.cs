@@ -19,7 +19,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         public Firearm Firearm;
         public BowShooting BowShooting;
 
-	    [Header("Service")]
+        [Header("Service")]
 		public LayerManager LayerManager;
 
 	    /// <summary>
@@ -96,10 +96,10 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             }
         }
 
-		/// <summary>
-		/// Set character's expression.
-		/// </summary>
-	    public void SetExpression(string expression)
+        /// <summary>
+        /// Set character's expression.
+        /// </summary>
+        public void SetExpression(string expression)
 		{
 			if (Expressions.Count < 3) throw new Exception("Character must have at least 3 basic expressions: Default, Angry and Dead.");
 			

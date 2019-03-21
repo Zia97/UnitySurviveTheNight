@@ -12,6 +12,7 @@ public class AnimatedExampleWeapon : ExampleWeapon
         switch(state)
         {
             case State.Firing:
+                Debug.Log("State is firing");
                 if(recoilAnimation != null)
                     recoilAnimation.TriggerTransition();
 
@@ -31,6 +32,9 @@ public class AnimatedExampleWeapon : ExampleWeapon
                 if(recoilAnimation != null)
                     recoilAnimation.Stop();
                 break;
+            case State.Waiting:
+                Debug.Log("State is waiitng");
+                break;
         }
     }
 
@@ -47,7 +51,37 @@ public class AnimatedExampleWeapon : ExampleWeapon
         if(lightsTransition != null)
             lightsTransition.Stop();
 
-        SetState(State.Firing);//will also fire a bullet
+        SetState(State.Firing); //will also fire a bullet
+    }
+
+    void FixedUpdate()
+    {
+        LayerMask mask = LayerMask.GetMask("Enemy");
+
+        Vector2 direction = new Vector2(7, 2);
+
+        var temp = transform.position;
+        temp.x = temp.x + 10;
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, transform.up, 300f, mask);
+        Debug.DrawRay(transform.position, transform.up, Color.green);
+
+        // If it hits something...
+
+        if (hitRight)
+        {
+            Debug.Log(hitRight.collider.gameObject.name);
+            if (state == State.Waiting)
+            {
+                SetState(State.Firing);
+            }
+        }
+        else
+        {
+            if (state != State.Waiting)
+            {
+                SetState(State.Waiting);
+            }
+        }
     }
 
     public override void FireBullet()

@@ -639,6 +639,11 @@ public class WorkshopController : MonoBehaviour
             GameObject d = Instantiate(turret6Ref, turret6Vector, Quaternion.identity);
             d.transform.SetParent(panel.transform, false);
 
+            turret1Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+            turret2Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+            turret3Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+            turret6Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+
         }
 
     }

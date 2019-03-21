@@ -173,7 +173,7 @@ public class GameController : MonoBehaviour
         avaliableTurrets.Add("Turret 2", 0);
         avaliableTurrets.Add("Turret 3", 0);
         avaliableTurrets.Add("Turret 6", 0);
-
+        InstantiateTurrets();
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
         StartCoroutine(SpawnWaves());
@@ -560,28 +560,10 @@ public class GameController : MonoBehaviour
     }
 
     public void InstantiateTurrets()
-    {
-        //turret1Ref = turret1;
-        //turret2Ref = turret2;
-        //turret3Ref = turret3;
-        //turret6Ref = turret6;
-
+    { 
         var topTurret = turretToPrefab(selectedTurret1);
         var centreTurret = turretToPrefab(selectedTurret2);
         var bottomTurret = turretToPrefab(selectedTurret3);
-
-        if(topTurret == null)
-        {
-            Debug.Log("Top turret null");
-        }
-        if (centreTurret == null)
-        {
-            Debug.Log("centre turret null");
-        }
-        if (bottomTurret == null)
-        {
-            Debug.Log("bottom turret null");
-        }
 
         Vector3 topTurretLoc = new Vector3(-355, 140, -40);
         Vector3 centerTurretLoc = new Vector3(-355, 0, -40);
@@ -594,18 +576,21 @@ public class GameController : MonoBehaviour
             {
                 GameObject a = Instantiate(topTurret, topTurretLoc, Quaternion.identity);
                 a.transform.SetParent(panel.transform, false);
+                topTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
 
             if (centreTurret != null)
             {
                 GameObject b = Instantiate(centreTurret, centerTurretLoc, Quaternion.identity);
                 b.transform.SetParent(panel.transform, false);
+                centreTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
 
             if(bottomTurret != null)
             {
                 GameObject c = Instantiate(bottomTurret, bottomTurretLoc, Quaternion.identity);
                 c.transform.SetParent(panel.transform, false);
+                bottomTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
            
         }

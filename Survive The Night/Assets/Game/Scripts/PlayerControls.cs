@@ -40,6 +40,8 @@ public class PlayerControls : MonoBehaviour {
 
     }
 
+   
+
     public void getCurrentWeapon()
     {
        Debug.Log(myCharacter.Firearm.Params.Name + "      349tuq349t");

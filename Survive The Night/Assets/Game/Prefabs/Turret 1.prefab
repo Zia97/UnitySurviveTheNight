@@ -149,7 +149,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 84da044fe11bf6f478ae205e0c3d3e04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a0d8bfb0530a594b86cb4e8591170be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   stayForever: 0
   copyTransitionInTime: 1
   parent: {fileID: 11409576}
-  state: 7
+  state: 1
   currentTime: 0
   delay: 0
   transitionInTime: 0.5
@@ -416,9 +416,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Example Turret Rotate
   mainDropDown:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 0.8586531
   transitionInDropDown:
     m_Target: 1
     speed: 2
@@ -570,9 +570,9 @@ MonoBehaviour:
     speed: 2
     m_Value: 0
   settingsGroup:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   renderersGroup:
     m_Target: 0
     speed: 2
@@ -746,7 +746,7 @@ MonoBehaviour:
   stayForever: 0
   copyTransitionInTime: 0
   parent: {fileID: 11459204}
-  state: 7
+  state: 5
   currentTime: 0
   delay: 0.1
   transitionInTime: 0.15
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123cd7e14b1f4aa4b8a5ddc5ea43e834, type: 3}
   m_Name: 
