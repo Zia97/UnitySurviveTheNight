@@ -36,7 +36,7 @@ public class WorkshopController : MonoBehaviour
     public GameObject turret3Ref;
     public GameObject turret6Ref;
 
-    private ArrayList _avaliableWeapons = new ArrayList();
+    private Dictionary<string, int> _avaliableWeapons = new Dictionary<string, int>();
 
     private Dictionary<string, int> avaliableTurrets = new Dictionary<string, int>();
 
@@ -667,11 +667,6 @@ public class WorkshopController : MonoBehaviour
         summaryCanvas.enabled = true;        
     }
 
-    public void addWeaponToAvaliableWeapons(string weapon)
-    {
-        _avaliableWeapons.Add(weapon);
-        _gameController.updateAllAvaliableWeapons(_avaliableWeapons);
-    }
 
     public void updateAvaliableMaterialsText()
     {

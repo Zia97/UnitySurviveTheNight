@@ -19,7 +19,7 @@ public class SummaryController : MonoBehaviour
 
     private GameController _gameController;
 
-    private ArrayList _avaliableWeapons = new ArrayList();
+    private Dictionary<string,int> _avaliableWeapons = new Dictionary<string, int>();
 
     private string _primaryWeapon;
     private string _secondaryWeapon;
@@ -87,7 +87,16 @@ public class SummaryController : MonoBehaviour
 
     public void addWeaponToAvaliableWeapons(string weapon)
     {
-        _avaliableWeapons.Add(weapon);
+        if(_avaliableWeapons.ContainsKey(weapon))
+        {
+            int old = _avaliableWeapons[weapon];
+            _avaliableWeapons[weapon] = 1+old;
+        }
+        else
+        {
+            _avaliableWeapons.Add(weapon, 1);
+        }
+        
         _gameController.updateAllAvaliableWeapons(_avaliableWeapons);
     }
 
@@ -96,7 +105,7 @@ public class SummaryController : MonoBehaviour
         baseRepairsText.text = newText;
     }
 
-    public void updateSuppliesFoundSummary(string newText)
+    public void updateSuppliesFoundSummaryText(string newText)
     {
         suppliesFoundSummary.text = newText;
     }
@@ -104,7 +113,7 @@ public class SummaryController : MonoBehaviour
     public void updateDropdownWeaponList()
     {
         _avaliableWeapons = _gameController.getAllAvaliableWeapons();
-        List<string> results = _avaliableWeapons.Cast<string>().Distinct().ToList();
+        List<string> results = _avaliableWeapons.Keys.Cast<string>().Distinct().ToList();
         primaryWeaponDropdown.ClearOptions();
         secondaryWeaponDropdown.ClearOptions();
         primaryWeaponDropdown.AddOptions(results);

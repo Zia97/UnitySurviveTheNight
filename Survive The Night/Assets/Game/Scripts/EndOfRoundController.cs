@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,7 +36,7 @@ public class EndOfRoundController : MonoBehaviour
     private GameObject _summaryControllerObject;
     private SummaryController _summaryController;
 
-    private ArrayList _avaliableWeapons = new ArrayList();
+    private Dictionary<string, int> _avaliableWeapons = new Dictionary<string, int>();
 
 
     private int _suppliesHoursSelectedValue = 6;
@@ -96,7 +97,7 @@ public class EndOfRoundController : MonoBehaviour
 
     private void ConfirmButtonClicked()
     {
-        _avaliableWeapons =_gameController.getAllAvaliableWeapons();
+       _avaliableWeapons =_gameController.getAllAvaliableWeapons();
         SearchForSupplies();
         _gameController.disableEndOfRoundlayer();
         RepairBase();
@@ -124,36 +125,55 @@ public class EndOfRoundController : MonoBehaviour
             int random2 = Random.Range(0, 100);
             if (random2 <= 35)
             {
-                if (!_avaliableWeapons.Contains("MP-5"))
+                if (!_avaliableWeapons.ContainsKey("MP-5"))
                 {
                     weaponFound = true;
                     _summaryController.addWeaponToAvaliableWeapons("MP-5");
-                    _summaryController.updateSuppliesFoundSummary("MP-5 (Submachine gun)");
+                    _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun)");
+                }
+                else
+                {
+                    weaponFound = true;
+                    _summaryController.addWeaponToAvaliableWeapons("MP-5");
+                    _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun) - Duplicate");
+
                 }
             }
             if (random2 > 35 && random2 <= 55)
             {
-                if (!_avaliableWeapons.Contains("Shotgun"))
+                if (!_avaliableWeapons.ContainsKey("Shotgun"))
                 {
                     weaponFound = true;
                     _summaryController.addWeaponToAvaliableWeapons("Shotgun");
-                    _summaryController.updateSuppliesFoundSummary("Shotgun");
+                    _summaryController.updateSuppliesFoundSummaryText("Shotgun");
+                }
+                else
+                {
+                    weaponFound = true;
+                    _summaryController.addWeaponToAvaliableWeapons("Shotgun");
+                    _summaryController.updateSuppliesFoundSummaryText("Shotgun - Duplicate");
                 }
             }
             if (random2 > 56 && random2 <= 76)
             {
-                if (!_avaliableWeapons.Contains("Scout"))
+                if (!_avaliableWeapons.ContainsKey("Scout"))
                 {
                     weaponFound = true;
                     _summaryController.addWeaponToAvaliableWeapons("Scout");
-                    _summaryController.updateSuppliesFoundSummary("Scout (Sniper Rifle)");
+                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle)");
+                }
+                else
+                {
+                    weaponFound = true;
+                    _summaryController.addWeaponToAvaliableWeapons("Scout");
+                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle) - Duplicate");
                 }
             }
         }
 
         if (!weaponFound)
         {
-            _summaryController.updateSuppliesFoundSummary("Nothing of interest found");
+            _summaryController.updateSuppliesFoundSummaryText("Nothing of interest found");
         }
 
     }

@@ -49,6 +49,10 @@ public class GameController : MonoBehaviour
     private string selectedTurret2;
     private string selectedTurret3;
 
+    private string selectedNPC1;
+    private string selectedNPC2;
+    private string selectedNPC3;
+
     public Vector3 spawnValues;
 
     public BasicEnemy basicEnemyObject;
@@ -107,7 +111,7 @@ public class GameController : MonoBehaviour
     public GameObject _ReloadObject;
     private Button _ReloadWeaponButton;
 
-    private ArrayList _avaliableWeapons = new ArrayList();
+    private Dictionary<string, int> _avaliableWeapons = new Dictionary<string, int>();
     private ArrayList _turretList = new ArrayList();
 
     private string _primaryWeapon;
@@ -138,7 +142,7 @@ public class GameController : MonoBehaviour
         defaultPos.x = -8;
         defaultPos.y = -0;
         defaultPos.z = 1;
-        _avaliableWeapons.Add("USP");
+        _avaliableWeapons.Add("USP",5);
         _playerGameObject = GameObject.FindWithTag("Player");
         _player = _playerGameObject.GetComponent<PlayerControls>();
         myCharacter = _playerGameObject.GetComponent<Character>();
@@ -501,7 +505,7 @@ public class GameController : MonoBehaviour
         _secondaryWeapon = weapon2;
     }
 
-    public void updateAllAvaliableWeapons(ArrayList allWeapons)
+    public void updateAllAvaliableWeapons(Dictionary<string,int> allWeapons)
     {
         _avaliableWeapons = allWeapons;
     }
@@ -567,7 +571,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public ArrayList getAllAvaliableWeapons()
+    public Dictionary<string,int> getAllAvaliableWeapons()
     {
         return _avaliableWeapons;
     }
@@ -578,18 +582,33 @@ public class GameController : MonoBehaviour
         Vector3 pos2 = new Vector3(-6.4f, 0.5f, 0);
         Vector3 pos3 = new Vector3(-6.4f, -3f, 0);
 
-        Instantiate(S1USP, pos1, Quaternion.identity);
-        Instantiate(S1Shotgun, pos2, Quaternion.identity);
-        Instantiate(S1Scout, pos3, Quaternion.identity);
+        var topNPC = npcToPrefab(selectedNPC1);
+        var midNPC = npcToPrefab(selectedNPC2);
+        var botNPC = npcToPrefab(selectedNPC3);
+        
+        if(topNPC!=null)
+        {
+            Instantiate(topNPC, pos1, Quaternion.identity);
+            topNPC.GetComponent<WeaponControls>().isNPC();
+            topNPC.GetComponent<WeaponControls>().setLocation("Top");
 
-        S1USP.GetComponent<WeaponControls>().isNPC();
-        S1USP.GetComponent<WeaponControls>().setLocation("Top");
+        }
 
-        S1Shotgun.GetComponent<WeaponControls>().isNPC();
-        S1Shotgun.GetComponent<WeaponControls>().setLocation("Mid");
+        if(midNPC!=null)
+        {
+            Instantiate(midNPC, pos2, Quaternion.identity);
+            midNPC.GetComponent<WeaponControls>().isNPC();
+            midNPC.GetComponent<WeaponControls>().setLocation("Mid");
+        }
+       
+        if(botNPC!=null)
+        {
+            Instantiate(botNPC, pos3, Quaternion.identity);
+            botNPC.GetComponent<WeaponControls>().isNPC();
+            botNPC.GetComponent<WeaponControls>().setLocation("Bot");
+        }
+        
 
-        S1Scout.GetComponent<WeaponControls>().isNPC();
-        S1Scout.GetComponent<WeaponControls>().setLocation("Bot");
     }
 
     public void selectTurrets(string t1, string t2, string t3)
@@ -673,6 +692,38 @@ public class GameController : MonoBehaviour
         {
             Destroy(allNPCS[i]);
         }
+    }
+
+    public void selectNPCs(string t1, string t2, string t3)
+    {
+        selectedNPC1 = t1;
+        selectedNPC2 = t2;
+        selectedNPC3 = t3;
+    }
+
+    public GameObject npcToPrefab(string npc)
+    {
+        if(npc==null)
+        {
+            return null;
+        }
+        if (npc.Equals("S1USP"))
+        {
+            return S1USP;
+        }
+        //if (weaponName.Equals("MP-5"))
+        //{
+        //    return BasicMP5Player;
+        //}
+        //if (weaponName.Equals("Shotgun"))
+        //{
+        //    return ShotgunPlayer;
+        //}
+        //if (weaponName.Equals("Scout"))
+        //{
+        //    return SniperPlayer;
+        //}
+        return null;
     }
 
 }
