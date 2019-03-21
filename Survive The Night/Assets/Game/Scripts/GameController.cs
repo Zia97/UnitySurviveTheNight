@@ -599,10 +599,30 @@ public class GameController : MonoBehaviour
 
     public void DestroyTurrets()
     {
-        Destroy(GameObject.FindWithTag("Turret1"));
-        Destroy(GameObject.FindWithTag("Turret2"));
-        Destroy(GameObject.FindWithTag("Turret3"));
-        Destroy(GameObject.FindWithTag("Turret6"));
+        var allTurret1 = GameObject.FindGameObjectsWithTag("Turret1");
+        var allTurret2 = GameObject.FindGameObjectsWithTag("Turret2");
+        var allTurret3 = GameObject.FindGameObjectsWithTag("Turret3");
+        var allTurret4 = GameObject.FindGameObjectsWithTag("Turret6");
+
+        for (var i = 0; i < allTurret1.Length; i++)
+        {
+            Destroy(allTurret1[i]);
+        }
+
+        for (var i = 0; i < allTurret2.Length; i++)
+        {
+            Destroy(allTurret2[i]);
+        }
+
+        for (var i = 0; i < allTurret3.Length; i++)
+        {
+            Destroy(allTurret3[i]);
+        }
+
+        for (var i = 0; i < allTurret4.Length; i++)
+        {
+            Destroy(allTurret4[i]);
+        }
     }
 
 }
