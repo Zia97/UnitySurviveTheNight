@@ -55,6 +55,7 @@ TagManager:
   - MainGamePanel
   - Turret6Button
   - WorkshopText
+  - NPC
   layers:
   - Default
   - TransparentFX

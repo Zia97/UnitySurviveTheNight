@@ -10685,12 +10685,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4092846777760148}
   - component: {fileID: 114189777033721974}
-  - component: {fileID: 114169061363593260}
   - component: {fileID: 114020288807855842}
   - component: {fileID: 114776506864096632}
   m_Layer: 0
   m_Name: S3Shotgun
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10877,18 +10876,6 @@ MonoBehaviour:
   Firearm: {fileID: 114190225336769526}
   BowShooting: {fileID: 114298341660479430}
   LayerManager: {fileID: 114776506864096632}
---- !u!114 &114169061363593260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168892492390734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7655dbdbae96492abedad7bdc555301d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114020288807855842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10907,8 +10894,8 @@ MonoBehaviour:
   FireButton: 323
   ReloadButton: 114
   FixHorizontal: 0
-  isNpc: 0
-  location: 
+  isNpc: 1
+  location: Bot
 --- !u!114 &114776506864096632
 MonoBehaviour:
   m_ObjectHideFlags: 0

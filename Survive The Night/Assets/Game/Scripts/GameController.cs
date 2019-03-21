@@ -20,9 +20,20 @@ public class GameController : MonoBehaviour
     public GameObject ShotgunPlayer;
     public GameObject SniperPlayer;
 
-    public GameObject test1;
-    public GameObject test2;
-    public GameObject test3;
+    public GameObject S1USP;
+    public GameObject S1MP5;
+    public GameObject S1Shotgun;
+    public GameObject S1Scout;
+
+    public GameObject S2USP;
+    public GameObject S2MP5;
+    public GameObject S2Shotgun;
+    public GameObject S2Scout;
+
+    public GameObject S3USP;
+    public GameObject S3MP5;
+    public GameObject S3Shotgun;
+    public GameObject S3Scout;
 
     public GameObject turret1;
     public GameObject turret2;
@@ -422,6 +433,7 @@ public class GameController : MonoBehaviour
     {
         Destroy(GameObject.FindWithTag("Player"));
         DestroyTurrets();
+        DestroyNPCS();
         roundOverCanvas.enabled = true;
     }
 
@@ -457,6 +469,7 @@ public class GameController : MonoBehaviour
         dropdownCanvas.enabled = false;
 
         InstantiateTurrets();
+        InstantiateNPCS();
 
         Instantiate(weaponNameToPrefab(_primaryWeapon), defaultPos, Quaternion.identity);
         _playerGameObject = GameObject.FindWithTag("Player");
@@ -565,18 +578,18 @@ public class GameController : MonoBehaviour
         Vector3 pos2 = new Vector3(-6.4f, 0.5f, 0);
         Vector3 pos3 = new Vector3(-6.4f, -3f, 0);
 
-        Instantiate(test1, pos1, Quaternion.identity);
-        Instantiate(test2, pos2, Quaternion.identity);
-        Instantiate(test3, pos3, Quaternion.identity);
+        Instantiate(S1USP, pos1, Quaternion.identity);
+        Instantiate(S1Shotgun, pos2, Quaternion.identity);
+        Instantiate(S1Scout, pos3, Quaternion.identity);
 
-        test1.GetComponent<WeaponControls>().isNPC();
-        test1.GetComponent<WeaponControls>().setLocation("Top");
+        S1USP.GetComponent<WeaponControls>().isNPC();
+        S1USP.GetComponent<WeaponControls>().setLocation("Top");
 
-        test2.GetComponent<WeaponControls>().isNPC();
-        test2.GetComponent<WeaponControls>().setLocation("Mid");
+        S1Shotgun.GetComponent<WeaponControls>().isNPC();
+        S1Shotgun.GetComponent<WeaponControls>().setLocation("Mid");
 
-        test3.GetComponent<WeaponControls>().isNPC();
-        test3.GetComponent<WeaponControls>().setLocation("Bot");
+        S1Scout.GetComponent<WeaponControls>().isNPC();
+        S1Scout.GetComponent<WeaponControls>().setLocation("Bot");
     }
 
     public void selectTurrets(string t1, string t2, string t3)
@@ -649,6 +662,16 @@ public class GameController : MonoBehaviour
         for (var i = 0; i < allTurret4.Length; i++)
         {
             Destroy(allTurret4[i]);
+        }
+    }
+
+    public void DestroyNPCS()
+    {
+        var allNPCS = GameObject.FindGameObjectsWithTag("NPC");
+
+        for (var i = 0; i < allNPCS.Length; i++)
+        {
+            Destroy(allNPCS[i]);
         }
     }
 

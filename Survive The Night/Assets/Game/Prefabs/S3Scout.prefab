@@ -10688,7 +10688,7 @@ GameObject:
   - component: {fileID: 114020288807855842}
   m_Layer: 0
   m_Name: S3Scout
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10893,8 +10893,8 @@ MonoBehaviour:
   FireButton: 323
   ReloadButton: 114
   FixHorizontal: 0
-  isNpc: 0
-  location: 
+  isNpc: 1
+  location: Mid
 --- !u!1 &1179323946161564
 GameObject:
   m_ObjectHideFlags: 0

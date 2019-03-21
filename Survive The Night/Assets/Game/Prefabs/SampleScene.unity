@@ -1731,9 +1731,18 @@ MonoBehaviour:
     type: 3}
   SniperPlayer: {fileID: 1168892492390734, guid: 82425686b4dd455429177d58936696c5,
     type: 3}
-  test1: {fileID: 1168892492390734, guid: 798cd3f9f85a0ec409f8498b3d345fae, type: 3}
-  test2: {fileID: 1168892492390734, guid: 86ac907c40a2a364c977b9f81f8d0642, type: 3}
-  test3: {fileID: 1168892492390734, guid: e0b1731ab2296a145af3e713489db705, type: 3}
+  S1USP: {fileID: 1168892492390734, guid: 50e64b0e01b5df0469fb185226beb9ed, type: 3}
+  S1MP5: {fileID: 1168892492390734, guid: 5bf50b3c4398a714d99b281b14859ee6, type: 3}
+  S1Shotgun: {fileID: 1168892492390734, guid: 10fc33222f002964f85b5dcf979285f3, type: 3}
+  S1Scout: {fileID: 1168892492390734, guid: d6b82ba3a42c6ff4c9ded0d875b722d5, type: 3}
+  S2USP: {fileID: 1168892492390734, guid: 90c7ce40c6348e2429ee0cb184bfb43b, type: 3}
+  S2MP5: {fileID: 1168892492390734, guid: f505fac8a39d4294593df0b30481f234, type: 3}
+  S2Shotgun: {fileID: 1168892492390734, guid: ce6fef1e1454d034baa10ae59ace93b3, type: 3}
+  S2Scout: {fileID: 1168892492390734, guid: 662dd96d9fda07c4d902819b7843f37f, type: 3}
+  S3USP: {fileID: 1168892492390734, guid: ef0408626aff77b469b6a7aedf4d99ef, type: 3}
+  S3MP5: {fileID: 1168892492390734, guid: 798cd3f9f85a0ec409f8498b3d345fae, type: 3}
+  S3Shotgun: {fileID: 1168892492390734, guid: e0b1731ab2296a145af3e713489db705, type: 3}
+  S3Scout: {fileID: 1168892492390734, guid: 86ac907c40a2a364c977b9f81f8d0642, type: 3}
   turret1: {fileID: 145974, guid: d61b8af932fc5eb4fbf5caa18c7dd540, type: 3}
   turret2: {fileID: 169252, guid: 3dbddd9773b6a5b4280145fede5db178, type: 3}
   turret3: {fileID: 122802, guid: f88cb4ee5d1d53546aae5651035f8771, type: 3}
