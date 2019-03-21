@@ -171,7 +171,6 @@ public class EnemyScript : MonoBehaviour
 
                     if (randomDrop)
                     {
-                        Debug.Log("materials added " + noOfMaterials);
                         gameController.addBuildingMaterials(noOfMaterials);
                     }
                 }

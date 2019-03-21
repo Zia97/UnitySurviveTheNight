@@ -33,7 +33,6 @@ public class AnimatedExampleWeapon : ExampleWeapon
                     recoilAnimation.Stop();
                 break;
             case State.Waiting:
-                Debug.Log("State is waiitng");
                 break;
         }
     }
