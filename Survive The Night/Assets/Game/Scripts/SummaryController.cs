@@ -15,6 +15,12 @@ public class SummaryController : MonoBehaviour
     public GameObject _workshopController;
     public Button _workshopButton;
 
+    public GameObject _armoryButtonObject;
+    public Button _armoryButton;
+    public Canvas armoryCanvas;
+    public GameObject armoryObject;
+    public NPCArmoryController npcArmoryController;
+
     private GameObject _gameControllerObject;
 
     private GameController _gameController;
@@ -44,6 +50,12 @@ public class SummaryController : MonoBehaviour
         _workshopController = GameObject.FindWithTag("WorkshopController");
         _workshopButtonObject = GameObject.FindWithTag("WorkshopButton");
 
+        npcArmoryController = GameObject.FindWithTag("ArmoryController").GetComponent<NPCArmoryController>();
+
+        _armoryButtonObject = GameObject.FindWithTag("ArmoryButton");
+        _armoryButton = _armoryButtonObject.GetComponent<Button>();
+        _armoryButton.onClick.AddListener(ArmoryButtonClicked);
+
         _startNextWaveButton = _startNextWaveObject.GetComponent<Button>();
         _startNextWaveButton.onClick.AddListener(ConfirmButtonClicked);
 
@@ -63,6 +75,14 @@ public class SummaryController : MonoBehaviour
         workshopObject = GameObject.FindWithTag("WorkshopCanvas");
         workshopObject.SetActive(true);
         workshopCanvas = workshopObject.GetComponent<Canvas>();
+    }
+
+    private void ArmoryButtonClicked()
+    {
+        mainGameCanvas.enabled = false;
+        npcArmoryController.updateWeaponsDropdown();
+        armoryCanvas.enabled = true;
+        summaryCanvas.enabled = false;
     }
 
     private void WorkshopButtonClicked()

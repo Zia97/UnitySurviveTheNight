@@ -97,6 +97,10 @@ public class GameController : MonoBehaviour
     public GameObject workshopObject;
     public GameObject workshopController;
 
+    public Canvas armoryCanvas;
+    public GameObject armoryObject;
+    public GameObject armoryController;
+
     public GameObject dropdownObject;
     public Canvas dropdownCanvas;
 
@@ -168,6 +172,13 @@ public class GameController : MonoBehaviour
         workshopCanvas.enabled = false;
         workshopController = GameObject.FindWithTag("WorkshopController");
         workshopController.SetActive(true);
+
+        armoryObject = GameObject.FindWithTag("NPCCanvas");
+        armoryObject.SetActive(true);
+        armoryCanvas = armoryObject.GetComponent<Canvas>();
+        armoryCanvas.enabled = false;
+        armoryController = GameObject.FindWithTag("ArmoryController");
+        armoryController.SetActive(true);
 
         summaryObject = GameObject.FindWithTag("SummaryCanvas");
         summaryObject.SetActive(true);
@@ -699,6 +710,16 @@ public class GameController : MonoBehaviour
         selectedNPC1 = t1;
         selectedNPC2 = t2;
         selectedNPC3 = t3;
+    }
+
+    public string getPrimary()
+    {
+        return _primaryWeapon;
+    }
+
+    public string getSecondary()
+    {
+        return _secondaryWeapon;
     }
 
     public GameObject npcToPrefab(string npc)

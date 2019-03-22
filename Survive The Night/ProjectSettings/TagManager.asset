@@ -56,6 +56,13 @@ TagManager:
   - Turret6Button
   - WorkshopText
   - NPC
+  - NPCCanvas
+  - NPC1Dropdown
+  - NPC2Dropdown
+  - NPC3Dropdown
+  - ArmoryController
+  - ArmoryBackButton
+  - ArmoryButton
   layers:
   - Default
   - TransparentFX
