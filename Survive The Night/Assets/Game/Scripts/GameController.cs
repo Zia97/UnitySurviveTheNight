@@ -136,6 +136,8 @@ public class GameController : MonoBehaviour
 
     private Vector3 defaultPos;
 
+    private int noOfNPCS = 0;
+
 
     private void Start()
     {
@@ -745,6 +747,16 @@ public class GameController : MonoBehaviour
         //    return SniperPlayer;
         //}
         return null;
+    }
+
+    public void setNoOfNPCS(int value)
+    {
+        noOfNPCS = value;
+    }
+
+    public int getNoOfNPCS()
+    {
+        return noOfNPCS;
     }
 
 }

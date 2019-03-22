@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.605, y: 11}
+  m_AnchoredPosition: {x: -2.6025, y: 51}
   m_SizeDelta: {x: 440.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970339
@@ -6640,6 +6640,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0408626aff77b469b6a7aedf4d99ef, type: 3}
+--- !u!1 &849110879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849110880}
+  - component: {fileID: 849110882}
+  - component: {fileID: 849110881}
+  m_Layer: 5
+  m_Name: SurvivorsFoundText
+  m_TagString: SurvivorsFoundText
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &849110880
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849110879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1931680386}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -143, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &849110881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849110879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Survivors found:'
+--- !u!222 &849110882
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849110879}
+  m_CullTransparentMesh: 0
 --- !u!1 &853338928
 GameObject:
   m_ObjectHideFlags: 0
@@ -8056,7 +8135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143, y: 41}
+  m_AnchoredPosition: {x: -143, y: 81}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022735044
@@ -12027,18 +12106,24 @@ MonoBehaviour:
   _gameControllerObject: {fileID: 0}
   _armoryBackButtonObject: {fileID: 0}
   _armoryBackButton: {fileID: 181110660}
-  turret1: {fileID: 0}
-  turret2: {fileID: 0}
-  turret3: {fileID: 0}
-  turret1Ref: {fileID: 0}
-  turret2Ref: {fileID: 0}
-  turret3Ref: {fileID: 0}
-  NPC1Dropdown: {fileID: 0}
-  NPC2Dropdown: {fileID: 0}
-  NPC3Dropdown: {fileID: 0}
-  armoryCanvas: {fileID: 0}
+  S1USP: {fileID: 0}
+  S1MP5: {fileID: 0}
+  S1Shotgun: {fileID: 0}
+  S1Scout: {fileID: 0}
+  S2USP: {fileID: 0}
+  S2MP5: {fileID: 0}
+  S2Shotgun: {fileID: 0}
+  S2Scout: {fileID: 0}
+  S3USP: {fileID: 0}
+  S3MP5: {fileID: 0}
+  S3Shotgun: {fileID: 0}
+  S3Scout: {fileID: 0}
+  NPC1Dropdown: {fileID: 1800604413}
+  NPC2Dropdown: {fileID: 599975915}
+  NPC3Dropdown: {fileID: 227156833}
+  armoryCanvas: {fileID: 1329389422}
   armoryObject: {fileID: 0}
-  summaryCanvas: {fileID: 0}
+  summaryCanvas: {fileID: 1448382618}
   armoryHelperText: {fileID: 0}
 --- !u!1 &1575284849
 GameObject:
@@ -14706,6 +14791,7 @@ RectTransform:
   - {fileID: 1575284850}
   - {fileID: 1371370409}
   - {fileID: 217828056}
+  - {fileID: 849110880}
   m_Father: {fileID: 1448382619}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15406,7 +15492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.6025, y: 111}
+  m_AnchoredPosition: {x: -2.6025, y: 141}
   m_SizeDelta: {x: 440.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065846520
@@ -16033,6 +16119,11 @@ PrefabInstance:
       propertyPath: armoryCanvas
       value: 
       objectReference: {fileID: 1329389422}
+    - target: {fileID: 3701475597870439375, guid: a03be5eb31c23364fbed0d6d92f64fdc,
+        type: 3}
+      propertyPath: survivorsFoundText
+      value: 
+      objectReference: {fileID: 849110881}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03be5eb31c23364fbed0d6d92f64fdc, type: 3}
 --- !u!1001 &1341478769277774873

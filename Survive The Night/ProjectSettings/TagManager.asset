@@ -63,6 +63,7 @@ TagManager:
   - ArmoryController
   - ArmoryBackButton
   - ArmoryButton
+  - SurvivorsFoundText
   layers:
   - Default
   - TransparentFX

@@ -43,6 +43,8 @@ public class SummaryController : MonoBehaviour
     public Text baseRepairsText;
     public Text suppliesFoundSummary;
 
+    public Text survivorsFoundText;
+
     private void Start()
     {
         _startNextWaveObject = GameObject.FindWithTag("StartNextWave");
@@ -81,6 +83,7 @@ public class SummaryController : MonoBehaviour
     {
         mainGameCanvas.enabled = false;
         npcArmoryController.updateWeaponsDropdown();
+        npcArmoryController.updateLayout();
         armoryCanvas.enabled = true;
         summaryCanvas.enabled = false;
     }
@@ -128,6 +131,11 @@ public class SummaryController : MonoBehaviour
     public void updateSuppliesFoundSummaryText(string newText)
     {
         suppliesFoundSummary.text = newText;
+    }
+
+    public void updateSurvivorsFoundText(string newText)
+    {
+        survivorsFoundText.text = newText;
     }
 
     public void updateDropdownWeaponList()
