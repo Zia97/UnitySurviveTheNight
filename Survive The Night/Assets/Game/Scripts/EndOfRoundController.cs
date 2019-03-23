@@ -176,46 +176,48 @@ public class EndOfRoundController : MonoBehaviour
             _summaryController.updateSuppliesFoundSummaryText("Nothing of interest found");
         }
 
-        if(_gameController.getNoOfNPCS()==0)
-        {
-            int highProb = Random.Range(0, 100);
+        _gameController.setNoOfNPCS(_gameController.getNoOfNPCS() + 1);
 
-            if (highProb<=75)
-            {
-                _gameController.setNoOfNPCS(1);
-                _summaryController.updateSurvivorsFoundText("Surviors found: 1");
-            }
-            else
-            {
-                _summaryController.updateSurvivorsFoundText("Surviors found: 0");
-            }
-        }
-        else if (_gameController.getNoOfNPCS() == 1)
-        {
-            int highProb = Random.Range(0, 100);
-            if (highProb <= 35)
-            {
-                _gameController.setNoOfNPCS(2);
-                _summaryController.updateSurvivorsFoundText("Surviors found: 1");
-            }
-            else
-            {
-                _summaryController.updateSurvivorsFoundText("Surviors found: 0");
-            }
-        }
-        else if (_gameController.getNoOfNPCS() == 2)
-        {
-            int highProb = Random.Range(0, 100);
-            if (highProb <= 10)
-            {
-                _gameController.setNoOfNPCS(3);
-                _summaryController.updateSurvivorsFoundText("Surviors found: 1");
-            }
-            else
-            {
-                _summaryController.updateSurvivorsFoundText("Surviors found: 0");
-            }
-        }
+        //if(_gameController.getNoOfNPCS()==0)
+        //{
+        //    int highProb = Random.Range(0, 100);
+
+        //    if (highProb<=75)
+        //    {
+        //        _gameController.setNoOfNPCS(1);
+        //        _summaryController.updateSurvivorsFoundText("Surviors found: 1");
+        //    }
+        //    else
+        //    {
+        //        _summaryController.updateSurvivorsFoundText("Surviors found: 0");
+        //    }
+        //}
+        //else if (_gameController.getNoOfNPCS() == 1)
+        //{
+        //    int highProb = Random.Range(0, 100);
+        //    if (highProb <= 35)
+        //    {
+        //        _gameController.setNoOfNPCS(2);
+        //        _summaryController.updateSurvivorsFoundText("Surviors found: 1");
+        //    }
+        //    else
+        //    {
+        //        _summaryController.updateSurvivorsFoundText("Surviors found: 0");
+        //    }
+        //}
+        //else if (_gameController.getNoOfNPCS() == 2)
+        //{
+        //    int highProb = Random.Range(0, 100);
+        //    if (highProb <= 10)
+        //    {
+        //        _gameController.setNoOfNPCS(3);
+        //        _summaryController.updateSurvivorsFoundText("Surviors found: 1");
+        //    }
+        //    else
+        //    {
+        //        _summaryController.updateSurvivorsFoundText("Surviors found: 0");
+        //    }
+        //}
 
 
     }

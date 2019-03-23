@@ -735,29 +735,63 @@ public class GameController : MonoBehaviour
 
     public GameObject npcToPrefab(string npc)
     {
-        Debug.Log("Hit npc to prefab");
-        Debug.Log("@@@" + npc);
         if(npc==null)
         {
             return null;
         }
+
         if (npc.Equals("S1USP"))
         {
-            Debug.Log("s1 usp created");
             return S1USP;
         }
-        //if (weaponName.Equals("MP-5"))
-        //{
-        //    return BasicMP5Player;
-        //}
-        //if (weaponName.Equals("Shotgun"))
-        //{
-        //    return ShotgunPlayer;
-        //}
-        //if (weaponName.Equals("Scout"))
-        //{
-        //    return SniperPlayer;
-        //}
+        if (npc.Equals("S2USP"))
+        {
+            return S2USP;
+        }
+        if (npc.Equals("S3USP"))
+        {
+            return S3USP;
+        }
+
+        if (npc.Equals("S1MP5"))
+        {
+            return S1MP5;
+        }
+        if (npc.Equals("S2MP5"))
+        {
+            return S2MP5;
+        }
+        if (npc.Equals("S3MP5"))
+        {
+            return S3MP5;
+        }
+
+        if (npc.Equals("S1Shotgun"))
+        {
+            return S1Shotgun;
+        }
+        if (npc.Equals("S2Shotgun"))
+        {
+            return S2Shotgun;
+        }
+        if (npc.Equals("S3Shotgun"))
+        {
+            return S3Shotgun;
+        }
+
+        if (npc.Equals("S1Scout"))
+        {
+            return S1Scout;
+        }
+        if (npc.Equals("S2Scout"))
+        {
+            return S2Scout;
+        }
+        if (npc.Equals("S3Scout"))
+        {
+            return S3Scout;
+        }
+
         return null;
     }
 

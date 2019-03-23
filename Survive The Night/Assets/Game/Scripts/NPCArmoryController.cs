@@ -131,7 +131,24 @@ public class NPCArmoryController : MonoBehaviour
     private void ArmoryBackButtonClicked()
     {
         armoryCanvas.enabled = false;
-        _gameController.selectNPCs("S1"+NPC1Dropdown.options[NPC1Dropdown.value].text,"S2"+NPC2Dropdown.options[NPC2Dropdown.value].text, "S3"+NPC3Dropdown.options[NPC3Dropdown.value].text);
+
+        if (_gameController.getNoOfNPCS() == 1)
+        {
+            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text,null,null);
+        }
+        else if (_gameController.getNoOfNPCS() == 2)
+        {
+            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, "S2" + NPC2Dropdown.options[NPC2Dropdown.value].text,null);
+        }
+        else if (_gameController.getNoOfNPCS() == 3)
+        {
+            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, "S2" + NPC2Dropdown.options[NPC2Dropdown.value].text, "S3" + NPC3Dropdown.options[NPC3Dropdown.value].text);
+        }
+        else
+        {
+      
+        }
+
         DestroyNPCS();
         S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -182,7 +199,7 @@ public class NPCArmoryController : MonoBehaviour
                 b.GetComponent<WeaponControls>().setLocation("Armory");
                 b.transform.SetParent(panel.transform, true);
 
-                GameObject c = Instantiate(S2USP, pos3, Quaternion.identity);
+                GameObject c = Instantiate(S3USP, pos3, Quaternion.identity);
                 c.GetComponent<WeaponControls>().isNPC();
                 c.GetComponent<WeaponControls>().setLocation("Armory");
                 c.transform.SetParent(panel.transform, true);
