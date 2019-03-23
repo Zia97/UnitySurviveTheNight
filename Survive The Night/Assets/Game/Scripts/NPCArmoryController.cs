@@ -105,49 +105,105 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        if (tempList.ContainsKey(selectedPrimary))
-        {
-            int old = tempList[selectedPrimary];
-            tempList[selectedPrimary] = old - 1;
-        }
+        SetWeapons();
 
-        if (tempList.ContainsKey(selectedSecondary))
+       
+
+        //if (tempList.ContainsKey(selectedPrimary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
+
+        //if (tempList.ContainsKey(selectedSecondary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
+
+        //if(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] <0)
+        //{
+        //    armoryHelperText.text = "You do not have enough " + NPC1Dropdown.options[NPC1Dropdown.value].text + "'s";
+        //    Debug.Log(NPC1Dropdown.value);
+        //}
+    }
+
+    private void SetWeapons()
+    {
+        Debug.Log(_gameController.getNoOfNPCS()+"      @@@@" );
+        if (_gameController.getNoOfNPCS() == 1)
         {
-            int old = tempList[selectedPrimary];
-            tempList[selectedPrimary] = old - 1;
+            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, null, null);
+        }
+        else if (_gameController.getNoOfNPCS() == 2)
+        {
+            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, "S2" + NPC2Dropdown.options[NPC2Dropdown.value].text, null);
+        }
+        else if (_gameController.getNoOfNPCS() >= 3)
+        {
+            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, "S2" + NPC2Dropdown.options[NPC2Dropdown.value].text, "S3" + NPC3Dropdown.options[NPC3Dropdown.value].text);
         }
     }
 
     private void npc2DropdownValueChanged(object npc2Value)
     {
-        throw new NotImplementedException();
+        var tempList = _gameController.getAllAvaliableWeapons();
+        var selectedPrimary = _gameController.getPrimary();
+        var selectedSecondary = _gameController.getSecondary();
+
+        SetWeapons();
+
+        //if (tempList.ContainsKey(selectedPrimary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
+
+        //if (tempList.ContainsKey(selectedSecondary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
+
+        //if (tempList[NPC2Dropdown.options[NPC2Dropdown.value].text] < 0)
+        //{
+        //    armoryHelperText.text = "You do not have enough " + NPC2Dropdown.options[NPC2Dropdown.value].text + "'s";
+        //    Debug.Log(NPC2Dropdown.value);
+        //}
     }
 
     private void npc3DropdownValueChanged(object npc3Value)
     {
-        throw new NotImplementedException();
+        var tempList = _gameController.getAllAvaliableWeapons();
+        var selectedPrimary = _gameController.getPrimary();
+        var selectedSecondary = _gameController.getSecondary();
+
+        SetWeapons();
+
+        //if (tempList.ContainsKey(selectedPrimary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
+
+        //if (tempList.ContainsKey(selectedSecondary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
+
+        //if (tempList[NPC3Dropdown.options[NPC3Dropdown.value].text] < 0)
+        //{
+        //    armoryHelperText.text = "You do not have enough " + NPC3Dropdown.options[NPC3Dropdown.value].text + "'s";
+        //    Debug.Log(NPC3Dropdown.value);
+        //}
     }
 
     private void ArmoryBackButtonClicked()
     {
         armoryCanvas.enabled = false;
 
-        if (_gameController.getNoOfNPCS() == 1)
-        {
-            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text,null,null);
-        }
-        else if (_gameController.getNoOfNPCS() == 2)
-        {
-            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, "S2" + NPC2Dropdown.options[NPC2Dropdown.value].text,null);
-        }
-        else if (_gameController.getNoOfNPCS() == 3)
-        {
-            _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, "S2" + NPC2Dropdown.options[NPC2Dropdown.value].text, "S3" + NPC3Dropdown.options[NPC3Dropdown.value].text);
-        }
-        else
-        {
-      
-        }
+        SetWeapons();
 
         DestroyNPCS();
         S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -166,7 +222,11 @@ public class NPCArmoryController : MonoBehaviour
         var panel = GameObject.Find("NPCPanel");
         if (panel != null)
         {
-            if (_gameController.getNoOfNPCS() == 1)
+            if(_gameController.getNoOfNPCS() == 0)
+            {
+
+            }
+            else if (_gameController.getNoOfNPCS() == 1)
             {
                 GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
@@ -187,7 +247,7 @@ public class NPCArmoryController : MonoBehaviour
                 b.transform.SetParent(panel.transform, true);
             }
 
-            else if (_gameController.getNoOfNPCS() == 3)
+            else if (_gameController.getNoOfNPCS() >= 3)
             {
                 GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
@@ -249,7 +309,7 @@ public class NPCArmoryController : MonoBehaviour
         }
         if(noOfNpcs==1)
         {
-            Debug.Log("hit here");
+            armoryHelperText.text = "Arm your survivors...";
             S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
@@ -261,6 +321,7 @@ public class NPCArmoryController : MonoBehaviour
         }
         if (noOfNpcs == 2)
         {
+            armoryHelperText.text = "Arm your survivors...";
             S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             NPC2Dropdown.Show();
@@ -270,6 +331,7 @@ public class NPCArmoryController : MonoBehaviour
         }
         if(noOfNpcs>=3)
         {
+            armoryHelperText.text = "Arm your survivors...";
             S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             NPC3Dropdown.Show();
             NPC1Dropdown.enabled = true;

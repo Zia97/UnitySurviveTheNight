@@ -599,6 +599,7 @@ public class GameController : MonoBehaviour
 
     public void InstantiateNPCS()
     {
+        Debug.Log("instantiating npcs");
         Vector3 pos1 = new Vector3(-6.4f, 2.4f, 0);
         Vector3 pos2 = new Vector3(-6.4f, 0.5f, 0);
         Vector3 pos3 = new Vector3(-6.4f, -3f, 0);
@@ -609,25 +610,30 @@ public class GameController : MonoBehaviour
         
         if(topNPC!=null)
         {
-            Debug.Log("Loaded top npc");
-            Instantiate(topNPC, pos1, Quaternion.identity);
+            Debug.Log("top npc instantiated");
             topNPC.GetComponent<WeaponControls>().isNPC();
             topNPC.GetComponent<WeaponControls>().setLocation("Top");
+            Instantiate(topNPC, pos1, Quaternion.identity);
+            
 
         }
 
         if(midNPC!=null)
         {
-            Instantiate(midNPC, pos2, Quaternion.identity);
+            Debug.Log("mid npc instantiated");
             midNPC.GetComponent<WeaponControls>().isNPC();
             midNPC.GetComponent<WeaponControls>().setLocation("Mid");
+            Instantiate(midNPC, pos2, Quaternion.identity);
+         
         }
        
         if(botNPC!=null)
         {
-            Instantiate(botNPC, pos3, Quaternion.identity);
+            Debug.Log("bot npc instantiated");
             botNPC.GetComponent<WeaponControls>().isNPC();
             botNPC.GetComponent<WeaponControls>().setLocation("Bot");
+            Instantiate(botNPC, pos3, Quaternion.identity);
+ 
         }
         
 
@@ -720,7 +726,7 @@ public class GameController : MonoBehaviour
     {
         selectedNPC1 = t1;
         selectedNPC2 = t2;
-        selectedNPC3 = t3;
+        selectedNPC3 = t3;                                                                                                                                             
     }
 
     public string getPrimary()
@@ -735,6 +741,7 @@ public class GameController : MonoBehaviour
 
     public GameObject npcToPrefab(string npc)
     {
+        Debug.Log(npc + " @@@@@");
         if(npc==null)
         {
             return null;
@@ -753,15 +760,15 @@ public class GameController : MonoBehaviour
             return S3USP;
         }
 
-        if (npc.Equals("S1MP5"))
+        if (npc.Equals("S1MP-5"))
         {
             return S1MP5;
         }
-        if (npc.Equals("S2MP5"))
+        if (npc.Equals("S2MP-5"))
         {
             return S2MP5;
         }
-        if (npc.Equals("S3MP5"))
+        if (npc.Equals("S3MP-5"))
         {
             return S3MP5;
         }

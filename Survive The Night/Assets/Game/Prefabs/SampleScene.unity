@@ -12196,7 +12196,7 @@ MonoBehaviour:
   armoryCanvas: {fileID: 1329389422}
   armoryObject: {fileID: 0}
   summaryCanvas: {fileID: 1448382618}
-  armoryHelperText: {fileID: 0}
+  armoryHelperText: {fileID: 354522937}
   S1Cross: {fileID: 0}
   S2Cross: {fileID: 0}
   S3Cross: {fileID: 0}
