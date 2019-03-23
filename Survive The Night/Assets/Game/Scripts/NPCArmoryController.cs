@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts;
+using Assets.HeroEditor.Common.CharacterScripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,21 +40,17 @@ public class NPCArmoryController : MonoBehaviour
     public Dropdown NPC2Dropdown;
     public Dropdown NPC3Dropdown;
 
-    private int turret1Count = 0;
-    private int turret2Count = 0;
-    private int turret3Count = 0;
-    private int turret6Count = 0;
-
-
     public Canvas armoryCanvas;
     public GameObject armoryObject;
 
     public Canvas summaryCanvas;
 
     public Text armoryHelperText;
-    private object turret1Value;
-    private object turret2Value;
-    private object turret3Value;
+ 
+    public GameObject S1Cross;
+    public GameObject S2Cross;
+    public GameObject S3Cross;
+
     private object npc1Value;
     private object npc2Value;
     private object npc3Value;
@@ -66,7 +63,12 @@ public class NPCArmoryController : MonoBehaviour
         _armoryBackButton = _armoryBackButtonObject.GetComponent<Button>();
         _armoryBackButton.onClick.AddListener(ArmoryBackButtonClicked);
 
-        
+        S1Cross = GameObject.FindWithTag("S1Cross");
+        S2Cross = GameObject.FindWithTag("S2Cross");
+        S3Cross = GameObject.FindWithTag("S3Cross");
+
+
+
 
         if (_gameControllerObject != null)
         {
@@ -134,56 +136,59 @@ public class NPCArmoryController : MonoBehaviour
     private void ArmoryBackButtonClicked()
     {
         armoryCanvas.enabled = false;
+        DestroyNPCS();
+        S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         summaryCanvas.enabled = true;     
     }
 
-    public void InstantiateTurrets()
+    public void InstantiateNPCS()
     {
-       // turret1Ref = turret1;
-       // turret2Ref = turret2;
-       // turret3Ref = turret3;
-       //// turret6Ref = turret6;
+        Vector3 pos1 = new Vector3(-4f, 0, 0);
+        Vector3 pos2 = new Vector3(0, 0, 0);
+        Vector3 pos3 = new Vector3(4, 0, 0);
 
-       // Vector3 turret1Vector = new Vector3(-260, 90, -400);
-       // Vector3 turret2Vector = new Vector3(-260, 0, -400);
-       // Vector3 turret3Vector = new Vector3(-260, -90, -400);
-       // Vector3 turret6Vector = new Vector3(-260, -180, -400);
 
-       // var panel = GameObject.Find("WorkshopPanel");
-       // if (panel != null) 
-       // {
-       //     GameObject a = Instantiate(turret1Ref, turret1Vector, Quaternion.identity);
-       //     a.transform.SetParent(panel.transform, false);
+        var panel = GameObject.Find("NPCPanel");
+        if (panel != null)
+        {
+            GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
+            a.GetComponent<WeaponControls>().isNPC();
+            a.GetComponent<WeaponControls>().setLocation("Armory");
+            a.transform.SetParent(panel.transform, true);
 
-       //     GameObject b = Instantiate(turret2Ref, turret2Vector, Quaternion.identity);
-       //     b.transform.SetParent(panel.transform, false);
+            //GameObject b = Instantiate(turret2Ref, turret2Vector, Quaternion.identity);
+            //b.transform.SetParent(panel.transform, false);
 
-       //     GameObject c = Instantiate(turret3Ref, turret3Vector, Quaternion.identity);
-       //     c.transform.SetParent(panel.transform, false);
+            //GameObject c = Instantiate(turret3Ref, turret3Vector, Quaternion.identity);
+            //c.transform.SetParent(panel.transform, false);
 
-       //    // GameObject d = Instantiate(turret6Ref, turret6Vector, Quaternion.identity);
-       //     //d.transform.SetParent(panel.transform, false);
+            // GameObject d = Instantiate(turret6Ref, turret6Vector, Quaternion.identity);
+            //d.transform.SetParent(panel.transform, false);
 
-       //     turret1Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
-       //     turret2Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
-       //     turret3Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
-       //     //turret6Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+            //turret1Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+            //turret2Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+            //turret3Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+            //turret6Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
 
-       // }
+        }
 
     }
 
-    public void DestroyTurrets()
+    public void DestroyNPCS()
     {
-        Destroy(GameObject.FindWithTag("Turret1"));
-        Destroy(GameObject.FindWithTag("Turret2"));
-        Destroy(GameObject.FindWithTag("Turret3"));
-        Destroy(GameObject.FindWithTag("Turret6"));
+        var allNPCS = GameObject.FindGameObjectsWithTag("NPC");
+
+        for (var i = 0; i < allNPCS.Length; i++)
+        {
+            Destroy(allNPCS[i]);
+        }
     }
 
     private void WorkshopBackButtonClicked()
     {
-        DestroyTurrets();
+     //   DestroyTurrets();
         ////workshopCanvas.enabled = false;
         //summaryCanvas.enabled = true;        
     }
@@ -211,6 +216,11 @@ public class NPCArmoryController : MonoBehaviour
         var noOfNpcs = _gameController.getNoOfNPCS();
         if(noOfNpcs==1)
         {
+            Debug.Log("hit here");
+            S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
             NPC2Dropdown.Hide();
             NPC3Dropdown.Hide();
             NPC2Dropdown.enabled = false;
@@ -218,6 +228,8 @@ public class NPCArmoryController : MonoBehaviour
         }
         if (noOfNpcs == 2)
         {
+            S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             NPC2Dropdown.Show();
             NPC3Dropdown.Hide();
             NPC2Dropdown.enabled = true;
@@ -225,6 +237,7 @@ public class NPCArmoryController : MonoBehaviour
         }
         if(noOfNpcs>=3)
         {
+            S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             NPC3Dropdown.Show();
             NPC1Dropdown.enabled = true;
             NPC2Dropdown.enabled = true;

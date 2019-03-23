@@ -176,13 +176,10 @@ public class EndOfRoundController : MonoBehaviour
             _summaryController.updateSuppliesFoundSummaryText("Nothing of interest found");
         }
 
-        Debug.Log(_gameController.getNoOfNPCS() + "      @@@@@@");
         if(_gameController.getNoOfNPCS()==0)
         {
-            Debug.Log("no npcs");
             int highProb = Random.Range(0, 100);
 
-            Debug.Log(highProb);
             if (highProb<=75)
             {
                 _gameController.setNoOfNPCS(1);

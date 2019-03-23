@@ -64,6 +64,11 @@ TagManager:
   - ArmoryBackButton
   - ArmoryButton
   - SurvivorsFoundText
+  - NPCPanel
+  - NPCHelperText
+  - S1Cross
+  - S2Cross
+  - S3Cross
   layers:
   - Default
   - TransparentFX

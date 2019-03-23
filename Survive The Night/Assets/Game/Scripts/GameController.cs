@@ -206,12 +206,21 @@ public class GameController : MonoBehaviour
         avaliableTurrets.Add("Turret 3", 0);
         avaliableTurrets.Add("Turret 6", 0);
 
+        var S1Cross = GameObject.FindWithTag("S1Cross");
+        var S2Cross = GameObject.FindWithTag("S2Cross");
+        var S3Cross = GameObject.FindWithTag("S3Cross");
+
+        S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
         InstantiateTurrets();
         InstantiateNPCS();
 
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
         StartCoroutine(SpawnWaves());
+
         var temp = GameObject.FindWithTag("Player");
         
     }

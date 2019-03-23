@@ -84,6 +84,7 @@ public class SummaryController : MonoBehaviour
         mainGameCanvas.enabled = false;
         npcArmoryController.updateWeaponsDropdown();
         npcArmoryController.updateLayout();
+        npcArmoryController.InstantiateNPCS();
         armoryCanvas.enabled = true;
         summaryCanvas.enabled = false;
     }

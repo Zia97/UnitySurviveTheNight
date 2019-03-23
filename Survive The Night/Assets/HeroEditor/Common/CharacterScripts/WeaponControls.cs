@@ -106,6 +106,10 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 {
                     newVector = new Vector3(0.5f, -2.5f, -10);
                 }
+                else if(location.Equals("Armory"))
+                {
+                    newVector = new Vector3(1.8f, -2f, -10);
+                }
 
                 RotateArm(arm, weapon, newVector, -40, 40);
 
@@ -113,7 +117,9 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             else
             {
                 RotateArm(arm, weapon, FixHorizontal ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition),-40, 40);
-            }            
+            }
+
+            //Debug.Log(FixHorizontal ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
 
         public void setLocation(String loc)
