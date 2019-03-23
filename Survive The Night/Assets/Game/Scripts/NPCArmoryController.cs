@@ -101,11 +101,6 @@ public class NPCArmoryController : MonoBehaviour
 
     private void npc1DropdownValueChanged(object npc1Value)
     {
-        int turret1temp = 0;
-        int turret2temp = 0;
-        int turret3temp = 0;
-        int turret6temp = 0;
-
         var tempList = _gameController.getAllAvaliableWeapons();
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
@@ -136,6 +131,7 @@ public class NPCArmoryController : MonoBehaviour
     private void ArmoryBackButtonClicked()
     {
         armoryCanvas.enabled = false;
+        _gameController.selectNPCs("S1"+NPC1Dropdown.options[NPC1Dropdown.value].text,"S2"+NPC2Dropdown.options[NPC2Dropdown.value].text, "S3"+NPC3Dropdown.options[NPC3Dropdown.value].text);
         DestroyNPCS();
         S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -153,24 +149,44 @@ public class NPCArmoryController : MonoBehaviour
         var panel = GameObject.Find("NPCPanel");
         if (panel != null)
         {
-            GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
-            a.GetComponent<WeaponControls>().isNPC();
-            a.GetComponent<WeaponControls>().setLocation("Armory");
-            a.transform.SetParent(panel.transform, true);
+            if (_gameController.getNoOfNPCS() == 1)
+            {
+                GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
+                a.GetComponent<WeaponControls>().isNPC();
+                a.GetComponent<WeaponControls>().setLocation("Armory");
+                a.transform.SetParent(panel.transform, true);
+            }
 
-            //GameObject b = Instantiate(turret2Ref, turret2Vector, Quaternion.identity);
-            //b.transform.SetParent(panel.transform, false);
+            else if(_gameController.getNoOfNPCS() == 2)
+            {
+                GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
+                a.GetComponent<WeaponControls>().isNPC();
+                a.GetComponent<WeaponControls>().setLocation("Armory");
+                a.transform.SetParent(panel.transform, true);
 
-            //GameObject c = Instantiate(turret3Ref, turret3Vector, Quaternion.identity);
-            //c.transform.SetParent(panel.transform, false);
+                GameObject b = Instantiate(S2USP, pos2, Quaternion.identity);
+                b.GetComponent<WeaponControls>().isNPC();
+                b.GetComponent<WeaponControls>().setLocation("Armory");
+                b.transform.SetParent(panel.transform, true);
+            }
 
-            // GameObject d = Instantiate(turret6Ref, turret6Vector, Quaternion.identity);
-            //d.transform.SetParent(panel.transform, false);
+            else if (_gameController.getNoOfNPCS() == 3)
+            {
+                GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
+                a.GetComponent<WeaponControls>().isNPC();
+                a.GetComponent<WeaponControls>().setLocation("Armory");
+                a.transform.SetParent(panel.transform, true);
 
-            //turret1Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
-            //turret2Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
-            //turret3Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
-            //turret6Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
+                GameObject b = Instantiate(S2USP, pos2, Quaternion.identity);
+                b.GetComponent<WeaponControls>().isNPC();
+                b.GetComponent<WeaponControls>().setLocation("Armory");
+                b.transform.SetParent(panel.transform, true);
+
+                GameObject c = Instantiate(S2USP, pos3, Quaternion.identity);
+                c.GetComponent<WeaponControls>().isNPC();
+                c.GetComponent<WeaponControls>().setLocation("Armory");
+                c.transform.SetParent(panel.transform, true);
+            }
 
         }
 
@@ -186,12 +202,6 @@ public class NPCArmoryController : MonoBehaviour
         }
     }
 
-    private void WorkshopBackButtonClicked()
-    {
-     //   DestroyTurrets();
-        ////workshopCanvas.enabled = false;
-        //summaryCanvas.enabled = true;        
-    }
 
 
     public void updateAvaliableMaterialsText()
@@ -214,6 +224,12 @@ public class NPCArmoryController : MonoBehaviour
     public void updateLayout()
     {
         var noOfNpcs = _gameController.getNoOfNPCS();
+        if(noOfNpcs==0)
+        {
+            S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
         if(noOfNpcs==1)
         {
             Debug.Log("hit here");

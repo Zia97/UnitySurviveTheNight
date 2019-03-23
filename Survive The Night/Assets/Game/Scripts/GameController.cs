@@ -215,7 +215,6 @@ public class GameController : MonoBehaviour
         S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         InstantiateTurrets();
-        InstantiateNPCS();
 
         _primaryWeapon = "USP";
         _secondaryWeapon = "MP-5";
@@ -610,6 +609,7 @@ public class GameController : MonoBehaviour
         
         if(topNPC!=null)
         {
+            Debug.Log("Loaded top npc");
             Instantiate(topNPC, pos1, Quaternion.identity);
             topNPC.GetComponent<WeaponControls>().isNPC();
             topNPC.GetComponent<WeaponControls>().setLocation("Top");
@@ -735,12 +735,15 @@ public class GameController : MonoBehaviour
 
     public GameObject npcToPrefab(string npc)
     {
+        Debug.Log("Hit npc to prefab");
+        Debug.Log("@@@" + npc);
         if(npc==null)
         {
             return null;
         }
         if (npc.Equals("S1USP"))
         {
+            Debug.Log("s1 usp created");
             return S1USP;
         }
         //if (weaponName.Equals("MP-5"))
