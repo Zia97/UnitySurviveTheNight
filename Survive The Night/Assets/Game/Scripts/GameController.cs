@@ -741,7 +741,6 @@ public class GameController : MonoBehaviour
 
     public GameObject npcToPrefab(string npc)
     {
-        Debug.Log(npc + " @@@@@");
         if(npc==null)
         {
             return null;

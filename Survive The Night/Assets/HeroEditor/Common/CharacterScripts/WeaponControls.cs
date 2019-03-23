@@ -108,7 +108,7 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 }
                 else if(location.Equals("Armory"))
                 {
-                    newVector = new Vector3(1.8f, -2f, -10);
+                    newVector = new Vector3(20f, -2f, -10);
                 }
 
                 RotateArm(arm, weapon, newVector, -40, 40);

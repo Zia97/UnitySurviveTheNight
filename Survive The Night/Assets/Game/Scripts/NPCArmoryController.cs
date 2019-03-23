@@ -55,6 +55,10 @@ public class NPCArmoryController : MonoBehaviour
     private object npc2Value;
     private object npc3Value;
 
+    private Vector3 pos1 = new Vector3(-4f, 0, 0);
+    private Vector3 pos2 = new Vector3(0, 0, 0);
+    private Vector3 pos3 = new Vector3(4, 0, 0);
+
     private void Start()
     {
         _gameControllerObject = GameObject.FindWithTag("GameController");
@@ -105,6 +109,9 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
+        destroyCharcter("S1");
+        updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
+
         SetWeapons();
 
        
@@ -151,6 +158,9 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
+        destroyCharcter("S2");
+        updateNPC("S2",NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
+
         SetWeapons();
 
         //if (tempList.ContainsKey(selectedPrimary))
@@ -177,6 +187,9 @@ public class NPCArmoryController : MonoBehaviour
         var tempList = _gameController.getAllAvaliableWeapons();
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
+
+        destroyCharcter("S3");
+        updateNPC("S3",NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
 
         SetWeapons();
 
@@ -212,13 +225,20 @@ public class NPCArmoryController : MonoBehaviour
         summaryCanvas.enabled = true;     
     }
 
+    private void updateNPC(string charac, string weapon, Vector3 pos)
+    {
+        var panel = GameObject.Find("NPCPanel");
+        if (panel != null)
+        {
+            GameObject a = Instantiate(npcToPrefab(charac,weapon), pos, Quaternion.identity);
+            a.GetComponent<WeaponControls>().isNPC();
+            a.GetComponent<WeaponControls>().setLocation("Armory");
+            a.transform.SetParent(panel.transform, true);
+        }
+    }
+
     public void InstantiateNPCS()
     {
-        Vector3 pos1 = new Vector3(-4f, 0, 0);
-        Vector3 pos2 = new Vector3(0, 0, 0);
-        Vector3 pos3 = new Vector3(4, 0, 0);
-
-
         var panel = GameObject.Find("NPCPanel");
         if (panel != null)
         {
@@ -286,6 +306,40 @@ public class NPCArmoryController : MonoBehaviour
        // avaliableMaterialsText.text = "Avaliable materials: "+avaliableMaterials;
     }
 
+    private void destroyCharcter(string survivorNumber)
+    {
+        var allNPCS = GameObject.FindGameObjectsWithTag("NPC");
+        
+        foreach(var selectedcharacter in allNPCS)
+        {
+            if(survivorNumber.Equals("S1"))
+            {
+                if(selectedcharacter.gameObject.name.Equals("S1USP(Clone)") || selectedcharacter.gameObject.name.Equals("S1MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S1Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S1Shotgun(Clone)"))
+                {
+                    Destroy(selectedcharacter);
+                }
+
+            }
+            else if (survivorNumber.Equals("S2"))
+            {
+                if (selectedcharacter.gameObject.name.Equals("S2USP(Clone)") || selectedcharacter.gameObject.name.Equals("S2MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S2Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S2Shotgun(Clone)"))
+                {
+                    Destroy(selectedcharacter);
+                }
+
+            }
+            else if (survivorNumber.Equals("S3"))
+            {
+                if (selectedcharacter.gameObject.name.Equals("S3USP(Clone)") || selectedcharacter.gameObject.name.Equals("S3MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S3Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S3Shotgun(Clone)"))
+                {
+                    Destroy(selectedcharacter);
+                }
+
+            }
+        }
+
+    }
+
 
     public void updateWeaponsDropdown()
     {
@@ -338,6 +392,76 @@ public class NPCArmoryController : MonoBehaviour
             NPC2Dropdown.enabled = true;
             NPC3Dropdown.enabled = true;
         }
+    }
+
+    public GameObject npcToPrefab(string charac, string npc)
+    {
+        if (npc == null)
+        {
+            return null;
+        }
+
+        if(charac.Equals("S1"))
+        {
+            if (npc.Equals("USP"))
+            {
+                return S1USP;
+            }
+            if (npc.Equals("MP-5"))
+            {
+                return S1MP5;
+            }
+            if (npc.Equals("Scout"))
+            {
+                return S1Scout;
+            }
+            if (npc.Equals("Shotgun"))
+            {
+                return S1Shotgun;
+            }
+        }
+
+        else if (charac.Equals("S2"))
+        {
+            if (npc.Equals("USP"))
+            {
+                return S2USP;
+            }
+            if (npc.Equals("MP-5"))
+            {
+                return S2MP5;
+            }
+            if (npc.Equals("Scout"))
+            {
+                return S2Scout;
+            }
+            if (npc.Equals("Shotgun"))
+            {
+                return S2Shotgun;
+            }
+        }
+
+        else if (charac.Equals("S3"))
+        {
+            if (npc.Equals("USP"))
+            {
+                return S3USP;
+            }
+            if (npc.Equals("MP-5"))
+            {
+                return S3MP5;
+            }
+            if (npc.Equals("Scout"))
+            {
+                return S3Scout;
+            }
+            if (npc.Equals("Shotgun"))
+            {
+                return S3Shotgun;
+            }
+        }
+
+        return null;
     }
 
 }

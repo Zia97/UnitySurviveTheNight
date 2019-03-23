@@ -67,7 +67,6 @@ public class AnimatedExampleWeapon : ExampleWeapon
 
         if (hitRight)
         {
-            Debug.Log(hitRight.collider.gameObject.name);
             if (state == State.Waiting)
             {
                 SetState(State.Firing);
