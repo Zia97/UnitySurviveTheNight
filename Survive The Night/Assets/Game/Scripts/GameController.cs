@@ -599,7 +599,6 @@ public class GameController : MonoBehaviour
 
     public void InstantiateNPCS()
     {
-        Debug.Log("instantiating npcs");
         Vector3 pos1 = new Vector3(-6.4f, 2.4f, 0);
         Vector3 pos2 = new Vector3(-6.4f, 0.5f, 0);
         Vector3 pos3 = new Vector3(-6.4f, -3f, 0);
@@ -610,7 +609,6 @@ public class GameController : MonoBehaviour
         
         if(topNPC!=null)
         {
-            Debug.Log("top npc instantiated");
             topNPC.GetComponent<WeaponControls>().isNPC();
             topNPC.GetComponent<WeaponControls>().setLocation("Top");
             Instantiate(topNPC, pos1, Quaternion.identity);

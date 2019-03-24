@@ -114,7 +114,7 @@ public class EndOfRoundController : MonoBehaviour
             _summaryController = _summaryControllerObject.GetComponent<SummaryController>();
         }
 
-        int weaponProbability = 72 / 12;
+        int weaponProbability = 84 / 12;
 
 
         int random1 = Random.Range(0, 100);
@@ -125,99 +125,103 @@ public class EndOfRoundController : MonoBehaviour
             int random2 = Random.Range(0, 100);
             if (random2 <= 35)
             {
+                int random3 = Random.Range(50, 350);
+
+                weaponFound = true;
+
                 if (!_avaliableWeapons.ContainsKey("MP-5"))
                 {
-                    weaponFound = true;
-                    _summaryController.addWeaponToAvaliableWeapons("MP-5");
-                    _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun)");
+                    _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun)"+ System.Environment.NewLine+"Building materials: "+random3);
                 }
                 else
-                {
-                    weaponFound = true;
-                    _summaryController.addWeaponToAvaliableWeapons("MP-5");
-                    _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun) - Duplicate");
-
+                {                 
+                    _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun) - Duplicate"+ System.Environment.NewLine+"Building materials: " + random3);
                 }
+
+                _summaryController.addWeaponToAvaliableWeapons("MP-5");
+                _gameController.addBuildingMaterials(random3);
             }
-            if (random2 > 35 && random2 <= 55)
+            else if (random2 > 35 && random2 <= 55)
             {
+                int random3 = Random.Range(20, 250);
+                weaponFound = true;
+
                 if (!_avaliableWeapons.ContainsKey("Shotgun"))
                 {
-                    weaponFound = true;
-                    _summaryController.addWeaponToAvaliableWeapons("Shotgun");
-                    _summaryController.updateSuppliesFoundSummaryText("Shotgun");
+                    _summaryController.updateSuppliesFoundSummaryText("Shotgun" + System.Environment.NewLine + "Building materials: " + random3);
                 }
                 else
                 {
-                    weaponFound = true;
-                    _summaryController.addWeaponToAvaliableWeapons("Shotgun");
-                    _summaryController.updateSuppliesFoundSummaryText("Shotgun - Duplicate");
+                    _summaryController.updateSuppliesFoundSummaryText("Shotgun - Duplicate" + System.Environment.NewLine + "Building materials: " + random3);
                 }
+
+                _gameController.addBuildingMaterials(random3);
+                _summaryController.addWeaponToAvaliableWeapons("Shotgun");
             }
-            if (random2 > 56 && random2 <= 76)
+            else if (random2 > 56 && random2 <= 76)
             {
+                int random3 = Random.Range(10, 160);
+                weaponFound = true;
+                _summaryController.addWeaponToAvaliableWeapons("Scout");
+
                 if (!_avaliableWeapons.ContainsKey("Scout"))
                 {
-                    weaponFound = true;
-                    _summaryController.addWeaponToAvaliableWeapons("Scout");
-                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle)");
+                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle)" + System.Environment.NewLine + "Building materials: " + random3);
                 }
                 else
                 {
-                    weaponFound = true;
-                    _summaryController.addWeaponToAvaliableWeapons("Scout");
-                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle) - Duplicate");
+                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle) - Duplicate" + System.Environment.NewLine + "Building materials: " + random3);
                 }
+                _gameController.addBuildingMaterials(random3);
+            }
+            else
+            {
+                int random3 = Random.Range(80, 400);
+                _summaryController.updateSuppliesFoundSummaryText("Building materials: " + random3);
+                _gameController.addBuildingMaterials(random3);
             }
         }
 
-        if (!weaponFound)
+        if (_gameController.getNoOfNPCS() == 0)
         {
-            _summaryController.updateSuppliesFoundSummaryText("Nothing of interest found");
+            int highProb = Random.Range(0, 100);
+
+            if (highProb <= 75)
+            {
+                _gameController.setNoOfNPCS(1);
+                _summaryController.updateSurvivorsFoundText("Surviors found: 1");
+            }
+            else
+            {
+                _summaryController.updateSurvivorsFoundText("Surviors found: 0");
+            }
         }
-
-        _gameController.setNoOfNPCS(_gameController.getNoOfNPCS() + 1);
-
-        //if(_gameController.getNoOfNPCS()==0)
-        //{
-        //    int highProb = Random.Range(0, 100);
-
-        //    if (highProb<=75)
-        //    {
-        //        _gameController.setNoOfNPCS(1);
-        //        _summaryController.updateSurvivorsFoundText("Surviors found: 1");
-        //    }
-        //    else
-        //    {
-        //        _summaryController.updateSurvivorsFoundText("Surviors found: 0");
-        //    }
-        //}
-        //else if (_gameController.getNoOfNPCS() == 1)
-        //{
-        //    int highProb = Random.Range(0, 100);
-        //    if (highProb <= 35)
-        //    {
-        //        _gameController.setNoOfNPCS(2);
-        //        _summaryController.updateSurvivorsFoundText("Surviors found: 1");
-        //    }
-        //    else
-        //    {
-        //        _summaryController.updateSurvivorsFoundText("Surviors found: 0");
-        //    }
-        //}
-        //else if (_gameController.getNoOfNPCS() == 2)
-        //{
-        //    int highProb = Random.Range(0, 100);
-        //    if (highProb <= 10)
-        //    {
-        //        _gameController.setNoOfNPCS(3);
-        //        _summaryController.updateSurvivorsFoundText("Surviors found: 1");
-        //    }
-        //    else
-        //    {
-        //        _summaryController.updateSurvivorsFoundText("Surviors found: 0");
-        //    }
-        //}
+        else if (_gameController.getNoOfNPCS() == 1)
+        {
+            int highProb = Random.Range(0, 100);
+            if (highProb <= 35)
+            {
+                _gameController.setNoOfNPCS(2);
+                _summaryController.updateSurvivorsFoundText("Surviors found: 1");
+            }
+            else
+            {
+                _summaryController.updateSurvivorsFoundText("Surviors found: 0");
+            }
+        }
+        else if (_gameController.getNoOfNPCS() == 2)
+        {
+            int highProb = Random.Range(0, 100);
+            if (highProb <= 10)
+            {
+                _gameController.setNoOfNPCS(3);
+                _summaryController.updateSurvivorsFoundText("Surviors found: 1");
+            }
+            else
+            {
+                _summaryController.updateSurvivorsFoundText("Surviors found: 0");
+            }
+        }
 
 
     }

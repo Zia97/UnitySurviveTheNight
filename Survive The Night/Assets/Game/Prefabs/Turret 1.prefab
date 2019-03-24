@@ -504,8 +504,8 @@ MonoBehaviour:
   events: []
   whenToSends: 
   reverseNegativeRotations: 0
-  startPoint: {x: -0, y: 0, z: 240}
-  endPoint: {x: 0, y: 0, z: 300}
+  startPoint: {x: -0, y: 0, z: 255}
+  endPoint: {x: 0, y: 0, z: 285}
 --- !u!114 &11402918
 MonoBehaviour:
   m_ObjectHideFlags: 0

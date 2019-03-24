@@ -118,8 +118,6 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             {
                 RotateArm(arm, weapon, FixHorizontal ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition),-40, 40);
             }
-
-            //Debug.Log(FixHorizontal ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
 
         public void setLocation(String loc)

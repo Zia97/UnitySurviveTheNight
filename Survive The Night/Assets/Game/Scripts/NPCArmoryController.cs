@@ -137,7 +137,6 @@ public class NPCArmoryController : MonoBehaviour
 
     private void SetWeapons()
     {
-        Debug.Log(_gameController.getNoOfNPCS()+"      @@@@" );
         if (_gameController.getNoOfNPCS() == 1)
         {
             _gameController.selectNPCs("S1" + NPC1Dropdown.options[NPC1Dropdown.value].text, null, null);
@@ -248,7 +247,7 @@ public class NPCArmoryController : MonoBehaviour
             }
             else if (_gameController.getNoOfNPCS() == 1)
             {
-                GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
+                GameObject a = Instantiate(npcToPrefab("S1", NPC1Dropdown.options[NPC1Dropdown.value].text), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
@@ -256,12 +255,12 @@ public class NPCArmoryController : MonoBehaviour
 
             else if(_gameController.getNoOfNPCS() == 2)
             {
-                GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
+                GameObject a = Instantiate(npcToPrefab("S1", NPC1Dropdown.options[NPC1Dropdown.value].text), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
 
-                GameObject b = Instantiate(S2USP, pos2, Quaternion.identity);
+                GameObject b = Instantiate(npcToPrefab("S2", NPC2Dropdown.options[NPC2Dropdown.value].text), pos2, Quaternion.identity);
                 b.GetComponent<WeaponControls>().isNPC();
                 b.GetComponent<WeaponControls>().setLocation("Armory");
                 b.transform.SetParent(panel.transform, true);
@@ -269,17 +268,17 @@ public class NPCArmoryController : MonoBehaviour
 
             else if (_gameController.getNoOfNPCS() >= 3)
             {
-                GameObject a = Instantiate(S1USP, pos1, Quaternion.identity);
+                GameObject a = Instantiate(npcToPrefab("S1", NPC1Dropdown.options[NPC1Dropdown.value].text), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
 
-                GameObject b = Instantiate(S2USP, pos2, Quaternion.identity);
+                GameObject b = Instantiate(npcToPrefab("S2", NPC2Dropdown.options[NPC2Dropdown.value].text), pos2, Quaternion.identity);
                 b.GetComponent<WeaponControls>().isNPC();
                 b.GetComponent<WeaponControls>().setLocation("Armory");
                 b.transform.SetParent(panel.transform, true);
 
-                GameObject c = Instantiate(S3USP, pos3, Quaternion.identity);
+                GameObject c = Instantiate(npcToPrefab("S3", NPC2Dropdown.options[NPC3Dropdown.value].text), pos3, Quaternion.identity);
                 c.GetComponent<WeaponControls>().isNPC();
                 c.GetComponent<WeaponControls>().setLocation("Armory");
                 c.transform.SetParent(panel.transform, true);

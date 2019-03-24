@@ -527,9 +527,9 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret6ButtonClicked()
     {
-        if(avaliableMaterials>=1)
+        if(avaliableMaterials>=7000)
         {
-            //avaliableMaterials = avaliableMaterials - 7000;
+            avaliableMaterials = avaliableMaterials - 7000;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 6");
