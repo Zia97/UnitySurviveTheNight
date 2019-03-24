@@ -58,18 +58,6 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
             }
 
-            //if (gameObject.GetComponent<WeaponControls>().isNpc)
-            //{
-            //    RaycastHit2D hitRight = Physics2D.Raycast(transform.position, transform.right, 300f, mask);
-
-            //    Debug.DrawRay(transform.position, transform.right, Color.green);
-
-            //    if (hitRight)
-            //    {
-            //        StartCoroutine(Fire());
-            //    }
-            //}
-
             if (Character.Firearm.Params.AutomaticFire ? FireButtonPressed : FireButtonDown)
             {
                 StartCoroutine(Fire());
