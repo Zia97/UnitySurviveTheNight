@@ -504,9 +504,9 @@ public class GameController : MonoBehaviour
         _waveCount = _waveCount + 1;
         _roundOver = false;
         spawnWait = spawnWait - 0.05f;
-        if(spawnWait<=0.3)
+        if(spawnWait<=0)
         {
-            spawnWait = 0.3f;
+            spawnWait = 0f;
         }
         StartCoroutine(SpawnWaves());
     }

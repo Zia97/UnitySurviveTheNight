@@ -109,30 +109,36 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        destroyCharcter("S1");
-        updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
+        if (tempList.ContainsKey(selectedPrimary))
+        {
+            int old = tempList[selectedPrimary];
+            tempList[selectedPrimary] = old - 1;
+        }
 
-        SetWeapons();
+        if (tempList.ContainsKey(selectedSecondary))
+        {
+            int old = tempList[selectedPrimary];
+            tempList[selectedPrimary] = old - 1;
+        }
 
+        Debug.Log(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] + "  @@");
+        if (tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] < 0 && !NPC1Dropdown.options[NPC1Dropdown.value].text.Equals("USP"))
+        {
+            Debug.Log("hit here");
+            armoryHelperText.text = "You do not have enough " + NPC1Dropdown.options[NPC1Dropdown.value].text + "'s";
+            destroyCharcter("S1");
+            updateNPC("S1", "USP", pos1);
+
+            SetWeapons();
+        }
+        else
+        {
+            destroyCharcter("S1");
+            updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
+
+            SetWeapons();
+        }
        
-
-        //if (tempList.ContainsKey(selectedPrimary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
-
-        //if (tempList.ContainsKey(selectedSecondary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
-
-        //if(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] <0)
-        //{
-        //    armoryHelperText.text = "You do not have enough " + NPC1Dropdown.options[NPC1Dropdown.value].text + "'s";
-        //    Debug.Log(NPC1Dropdown.value);
-        //}
     }
 
     private void SetWeapons()
@@ -157,28 +163,23 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        destroyCharcter("S2");
-        updateNPC("S2",NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
+        if (tempList[NPC2Dropdown.options[NPC2Dropdown.value].text] < 0 && !NPC2Dropdown.options[NPC2Dropdown.value].text.Equals("USP"))
+        {
+            armoryHelperText.text = "You do not have enough " + NPC2Dropdown.options[NPC2Dropdown.value].text + "'s";
+            destroyCharcter("S2");
+            updateNPC("S2", "USP", pos2);
 
-        SetWeapons();
+            SetWeapons();
+        }
+        else
+        {
+            destroyCharcter("S2");
+            updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
 
-        //if (tempList.ContainsKey(selectedPrimary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
+            SetWeapons();
+        }
 
-        //if (tempList.ContainsKey(selectedSecondary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
 
-        //if (tempList[NPC2Dropdown.options[NPC2Dropdown.value].text] < 0)
-        //{
-        //    armoryHelperText.text = "You do not have enough " + NPC2Dropdown.options[NPC2Dropdown.value].text + "'s";
-        //    Debug.Log(NPC2Dropdown.value);
-        //}
     }
 
     private void npc3DropdownValueChanged(object npc3Value)
@@ -187,28 +188,22 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        destroyCharcter("S3");
-        updateNPC("S3",NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
 
-        SetWeapons();
+        if (tempList[NPC3Dropdown.options[NPC3Dropdown.value].text] < 0 && !NPC3Dropdown.options[NPC3Dropdown.value].text.Equals("USP"))
+        {
+            armoryHelperText.text = "You do not have enough " + NPC3Dropdown.options[NPC3Dropdown.value].text + "'s";
+            destroyCharcter("S3");
+            updateNPC("S3", "USP", pos3);
 
-        //if (tempList.ContainsKey(selectedPrimary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
+            SetWeapons();
+        }
+        else
+        {
+            destroyCharcter("S3");
+            updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
 
-        //if (tempList.ContainsKey(selectedSecondary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
-
-        //if (tempList[NPC3Dropdown.options[NPC3Dropdown.value].text] < 0)
-        //{
-        //    armoryHelperText.text = "You do not have enough " + NPC3Dropdown.options[NPC3Dropdown.value].text + "'s";
-        //    Debug.Log(NPC3Dropdown.value);
-        //}
+            SetWeapons();
+        }
     }
 
     private void ArmoryBackButtonClicked()
