@@ -418,7 +418,7 @@ MonoBehaviour:
   mainDropDown:
     m_Target: 1
     speed: 2
-    m_Value: 0.8586531
+    m_Value: 1
   transitionInDropDown:
     m_Target: 1
     speed: 2

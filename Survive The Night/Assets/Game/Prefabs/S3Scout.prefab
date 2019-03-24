@@ -10890,11 +10890,11 @@ MonoBehaviour:
   Character: {fileID: 114189777033721974}
   ArmL: {fileID: 4485917816442870}
   ArmR: {fileID: 4280409540652734}
-  FireButton: 323
+  FireButton: 324
   ReloadButton: 114
   FixHorizontal: 0
   isNpc: 1
-  location: Mid
+  location: Bot
 --- !u!1 &1179323946161564
 GameObject:
   m_ObjectHideFlags: 0

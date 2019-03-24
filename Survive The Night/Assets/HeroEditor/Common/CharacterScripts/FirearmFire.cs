@@ -37,6 +37,39 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         {
 			if (Character.WeaponType != WeaponType.Firearms1H && Character.WeaponType != WeaponType.Firearms2H) return;
 
+            LayerMask mask = LayerMask.GetMask("Enemy");
+
+            Vector2 direction = new Vector2(7, 2);
+
+            var temp = transform.position;
+            temp.x = temp.x + 10;
+
+
+            if(Character.gameObject.GetComponent<WeaponControls>().isNpc)
+                {
+                RaycastHit2D hitRight = Physics2D.Raycast(transform.position, transform.right, 300f, mask);
+
+                Debug.DrawRay(transform.position, transform.right, Color.green);
+
+                if (hitRight)
+                {
+                    StartCoroutine(Fire());
+                }
+
+            }
+
+            //if (gameObject.GetComponent<WeaponControls>().isNpc)
+            //{
+            //    RaycastHit2D hitRight = Physics2D.Raycast(transform.position, transform.right, 300f, mask);
+
+            //    Debug.DrawRay(transform.position, transform.right, Color.green);
+
+            //    if (hitRight)
+            //    {
+            //        StartCoroutine(Fire());
+            //    }
+            //}
+
             if (Character.Firearm.Params.AutomaticFire ? FireButtonPressed : FireButtonDown)
             {
                 StartCoroutine(Fire());

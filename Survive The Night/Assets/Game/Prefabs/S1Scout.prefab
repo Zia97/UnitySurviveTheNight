@@ -10895,7 +10895,7 @@ MonoBehaviour:
   ReloadButton: 114
   FixHorizontal: 0
   isNpc: 1
-  location: Bot
+  location: Top
 --- !u!114 &114776506864096632
 MonoBehaviour:
   m_ObjectHideFlags: 0
