@@ -118,23 +118,27 @@ public class NPCArmoryController : MonoBehaviour
             tempList[selectedPrimary] = old - 1;
         }
 
-        Debug.Log(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] + "  @@");
-        if (tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] < 0 && !NPC1Dropdown.options[NPC1Dropdown.value].text.Equals("USP"))
-        {
-            armoryHelperText.text = "You do not have enough " + NPC1Dropdown.options[NPC1Dropdown.value].text + "'s";
-            destroyCharcter("S1");
-            updateNPC("S1", "USP", pos1);
+        //Debug.Log(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] + "  @@");
+        //if (tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] < 0 && !NPC1Dropdown.options[NPC1Dropdown.value].text.Equals("USP"))
+        //{
+        //    armoryHelperText.text = "You do not have enough " + NPC1Dropdown.options[NPC1Dropdown.value].text + "'s";
+        //    destroyCharcter("S1");
+        //    updateNPC("S1", "USP", pos1);
 
-            NPC1Dropdown.value = 0;
-            SetWeapons();
-        }
-        else
-        {
-            destroyCharcter("S1");
-            updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
-            SetWeapons();
-        }
-       
+        //    NPC1Dropdown.value = 0;
+        //    SetWeapons();
+        //}
+        //else
+        //{
+        //    destroyCharcter("S1");
+        //    updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
+        //    SetWeapons();
+        //}
+
+        destroyCharcter("S1");
+        updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
+        SetWeapons();
+
     }
 
     private void SetWeapons()
@@ -159,21 +163,26 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        if (tempList[NPC2Dropdown.options[NPC2Dropdown.value].text] < 0 && !NPC2Dropdown.options[NPC2Dropdown.value].text.Equals("USP"))
-        {
-            armoryHelperText.text = "You do not have enough " + NPC2Dropdown.options[NPC2Dropdown.value].text + "'s";
-            destroyCharcter("S2");
-            updateNPC("S2", "USP", pos2);
-            NPC1Dropdown.value = 0;
-            SetWeapons();
-        }
-        else
-        {
-            destroyCharcter("S2");
-            updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
+        //if (tempList[NPC2Dropdown.options[NPC2Dropdown.value].text] < 0 && !NPC2Dropdown.options[NPC2Dropdown.value].text.Equals("USP"))
+        //{
+        //    armoryHelperText.text = "You do not have enough " + NPC2Dropdown.options[NPC2Dropdown.value].text + "'s";
+        //    destroyCharcter("S2");
+        //    updateNPC("S2", "USP", pos2);
+        //    NPC1Dropdown.value = 0;
+        //    SetWeapons();
+        //}
+        //else
+        //{
+        //    destroyCharcter("S2");
+        //    updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
 
-            SetWeapons();
-        }
+        //    SetWeapons();
+        //}
+
+        destroyCharcter("S2");
+        updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
+
+        SetWeapons();
 
 
     }
@@ -185,21 +194,26 @@ public class NPCArmoryController : MonoBehaviour
         var selectedSecondary = _gameController.getSecondary();
 
 
-        if (tempList[NPC3Dropdown.options[NPC3Dropdown.value].text] < 0 && !NPC3Dropdown.options[NPC3Dropdown.value].text.Equals("USP"))
-        {
-            armoryHelperText.text = "You do not have enough " + NPC3Dropdown.options[NPC3Dropdown.value].text + "'s";
-            destroyCharcter("S3");
-            updateNPC("S3", "USP", pos3);
-            NPC1Dropdown.value = 0;
-            SetWeapons();
-        }
-        else
-        {
-            destroyCharcter("S3");
-            updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
+        //if (tempList[NPC3Dropdown.options[NPC3Dropdown.value].text] < 0 && !NPC3Dropdown.options[NPC3Dropdown.value].text.Equals("USP"))
+        //{
+        //    armoryHelperText.text = "You do not have enough " + NPC3Dropdown.options[NPC3Dropdown.value].text + "'s";
+        //    destroyCharcter("S3");
+        //    updateNPC("S3", "USP", pos3);
+        //    NPC1Dropdown.value = 0;
+        //    SetWeapons();
+        //}
+        //else
+        //{
+        //    destroyCharcter("S3");
+        //    updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
 
-            SetWeapons();
-        }
+        //    SetWeapons();
+        //}
+
+        destroyCharcter("S3");
+        updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
+
+        SetWeapons();
     }
 
     private void ArmoryBackButtonClicked()
