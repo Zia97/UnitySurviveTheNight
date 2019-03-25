@@ -124,6 +124,14 @@ public class EnemyScript : MonoBehaviour
         _scoreValue = _score;
     }
 
+    IEnumerator deathDelay()
+    {
+        yield return new WaitForSecondsRealtime(4);
+
+        Debug.Log("color scheme set");
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
@@ -140,6 +148,7 @@ public class EnemyScript : MonoBehaviour
                         gameController.updateScore(_scoreValue);
                         gameController.increaseCurrentWaveScore(_scoreValue);
 
+                        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f ,0f, 255f);
                         gameObject.GetComponent<Animator>().Play("die");
 
                         Destroy(gameObject, 3);
@@ -166,8 +175,7 @@ public class EnemyScript : MonoBehaviour
                     gameController.increaseCurrentWaveScore(_scoreValue);
 
                     gameObject.GetComponent<Animator>().Play("die");
-
-                    Destroy(gameObject, 3);
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
 
                     if (randomDrop)
                     {
@@ -189,8 +197,7 @@ public class EnemyScript : MonoBehaviour
                     gameController.increaseCurrentWaveScore(_scoreValue);
 
                     gameObject.GetComponent<Animator>().Play("die");
-
-                    Destroy(gameObject, 3);
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
 
                     if (randomDrop)
                     {

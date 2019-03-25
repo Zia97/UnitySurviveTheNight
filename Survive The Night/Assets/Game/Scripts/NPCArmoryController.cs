@@ -71,9 +71,6 @@ public class NPCArmoryController : MonoBehaviour
         S2Cross = GameObject.FindWithTag("S2Cross");
         S3Cross = GameObject.FindWithTag("S3Cross");
 
-
-
-
         if (_gameControllerObject != null)
         {
              _gameController = _gameControllerObject.GetComponent<GameController>();
@@ -124,18 +121,17 @@ public class NPCArmoryController : MonoBehaviour
         Debug.Log(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] + "  @@");
         if (tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] < 0 && !NPC1Dropdown.options[NPC1Dropdown.value].text.Equals("USP"))
         {
-            Debug.Log("hit here");
             armoryHelperText.text = "You do not have enough " + NPC1Dropdown.options[NPC1Dropdown.value].text + "'s";
             destroyCharcter("S1");
             updateNPC("S1", "USP", pos1);
 
+            NPC1Dropdown.value = 0;
             SetWeapons();
         }
         else
         {
             destroyCharcter("S1");
             updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
-
             SetWeapons();
         }
        
@@ -168,7 +164,7 @@ public class NPCArmoryController : MonoBehaviour
             armoryHelperText.text = "You do not have enough " + NPC2Dropdown.options[NPC2Dropdown.value].text + "'s";
             destroyCharcter("S2");
             updateNPC("S2", "USP", pos2);
-
+            NPC1Dropdown.value = 0;
             SetWeapons();
         }
         else
@@ -194,7 +190,7 @@ public class NPCArmoryController : MonoBehaviour
             armoryHelperText.text = "You do not have enough " + NPC3Dropdown.options[NPC3Dropdown.value].text + "'s";
             destroyCharcter("S3");
             updateNPC("S3", "USP", pos3);
-
+            NPC1Dropdown.value = 0;
             SetWeapons();
         }
         else

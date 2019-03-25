@@ -217,7 +217,6 @@ public class GameController : MonoBehaviour
         InstantiateTurrets();
 
         _primaryWeapon = "USP";
-        _secondaryWeapon = "MP-5";
         StartCoroutine(SpawnWaves());
 
         var temp = GameObject.FindWithTag("Player");
@@ -459,6 +458,7 @@ public class GameController : MonoBehaviour
         Destroy(GameObject.FindWithTag("Player"));
         DestroyTurrets();
         DestroyNPCS();
+        DestroyDeadEnemies();
         roundOverCanvas.enabled = true;
     }
 
@@ -533,6 +533,10 @@ public class GameController : MonoBehaviour
 
     public GameObject weaponNameToPrefab(string weaponName)
     {
+        if(weaponName==null)
+        {
+            return null;
+        }
         if(weaponName.Equals("USP"))
         {
             return BasicPistolPlayer;
@@ -618,7 +622,6 @@ public class GameController : MonoBehaviour
 
         if(midNPC!=null)
         {
-            Debug.Log("mid npc instantiated");
             midNPC.GetComponent<WeaponControls>().isNPC();
             midNPC.GetComponent<WeaponControls>().setLocation("Mid");
             Instantiate(midNPC, pos2, Quaternion.identity);
@@ -627,7 +630,6 @@ public class GameController : MonoBehaviour
        
         if(botNPC!=null)
         {
-            Debug.Log("bot npc instantiated");
             botNPC.GetComponent<WeaponControls>().isNPC();
             botNPC.GetComponent<WeaponControls>().setLocation("Bot");
             Instantiate(botNPC, pos3, Quaternion.identity);
@@ -717,6 +719,16 @@ public class GameController : MonoBehaviour
         for (var i = 0; i < allNPCS.Length; i++)
         {
             Destroy(allNPCS[i]);
+        }
+    }
+
+    public void DestroyDeadEnemies()
+    {
+        var allenemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        for (var i = 0; i < allenemies.Length; i++)
+        {
+            Destroy(allenemies[i]);
         }
     }
 

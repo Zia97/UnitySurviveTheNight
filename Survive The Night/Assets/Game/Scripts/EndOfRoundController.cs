@@ -174,7 +174,7 @@ public class EndOfRoundController : MonoBehaviour
                 }
                 _gameController.addBuildingMaterials(random3);
             }
-            else
+            else if(random2>=77)
             {
                 int random3 = Random.Range(80, 400);
                 _summaryController.updateSuppliesFoundSummaryText("Building materials: " + random3);

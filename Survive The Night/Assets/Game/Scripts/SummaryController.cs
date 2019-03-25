@@ -44,6 +44,8 @@ public class SummaryController : MonoBehaviour
     public Text suppliesFoundSummary;
 
     public Text survivorsFoundText;
+    private object primaryWeaponDropdownValue;
+    private object secondaryWeaponDropdownValue;
 
     private void Start()
     {
@@ -70,13 +72,31 @@ public class SummaryController : MonoBehaviour
             _avaliableWeapons = _gameController.getAllAvaliableWeapons();
         }
 
-        workshopObject = GameObject.FindWithTag("WorkshopCanvas");
-        workshopObject.SetActive(true);
-        workshopCanvas = workshopObject.GetComponent<Canvas>();
+        primaryWeaponDropdown.onValueChanged.AddListener(delegate {
+            primaryWeaponDropdownChanged(primaryWeaponDropdownValue);
+        });
+
+        secondaryWeaponDropdown.onValueChanged.AddListener(delegate {
+            secondaryWeaponDropdownChanged(secondaryWeaponDropdownValue);
+        });
 
         workshopObject = GameObject.FindWithTag("WorkshopCanvas");
         workshopObject.SetActive(true);
         workshopCanvas = workshopObject.GetComponent<Canvas>();
+    }
+
+    private void secondaryWeaponDropdownChanged(object secondaryWeaponDropdownValue)
+    {
+        _primaryWeapon = primaryWeaponDropdown.options[primaryWeaponDropdown.value].text;
+        _secondaryWeapon = secondaryWeaponDropdown.options[secondaryWeaponDropdown.value].text;
+        _gameController.updateSelectedWeapons(_primaryWeapon, _secondaryWeapon);
+    }
+
+    private void primaryWeaponDropdownChanged(object primaryWeaponDropdownValue)
+    {
+        _primaryWeapon = primaryWeaponDropdown.options[primaryWeaponDropdown.value].text;
+        _secondaryWeapon = secondaryWeaponDropdown.options[secondaryWeaponDropdown.value].text;
+        _gameController.updateSelectedWeapons(_primaryWeapon, _secondaryWeapon);
     }
 
     private void ArmoryButtonClicked()
