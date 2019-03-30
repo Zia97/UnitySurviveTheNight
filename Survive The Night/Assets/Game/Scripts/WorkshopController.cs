@@ -527,7 +527,7 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret6ButtonClicked()
     {
-        if(avaliableMaterials>=7000)
+        if(avaliableMaterials>=0)
         {
             avaliableMaterials = avaliableMaterials - 7000;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
@@ -547,7 +547,7 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret3ButtonClicked()
     {
-        if (avaliableMaterials >= 5000)
+        if (avaliableMaterials >= 0)
         {
             avaliableMaterials = avaliableMaterials - 5000;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
@@ -567,7 +567,7 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret2ButtonClicked()
     {
-        if (avaliableMaterials >= 3000)
+        if (avaliableMaterials >= 0)
         {
             avaliableMaterials = avaliableMaterials - 3000;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
@@ -587,7 +587,7 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret1ButtonClicked()
     {
-        if (avaliableMaterials >= 1500)
+        if (avaliableMaterials >= 0)
         {
             avaliableMaterials = avaliableMaterials - 1500;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
@@ -624,24 +624,28 @@ public class WorkshopController : MonoBehaviour
         turret6Ref = turret6;
 
         Vector3 turret1Vector = new Vector3(-260, 90, -400);
-        Vector3 turret2Vector = new Vector3(-260, 0, -400);
-        Vector3 turret3Vector = new Vector3(-260, -90, -400);
-        Vector3 turret6Vector = new Vector3(-260, -180, -400);
+        Vector3 turret2Vector = new Vector3(-260, 35, -400);
+        Vector3 turret3Vector = new Vector3(-260, -25, -400);
+        Vector3 turret6Vector = new Vector3(-260, -90, -400);
 
         var panel = GameObject.Find("WorkshopPanel");
         if (panel != null) 
         {
             GameObject a = Instantiate(turret1Ref, turret1Vector, Quaternion.identity);
             a.transform.SetParent(panel.transform, false);
+            a.transform.localScale = new Vector3(15, 15, 15);
 
             GameObject b = Instantiate(turret2Ref, turret2Vector, Quaternion.identity);
             b.transform.SetParent(panel.transform, false);
+            b.transform.localScale = new Vector3(15, 15, 15);
 
             GameObject c = Instantiate(turret3Ref, turret3Vector, Quaternion.identity);
             c.transform.SetParent(panel.transform, false);
+            c.transform.localScale = new Vector3(15, 15, 15);
 
             GameObject d = Instantiate(turret6Ref, turret6Vector, Quaternion.identity);
             d.transform.SetParent(panel.transform, false);
+            d.transform.localScale = new Vector3(15, 15 ,15);
 
             turret1Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             turret2Ref.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
