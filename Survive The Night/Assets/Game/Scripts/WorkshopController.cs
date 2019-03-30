@@ -62,6 +62,11 @@ public class WorkshopController : MonoBehaviour
 
     public Text avaliableMaterialsText;
     public Text workshopText;
+
+    public Text basicBuilt;
+    public Text mediumBuilt;
+    public Text heavyBuilt;
+    public Text superBuilt;
     private object turret1Value;
     private object turret2Value;
     private object turret3Value;
@@ -111,6 +116,16 @@ public class WorkshopController : MonoBehaviour
         turret3Dropdown.onValueChanged.AddListener(delegate {
             turret3DropdownValueChanged(turret3Value);
         });
+
+        basicBuilt.color = Color.red;
+        mediumBuilt.color = Color.red;
+        heavyBuilt.color = Color.red;
+        superBuilt.color = Color.red;
+
+        basicBuilt.text = "0";
+        mediumBuilt.text = "0";
+        heavyBuilt.text = "0";
+        superBuilt.text = "0";
 
         updateDropdownTurretList();
     }
@@ -529,13 +544,15 @@ public class WorkshopController : MonoBehaviour
     {
         if(avaliableMaterials>=0)
         {
-            avaliableMaterials = avaliableMaterials - 7000;
+            turret6Count++;
+            //avaliableMaterials = avaliableMaterials - 7000;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 6");
             workshopText.text = "Super turret built!";
             workshopText.color = Color.green;
             updateDropdownTurretList();
+            updateTurretCountText();
         }
         else
         {
@@ -549,13 +566,15 @@ public class WorkshopController : MonoBehaviour
     {
         if (avaliableMaterials >= 0)
         {
-            avaliableMaterials = avaliableMaterials - 5000;
+            turret3Count++;
+            //avaliableMaterials = avaliableMaterials - 5000;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 3");
             workshopText.text = "Heavy turret built!";
             workshopText.color = Color.green;
             updateDropdownTurretList();
+            updateTurretCountText();
         }
         else
         {
@@ -565,17 +584,44 @@ public class WorkshopController : MonoBehaviour
       
     }
 
+    private void updateTurretCountText()
+    {
+        basicBuilt.text = turret1Count.ToString();
+        mediumBuilt.text = turret2Count.ToString();
+        heavyBuilt.text = turret3Count.ToString();
+        superBuilt.text = turret6Count.ToString();
+
+        if(turret1Count>0)
+        {
+            basicBuilt.color = Color.green;
+        }
+        if (turret2Count > 0)
+        {
+            mediumBuilt.color = Color.green;
+        }
+        if (turret3Count > 0)
+        {
+            heavyBuilt.color = Color.green;
+        }
+        if (turret6Count > 0)
+        {
+            superBuilt.color = Color.green;
+        }
+    }
+
     private void BuildTurret2ButtonClicked()
     {
         if (avaliableMaterials >= 0)
         {
-            avaliableMaterials = avaliableMaterials - 3000;
+            turret2Count++;
+            //avaliableMaterials = avaliableMaterials - 3000;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 2");
             workshopText.text = "Medium turret built!";
             workshopText.color = Color.green;
             updateDropdownTurretList();
+            updateTurretCountText();
         }
         else
         {
@@ -589,13 +635,15 @@ public class WorkshopController : MonoBehaviour
     {
         if (avaliableMaterials >= 0)
         {
-            avaliableMaterials = avaliableMaterials - 1500;
+            turret1Count++;
+            //avaliableMaterials = avaliableMaterials - 1500;
             avaliableMaterialsText.text = "Materials avaliable: " + avaliableMaterials;
             _gameController.updateBuildingMaterials(avaliableMaterials);
             _gameController.addTurret("Turret 1");
             workshopText.text = "Basic turret built!";
             workshopText.color = Color.green;
             updateDropdownTurretList();
+            updateTurretCountText();
         }
         else
         {
