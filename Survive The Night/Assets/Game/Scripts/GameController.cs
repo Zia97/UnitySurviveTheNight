@@ -403,6 +403,19 @@ public class GameController : MonoBehaviour
             healthText.text = "Health: " + wallHeath + "/100";
         }
 
+        if(wallHeath<=100 && wallHeath >= 65)
+        {
+            healthText.color = Color.green;
+        }
+        if (wallHeath <= 64 && wallHeath >= 35)
+        {
+            healthText.color = Color.yellow;
+        }
+        if (wallHeath <= 34)
+        {
+            healthText.color = Color.red;
+        }
+
         if (wallHeath <= 0)
         {
             healthText.text = "Health: 0/100";
