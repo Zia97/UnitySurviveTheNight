@@ -677,6 +677,7 @@ public class GameController : MonoBehaviour
             {
                 GameObject a = Instantiate(topTurret, topTurretLoc, Quaternion.identity);
                 a.transform.SetParent(panel.transform, false);
+                a.transform.localScale = new Vector3(17, 17, 17);
                 topTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
 
@@ -684,6 +685,7 @@ public class GameController : MonoBehaviour
             {
                 GameObject b = Instantiate(centreTurret, centerTurretLoc, Quaternion.identity);
                 b.transform.SetParent(panel.transform, false);
+                b.transform.localScale = new Vector3(17, 17, 17);
                 centreTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
 
@@ -691,6 +693,7 @@ public class GameController : MonoBehaviour
             {
                 GameObject c = Instantiate(bottomTurret, bottomTurretLoc, Quaternion.identity);
                 c.transform.SetParent(panel.transform, false);
+                c.transform.localScale = new Vector3(17, 17, 17);
                 bottomTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
            
