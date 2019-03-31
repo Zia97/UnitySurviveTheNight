@@ -25,4 +25,20 @@ public class ParralaxItem : MonoBehaviour
 
         transform.Rotate(rotationAxis, rotationSpeed * Time.deltaTime);
     }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("turret bullet collision");
+        Destroy(gameObject);
+    }
 }

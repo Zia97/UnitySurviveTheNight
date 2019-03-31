@@ -522,6 +522,7 @@ public class GameController : MonoBehaviour
             spawnWait = 0f;
         }
         StartCoroutine(SpawnWaves());
+        damageWall(0);
     }
 
     public void RepairBase(int value)
