@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
     private int _buildingMaterials = 0;
 
     public Text healthText;
-    private int wallHeath = 100;
+    private double wallHeath = 100;
 
     public Text gameOverText;
     public Text waveText;
@@ -225,7 +225,7 @@ public class GameController : MonoBehaviour
         
     }
 
-    public int getWallHealth()
+    public double getWallHealth()
     {
         return wallHeath;
     }
@@ -397,7 +397,7 @@ public class GameController : MonoBehaviour
         return _isPlayerDead;
     }
 
-    public void damageWall(int damage)
+    public void damageWall(double damage)
     {
         if (!_gameOver)
         {

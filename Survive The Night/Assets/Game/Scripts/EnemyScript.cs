@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
     private bool isMovingTowardsPlayer = false;
     private double _health = 100;
     protected GameController gameController;
-    private int _wallDamagetick = 1;
+    private double _wallDamagetick = 1;
     private float _wallDamageFrequency = 1f;
     private bool randomDrop;
     private int _dropProbability = 2;
@@ -96,17 +96,18 @@ public class EnemyScript : MonoBehaviour
 
     protected void setHealth(int health)
     {
-        _health = health;
+        
+        _health = DifficultySelector.getDifficulty()*health;
     }
 
     protected void setSpeed(float speed)
     {
-        _speed = speed;
+        _speed = (float)DifficultySelector.getDifficulty()*speed;
     }
 
     protected void setDamage(int damage)
     {
-        _wallDamagetick = damage;
+        _wallDamagetick = DifficultySelector.getDifficulty()*damage;
     }
 
     protected void setDamageFrequency(float frequency)
