@@ -47,7 +47,8 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
             if(Character.gameObject.GetComponent<WeaponControls>().isNpc)
                 {
-                RaycastHit2D hitRight = Physics2D.Raycast(transform.position, transform.right, 6f, mask); 
+                RaycastHit2D hitRight = Physics2D.Raycast(transform.position, transform.right, 6f, mask);
+                Debug.DrawRay(transform.position, transform.right * 5, Color.green);
                 //Todo
 
                 if (hitRight)

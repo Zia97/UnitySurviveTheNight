@@ -79,6 +79,8 @@ public class GameController : MonoBehaviour
 
     public Text ammoText;
 
+    public Text roundText;
+
     private bool _gameOver;
     private bool _roundOver;
     private bool _beginNextRound;
@@ -137,7 +139,6 @@ public class GameController : MonoBehaviour
     private Vector3 defaultPos;
 
     private int noOfNPCS = 0;
-
 
     private void Start()
     {
@@ -218,6 +219,7 @@ public class GameController : MonoBehaviour
 
         _primaryWeapon = "USP";
         StartCoroutine(SpawnWaves());
+        updateRoundText();
 
         var temp = GameObject.FindWithTag("Player");
         
@@ -294,7 +296,7 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnWaves()
     {
         healthText.text = "Health: " + wallHeath + "/100";
-
+        updateRoundText();
         while (!_gameOver && !_roundOver)
         {
             roundOverCanvas.enabled = false;
@@ -532,6 +534,11 @@ public class GameController : MonoBehaviour
         {
             wallHeath = 100;
         }
+    }
+
+    private void updateRoundText()
+    {
+        roundText.text ="Night "+ _waveCount.ToString();
     }
 
     public void updateSelectedWeapons(string weapon1, string weapon2)

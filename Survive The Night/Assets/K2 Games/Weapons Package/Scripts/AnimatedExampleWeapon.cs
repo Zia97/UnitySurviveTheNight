@@ -62,6 +62,7 @@ public class AnimatedExampleWeapon : ExampleWeapon
         var temp = transform.position;
         temp.x = temp.x + 10;
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position, transform.up, 12f, mask);
+        Debug.DrawRay(transform.position, transform.up * 12, Color.red);
 
         // If it hits something...
 
