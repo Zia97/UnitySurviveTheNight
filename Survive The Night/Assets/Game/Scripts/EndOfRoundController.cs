@@ -223,6 +223,11 @@ public class EndOfRoundController : MonoBehaviour
             }
         }
 
+        if(_gameController.getNoOfNPCS()==3)
+        {
+            _summaryController.updateSurvivorsFoundText("Surviors found: Maximum survivors found");
+        }
+
 
     }
 

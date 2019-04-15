@@ -150,9 +150,12 @@ public class GameController : MonoBehaviour
         defaultPos.y = -0;
         defaultPos.z = 1;
         _avaliableWeapons.Add("USP",5);
+        _primaryWeapon = "USP";
+
+        Instantiate(weaponNameToPrefab(_primaryWeapon), defaultPos, Quaternion.identity);
         _playerGameObject = GameObject.FindWithTag("Player");
-        _player = _playerGameObject.GetComponent<PlayerControls>();
-        myCharacter = _playerGameObject.GetComponent<Character>();
+        _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
+        myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
 
         BaseWall = GameObject.FindWithTag("BaseWall");
 
@@ -217,7 +220,7 @@ public class GameController : MonoBehaviour
 
         InstantiateTurrets();
 
-        _primaryWeapon = "USP";
+        
         StartCoroutine(SpawnWaves());
         updateRoundText();
 

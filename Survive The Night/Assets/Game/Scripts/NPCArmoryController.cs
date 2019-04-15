@@ -106,17 +106,17 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        if (tempList.ContainsKey(selectedPrimary))
-        {
-            int old = tempList[selectedPrimary];
-            tempList[selectedPrimary] = old - 1;
-        }
+        //if (tempList.ContainsKey(selectedPrimary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
 
-        if (tempList.ContainsKey(selectedSecondary))
-        {
-            int old = tempList[selectedPrimary];
-            tempList[selectedPrimary] = old - 1;
-        }
+        //if (tempList.ContainsKey(selectedSecondary))
+        //{
+        //    int old = tempList[selectedPrimary];
+        //    tempList[selectedPrimary] = old - 1;
+        //}
 
         //Debug.Log(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] + "  @@");
         //if (tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] < 0 && !NPC1Dropdown.options[NPC1Dropdown.value].text.Equals("USP"))
@@ -238,6 +238,7 @@ public class NPCArmoryController : MonoBehaviour
             a.GetComponent<WeaponControls>().isNPC();
             a.GetComponent<WeaponControls>().setLocation("Armory");
             a.transform.SetParent(panel.transform, true);
+            a.transform.localScale = new Vector3(28, 28, 28);
         }
     }
 
@@ -256,6 +257,7 @@ public class NPCArmoryController : MonoBehaviour
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
+                a.transform.localScale = new Vector3(28, 28, 28);
             }
 
             else if(_gameController.getNoOfNPCS() == 2)
@@ -264,11 +266,13 @@ public class NPCArmoryController : MonoBehaviour
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
+                a.transform.localScale = new Vector3(28, 28, 28);
 
                 GameObject b = Instantiate(npcToPrefab("S2", NPC2Dropdown.options[NPC2Dropdown.value].text), pos2, Quaternion.identity);
                 b.GetComponent<WeaponControls>().isNPC();
                 b.GetComponent<WeaponControls>().setLocation("Armory");
                 b.transform.SetParent(panel.transform, true);
+                b.transform.localScale = new Vector3(28, 28, 28);
             }
 
             else if (_gameController.getNoOfNPCS() >= 3)
@@ -277,16 +281,19 @@ public class NPCArmoryController : MonoBehaviour
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
+                a.transform.localScale = new Vector3(28, 28, 28);
 
                 GameObject b = Instantiate(npcToPrefab("S2", NPC2Dropdown.options[NPC2Dropdown.value].text), pos2, Quaternion.identity);
                 b.GetComponent<WeaponControls>().isNPC();
                 b.GetComponent<WeaponControls>().setLocation("Armory");
                 b.transform.SetParent(panel.transform, true);
+                b.transform.localScale = new Vector3(28, 28, 28);
 
                 GameObject c = Instantiate(npcToPrefab("S3", NPC2Dropdown.options[NPC3Dropdown.value].text), pos3, Quaternion.identity);
                 c.GetComponent<WeaponControls>().isNPC();
                 c.GetComponent<WeaponControls>().setLocation("Armory");
                 c.transform.SetParent(panel.transform, true);
+                c.transform.localScale = new Vector3(28, 28, 28);
             }
 
         }
