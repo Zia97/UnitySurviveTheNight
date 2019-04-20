@@ -36,15 +36,19 @@ public class EndOfRoundController : MonoBehaviour
     private GameObject _summaryControllerObject;
     private SummaryController _summaryController;
 
+    public Text hammerText;
+
     private Dictionary<string, int> _avaliableWeapons = new Dictionary<string, int>();
 
 
     private int _suppliesHoursSelectedValue = 6;
     private int _repairsHoursSelectedValue = 6;
 
+    private bool goldenHammer = false;
+    private bool superHammer = false;
+
     private void Start()
     {
-
         _confirmButtonObject = GameObject.FindWithTag("ConfirmButton");
         _gameControllerObject = GameObject.FindWithTag("GameController");
         _summaryCanvasController = GameObject.FindWithTag("SummaryCanvas");
@@ -229,6 +233,36 @@ public class EndOfRoundController : MonoBehaviour
         }
 
 
+        int hammerProb = Random.Range(0, 100);
+
+        if(hammerProb==0)
+        {
+            goldenHammer = true;
+           
+        }
+        if(hammerProb>=1 && hammerProb<=6)
+        {
+            superHammer = true;
+        }
+
+        if(superHammer)
+        {
+            hammerText.text = "Your base will currently be repaired at 6% per hour.      (Super Hammer)";
+        }
+        if(goldenHammer)
+        {
+            hammerText.text = "Your base will currently be repaired at 9% per hour.      (Golden Hammer)";
+        }
+    }
+
+    public bool isGavaliable()
+    {
+        return goldenHammer;
+    }
+
+    public bool isSavaliable()
+    {
+        return superHammer;
     }
 
     private void repairDecreaseButtonClicked()
@@ -292,7 +326,20 @@ public class EndOfRoundController : MonoBehaviour
         else
         {
             double previousHealth = _gameController.getWallHealth();
-            _gameController.RepairBase(_repairsHoursSelectedValue * 3);
+            
+            if(goldenHammer)
+            {
+                _gameController.RepairBase(_repairsHoursSelectedValue * 9);
+            }
+            else if(superHammer)
+            {
+                _gameController.RepairBase(_repairsHoursSelectedValue * 6);
+            }
+            else
+            {
+                _gameController.RepairBase(_repairsHoursSelectedValue * 3);
+            }
+
             double newHealth = _gameController.getWallHealth();
 
             _summaryController.updateBaseRepairsText("Your base was repaired from " + previousHealth + "% -> " + newHealth + "%");

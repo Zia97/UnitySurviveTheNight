@@ -1480,6 +1480,7 @@ MonoBehaviour:
   _suppliesHoursObject: {fileID: 0}
   _suppliesHoursSelected: {fileID: 0}
   _summaryCanvasController: {fileID: 943141652}
+  hammerText: {fileID: 0}
 --- !u!4 &172107956
 Transform:
   m_ObjectHideFlags: 0
@@ -12150,8 +12151,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79, y: 12.5}
-  m_SizeDelta: {x: 331.6, y: 25}
+  m_AnchoredPosition: {x: 1.6, y: 12.5}
+  m_SizeDelta: {x: 492.8, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447074291
 MonoBehaviour:
@@ -12186,7 +12187,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your base will currently be repaired at 3% per hour.
+  m_Text: Your base will currently be repaired at 3% per hour.      (Basic Hammer)
 --- !u!222 &1447074292
 CanvasRenderer:
   m_ObjectHideFlags: 0
