@@ -140,8 +140,13 @@ public class GameController : MonoBehaviour
 
     private int noOfNPCS = 0;
 
+    public AudioSource mainGameMusic;
+    public AudioSource breakMusic;
+
+
     private void Start()
     {
+        breakMusic.Stop();
         _turretList.Add(selectedTurret1);
         _turretList.Add(selectedTurret2);
         _turretList.Add(selectedTurret3);
@@ -478,6 +483,8 @@ public class GameController : MonoBehaviour
         DestroyNPCS();
         DestroyDeadEnemies();
         roundOverCanvas.enabled = true;
+        mainGameMusic.Stop();
+        breakMusic.PlayDelayed(2);
     }
 
     public void updateScore(int scoreValue)
@@ -507,6 +514,8 @@ public class GameController : MonoBehaviour
 
     public void StartNextWave()
     {
+        breakMusic.Stop();
+        mainGameMusic.Play();
         roundOverCanvas.enabled = false;
         summaryCanvas.enabled = false;
         dropdownCanvas.enabled = false;

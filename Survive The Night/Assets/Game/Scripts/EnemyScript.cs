@@ -20,6 +20,7 @@ public class EnemyScript : MonoBehaviour
     private int minMaterials = 0;
     private int maxMaterials = 0;
     private int noOfMaterials = 0;
+    private double difficultyMultiplier = 1;
     Rigidbody2D rb;
 
     private GameObject _gameController;
@@ -29,6 +30,11 @@ public class EnemyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        difficultyMultiplier = DifficultySelector.getDifficulty();
+        if(difficultyMultiplier<1)
+        {
+            difficultyMultiplier = 1;
+        }
         rb = GetComponent<Rigidbody2D>();
         GetComponent<Collider2D>().isTrigger = true;
         _gameController = GameObject.FindWithTag("GameController");
@@ -46,7 +52,13 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameController.isPlayerDead())
+        if(gameController==null)
+        {
+            this.gameObject.GetComponent<Animator>().Play("walkSide");
+            transform.position += -transform.right * _speed * Time.deltaTime;
+            Destroy(gameObject, 25);
+        }
+        else if(gameController.isPlayerDead())
         {
             if(collidedWithPlayer)
             {
@@ -97,17 +109,17 @@ public class EnemyScript : MonoBehaviour
     protected void setHealth(int health)
     {
         
-        _health = DifficultySelector.getDifficulty()*health;
+        _health = difficultyMultiplier * health;
     }
 
     protected void setSpeed(float speed)
     {
-        _speed = (float)DifficultySelector.getDifficulty()*speed;
+        _speed = (float)difficultyMultiplier * speed;
     }
 
     protected void setDamage(int damage)
     {
-        _wallDamagetick = DifficultySelector.getDifficulty()*damage;
+        _wallDamagetick = difficultyMultiplier * damage;
     }
 
     protected void setDamageFrequency(float frequency)

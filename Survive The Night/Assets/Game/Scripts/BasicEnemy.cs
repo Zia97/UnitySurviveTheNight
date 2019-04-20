@@ -28,7 +28,6 @@ namespace Assets.Game.Scripts
             }
             if (gameController == null)
             {
-                Debug.Log("Cannot find 'GameController' script");
             }
 
             updateMaterialRange(3, 7);
