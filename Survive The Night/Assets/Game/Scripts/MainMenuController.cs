@@ -1,4 +1,7 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+// Responsibe for generating and destroying unlimited enemies on the start screen.
+using Assets.Game.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;

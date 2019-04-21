@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Author : Qasim Ziauddin
+
+//Basic script handling the wall.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

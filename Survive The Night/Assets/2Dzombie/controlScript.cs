@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Author : THIRTYSIXLAB
+using UnityEngine;
 using System.Collections;
 
 public class controlScript : MonoBehaviour {

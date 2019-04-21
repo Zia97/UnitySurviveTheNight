@@ -1,4 +1,6 @@
-﻿#define StoreVersion
+﻿//Author : K2 Games
+//Modified by : K2 Games
+#define StoreVersion
 
 using UnityEngine;
 using System.Collections;

@@ -1,4 +1,7 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+//Controller that handles the "Game-Over" scenario. Provides final score and options to restart/quit the game.
+using Assets.Game.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;

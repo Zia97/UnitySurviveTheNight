@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿//Author : THIRTYSIXLAB
+
+using System.Linq;
 using Assets.HeroEditor.Common.CharacterScripts;
 using Assets.HeroEditor.Common.EditorScripts;
 using HeroEditor.Common;

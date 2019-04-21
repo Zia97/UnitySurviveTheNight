@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Author : THIRTYSIXLAB
+//Modified by: Qasim Ziauddin
+
+using System.Collections;
 using Assets.HeroEditor.Common.Enums;
 using Assets.MilitaryHeroes.Scripts.Enums;
 using UnityEngine;

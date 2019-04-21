@@ -1,4 +1,6 @@
-﻿namespace Assets.HeroEditor.Common.Enums
+﻿//Author : THIRTYSIXLAB
+
+namespace Assets.HeroEditor.Common.Enums
 {
 	public enum FirearmLoadType
 	{

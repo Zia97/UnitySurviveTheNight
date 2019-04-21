@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Author : K2 Games
+//Modified by: Qasim Ziauddin
+using UnityEngine;
 using System.Collections;
 
 public class ExampleWeapon : MonoBehaviour

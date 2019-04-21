@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Author : K2 Games
+
+using UnityEngine;
 using System.Collections;
 
 public class AsteroidBelt : MonoBehaviour

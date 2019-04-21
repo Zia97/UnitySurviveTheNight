@@ -1,4 +1,5 @@
-﻿////#define ownsEaser//Uncomment this if you own the easer framework!
+﻿//Author : K2 Games
+////#define ownsEaser//Uncomment this if you own the easer framework!
 //#define StoreVersion
 
 //using UnityEngine;

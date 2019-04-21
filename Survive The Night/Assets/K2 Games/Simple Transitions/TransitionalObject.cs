@@ -1,4 +1,5 @@
-﻿//#define ownsEaser//Uncomment this if you own the easer framework!
+﻿//Author : K2 Games
+//#define ownsEaser//Uncomment this if you own the easer framework!
 #define StoreVersion
 //#define UsingNGUI//Uncomment this if you use NGUI. WARNING using alpha transitions can randomly fail with NGUI. To fix this you have to disable and enable the affected gameobject at runtime (If anyone finds a better workaround than this please let me know!)
 #define UsingUGUI//this is Unity's build in GUI tools

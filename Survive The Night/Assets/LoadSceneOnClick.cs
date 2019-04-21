@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Author : Qasim Ziauddin
+
+//This class controls the difficulty selection. Set the difficulty value in hte difficulty selector depending on which difficult is selected
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour

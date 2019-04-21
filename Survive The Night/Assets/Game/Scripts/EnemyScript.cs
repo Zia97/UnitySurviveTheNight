@@ -1,4 +1,8 @@
-﻿using Assets.HeroEditor.Common.CharacterScripts;
+﻿//Author : Qasim Ziauddin
+
+//Superclass enemy script which is intended to be extended by futher subclassess. Provides the basic framework for each enemy,
+//providing movement, bullet collision, animations, death etc
+using Assets.HeroEditor.Common.CharacterScripts;
 using System.Collections;
 using UnityEngine;
 

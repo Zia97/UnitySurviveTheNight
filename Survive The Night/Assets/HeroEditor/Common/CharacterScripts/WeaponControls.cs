@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Author : THIRTYSIXLAB
+//Modified by: Qasim Ziauddin
+
+using System;
 using HeroEditor.Common.Enums;
 using UnityEngine;
 

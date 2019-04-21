@@ -1,4 +1,7 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+//Controller handling the workshop. Responsible for allowing the user to build turrrets and deploy them in set locations on the battlefield.
+using Assets.Game.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;

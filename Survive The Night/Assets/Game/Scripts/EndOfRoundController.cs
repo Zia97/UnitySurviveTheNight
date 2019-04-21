@@ -1,4 +1,8 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+//This controller controls the actions at the end of each wave. Allows the user to repair base and search for supplies.
+// Provides the results of the users decisions to the summary controller.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -127,7 +131,7 @@ public class EndOfRoundController : MonoBehaviour
         if (random1 < weaponProbability * _suppliesHoursSelectedValue)
         {
             int random2 = Random.Range(0, 100);
-            if (random2 <= 35)
+            if (random2 <= 25)
             {
                 int random3 = Random.Range(50, 350);
 
@@ -145,7 +149,7 @@ public class EndOfRoundController : MonoBehaviour
                 _summaryController.addWeaponToAvaliableWeapons("MP-5");
                 _gameController.addBuildingMaterials(random3);
             }
-            else if (random2 > 35 && random2 <= 55)
+            else if (random2 > 45 && random2 <= 55)
             {
                 int random3 = Random.Range(20, 250);
                 weaponFound = true;
@@ -190,7 +194,7 @@ public class EndOfRoundController : MonoBehaviour
         {
             int highProb = Random.Range(0, 100);
 
-            if (highProb <= 75)
+            if (highProb <= 45)
             {
                 _gameController.setNoOfNPCS(1);
                 _summaryController.updateSurvivorsFoundText("Surviors found: 1");
@@ -203,7 +207,7 @@ public class EndOfRoundController : MonoBehaviour
         else if (_gameController.getNoOfNPCS() == 1)
         {
             int highProb = Random.Range(0, 100);
-            if (highProb <= 35)
+            if (highProb <= 25)
             {
                 _gameController.setNoOfNPCS(2);
                 _summaryController.updateSurvivorsFoundText("Surviors found: 1");

@@ -1,4 +1,6 @@
-﻿#if UNITY_EDITOR
+﻿////Author : THIRTYSIXLAB
+
+#if UNITY_EDITOR
 
 using HeroEditor.Common;
 using UnityEditor;

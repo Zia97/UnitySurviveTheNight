@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Author : THIRTYSIXLAB
+//Modified by: Qasim Ziauddin
+
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.HeroEditor.Common.Enums;

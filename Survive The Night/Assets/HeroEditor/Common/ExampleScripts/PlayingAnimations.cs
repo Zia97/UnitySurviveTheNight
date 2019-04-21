@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Author : THIRTYSIXLAB
+
+using System.Collections;
 using Assets.HeroEditor.Common.CharacterScripts;
 using HeroEditor.Common.Enums;
 using UnityEngine;

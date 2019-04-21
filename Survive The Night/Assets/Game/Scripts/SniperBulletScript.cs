@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Author : Qasim Ziauddin
+
+//Class handles unique behvaviour for bullets fired from the sniper rifle. Need for bullet penetration.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

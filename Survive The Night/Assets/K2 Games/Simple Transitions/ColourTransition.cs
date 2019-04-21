@@ -1,4 +1,5 @@
-﻿#define StoreVersion
+﻿//Author : K2 Games
+#define StoreVersion
 #define UsingUGUI
 //#define UsingNGUI
 

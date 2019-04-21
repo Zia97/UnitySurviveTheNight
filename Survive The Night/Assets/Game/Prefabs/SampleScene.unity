@@ -1480,7 +1480,7 @@ MonoBehaviour:
   _suppliesHoursObject: {fileID: 0}
   _suppliesHoursSelected: {fileID: 0}
   _summaryCanvasController: {fileID: 943141652}
-  hammerText: {fileID: 0}
+  hammerText: {fileID: 1447074291}
 --- !u!4 &172107956
 Transform:
   m_ObjectHideFlags: 0

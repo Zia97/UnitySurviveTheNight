@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿//Author : THIRTYSIXLAB
+//Modified by: Qasim Ziauddin
+
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.HeroEditor.Common.CharacterScripts

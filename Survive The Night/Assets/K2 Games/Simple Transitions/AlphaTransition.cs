@@ -1,4 +1,5 @@
-﻿#define UsingUGUI
+﻿//Author : K2 Games
+#define UsingUGUI
 //#define UsingNGUI
 
 using UnityEngine;

@@ -1,4 +1,6 @@
-﻿namespace Assets.MilitaryHeroes.Scripts.Enums
+﻿//Author : THIRTYSIXLAB
+
+namespace Assets.MilitaryHeroes.Scripts.Enums
 {
     /// <summary>
     /// Firearm magazine type can be used to handle firearm behaviour.

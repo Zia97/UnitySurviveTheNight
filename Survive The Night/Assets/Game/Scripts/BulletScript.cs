@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Author : Qasim Ziauddin
+
+//This class instatiates the bullet with a direction and destroys it after 3f.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

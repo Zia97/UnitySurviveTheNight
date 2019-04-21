@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Author : THIRTYSIXLAB
+
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;

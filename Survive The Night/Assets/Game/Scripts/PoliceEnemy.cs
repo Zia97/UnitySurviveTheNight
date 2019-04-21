@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Author : Qasim Ziauddin
+
+//Subclass of the EnemyScript.cs superclass. Sets the specific properties for this PoliceEnemy.
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

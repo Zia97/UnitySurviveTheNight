@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Author : Qasim Ziauddin
+
+//Static class holding the difficulty value the user has selected. Used for transition between scenes.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

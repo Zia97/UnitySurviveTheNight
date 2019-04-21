@@ -1,4 +1,8 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+//The main game controller that is responsible for co-ordinating each waves. Loads and deletes assets such as NPC's and turrets.
+//Handles enemy generation. Also handles UI updates.
+using Assets.Game.Scripts;
 using Assets.HeroEditor.Common.CharacterScripts;
 using System;
 using System.Collections;

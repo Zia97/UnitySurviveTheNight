@@ -1,4 +1,8 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+//Controller handling the summary screen. Values passed to it from the EndOfRoundController.cs. Allows the user to navigate to workshop
+//or NPC armoury. Lets the player select their weapons. 
+using Assets.Game.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;

@@ -1,4 +1,7 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+//Handles specific player controls such as movement, weapon firing and screen partitions and collisions.
+using Assets.Game.Scripts;
 using Assets.HeroEditor.Common.CharacterScripts;
 using System.Collections;
 using System.Collections.Generic;

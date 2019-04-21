@@ -1,4 +1,7 @@
-﻿using Assets.Game.Scripts;
+﻿//Author : Qasim Ziauddin
+
+//Controller handling the NPC Armoury. Gives a visual display of suvivors that have been found. Allows user to switch their weapons.
+using Assets.Game.Scripts;
 using Assets.HeroEditor.Common.CharacterScripts;
 using System;
 using System.Collections;
@@ -192,24 +195,6 @@ public class NPCArmoryController : MonoBehaviour
         var tempList = _gameController.getAllAvaliableWeapons();
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
-
-
-        //if (tempList[NPC3Dropdown.options[NPC3Dropdown.value].text] < 0 && !NPC3Dropdown.options[NPC3Dropdown.value].text.Equals("USP"))
-        //{
-        //    armoryHelperText.text = "You do not have enough " + NPC3Dropdown.options[NPC3Dropdown.value].text + "'s";
-        //    destroyCharcter("S3");
-        //    updateNPC("S3", "USP", pos3);
-        //    NPC1Dropdown.value = 0;
-        //    SetWeapons();
-        //}
-        //else
-        //{
-        //    destroyCharcter("S3");
-        //    updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
-
-        //    SetWeapons();
-        //}
-
         destroyCharcter("S3");
         updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
 

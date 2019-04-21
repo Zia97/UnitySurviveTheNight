@@ -1,4 +1,7 @@
-﻿using Assets.HeroEditor.Common.Data;
+﻿//Author : THIRTYSIXLAB
+//Modified by: Qasim Ziauddin
+
+using Assets.HeroEditor.Common.Data;
 using UnityEngine;
 
 namespace Assets.HeroEditor.Common.CharacterScripts

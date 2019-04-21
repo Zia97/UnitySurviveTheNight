@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+//Author : Qasim Ziauddin
+
+//Script was initially used to handle the weapon controller. Was made redundant later.
 using System.Text;
 using UnityEngine;
 

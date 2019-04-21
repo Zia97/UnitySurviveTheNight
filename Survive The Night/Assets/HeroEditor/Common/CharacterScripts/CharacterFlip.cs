@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Author : THIRTYSIXLAB
+using UnityEngine;
 
 namespace Assets.HeroEditor.Common.CharacterScripts
 {
