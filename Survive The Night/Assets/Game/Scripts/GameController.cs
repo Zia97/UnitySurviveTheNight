@@ -476,6 +476,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator endOfRoundDelay()
     {
+        waveText.text = "Wave Cleared";
         yield return new WaitForSecondsRealtime(4);
         InitiateEndOfRound();
     }
@@ -540,7 +541,6 @@ public class GameController : MonoBehaviour
             spawnWait = 0f;
         }
         StartCoroutine(SpawnWaves());
-        damageWall(0);
     }
 
     public void RepairBase(int value)

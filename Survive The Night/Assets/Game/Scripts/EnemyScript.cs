@@ -34,11 +34,12 @@ public class EnemyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        difficultyMultiplier = DifficultySelector.getDifficulty();
-        if(difficultyMultiplier<1)
-        {
-            difficultyMultiplier = 1;
-        }
+        
+        Debug.Log("DIIFFCULTY  = " + difficultyMultiplier);
+        //if(difficultyMultiplier<1)
+        //{
+        //    difficultyMultiplier = 1;
+        //}
         rb = GetComponent<Rigidbody2D>();
         GetComponent<Collider2D>().isTrigger = true;
         _gameController = GameObject.FindWithTag("GameController");
@@ -112,18 +113,18 @@ public class EnemyScript : MonoBehaviour
 
     protected void setHealth(int health)
     {
-        
-        _health = difficultyMultiplier * health;
+        _health =  DifficultySelector.getDifficulty() * health;
+        Debug.Log(_health);
     }
 
     protected void setSpeed(float speed)
     {
-        _speed = (float)difficultyMultiplier * speed;
+        _speed = (float)DifficultySelector.getDifficulty() * speed;
     }
 
     protected void setDamage(int damage)
     {
-        _wallDamagetick = difficultyMultiplier * damage;
+        _wallDamagetick = DifficultySelector.getDifficulty() * damage;
     }
 
     protected void setDamageFrequency(float frequency)
@@ -145,7 +146,6 @@ public class EnemyScript : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(4);
 
-        Debug.Log("color scheme set");
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
     }
 
@@ -258,7 +258,10 @@ public class EnemyScript : MonoBehaviour
         {
             if (!isDead)
             {
-                gameController.damageWall(_wallDamagetick);
+                if(!gameController.isWallDestroyed())
+                {
+                    gameController.damageWall(_wallDamagetick);
+                }              
             }
             yield return new WaitForSeconds(_wallDamageFrequency);
         }

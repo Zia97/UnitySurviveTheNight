@@ -22,6 +22,7 @@ public class GameOverController : MonoBehaviour
     private GameController _gameController;
 
     public Text _GameSummaryText;
+    public Text _GameSummaryScoreText;
 
     private int waveReached = 0;
     private int score = 0;
@@ -54,7 +55,23 @@ public class GameOverController : MonoBehaviour
     {
         waveReached = wave;
         score = thisscore;
-        _GameSummaryText.text = "You survived for " + waveReached + " nights \n Score: " + score;
+
+        int highScore = PlayerPrefs.GetInt("HighScore");
+        _GameSummaryText.text = "You survived for " + waveReached + " nights";
+
+        if (score>highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            _GameSummaryScoreText.color = Color.green;
+            _GameSummaryScoreText.text = "New High Score! \n High Score : " + score;
+        }
+        else
+        {
+            _GameSummaryScoreText.color = Color.red;
+            _GameSummaryScoreText.text = "High Score : " + highScore + " \n Score: " + score;
+                      
+        }
+       
     }
 
 }

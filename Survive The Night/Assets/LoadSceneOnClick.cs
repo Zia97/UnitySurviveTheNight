@@ -8,6 +8,7 @@ public class LoadSceneOnClick : MonoBehaviour
 {
     public void LoadSceneEasy(string sceneName)
     {
+        PlayerPrefs.SetInt("Coins", 0);
         DifficultySelector.setDifficulty(1);
         SceneManager.LoadScene(sceneName);
     }
@@ -22,6 +23,20 @@ public class LoadSceneOnClick : MonoBehaviour
     {
         DifficultySelector.setDifficulty(1.5);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void loadPreGrame()
+    {
+        string temp = PlayerPrefs.GetString("IsFirstTime");
+        if (temp == null)
+        {
+            Debug.Log("First time loaded");
+            PlayerPrefs.SetString("IsFirstTime", "NotFirst");
+        }
+        else
+        {
+
+        }
     }
 
 }

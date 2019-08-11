@@ -13,11 +13,11 @@ namespace Assets.Game.Scripts
     public class PoliceEnemy : EnemyScript
     {
 
-        private int damage = 5;
-        private int health = 300;
+        private int damage = 3;
+        private int health = 400;
         private float frequency = 1f;
         private int dropProb = 6;
-        private float speed = 1.3f;
+        private float speed = 1f;
         private int _difficulty = 4;
 
         void Start()

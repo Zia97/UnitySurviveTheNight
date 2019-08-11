@@ -69,6 +69,7 @@ TagManager:
   - S1Cross
   - S2Cross
   - S3Cross
+  - GameSummaryScoreText
   layers:
   - Default
   - TransparentFX

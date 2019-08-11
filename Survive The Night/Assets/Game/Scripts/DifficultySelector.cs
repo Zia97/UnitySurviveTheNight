@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class DifficultySelector  {
 
-    static double difficulty = 0;
+    static double difficulty = 1;
 
     public static void setDifficulty(double selecteddifficulty)
     {

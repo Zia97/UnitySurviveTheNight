@@ -149,7 +149,7 @@ public class EndOfRoundController : MonoBehaviour
                 _summaryController.addWeaponToAvaliableWeapons("MP-5");
                 _gameController.addBuildingMaterials(random3);
             }
-            else if (random2 > 45 && random2 <= 55)
+            else if (random2 > 25 && random2 <= 40)
             {
                 int random3 = Random.Range(20, 250);
                 weaponFound = true;
@@ -166,7 +166,7 @@ public class EndOfRoundController : MonoBehaviour
                 _gameController.addBuildingMaterials(random3);
                 _summaryController.addWeaponToAvaliableWeapons("Shotgun");
             }
-            else if (random2 > 56 && random2 <= 76)
+            else if (random2 > 40 && random2 <= 50)
             {
                 int random3 = Random.Range(10, 160);
                 weaponFound = true;
@@ -182,12 +182,18 @@ public class EndOfRoundController : MonoBehaviour
                 }
                 _gameController.addBuildingMaterials(random3);
             }
-            else if(random2>=77)
+            else if(random2>50)
             {
                 int random3 = Random.Range(80, 400);
                 _summaryController.updateSuppliesFoundSummaryText("Building materials: " + random3);
                 _gameController.addBuildingMaterials(random3);
             }
+        }
+        else
+        {
+            int random3 = Random.Range(150, 600);
+            _summaryController.updateSuppliesFoundSummaryText("Building materials: " + random3);
+            _gameController.addBuildingMaterials(random3);
         }
 
         if (_gameController.getNoOfNPCS() == 0)
