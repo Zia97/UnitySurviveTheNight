@@ -8,7 +8,11 @@ public class PurchaseCoinsOnClick : MonoBehaviour
 {
     public void LoadPurchaseCoins(string sceneName)
     {
-        Debug.Log("loading " + sceneName);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadMainMenu(string sceneName)
+    {
         SceneManager.LoadScene(sceneName);
     }
 
