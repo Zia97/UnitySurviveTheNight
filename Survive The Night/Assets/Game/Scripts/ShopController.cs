@@ -45,12 +45,22 @@ public class ShopController : MonoBehaviour
     public GameObject ConfirmedImageScout;
     public GameObject ConfirmedImageGoldenAK;
 
+    public GameObject MP5OwnedDisplay;
+    public GameObject ShotgunOwnedDisplay;
+    public GameObject ScoutOwnedDisplay;
+    public GameObject GoldenAKOwnedDisplay;
+
+
     private string _selectedStoreWeapon;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        #region Canvas'
+
+        PlayerPrefs.DeleteAll();
+
         BlurCanvasObject = GameObject.Find("BlurCanvas");
         BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
         BlurCanvas.enabled = false;
@@ -67,6 +77,10 @@ public class ShopController : MonoBehaviour
         ConfirmationCanvas = ConfirmationCanvasObject.GetComponent<Canvas>();
         ConfirmationCanvas.enabled = false;
 
+        #endregion 
+
+        #region Images GameObjects
+
         ImageMP5.SetActive(false);
         ImageShotgun.SetActive(false);
         ImageScout.SetActive(false);
@@ -77,29 +91,99 @@ public class ShopController : MonoBehaviour
         ConfirmedImageScout.SetActive(false);
         ConfirmedImageGoldenAK.SetActive(false);
 
+        MP5OwnedDisplay.SetActive(false);
+        ShotgunOwnedDisplay.SetActive(false);
+        ScoutOwnedDisplay.SetActive(false);
+        GoldenAKOwnedDisplay.SetActive(false);
+
+        #endregion
+
+        #region MoneyButton
+
         _moneyButtonObject = GameObject.Find("Btn_Money");
         _moneyButton = _moneyButtonObject.GetComponent<Button>();
-        _moneyButton.GetComponentInChildren<Text>().text = UserProfile.getCoins().ToString();
 
+        #endregion
+
+        #region Gun Buttons
         //MP5
         _purchaseMP5ButtonObject = GameObject.Find("PurchaseMP5Button");
         _purchaseMP5Button = _purchaseMP5ButtonObject.GetComponent<Button>();
         _purchaseMP5Button.onClick.AddListener(_purchaseMP5ButtonClicked);
+       
+
 
         //Shotgun
         _purchaseShotgunButtonObject = GameObject.Find("PurchaseShotgunButton");
         _purchaseShotgunButton = _purchaseShotgunButtonObject.GetComponent<Button>();
         _purchaseShotgunButton.onClick.AddListener(_purchaseShotgunButtonClicked);
+        
+
+        //GoldenAK
+        _purchaseGoldenAKButtonObject = GameObject.Find("PurchaseGoldenAKButton");
+        _purchaseGoldenAKButton = _purchaseGoldenAKButtonObject.GetComponent<Button>();
+        _purchaseGoldenAKButton.onClick.AddListener(_purchaseGoldenAKButtonClicked);
+        
 
         //Scout
         _purchaseScoutButtonObject = GameObject.Find("PurchaseScoutButton");
         _purchaseScoutButton = _purchaseScoutButtonObject.GetComponent<Button>();
         _purchaseScoutButton.onClick.AddListener(_purchaseScoutButtonClicked);
 
-        //GoldenAK
-        _purchaseGoldenAKButtonObject = GameObject.Find("PurchaseGoldenAKButton");
-        _purchaseGoldenAKButton = _purchaseGoldenAKButtonObject.GetComponent<Button>();
-        _purchaseGoldenAKButton.onClick.AddListener(_purchaseGoldenAKButtonClicked);
+        #endregion
+
+        updateShopButtons();
+        updateUserMoney();
+    }
+
+
+    private void updateShopButtons()
+    {
+        if (PlayerPrefs.HasKey("MP5"))
+        {
+            _purchaseMP5Button.enabled = false;
+            MP5OwnedDisplay.SetActive(true);
+        }
+        else
+        {
+            _purchaseMP5Button.enabled = true;
+            MP5OwnedDisplay.SetActive(false);
+        }
+
+        if (PlayerPrefs.HasKey("Shotgun"))
+        {
+            _purchaseShotgunButton.enabled = false;
+            ShotgunOwnedDisplay.SetActive(true);
+        }
+        else
+        {
+            _purchaseShotgunButton.enabled = true;
+            ShotgunOwnedDisplay.SetActive(false);
+        }
+
+        if (PlayerPrefs.HasKey("GoldenAK"))
+        {
+            _purchaseGoldenAKButton.enabled = false;
+            GoldenAKOwnedDisplay.SetActive(true);
+
+        }
+        else
+        {
+            _purchaseGoldenAKButton.enabled = true;
+            GoldenAKOwnedDisplay.SetActive(false);
+        }
+
+        if (PlayerPrefs.HasKey("Scout"))
+        {
+            _purchaseScoutButton.enabled = false;
+            ScoutOwnedDisplay.SetActive(true);
+        }
+        else
+        {
+            _purchaseScoutButton.enabled = true;
+            ScoutOwnedDisplay.SetActive(false);
+        }
+
     }
 
     #region Purchase buttons 
@@ -167,6 +251,7 @@ public class ShopController : MonoBehaviour
             UserProfile.decreaseCoins(1000);
         }
         PurchasedCanvas.enabled = true;
+        updateUserMoney();
         _selectedStoreWeapon = "";
     }
 
@@ -177,6 +262,7 @@ public class ShopController : MonoBehaviour
     {
         ConfirmationCanvas.enabled = false;
         BlurCanvas.enabled = false;
+        disableAllImages();
         _selectedStoreWeapon = "";
     }
 
@@ -185,6 +271,7 @@ public class ShopController : MonoBehaviour
         PurchasedCanvas.enabled = false;
         BlurCanvas.enabled = false;
         disableAllImages();
+        updateShopButtons();
         _selectedStoreWeapon = "";
     }
 
@@ -215,7 +302,6 @@ public class ShopController : MonoBehaviour
     {
         if (enoughMoneyForPurchase)
         {
-            Debug.Log("ccanvas enabled");
             ConfirmationCanvas.enabled = true;
 
             if (weapon.Equals("MP5"))
@@ -255,14 +341,14 @@ public class ShopController : MonoBehaviour
     {
         if (_selectedGun.Equals("MP5"))
         {
-            if (UserProfile.getCoins()>= 250)
+            if (300>= 250)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("Scout"))
         {
-            if (UserProfile.getCoins() >= 650)
+            if (700 >= 650)
             {
                 return true;
             }
@@ -276,7 +362,7 @@ public class ShopController : MonoBehaviour
         }
         else if (_selectedGun.Equals("GoldenAK"))
         {
-            if (UserProfile.getCoins() >= 1000)
+            if (2000 >= 1000)
             {
                 return true;
             }
@@ -290,6 +376,10 @@ public class ShopController : MonoBehaviour
         BlurCanvas.enabled = true;
     }
 
+    private void updateUserMoney()
+    {
+        _moneyButton.GetComponentInChildren<Text>().text = UserProfile.getCoins().ToString();
+    }
 
     // Update is called once per frame
     void Update()
