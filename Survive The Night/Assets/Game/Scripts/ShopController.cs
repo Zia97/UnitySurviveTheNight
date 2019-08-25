@@ -27,6 +27,10 @@ public class ShopController : MonoBehaviour
     public GameObject NotEnoughCoinsObject;
     Canvas NotEnoughCoinsCanvas;
 
+    public GameObject PurchasedCanvasObject;
+    Canvas PurchasedCanvas;
+    public GameObject ConfirmedPurchase_Text;
+
     public GameObject ConfirmationCanvasObject;
     Canvas ConfirmationCanvas;
     public GameObject Purchase_Text;
@@ -36,6 +40,13 @@ public class ShopController : MonoBehaviour
     public GameObject ImageScout;
     public GameObject ImageGoldenAK;
 
+    public GameObject ConfirmedImageMP5;
+    public GameObject ConfirmedImageShotgun;
+    public GameObject ConfirmedImageScout;
+    public GameObject ConfirmedImageGoldenAK;
+
+    private string _selectedStoreWeapon;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +54,10 @@ public class ShopController : MonoBehaviour
         BlurCanvasObject = GameObject.Find("BlurCanvas");
         BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
         BlurCanvas.enabled = false;
+
+        PurchasedCanvasObject = GameObject.Find("PurchasedCanvas");
+        PurchasedCanvas = PurchasedCanvasObject.GetComponent<Canvas>();
+        PurchasedCanvas.enabled = false;
 
         NotEnoughCoinsObject = GameObject.Find("NotEnoughCoinsCanvas");
         NotEnoughCoinsCanvas = NotEnoughCoinsObject.GetComponent<Canvas>();
@@ -56,6 +71,11 @@ public class ShopController : MonoBehaviour
         ImageShotgun.SetActive(false);
         ImageScout.SetActive(false);
         ImageGoldenAK.SetActive(false);
+
+        ConfirmedImageMP5.SetActive(false);
+        ConfirmedImageShotgun.SetActive(false);
+        ConfirmedImageScout.SetActive(false);
+        ConfirmedImageGoldenAK.SetActive(false);
 
         _moneyButtonObject = GameObject.Find("Btn_Money");
         _moneyButton = _moneyButtonObject.GetComponent<Button>();
@@ -80,11 +100,9 @@ public class ShopController : MonoBehaviour
         _purchaseGoldenAKButtonObject = GameObject.Find("PurchaseGoldenAKButton");
         _purchaseGoldenAKButton = _purchaseGoldenAKButtonObject.GetComponent<Button>();
         _purchaseGoldenAKButton.onClick.AddListener(_purchaseGoldenAKButtonClicked);
-
-
-        //Blur Canvas
-        BlurCanvasObject = GameObject.Find("BlurCanvas");
     }
+
+    #region Purchase buttons 
 
     private void _purchaseGoldenAKButtonClicked()
     {
@@ -92,8 +110,8 @@ public class ShopController : MonoBehaviour
         CheckForEnoughCoins("GoldenAK");
         var check = CheckForEnoughCoins("GoldenAK");
         displayConfirmation(check, "GoldenAK");
+        _selectedStoreWeapon = "GoldenAK";
     }
-
 
     private void _purchaseScoutButtonClicked()
     {
@@ -101,6 +119,7 @@ public class ShopController : MonoBehaviour
         CheckForEnoughCoins("Scout");
         var check = CheckForEnoughCoins("Scout");
         displayConfirmation(check, "Scout");
+        _selectedStoreWeapon = "Scout";
     }
 
     private void _purchaseShotgunButtonClicked()
@@ -109,16 +128,89 @@ public class ShopController : MonoBehaviour
         CheckForEnoughCoins("Shotgun");
         var check = CheckForEnoughCoins("Shotgun");
         displayConfirmation(check, "Shotgun");
+        _selectedStoreWeapon = "Shotgun";
     }
-
 
     private void _purchaseMP5ButtonClicked()
     {
         InitiateScreenFocus();
         var check = CheckForEnoughCoins("MP5");
         displayConfirmation(check, "MP5");
+        _selectedStoreWeapon = "MP5";
     }
 
+    #endregion
+
+    public void _purchaseConfirmButtonClicked()
+    {
+        ConfirmationCanvas.enabled = false;
+        PlayerPrefs.SetString(_selectedStoreWeapon, _selectedStoreWeapon);
+        ConfirmedPurchase_Text.GetComponentInChildren<Text>().text = _selectedStoreWeapon + " purchased!";
+        if (_selectedStoreWeapon.Equals("MP5"))
+        {
+            ConfirmedImageMP5.SetActive(true);
+            UserProfile.decreaseCoins(250);
+        }
+        else if (_selectedStoreWeapon.Equals("Scout"))
+        {
+            ConfirmedImageScout.SetActive(true);
+            UserProfile.decreaseCoins(650);
+        }
+        else if (_selectedStoreWeapon.Equals("Shotgun"))
+        {
+            ConfirmedImageShotgun.SetActive(true);
+            UserProfile.decreaseCoins(500);
+        }
+        else if (_selectedStoreWeapon.Equals("GoldenAK"))
+        {
+            ConfirmedImageGoldenAK.SetActive(true);
+            UserProfile.decreaseCoins(1000);
+        }
+        PurchasedCanvas.enabled = true;
+        _selectedStoreWeapon = "";
+    }
+
+
+    #region Cancel buttons
+
+    public void _purchaseCancelButtonClicked()
+    {
+        ConfirmationCanvas.enabled = false;
+        BlurCanvas.enabled = false;
+        _selectedStoreWeapon = "";
+    }
+
+    public void _weaponPurchasedCloseButtonClicked()
+    {
+        PurchasedCanvas.enabled = false;
+        BlurCanvas.enabled = false;
+        disableAllImages();
+        _selectedStoreWeapon = "";
+    }
+
+    public void _notEnoughCoinsCancelButtonClicked()
+    {
+        NotEnoughCoinsCanvas.enabled = false;
+        _selectedStoreWeapon = "";
+        BlurCanvas.enabled = false;
+    }
+
+    public void disableAllImages()
+    {
+        ConfirmedImageMP5.SetActive(false);
+        ConfirmedImageGoldenAK.SetActive(false);
+        ConfirmedImageScout.SetActive(false);
+        ConfirmedImageShotgun.SetActive(false);
+
+        ImageGoldenAK.SetActive(false);
+        ImageScout.SetActive(false);
+        ImageMP5.SetActive(false);
+        ImageShotgun.SetActive(false);
+    }
+
+    #endregion
+
+    //Modify confirmation display
     private void displayConfirmation(bool enoughMoneyForPurchase, string weapon)
     {
         if (enoughMoneyForPurchase)
@@ -163,28 +255,28 @@ public class ShopController : MonoBehaviour
     {
         if (_selectedGun.Equals("MP5"))
         {
-            if (300>= 250)
+            if (UserProfile.getCoins()>= 250)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("Scout"))
         {
-            if (650 >= 650)
+            if (UserProfile.getCoins() >= 650)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("Shotgun"))
         {
-            if (500 >= 500)
+            if (UserProfile.getCoins() >= 500)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("GoldenAK"))
         {
-            if (1000>= 1000)
+            if (UserProfile.getCoins() >= 1000)
             {
                 return true;
             }
@@ -192,7 +284,7 @@ public class ShopController : MonoBehaviour
         return false;
     }
 
-
+    //Blurs screen background
     private void InitiateScreenFocus()
     {
         BlurCanvas.enabled = true;
