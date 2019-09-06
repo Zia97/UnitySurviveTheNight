@@ -8,7 +8,7 @@ using UnityEngine;
 public static class UserProfile  {
 
     static int _coins = PlayerPrefs.GetInt("Coins");
-
+  
     public static void setCoins(int _newCoins)
     {
         _coins = _newCoins;
