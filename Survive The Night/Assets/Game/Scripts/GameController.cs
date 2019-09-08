@@ -23,6 +23,15 @@ public class GameController : MonoBehaviour
     public GameObject BasicMP5Player;
     public GameObject ShotgunPlayer;
     public GameObject SniperPlayer;
+    public GameObject GoldenAKPlayer;
+    public GameObject M249Player;
+    public GameObject RocketLauncherPlayer;
+    public GameObject RPGPlayer;
+    public GameObject SPAS12Player;
+    public GameObject SRLPlayer;
+    public GameObject RevolverPlayer;
+    public GameObject M4LaserPlayer;
+
 
     public GameObject S1USP;
     public GameObject S1MP5;
@@ -636,6 +645,15 @@ public class GameController : MonoBehaviour
         if (weaponName.Equals("Scout"))
         {
             return SniperPlayer;
+        }
+        if (weaponName.Equals("Golden AK"))
+        {
+            return GoldenAKPlayer;
+        }
+
+        if (weaponName.Equals("Revolver"))
+        {
+            return RevolverPlayer;
         }
         return null;
     }

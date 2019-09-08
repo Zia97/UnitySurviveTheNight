@@ -21,6 +21,9 @@ public class ShopController : MonoBehaviour
     GameObject _purchaseGoldenAKButtonObject;
     Button _purchaseGoldenAKButton;
 
+    GameObject _purchaseRevolverButtonObject;
+    Button _purchaseRevolverButton;
+
     public GameObject BlurCanvasObject;
     Canvas BlurCanvas;
 
@@ -39,16 +42,19 @@ public class ShopController : MonoBehaviour
     public GameObject ImageShotgun;
     public GameObject ImageScout;
     public GameObject ImageGoldenAK;
+    public GameObject ImageRevolver;
 
     public GameObject ConfirmedImageMP5;
     public GameObject ConfirmedImageShotgun;
     public GameObject ConfirmedImageScout;
     public GameObject ConfirmedImageGoldenAK;
+    public GameObject ConfirmedImageRevolver;
 
     public GameObject MP5OwnedDisplay;
     public GameObject ShotgunOwnedDisplay;
     public GameObject ScoutOwnedDisplay;
     public GameObject GoldenAKOwnedDisplay;
+    public GameObject RevolverOwnedDisplay;
 
 
     private string _selectedStoreWeapon;
@@ -85,16 +91,19 @@ public class ShopController : MonoBehaviour
         ImageShotgun.SetActive(false);
         ImageScout.SetActive(false);
         ImageGoldenAK.SetActive(false);
+        ImageRevolver.SetActive(false);
 
         ConfirmedImageMP5.SetActive(false);
         ConfirmedImageShotgun.SetActive(false);
         ConfirmedImageScout.SetActive(false);
         ConfirmedImageGoldenAK.SetActive(false);
+        ConfirmedImageRevolver.SetActive(false);
 
         MP5OwnedDisplay.SetActive(false);
         ShotgunOwnedDisplay.SetActive(false);
         ScoutOwnedDisplay.SetActive(false);
         GoldenAKOwnedDisplay.SetActive(false);
+        RevolverOwnedDisplay.SetActive(false);
 
         #endregion
 
@@ -112,7 +121,6 @@ public class ShopController : MonoBehaviour
         _purchaseMP5Button.onClick.AddListener(_purchaseMP5ButtonClicked);
        
 
-
         //Shotgun
         _purchaseShotgunButtonObject = GameObject.Find("PurchaseShotgunButton");
         _purchaseShotgunButton = _purchaseShotgunButtonObject.GetComponent<Button>();
@@ -129,6 +137,13 @@ public class ShopController : MonoBehaviour
         _purchaseScoutButtonObject = GameObject.Find("PurchaseScoutButton");
         _purchaseScoutButton = _purchaseScoutButtonObject.GetComponent<Button>();
         _purchaseScoutButton.onClick.AddListener(_purchaseScoutButtonClicked);
+
+
+        //Revolver
+        _purchaseRevolverButtonObject = GameObject.Find("PurchaseRevolverButton");
+        _purchaseRevolverButton = _purchaseRevolverButtonObject.GetComponent<Button>();
+        _purchaseRevolverButton.onClick.AddListener(_purchaseRevolverButtonClicked);
+
 
         #endregion
 
@@ -184,6 +199,17 @@ public class ShopController : MonoBehaviour
             ScoutOwnedDisplay.SetActive(false);
         }
 
+        if (PlayerPrefs.HasKey("Revolver"))
+        {
+            _purchaseRevolverButton.enabled = false;
+            RevolverOwnedDisplay.SetActive(true);
+        }
+        else
+        {
+            _purchaseRevolverButton.enabled = true;
+            RevolverOwnedDisplay.SetActive(false);
+        }
+
     }
 
     #region Purchase buttons 
@@ -223,6 +249,14 @@ public class ShopController : MonoBehaviour
         _selectedStoreWeapon = "MP5";
     }
 
+    private void _purchaseRevolverButtonClicked()
+    {
+        InitiateScreenFocus();
+        var check = CheckForEnoughCoins("Revolver");
+        displayConfirmation(check, "Revolver");
+        _selectedStoreWeapon = "Revolver";
+    }
+
     #endregion
 
     public void _purchaseConfirmButtonClicked()
@@ -249,6 +283,11 @@ public class ShopController : MonoBehaviour
         {
             ConfirmedImageGoldenAK.SetActive(true);
             UserProfile.decreaseCoins(1000);
+        }
+        else if (_selectedStoreWeapon.Equals("Revolver"))
+        {
+            ConfirmedImageRevolver.SetActive(true);
+            UserProfile.decreaseCoins(150);
         }
         PurchasedCanvas.enabled = true;
         updateUserMoney();
@@ -288,11 +327,13 @@ public class ShopController : MonoBehaviour
         ConfirmedImageGoldenAK.SetActive(false);
         ConfirmedImageScout.SetActive(false);
         ConfirmedImageShotgun.SetActive(false);
+        ConfirmedImageRevolver.SetActive(false);
 
         ImageGoldenAK.SetActive(false);
         ImageScout.SetActive(false);
         ImageMP5.SetActive(false);
         ImageShotgun.SetActive(false);
+        ImageRevolver.SetActive(false);
     }
 
     #endregion
@@ -312,17 +353,22 @@ public class ShopController : MonoBehaviour
             else if (weapon.Equals("Scout"))
             {
                 ImageScout.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 250" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 650);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 650" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 650);
             }
             else if (weapon.Equals("Shotgun"))
             {
                 ImageShotgun.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 250" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 500);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 500" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 500);
             }
             else if (weapon.Equals("GoldenAK"))
             {
                 ImageGoldenAK.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 250" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1000);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 1000" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1000);
+            }
+            else if (weapon.Equals("Revolver"))
+            {
+                ImageRevolver.SetActive(true);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 150" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 150);
             }
 
         }
@@ -359,6 +405,13 @@ public class ShopController : MonoBehaviour
         else if (_selectedGun.Equals("GoldenAK"))
         {
             if (2000 >= 1000)
+            {
+                return true;
+            }
+        }
+        else if (_selectedGun.Equals("Revolver"))
+        {
+            if (2000 >= 300)
             {
                 return true;
             }

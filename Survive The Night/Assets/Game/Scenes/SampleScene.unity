@@ -3019,6 +3019,19 @@ MonoBehaviour:
     type: 3}
   SniperPlayer: {fileID: 1168892492390734, guid: 82425686b4dd455429177d58936696c5,
     type: 3}
+  GoldenAKPlayer: {fileID: 1168892492390734, guid: a4c9a97859014864d856d6bc7957d910,
+    type: 3}
+  M249Player: {fileID: 1168892492390734, guid: ed48a49799815ba4c921be1e5eba1052, type: 3}
+  RocketLauncherPlayer: {fileID: 1168892492390734, guid: 34bd799d25471054ea57ea982ba552c2,
+    type: 3}
+  RPGPlayer: {fileID: 1168892492390734, guid: 0817a628987909f49a5e4181df96fe1b, type: 3}
+  SPAS12Player: {fileID: 1168892492390734, guid: dabf424767405b44caf9170eaabb083b,
+    type: 3}
+  SRLPlayer: {fileID: 1168892492390734, guid: ce768325e3f801a498cc0ba0c1a21898, type: 3}
+  RevolverPlayer: {fileID: 1168892492390734, guid: 340c168990cccac4199afab39d8bc16f,
+    type: 3}
+  M4LaserPlayer: {fileID: 1168892492390734, guid: 4c3cfeca0fbb8114ea58fdc4a2d67ace,
+    type: 3}
   S1USP: {fileID: 1168892492390734, guid: 50e64b0e01b5df0469fb185226beb9ed, type: 3}
   S1MP5: {fileID: 1168892492390734, guid: 5bf50b3c4398a714d99b281b14859ee6, type: 3}
   S1Shotgun: {fileID: 1168892492390734, guid: 10fc33222f002964f85b5dcf979285f3, type: 3}

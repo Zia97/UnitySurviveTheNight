@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 3767489873745939926}
   m_Layer: 0
   m_Name: RevolverPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
