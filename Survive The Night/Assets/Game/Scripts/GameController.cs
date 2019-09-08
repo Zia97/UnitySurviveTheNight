@@ -267,9 +267,13 @@ public class GameController : MonoBehaviour
         {
             _avaliableWeapons.Add("AK-47 [Golden]", 1);
         }
-        if (PlayerPrefs.HasKey("M-249"))
+        if (PlayerPrefs.HasKey("M249"))
         {
             _avaliableWeapons.Add("M-249", 1);
+        }
+        if (PlayerPrefs.HasKey("M4Laser"))
+        {
+            _avaliableWeapons.Add("M-4Laser", 1);
         }
         if (PlayerPrefs.HasKey("RocketLauncher"))
         {
@@ -279,7 +283,7 @@ public class GameController : MonoBehaviour
         {
             _avaliableWeapons.Add("RPG", 1);
         }
-        if (PlayerPrefs.HasKey("SPAS-12"))
+        if (PlayerPrefs.HasKey("SPAS12"))
         {
             _avaliableWeapons.Add("SPAS-12", 1);
         }
@@ -320,6 +324,8 @@ public class GameController : MonoBehaviour
         {
             _playerPos = defaultPos;
         }
+
+        Debug.Log(myCharacter.Firearm.Params.Name + "   WEPPPPPPPPPPPPPPPPPP");
         if (myCharacter.Firearm.Params.Name.Equals(_primaryWeapon))
         {
             if (_secondaryWeapon != null)
@@ -659,6 +665,36 @@ public class GameController : MonoBehaviour
         if (weaponName.Equals("Revolver"))
         {
             return RevolverPlayer;
+        }
+
+        if (weaponName.Equals("M-4Laser"))
+        {
+            return M4LaserPlayer;
+        }
+
+        if(weaponName.Equals("SPAS-12"))
+        {
+            return SPAS12Player;
+        }
+
+        if (weaponName.Equals("M-249"))
+        {
+            return M249Player;
+        }
+
+        if (weaponName.Equals("SRL"))
+        {
+            return SRLPlayer;
+        }
+
+        if (weaponName.Equals("RPG"))
+        {
+            return RPGPlayer;
+        }
+
+        if (weaponName.Equals("RocketLauncher"))
+        {
+            return RocketLauncherPlayer;
         }
         return null;
     }

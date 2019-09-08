@@ -244,38 +244,44 @@ public class ShopController : MonoBehaviour
 
     public void updateShopButtonsPage2()
     {
-        if (PlayerPrefs.HasKey("SRL"))
+        try
         {
-            _purchaseSRLButton.enabled = false;
-            SRLOwnedDisplay.SetActive(true);
-        }
-        else
-        {
-            _purchaseSRLButton.enabled = true;
-            SRLOwnedDisplay.SetActive(false);
-        }
+            if (PlayerPrefs.HasKey("SRL"))
+            {
+                _purchaseSRLButton.enabled = false;
+                SRLOwnedDisplay.SetActive(true);
+            }
+            else
+            {
+                _purchaseSRLButton.enabled = true;
+                SRLOwnedDisplay.SetActive(false);
+            }
 
-        if (PlayerPrefs.HasKey("RPG"))
-        {
-            _purchaseRPGButton.enabled = false;
-            RPGOwnedDisplay.SetActive(true);
-        }
-        else
-        {
-            _purchaseRPGButton.enabled = true;
-            RPGOwnedDisplay.SetActive(false);
-        }
+            if (PlayerPrefs.HasKey("RPG"))
+            {
+                _purchaseRPGButton.enabled = false;
+                RPGOwnedDisplay.SetActive(true);
+            }
+            else
+            {
+                _purchaseRPGButton.enabled = true;
+                RPGOwnedDisplay.SetActive(false);
+            }
 
-        if (PlayerPrefs.HasKey("RocketLauncher"))
-        {
-            _purchaseRocketLauncherButton.enabled = false;
-            RocketLauncherOwnedDisplay.SetActive(true);
+            if (PlayerPrefs.HasKey("RocketLauncher"))
+            {
+                _purchaseRocketLauncherButton.enabled = false;
+                RocketLauncherOwnedDisplay.SetActive(true);
+            }
+            else
+            {
+                _purchaseRocketLauncherButton.enabled = true;
+                RocketLauncherOwnedDisplay.SetActive(false);
+            }
         }
-        else
-        {
-            _purchaseRocketLauncherButton.enabled = true;
-            RocketLauncherOwnedDisplay.SetActive(false);
-        }
+        catch
+        { }
+       
     }
 
     private void activatePage1Weapons()
