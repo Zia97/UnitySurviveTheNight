@@ -263,7 +263,7 @@ public class GameController : MonoBehaviour
         {
             _avaliableWeapons.Add("Shotgun", 1);
         }
-        if (PlayerPrefs.HasKey("AK-47 [Golden]"))
+        if (PlayerPrefs.HasKey("GoldenAK"))
         {
             _avaliableWeapons.Add("GoldenAK", 1);
         }
@@ -646,7 +646,7 @@ public class GameController : MonoBehaviour
         {
             return SniperPlayer;
         }
-        if (weaponName.Equals("Golden AK"))
+        if (weaponName.Equals("GoldenAK"))
         {
             return GoldenAKPlayer;
         }

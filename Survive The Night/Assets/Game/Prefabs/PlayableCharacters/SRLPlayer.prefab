@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 7846946504608722505}
   m_Layer: 0
   m_Name: SRLPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   Character: {fileID: 114189777033721974}
   ArmL: {fileID: 4485917816442870}
   ArmR: {fileID: 4280409540652734}
-  FireButton: 324
+  FireButton: 323
   ReloadButton: 114
   FixHorizontal: 0
   isNpc: 0
