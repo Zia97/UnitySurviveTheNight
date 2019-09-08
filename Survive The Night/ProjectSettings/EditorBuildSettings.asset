@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/PurchaseCoinsScene.unity
     guid: 694f9b8080afaf9499794908fe5d7d89
-  - enabled: 1
+  - enabled: 0
     path: Assets/HeroEditor/MilitaryHeroes/Scenes/CharacterEditor [MH].unity
     guid: 5f01e010822045899d9457b71a8a1492
-  - enabled: 1
+  - enabled: 0
     path: Assets/HeroEditor/MilitaryHeroes/Scenes/TestRoom [MH].unity
     guid: 6f140bac83604182b560d2a0af8668a7
   m_configObjects: {}

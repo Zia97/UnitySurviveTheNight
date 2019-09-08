@@ -265,7 +265,7 @@ public class GameController : MonoBehaviour
         }
         if (PlayerPrefs.HasKey("GoldenAK"))
         {
-            _avaliableWeapons.Add("GoldenAK", 1);
+            _avaliableWeapons.Add("AK-47 [Golden]", 1);
         }
         if (PlayerPrefs.HasKey("M-249"))
         {
@@ -345,6 +345,10 @@ public class GameController : MonoBehaviour
             _playerGameObject = GameObject.FindWithTag("Player");
             _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
             myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
+        }
+        else
+        {
+            Debug.Log("EOERWERWERWETJGKIJWE");
         }
     }
 
@@ -630,6 +634,7 @@ public class GameController : MonoBehaviour
         {
             return null;
         }
+
         if(weaponName.Equals("USP"))
         {
             return BasicPistolPlayer;
@@ -646,7 +651,7 @@ public class GameController : MonoBehaviour
         {
             return SniperPlayer;
         }
-        if (weaponName.Equals("GoldenAK"))
+        if (weaponName.Equals("AK-47 [Golden]"))
         {
             return GoldenAKPlayer;
         }

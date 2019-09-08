@@ -264,7 +264,6 @@ public class ShopController : MonoBehaviour
     {
         ConfirmationCanvas.enabled = false;
         PlayerPrefs.SetString(_selectedStoreWeapon, _selectedStoreWeapon);
-        Debug.Log(_selectedStoreWeapon);
         ConfirmedPurchase_Text.GetComponentInChildren<Text>().text = _selectedStoreWeapon + " purchased!";
         if (_selectedStoreWeapon.Equals("MP5"))
         {
