@@ -114,7 +114,6 @@ public class EnemyScript : MonoBehaviour
     protected void setHealth(int health)
     {
         _health =  DifficultySelector.getDifficulty() * health;
-        Debug.Log(_health);
     }
 
     protected void setSpeed(float speed)
@@ -149,10 +148,18 @@ public class EnemyScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
     }
 
+    IEnumerator flashRed()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);    
+        yield return new WaitForSecondsRealtime(0.2f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)")
-        { 
+        if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)" || collision.transform.gameObject.name == "Rocket(Clone)" || collision.transform.gameObject.name == "Rocket")
+        {    
             if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
             {
                 if (!isDead)
@@ -165,8 +172,8 @@ public class EnemyScript : MonoBehaviour
                         gameController.updateScore(_scoreValue);
                         gameController.increaseCurrentWaveScore(_scoreValue);
 
-                        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f ,0f, 255f);
                         gameObject.GetComponent<Animator>().Play("die");
+                        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
 
                         Destroy(gameObject, 3);
 
@@ -178,6 +185,8 @@ public class EnemyScript : MonoBehaviour
                 }
             }
             collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+
         }
         else if (collision.transform.gameObject.name == "SniperBullet" || collision.transform.gameObject.name == "SniperBullet(Clone)")
         {
@@ -200,6 +209,7 @@ public class EnemyScript : MonoBehaviour
                     }
                 }
             }
+            StartCoroutine(flashRed());
         }
         else if (collision.transform.gameObject.name == "TurretBullet" || collision.transform.gameObject.name == "TurretBullet(Clone)")
         {
@@ -222,6 +232,7 @@ public class EnemyScript : MonoBehaviour
                     }
                 }
             }
+            StartCoroutine(flashRed());
         }
     }
 

@@ -158,6 +158,8 @@ public class GameController : MonoBehaviour
         defaultPos.x = -8;
         defaultPos.y = -0;
         defaultPos.z = 1;
+
+        AddOwnedWeapons();
         _avaliableWeapons.Add("USP",5);
         _primaryWeapon = "USP";
 
@@ -235,6 +237,51 @@ public class GameController : MonoBehaviour
 
         var temp = GameObject.FindWithTag("Player");
         
+    }
+
+    //Check for all purchasable weapons 
+    private void AddOwnedWeapons()
+    {
+        if(PlayerPrefs.HasKey("MP5"))
+        {
+            _avaliableWeapons.Add("MP-5", 1);
+        }
+        if (PlayerPrefs.HasKey("Scout"))
+        {
+            _avaliableWeapons.Add("Scout", 1);
+        }
+        if (PlayerPrefs.HasKey("Shotgun"))
+        {
+            _avaliableWeapons.Add("Shotgun", 1);
+        }
+        if (PlayerPrefs.HasKey("AK-47 [Golden]"))
+        {
+            _avaliableWeapons.Add("GoldenAK", 1);
+        }
+        if (PlayerPrefs.HasKey("M-249"))
+        {
+            _avaliableWeapons.Add("M-249", 1);
+        }
+        if (PlayerPrefs.HasKey("RocketLauncher"))
+        {
+            _avaliableWeapons.Add("RocketLauncher", 1);
+        }
+        if (PlayerPrefs.HasKey("RPG"))
+        {
+            _avaliableWeapons.Add("RPG", 1);
+        }
+        if (PlayerPrefs.HasKey("SPAS-12"))
+        {
+            _avaliableWeapons.Add("SPAS-12", 1);
+        }
+        if (PlayerPrefs.HasKey("SRL"))
+        {
+            _avaliableWeapons.Add("SRL", 1);
+        }
+        if (PlayerPrefs.HasKey("Revolver"))
+        {
+            _avaliableWeapons.Add("Revolver", 1);
+        }
     }
 
     public double getWallHealth()

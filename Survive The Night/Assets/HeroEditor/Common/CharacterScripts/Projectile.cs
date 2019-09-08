@@ -57,10 +57,10 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 
                 if (bullet.name.Equals("Bullet(Clone)") || bullet.name.Equals("Bullet"))
                 {
-                    health = 0;
+                Destroy(this.gameObject);
                 }
 
-            
+     
 
             ReplaceImpactSound(other);
             Impact.SetActive(true);
