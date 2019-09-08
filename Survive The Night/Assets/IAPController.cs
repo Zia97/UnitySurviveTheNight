@@ -23,11 +23,11 @@ public class IAPController : MonoBehaviour, IStoreListener
     // when defining the Product Identifiers on the store. Except, for illustration purposes, the 
     // kProductIDSubscription - it has custom Apple and Google identifiers. We declare their store-
     // specific mapping to Unity Purchasing's AddProduct, below.
-    public static string Coins_100 = "Coins_100";
-    public static string Coins_300 = "Coins_300";
-    public static string Coins_500 = "Coins_500";
-    public static string Coins_750 = "Coins_750";
-    public static string Coins_1000 = "Coins_1000";
+    public static string Coins_100 = "coins_100";
+    public static string Coins_300 = "coins_300";
+    public static string Coins_500 = "coins_500";
+    public static string Coins_750 = "coins_750";
+    public static string Coins_1000 = "coins_1000";
 
     //public static string kProductIDNonConsumable = "nonconsumable";
 
