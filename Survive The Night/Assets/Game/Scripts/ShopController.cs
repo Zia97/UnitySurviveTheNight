@@ -18,6 +18,9 @@ public class ShopController : MonoBehaviour
     GameObject _purchaseScoutButtonObject;
     Button _purchaseScoutButton;
 
+    public Button _page1Button;
+    public Button _page2Button;
+
     GameObject _purchaseGoldenAKButtonObject;
     Button _purchaseGoldenAKButton;
 
@@ -144,13 +147,11 @@ public class ShopController : MonoBehaviour
         _purchaseRevolverButton = _purchaseRevolverButtonObject.GetComponent<Button>();
         _purchaseRevolverButton.onClick.AddListener(_purchaseRevolverButtonClicked);
 
-
         #endregion
 
         updateShopButtons();
         updateUserMoney();
     }
-
 
     private void updateShopButtons()
     {
