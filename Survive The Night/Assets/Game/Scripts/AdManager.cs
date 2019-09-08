@@ -14,6 +14,7 @@ public class AdManager : MonoBehaviour
     void Start()
     {
         PurchaseCoinsMoneyObject = GameObject.Find("PurchaseCoinsMoney");
+        PurchaseCoinsMoneyObject.GetComponentInChildren<Text>().text = UserProfile.getCoins().ToString();
     }
 
     public void showAD()

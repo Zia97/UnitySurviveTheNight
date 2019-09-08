@@ -308,25 +308,21 @@ public class ShopController : MonoBehaviour
             {
                 ImageMP5.SetActive(true);
                 Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 250"+ System.Environment.NewLine+ "New Balance: " +(UserProfile.getCoins()-250);
-                UserProfile.decreaseCoins(250);
             }
             else if (weapon.Equals("Scout"))
             {
                 ImageScout.SetActive(true);
                 Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 250" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 650);
-                UserProfile.decreaseCoins(650);
             }
             else if (weapon.Equals("Shotgun"))
             {
                 ImageShotgun.SetActive(true);
                 Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 250" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 500);
-                UserProfile.decreaseCoins(500);
             }
             else if (weapon.Equals("GoldenAK"))
             {
                 ImageGoldenAK.SetActive(true);
                 Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 250" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1000);
-                UserProfile.decreaseCoins(1000);
             }
 
         }
