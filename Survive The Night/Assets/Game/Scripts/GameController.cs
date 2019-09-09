@@ -169,15 +169,30 @@ public class GameController : MonoBehaviour
         defaultPos.z = 1;
 
         AddOwnedWeapons();
-        _avaliableWeapons.Add("USP",5);
+        _avaliableWeapons.Add("USP", 5);
         _primaryWeapon = "USP";
+        _secondaryWeapon = "USP";
 
+        if (!UserProfile.getPrimaryWeapon().Equals(""))
+        {
+            _primaryWeapon = UserProfile.getPrimaryWeapon();
+        }
+
+        if (!UserProfile.getSecondaryWeapon().Equals(""))
+        {
+            _secondaryWeapon = UserProfile.getSecondaryWeapon();
+        }
+
+        #region Instantiate Player
         Instantiate(weaponNameToPrefab(_primaryWeapon), defaultPos, Quaternion.identity);
         _playerGameObject = GameObject.FindWithTag("Player");
         _player = weaponNameToPrefab(_primaryWeapon).GetComponent<PlayerControls>();
         myCharacter = weaponNameToPrefab(_primaryWeapon).gameObject.GetComponent<Character>();
+        #endregion
 
         BaseWall = GameObject.FindWithTag("BaseWall");
+
+        #region Find Objects
 
         _switchWeaponObject = GameObject.FindWithTag("SwitchWeapon");
         _switchWeaponButton = _switchWeaponObject.GetComponent<Button>();
@@ -189,7 +204,7 @@ public class GameController : MonoBehaviour
 
         roundOverGameObject = GameObject.FindWithTag("RoundEndCanvas");
         roundOverGameObject.SetActive(true);
-        roundOverCanvas = roundOverGameObject.GetComponent<Canvas>(); 
+        roundOverCanvas = roundOverGameObject.GetComponent<Canvas>();
         roundOverCanvas.enabled = false;
 
         workshopObject = GameObject.FindWithTag("WorkshopCanvas");
@@ -220,10 +235,12 @@ public class GameController : MonoBehaviour
         gameOverObject.SetActive(true);
         gameOverCanvas.enabled = false;
 
+        #endregion
+
         scoretext.text = "Score : " + score;
         healthText.text = "Health: " + wallHeath + "/100";
         gameOverText.text = "";
-        waveText.text = "Night "+_waveCount.ToString();
+        waveText.text = "Night " + _waveCount.ToString();
 
         avaliableTurrets.Add("Turret 1", 0);
         avaliableTurrets.Add("Turret 2", 0);
@@ -240,18 +257,18 @@ public class GameController : MonoBehaviour
 
         InstantiateTurrets();
 
-        
+
         StartCoroutine(SpawnWaves());
         updateRoundText();
 
         var temp = GameObject.FindWithTag("Player");
-        
+
     }
 
     //Check for all purchasable weapons 
     private void AddOwnedWeapons()
     {
-        if(PlayerPrefs.HasKey("MP5"))
+        if (PlayerPrefs.HasKey("MP5"))
         {
             _avaliableWeapons.Add("MP-5", 1);
         }
@@ -309,8 +326,8 @@ public class GameController : MonoBehaviour
 
     private void SwitchWeaponClicked()
     {
-          var temp = GameObject.FindWithTag("Player");
-         _playerPos = temp.gameObject.transform.position;
+        var temp = GameObject.FindWithTag("Player");
+        _playerPos = temp.gameObject.transform.position;
 
         Destroy(GameObject.FindWithTag("Player"));
 
@@ -320,12 +337,11 @@ public class GameController : MonoBehaviour
 
     private void InstantiatePlayer()
     {
-        if(_playerPos==null)
+        if (_playerPos == null)
         {
             _playerPos = defaultPos;
         }
 
-        Debug.Log(myCharacter.Firearm.Params.Name + "   WEPPPPPPPPPPPPPPPPPP");
         if (myCharacter.Firearm.Params.Name.Equals(_primaryWeapon))
         {
             if (_secondaryWeapon != null)
@@ -388,17 +404,17 @@ public class GameController : MonoBehaviour
             waveText.text = "";
 
             while (currentWaveDifficultyValue < roundWaveDifficulty)
-            {             
+            {
 
-                if(roundWaveDifficulty-currentWaveDifficultyValue>=4)
+                if (roundWaveDifficulty - currentWaveDifficultyValue >= 4)
                 {
-                   randomValue = rnd.Next(3);
+                    randomValue = rnd.Next(3);
                 }
                 else
                 {
                     randomValue = rnd.Next(2);
                 }
-                
+
 
                 Vector3 spawnPosition = new Vector3(spawnValues.x, UnityEngine.Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
@@ -409,7 +425,7 @@ public class GameController : MonoBehaviour
                     {
                         Instantiate(basicEnemy, spawnPosition, spawnRotation);
                     }
-                    else if(easyRandom >= 2 && easyRandom <=4 )
+                    else if (easyRandom >= 2 && easyRandom <= 4)
                     {
                         Instantiate(dogEnemy, spawnPosition, spawnRotation);
                     }
@@ -420,7 +436,7 @@ public class GameController : MonoBehaviour
                     currentWaveDifficultyValue = currentWaveDifficultyValue + 1;
 
                 }
-                else if(randomValue ==1)
+                else if (randomValue == 1)
                 {
                     int medRandom = rnd.Next(3);
                     if (currentWaveDifficultyValue + 1 == roundWaveDifficulty)
@@ -437,11 +453,11 @@ public class GameController : MonoBehaviour
                         else
                         {
                             Instantiate(runnerEnemy, spawnPosition, spawnRotation);
-                        }         
+                        }
                         currentWaveDifficultyValue = currentWaveDifficultyValue + 2;
                     }
                 }
-                else if(randomValue==2)
+                else if (randomValue == 2)
                 {
                     Instantiate(officerEnemy, spawnPosition, spawnRotation);
                     currentWaveDifficultyValue = currentWaveDifficultyValue + 4;
@@ -453,7 +469,7 @@ public class GameController : MonoBehaviour
 
             while (currentWaveScore != roundWaveDifficulty)
             {
-                    yield return new WaitForSeconds(waveWait);
+                yield return new WaitForSeconds(waveWait);
             }
 
 
@@ -483,7 +499,7 @@ public class GameController : MonoBehaviour
             healthText.text = "Health: " + wallHeath + "/100";
         }
 
-        if(wallHeath<=100 && wallHeath >= 65)
+        if (wallHeath <= 100 && wallHeath >= 65)
         {
             healthText.color = Color.green;
         }
@@ -579,7 +595,7 @@ public class GameController : MonoBehaviour
     {
         _gameOver = true;
         gameOverText.text = "Game Over";
-        gameOverObject.GetComponent<GameOverController>().updateWaveReachedAndScore(_waveCount-1, score);
+        gameOverObject.GetComponent<GameOverController>().updateWaveReachedAndScore(_waveCount - 1, score);
         StartCoroutine(endOfGameDelay());
     }
 
@@ -602,7 +618,7 @@ public class GameController : MonoBehaviour
         _waveCount = _waveCount + 1;
         _roundOver = false;
         spawnWait = spawnWait - 0.05f;
-        if(spawnWait<=0)
+        if (spawnWait <= 0)
         {
             spawnWait = 0f;
         }
@@ -612,7 +628,7 @@ public class GameController : MonoBehaviour
     public void RepairBase(int value)
     {
         wallHeath = wallHeath + value;
-        if(wallHeath>100)
+        if (wallHeath > 100)
         {
             wallHeath = 100;
         }
@@ -620,7 +636,7 @@ public class GameController : MonoBehaviour
 
     private void updateRoundText()
     {
-        roundText.text ="Night "+ _waveCount.ToString();
+        roundText.text = "Night " + _waveCount.ToString();
     }
 
     public void updateSelectedWeapons(string weapon1, string weapon2)
@@ -629,19 +645,19 @@ public class GameController : MonoBehaviour
         _secondaryWeapon = weapon2;
     }
 
-    public void updateAllAvaliableWeapons(Dictionary<string,int> allWeapons)
+    public void updateAllAvaliableWeapons(Dictionary<string, int> allWeapons)
     {
         _avaliableWeapons = allWeapons;
     }
 
     public GameObject weaponNameToPrefab(string weaponName)
     {
-        if(weaponName==null)
+        if (weaponName == null)
         {
             return null;
         }
 
-        if(weaponName.Equals("USP"))
+        if (weaponName.Equals("USP"))
         {
             return BasicPistolPlayer;
         }
@@ -672,7 +688,7 @@ public class GameController : MonoBehaviour
             return M4LaserPlayer;
         }
 
-        if(weaponName.Equals("SPAS-12"))
+        if (weaponName.Equals("SPAS-12"))
         {
             return SPAS12Player;
         }
@@ -702,7 +718,7 @@ public class GameController : MonoBehaviour
 
     public GameObject turretToPrefab(string selectedTurret)
     {
-        if(selectedTurret==null)
+        if (selectedTurret == null)
         {
             return null;
         }
@@ -725,21 +741,21 @@ public class GameController : MonoBehaviour
         return null;
     }
 
-    public Dictionary<string,int> getTurrets()
+    public Dictionary<string, int> getTurrets()
     {
         return avaliableTurrets;
     }
 
     public void addTurret(string turret)
     {
-        if(avaliableTurrets.ContainsKey(turret))
+        if (avaliableTurrets.ContainsKey(turret))
         {
             int oldValue = avaliableTurrets[turret];
             avaliableTurrets[turret] = oldValue + 1;
         }
     }
 
-    public Dictionary<string,int> getAllAvaliableWeapons()
+    public Dictionary<string, int> getAllAvaliableWeapons()
     {
         return _avaliableWeapons;
     }
@@ -753,32 +769,32 @@ public class GameController : MonoBehaviour
         var topNPC = npcToPrefab(selectedNPC1);
         var midNPC = npcToPrefab(selectedNPC2);
         var botNPC = npcToPrefab(selectedNPC3);
-        
-        if(topNPC!=null)
+
+        if (topNPC != null)
         {
             topNPC.GetComponent<WeaponControls>().isNPC();
             topNPC.GetComponent<WeaponControls>().setLocation("Top");
             Instantiate(topNPC, pos1, Quaternion.identity);
-            
+
 
         }
 
-        if(midNPC!=null)
+        if (midNPC != null)
         {
             midNPC.GetComponent<WeaponControls>().isNPC();
             midNPC.GetComponent<WeaponControls>().setLocation("Mid");
             Instantiate(midNPC, pos2, Quaternion.identity);
-         
+
         }
-       
-        if(botNPC!=null)
+
+        if (botNPC != null)
         {
             botNPC.GetComponent<WeaponControls>().isNPC();
             botNPC.GetComponent<WeaponControls>().setLocation("Bot");
             Instantiate(botNPC, pos3, Quaternion.identity);
- 
+
         }
-        
+
 
     }
 
@@ -790,7 +806,7 @@ public class GameController : MonoBehaviour
     }
 
     public void InstantiateTurrets()
-    { 
+    {
         var topTurret = turretToPrefab(selectedTurret1);
         var centreTurret = turretToPrefab(selectedTurret2);
         var bottomTurret = turretToPrefab(selectedTurret3);
@@ -800,7 +816,7 @@ public class GameController : MonoBehaviour
         Vector3 bottomTurretLoc = new Vector3(-355, -140, -40);
 
         var panel = GameObject.Find("MainGamePanel");
-        if (panel != null) 
+        if (panel != null)
         {
             if (topTurret != null)
             {
@@ -818,14 +834,14 @@ public class GameController : MonoBehaviour
                 centreTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
 
-            if(bottomTurret != null)
+            if (bottomTurret != null)
             {
                 GameObject c = Instantiate(bottomTurret, bottomTurretLoc, Quaternion.identity);
                 c.transform.SetParent(panel.transform, false);
                 c.transform.localScale = new Vector3(17, 17, 17);
                 bottomTurret.GetComponent<AnimatedExampleWeapon>().SetState(ExampleWeapon.State.Waiting);
             }
-           
+
         }
 
     }
@@ -882,7 +898,7 @@ public class GameController : MonoBehaviour
     {
         selectedNPC1 = t1;
         selectedNPC2 = t2;
-        selectedNPC3 = t3;                                                                                                                                             
+        selectedNPC3 = t3;
     }
 
     public string getPrimary()
@@ -897,7 +913,7 @@ public class GameController : MonoBehaviour
 
     public GameObject npcToPrefab(string npc)
     {
-        if(npc==null)
+        if (npc == null)
         {
             return null;
         }

@@ -238,7 +238,10 @@ public class NPCArmoryController : MonoBehaviour
             }
             else if (_gameController.getNoOfNPCS() == 1)
             {
-                GameObject a = Instantiate(npcToPrefab("S1", NPC1Dropdown.options[NPC1Dropdown.value].text), pos1, Quaternion.identity);
+
+                Debug.Log(NPC1Dropdown.options[NPC1Dropdown.value].text + " @@@@@@@@@@@@@@@@@@@@");
+
+                GameObject a = Instantiate(npcToPrefab("S1", "USP"), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
@@ -247,13 +250,13 @@ public class NPCArmoryController : MonoBehaviour
 
             else if(_gameController.getNoOfNPCS() == 2)
             {
-                GameObject a = Instantiate(npcToPrefab("S1", NPC1Dropdown.options[NPC1Dropdown.value].text), pos1, Quaternion.identity);
+                GameObject a = Instantiate(npcToPrefab("S1", "USP"), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
                 a.transform.localScale = new Vector3(28, 28, 28);
 
-                GameObject b = Instantiate(npcToPrefab("S2", NPC2Dropdown.options[NPC2Dropdown.value].text), pos2, Quaternion.identity);
+                GameObject b = Instantiate(npcToPrefab("S2", "USP"), pos2, Quaternion.identity);
                 b.GetComponent<WeaponControls>().isNPC();
                 b.GetComponent<WeaponControls>().setLocation("Armory");
                 b.transform.SetParent(panel.transform, true);
@@ -262,23 +265,25 @@ public class NPCArmoryController : MonoBehaviour
 
             else if (_gameController.getNoOfNPCS() >= 3)
             {
-                GameObject a = Instantiate(npcToPrefab("S1", NPC1Dropdown.options[NPC1Dropdown.value].text), pos1, Quaternion.identity);
+                GameObject a = Instantiate(npcToPrefab("S1", "USP"), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");
                 a.transform.SetParent(panel.transform, true);
                 a.transform.localScale = new Vector3(28, 28, 28);
 
-                GameObject b = Instantiate(npcToPrefab("S2", NPC2Dropdown.options[NPC2Dropdown.value].text), pos2, Quaternion.identity);
+                GameObject b = Instantiate(npcToPrefab("S2", "USP"), pos2, Quaternion.identity);
                 b.GetComponent<WeaponControls>().isNPC();
                 b.GetComponent<WeaponControls>().setLocation("Armory");
                 b.transform.SetParent(panel.transform, true);
                 b.transform.localScale = new Vector3(28, 28, 28);
 
-                GameObject c = Instantiate(npcToPrefab("S3", NPC2Dropdown.options[NPC3Dropdown.value].text), pos3, Quaternion.identity);
+                GameObject c = Instantiate(npcToPrefab("S3", "USP"), pos3, Quaternion.identity);
                 c.GetComponent<WeaponControls>().isNPC();
                 c.GetComponent<WeaponControls>().setLocation("Armory");
                 c.transform.SetParent(panel.transform, true);
                 c.transform.localScale = new Vector3(28, 28, 28);
+
+                //GameObject c = Instantiate(npcToPrefab("S3", NPC3Dropdown.options[NPC3Dropdown.value].text), pos3, Quaternion.identity);
             }
 
         }

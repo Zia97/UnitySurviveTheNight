@@ -1,13 +1,13 @@
 ﻿//Author : Qasim Ziauddin
 
 //Static class for user profile
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class UserProfile  {
 
     static int _coins = PlayerPrefs.GetInt("Coins");
+    static string _primaryWeapon = "";
+    static string _secondaryWeapon = "";
   
     public static void setCoins(int _newCoins)
     {
@@ -19,6 +19,26 @@ public static class UserProfile  {
     {
         _coins = _coins +_newCoins;
         PlayerPrefs.SetInt("Coins", _coins);
+    }
+
+    public static void setPrimaryWeapon(string primaryWeapon)
+    {
+        _primaryWeapon = primaryWeapon;
+    }
+
+    public static void setSecondaryWeapon(string secondaryWeapon)
+    {
+        _secondaryWeapon = secondaryWeapon;
+    }
+
+    public static string getPrimaryWeapon()
+    {
+        return _primaryWeapon;
+    }
+
+    public static string getSecondaryWeapon()
+    {
+        return _secondaryWeapon;
     }
 
     public static int getCoins()
