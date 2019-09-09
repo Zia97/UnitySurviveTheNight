@@ -104,8 +104,6 @@ public class ShopController : MonoBehaviour
     {
         #region Canvas'
 
-        PlayerPrefs.DeleteAll();
-
         BlurCanvasObject = GameObject.Find("BlurCanvas");
         BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
         BlurCanvas.enabled = false;

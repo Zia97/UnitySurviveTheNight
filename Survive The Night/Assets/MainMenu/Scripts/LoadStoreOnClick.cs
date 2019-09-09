@@ -11,4 +11,9 @@ public class LoadStoreOnClick : MonoBehaviour
         Debug.Log("loading " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void deletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
