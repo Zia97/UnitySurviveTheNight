@@ -286,7 +286,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: StoreScene
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -727,6 +727,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryWeaponDropdown: {fileID: 1200268835}
   secondaryWeaponDropdown: {fileID: 774127108}
+  BasicPistolPlayer: {fileID: 5676334091475545297, guid: 074f09c88310a0944b02a6b555d2e250,
+    type: 3}
+  BasicMP5Player: {fileID: 602, guid: eb8a550f3b74ad74083e652960458742, type: 3}
+  ShotgunPlayer: {fileID: 1168892492390734, guid: a1b023731e10eef4e9886b7671f970ea,
+    type: 3}
+  SniperPlayer: {fileID: 1168892492390734, guid: 82425686b4dd455429177d58936696c5,
+    type: 3}
+  GoldenAKPlayer: {fileID: 1168892492390734, guid: a4c9a97859014864d856d6bc7957d910,
+    type: 3}
+  M249Player: {fileID: 1168892492390734, guid: ed48a49799815ba4c921be1e5eba1052, type: 3}
+  RocketLauncherPlayer: {fileID: 1168892492390734, guid: 34bd799d25471054ea57ea982ba552c2,
+    type: 3}
+  RPGPlayer: {fileID: 1168892492390734, guid: 0817a628987909f49a5e4181df96fe1b, type: 3}
+  SPAS12Player: {fileID: 1168892492390734, guid: dabf424767405b44caf9170eaabb083b,
+    type: 3}
+  SRLPlayer: {fileID: 1168892492390734, guid: ce768325e3f801a498cc0ba0c1a21898, type: 3}
+  RevolverPlayer: {fileID: 1168892492390734, guid: 340c168990cccac4199afab39d8bc16f,
+    type: 3}
+  M4LaserPlayer: {fileID: 1168892492390734, guid: 4c3cfeca0fbb8114ea58fdc4a2d67ace,
+    type: 3}
 --- !u!4 &420825389
 Transform:
   m_ObjectHideFlags: 0

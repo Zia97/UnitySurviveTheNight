@@ -148,6 +148,8 @@ public class ShopController : MonoBehaviour
     }
 
 
+
+
     private void updateShopButtonsPage1()
     {
         if (PlayerPrefs.HasKey("MP5"))
@@ -462,7 +464,7 @@ public class ShopController : MonoBehaviour
         else if (_selectedStoreWeapon.Equals("GoldenAK"))
         {
             ConfirmedImageGoldenAK.SetActive(true);
-            UserProfile.decreaseCoins(1000);
+            UserProfile.decreaseCoins(750);
         }
         else if (_selectedStoreWeapon.Equals("Revolver"))
         {
@@ -472,32 +474,32 @@ public class ShopController : MonoBehaviour
         else if (_selectedStoreWeapon.Equals("M4Laser"))
         {
             ConfirmedImageM4Laser.SetActive(true);
-            UserProfile.decreaseCoins(150);
+            UserProfile.decreaseCoins(850);
         }
         else if (_selectedStoreWeapon.Equals("SPAS12"))
         {
             ConfirmedImageSPAS12.SetActive(true);
-            UserProfile.decreaseCoins(150);
+            UserProfile.decreaseCoins(950);
         }
         else if (_selectedStoreWeapon.Equals("M249"))
         {
             ConfirmedImageM249.SetActive(true);
-            UserProfile.decreaseCoins(150);
+            UserProfile.decreaseCoins(1300);
         }
         else if (_selectedStoreWeapon.Equals("SRL"))
         {
             ConfirmedImageSRL.SetActive(true);
-            UserProfile.decreaseCoins(150);
+            UserProfile.decreaseCoins(1450);
         }
         else if (_selectedStoreWeapon.Equals("RPG"))
         {
             ConfirmedImageRPG.SetActive(true);
-            UserProfile.decreaseCoins(150);
+            UserProfile.decreaseCoins(1600);
         }
         else if (_selectedStoreWeapon.Equals("RocketLauncher"))
         {
             ConfirmedImageRocketLauncher.SetActive(true);
-            UserProfile.decreaseCoins(150);
+            UserProfile.decreaseCoins(1800);
         }
         PurchasedCanvas.enabled = true;
         updateUserMoney();
@@ -651,14 +653,14 @@ public class ShopController : MonoBehaviour
     {
         if (_selectedGun.Equals("MP5"))
         {
-            if (300>= 250)
+            if (UserProfile.getCoins()>= 250)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("Scout"))
         {
-            if (700 >= 650)
+            if (UserProfile.getCoins() >= 650)
             {
                 return true;
             }
@@ -672,56 +674,56 @@ public class ShopController : MonoBehaviour
         }
         else if (_selectedGun.Equals("GoldenAK"))
         {
-            if (2000 >= 1000)
+            if (UserProfile.getCoins() >= 750)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("Revolver"))
         {
-            if (2000 >= 300)
+            if (UserProfile.getCoins() >= 150)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("M4Laser"))
         {
-            if (2000 >= 300)
+            if (UserProfile.getCoins() >= 850)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("SPAS12"))
         {
-            if (2000 >= 300)
+            if (UserProfile.getCoins() >= 950)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("M249"))
         {
-            if (2000 >= 300)
+            if (UserProfile.getCoins() >= 1300)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("SRL"))
         {
-            if (2000 >= 300)
+            if (UserProfile.getCoins() >= 1450)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("RPG"))
         {
-            if (2000 >= 300)
+            if (UserProfile.getCoins() >= 1600)
             {
                 return true;
             }
         }
         else if (_selectedGun.Equals("RocketLauncher"))
         {
-            if (2000 >= 300)
+            if (UserProfile.getCoins() >= 1800)
             {
                 return true;
             }

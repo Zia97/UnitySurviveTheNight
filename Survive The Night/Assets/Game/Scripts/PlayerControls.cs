@@ -3,6 +3,7 @@
 //Handles specific player controls such as movement, weapon firing and screen partitions and collisions.
 using Assets.Game.Scripts;
 using Assets.HeroEditor.Common.CharacterScripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,21 +26,30 @@ public class PlayerControls : MonoBehaviour {
     private Vector3 targetPos;
     private Character myCharacter;
 
-    private bool _uiButtonClicked;
+    public bool _uiButtonClicked;
 
     // Use this for initialization
     void Start ()
     {
-        myCharacter = this.GetComponent<Character>();
-        _weaponControllerObject = GameObject.FindWithTag("WeaponController");
-        _weaponControls = gameObject.GetComponent<WeaponControls>();
+        try
+        {
+            myCharacter = this.GetComponent<Character>();
+            _weaponControllerObject = GameObject.FindWithTag("WeaponController");
+            _weaponControls = gameObject.GetComponent<WeaponControls>();
 
-        weaponController = _weaponControllerObject.GetComponent<WeaponController>();
-        target = transform.position;
-        rb = GetComponent<Rigidbody2D>();
+            weaponController = _weaponControllerObject.GetComponent<WeaponController>();
+            target = transform.position;
+            rb = GetComponent<Rigidbody2D>();
 
-        _gameControllerObject = GameObject.FindWithTag("GameController");
-        _gameController = _gameControllerObject.GetComponent<GameController>();
+            _gameControllerObject = GameObject.FindWithTag("GameController");
+            _gameController = _gameControllerObject.GetComponent<GameController>();
+
+        }
+        catch(Exception e)
+        {
+
+        }
+
 
     }
 
@@ -47,7 +57,6 @@ public class PlayerControls : MonoBehaviour {
 
     public void getCurrentWeapon()
     {
-       Debug.Log(myCharacter.Firearm.Params.Name + "      349tuq349t");
     }
 	
 	// Update is called once per frame

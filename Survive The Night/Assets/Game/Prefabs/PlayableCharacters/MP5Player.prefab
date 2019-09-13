@@ -10960,6 +10960,7 @@ MonoBehaviour:
   playerSpeed: 7
   bullet: {fileID: 1142465273142782, guid: d49b375f2bd2dd34e959ffaaebd1dd62, type: 3}
   _weaponControllerObject: {fileID: 0}
+  _uiButtonClicked: 0
 --- !u!1 &603
 GameObject:
   m_ObjectHideFlags: 0
