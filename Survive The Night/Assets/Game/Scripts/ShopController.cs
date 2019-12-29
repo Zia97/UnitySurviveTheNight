@@ -603,7 +603,7 @@ public class ShopController : MonoBehaviour
             else if (weapon.Equals("GoldenAK"))
             {
                 ImageGoldenAK.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 1000" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1000);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 750" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 750);
             }
             else if (weapon.Equals("Revolver"))
             {
@@ -613,32 +613,32 @@ public class ShopController : MonoBehaviour
             else if (weapon.Equals("M4Laser"))
             {
                 ImageM4Laser.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 150" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 150);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 850" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 850);
             }
             else if (weapon.Equals("SPAS12"))
             {
                 ImageSPAS12.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 150" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 150);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 950" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 950);
             }
             else if (weapon.Equals("M249"))
             {
                 ImageM249.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 150" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 150);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 1300" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1300);
             }
             else if (weapon.Equals("SRL"))
             {
                 ImageSRL.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 150" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 150);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 1450" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1450);
             }
             else if (weapon.Equals("RPG"))
             {
                 ImageRPG.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 150" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 150);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 1600" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1600);
             }
             else if (weapon.Equals("RocketLauncher"))
             {
                 ImageRocketLauncher.SetActive(true);
-                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 150" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 150);
+                Purchase_Text.GetComponentInChildren<Text>().text = "Current balance: " + UserProfile.getCoins() + System.Environment.NewLine + "Cost: 1800" + System.Environment.NewLine + "New Balance: " + (UserProfile.getCoins() - 1800);
             }
 
         }

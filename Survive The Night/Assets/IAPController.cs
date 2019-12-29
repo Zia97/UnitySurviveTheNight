@@ -81,7 +81,17 @@ public class IAPController : MonoBehaviour, IStoreListener
 
     private void updateMoney()
     {
-        PurchaseCoinsMoneyObject.GetComponentInChildren<Text>().text = UserProfile.getCoins().ToString();
+
+        try
+        {
+            PurchaseCoinsMoneyObject.GetComponentInChildren<Text>().text = UserProfile.getCoins().ToString();
+        }
+        catch(Exception e)
+        {
+            Debug.Log("purchase error");
+            throw;
+        }
+        
     }
 
 
