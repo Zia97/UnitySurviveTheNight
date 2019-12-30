@@ -49,26 +49,20 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             if (bullet.name.Equals("SniperBullet") || bullet.name.Equals("SniperBullet(Clone)"))
             {
                 health = health - 30;
+                if (health <= 0)
+                {
+                    Destroy(this.gameObject);
+                }
             }
-            if (health <= 0)
-            {
-                Destroy(this.gameObject);
-            }
-
-            else if (bullet.name.Equals("Bullet(Clone)") || bullet.name.Equals("Bullet"))
-            {
-
-                Destroy(this.gameObject);
-            }
-
-            else if (bullet.name.Equals("Rocket(Clone)") || bullet.name.Equals("Rocket"))
+            else if (bullet.name.Equals("RocketLauncherBullet(Clone)") || bullet.name.Equals("RocketLauncherBullet") || bullet.name.Equals("RPGBullet") || bullet.name.Equals("RPGBullet(Clone)") || bullet.name.Equals("SRLBullet(Clone)") || bullet.name.Equals("SRLBullet"))
             {
                 Destroy(GetComponent<Rigidbody2D>());
                 Destroy(GetComponent<Collider2D>());
             }
-
-
-
+            else
+            {
+                Destroy(this.gameObject);
+            }
 
             ReplaceImpactSound(other);
             Impact.SetActive(true);

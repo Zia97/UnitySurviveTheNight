@@ -35,11 +35,6 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         
-        Debug.Log("DIIFFCULTY  = " + difficultyMultiplier);
-        //if(difficultyMultiplier<1)
-        //{
-        //    difficultyMultiplier = 1;
-        //}
         rb = GetComponent<Rigidbody2D>();
         GetComponent<Collider2D>().isTrigger = true;
         _gameController = GameObject.FindWithTag("GameController");
@@ -158,81 +153,142 @@ public class EnemyScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.gameObject.name == "Bullet" || collision.transform.gameObject.name == "Bullet(Clone)" || collision.transform.gameObject.name == "Rocket(Clone)" || collision.transform.gameObject.name == "Rocket")
-        {    
+        if (collision.transform.gameObject.name == "USPBullet" || collision.transform.gameObject.name == "USPBullet(Clone)")
+        {
             if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
             {
-                if (!isDead)
-                {
-                    _health = _health - 30;
-
-                    if (_health <= 0)
-                    {
-                        isDead = true;
-                        gameController.updateScore(_scoreValue);
-                        gameController.increaseCurrentWaveScore(_scoreValue);
-
-                        gameObject.GetComponent<Animator>().Play("die");
-                        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
-
-                        Destroy(gameObject, 3);
-
-                        if (randomDrop)
-                        {
-                            gameController.addBuildingMaterials(noOfMaterials);
-                        }
-                    }
-                }
+                bulletCollisionCommon(20);
             }
             collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
             StartCoroutine(flashRed());
-
         }
-        else if (collision.transform.gameObject.name == "SniperBullet" || collision.transform.gameObject.name == "SniperBullet(Clone)")
+
+        else if (collision.transform.gameObject.name == "MP-5Bullet" || collision.transform.gameObject.name == "MP-5Bullet(Clone)")
         {
-            if (!isDead)
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
             {
-                _health = _health - 150;
-
-                if (_health <= 0)
-                {
-                    isDead = true;
-                    gameController.updateScore(_scoreValue);
-                    gameController.increaseCurrentWaveScore(_scoreValue);
-
-                    gameObject.GetComponent<Animator>().Play("die");
-                    gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
-
-                    if (randomDrop)
-                    {
-                        gameController.addBuildingMaterials(noOfMaterials);
-                    }
-                }
+                bulletCollisionCommon(15);
             }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
             StartCoroutine(flashRed());
         }
+
+        else if (collision.transform.gameObject.name == "ShotgunBullet" || collision.transform.gameObject.name == "ShotgunBullet(Clone)")
+        {
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
+            {
+                bulletCollisionCommon(15);
+            }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "AK-47Bullet" || collision.transform.gameObject.name == "AK-47Bullet(Clone)")
+        {
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
+            {
+                bulletCollisionCommon(35);
+            }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "RevolverBullet" || collision.transform.gameObject.name == "RevolverBullet(Clone)")
+        {
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
+            {
+                bulletCollisionCommon(25);
+            }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "M-4LaserBullet" || collision.transform.gameObject.name == "M-4LaserBullet(Clone)")
+        {
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
+            {
+                bulletCollisionCommon(33);
+            }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "SPAS-12Bullet" || collision.transform.gameObject.name == "SPAS-12Bullet(Clone)")
+        {
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
+            {
+                bulletCollisionCommon(25);
+            }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "M-249Bullet" || collision.transform.gameObject.name == "M-249Bullet(Clone)")
+        {
+            if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
+            {
+                bulletCollisionCommon(25);
+            }
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
         else if (collision.transform.gameObject.name == "TurretBullet" || collision.transform.gameObject.name == "TurretBullet(Clone)")
         {
-            if (!isDead)
+            bulletCollisionCommon(1);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "SniperBullet" || collision.transform.gameObject.name == "SniperBullet(Clone)")
+        {
+            bulletCollisionCommon(150);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "SRLBullet" || collision.transform.gameObject.name == "SRLBullet(Clone)")
+        {
+            bulletCollisionCommon(70);
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "RPGBullet" || collision.transform.gameObject.name == "RPGBullet(Clone)")
+        {
+            bulletCollisionCommon(200);
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+
+        else if (collision.transform.gameObject.name == "RocketLauncherBullet" || collision.transform.gameObject.name == "RocketLauncherBullet(Clone)")
+        {
+            bulletCollisionCommon(140);
+            collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
+            StartCoroutine(flashRed());
+        }
+    }
+
+    void bulletCollisionCommon(int bulletDamage)
+    {
+        if (!isDead)
+        {
+            _health = _health - bulletDamage;
+
+            if (_health <= 0)
             {
-                _health = _health - 20;
+                isDead = true;
+                gameController.updateScore(_scoreValue);
+                gameController.increaseCurrentWaveScore(_scoreValue);
 
-                if (_health <= 0)
+                gameObject.GetComponent<Animator>().Play("die");
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
+
+                Destroy(gameObject, 3);
+
+                if (randomDrop)
                 {
-                    isDead = true;
-                    gameController.updateScore(_scoreValue);
-                    gameController.increaseCurrentWaveScore(_scoreValue);
-
-                    gameObject.GetComponent<Animator>().Play("die");
-                    gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
-
-                    if (randomDrop)
-                    {
-                        gameController.addBuildingMaterials(noOfMaterials);
-                    }
+                    gameController.addBuildingMaterials(noOfMaterials);
                 }
             }
-            StartCoroutine(flashRed());
         }
     }
 

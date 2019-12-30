@@ -87,6 +87,9 @@ public class SummaryController : MonoBehaviour
         workshopObject = GameObject.FindWithTag("WorkshopCanvas");
         workshopObject.SetActive(true);
         workshopCanvas = workshopObject.GetComponent<Canvas>();
+
+        updateDropdownWeaponList();
+        Debug.Log("Updated 123");
     }
 
     private void secondaryWeaponDropdownChanged(object secondaryWeaponDropdownValue)
@@ -167,11 +170,6 @@ public class SummaryController : MonoBehaviour
     {
         _avaliableWeapons = _gameController.getAllAvaliableWeapons();
         List<string> results = _avaliableWeapons.Keys.Cast<string>().Distinct().ToList();
-
-        foreach (var res in results)
-        {
-            Debug.Log(res);
-        }
 
         primaryWeaponDropdown.ClearOptions();
         secondaryWeaponDropdown.ClearOptions();

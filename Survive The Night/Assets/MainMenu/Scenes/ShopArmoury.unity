@@ -742,7 +742,7 @@ MonoBehaviour:
   RPGPlayer: {fileID: 1168892492390734, guid: 0817a628987909f49a5e4181df96fe1b, type: 3}
   SPAS12Player: {fileID: 1168892492390734, guid: dabf424767405b44caf9170eaabb083b,
     type: 3}
-  SRLPlayer: {fileID: 1168892492390734, guid: ce768325e3f801a498cc0ba0c1a21898, type: 3}
+  SRLPlayer: {fileID: 924, guid: ce768325e3f801a498cc0ba0c1a21898, type: 3}
   RevolverPlayer: {fileID: 1168892492390734, guid: 340c168990cccac4199afab39d8bc16f,
     type: 3}
   M4LaserPlayer: {fileID: 1168892492390734, guid: 4c3cfeca0fbb8114ea58fdc4a2d67ace,

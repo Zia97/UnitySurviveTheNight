@@ -219,6 +219,50 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 {
                     bullet.name = "SniperBullet";
                 }
+                else if(Character.Firearm.Params.Name.Equals("USP"))
+                {
+                    bullet.name = "USPBullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("MP-5"))
+                {
+                    bullet.name = "MP-5Bullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("Shotgun"))
+                {
+                    bullet.name = "ShotgunBullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("AK-47 [Golden]"))
+                {
+                    bullet.name = "AK-47Bullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("Revolver"))
+                {
+                    bullet.name = "RevolverBullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("M-4Laser"))
+                {
+                    bullet.name = "M-4LaserBullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("SPAS-12"))
+                {
+                    bullet.name = "SPAS-12Bullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("M-249"))
+                {
+                    bullet.name = "M-249Bullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("SRL"))
+                {
+                    bullet.name = "SRLBullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("RPG"))
+                {
+                    bullet.name = "RPGBullet";
+                }
+                else if (Character.Firearm.Params.Name.Equals("RocketLauncher"))
+                {
+                    bullet.name = "RocketLauncherBullet";
+                }
 
                 bullet.GetComponent<Collider2D>().isTrigger = true;
 
