@@ -14,28 +14,28 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         public List<Renderer> Renderers;
         public GameObject Trail;
         public GameObject Impact;
-	    public Rigidbody Rigidbody;
+        public Rigidbody Rigidbody;
         private int health = 100;
 
 
-		public void Start()
+        public void Start()
         {
             gameObject.layer = 9;
             Destroy(gameObject, 5);
         }
 
-	    public void Update()
-	    {
-		    if (Rigidbody != null && Rigidbody.useGravity)
-		    {
-			    transform.right = Rigidbody.velocity.normalized;
-		    }
-	    }
+        public void Update()
+        {
+            if (Rigidbody != null && Rigidbody.useGravity)
+            {
+                transform.right = Rigidbody.velocity.normalized;
+            }
+        }
 
         public void OnTriggerEnter(Collider other)
         {
             Bang(other.gameObject);
-           
+
         }
 
 
@@ -44,23 +44,31 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             Bang(collision.gameObject);
         }
 
-        public void Bang(GameObject other, GameObject bullet=null)
+        public void Bang(GameObject other, GameObject bullet = null)
         {
-                if (bullet.name.Equals("SniperBullet") || bullet.name.Equals("SniperBullet(Clone)"))
-                {
-                    health = health - 30;
-                }
-                if (health <= 0)
-                {
-                    Destroy(this.gameObject);
-                }
-
-                if (bullet.name.Equals("Bullet(Clone)") || bullet.name.Equals("Bullet"))
-                {
+            if (bullet.name.Equals("SniperBullet") || bullet.name.Equals("SniperBullet(Clone)"))
+            {
+                health = health - 30;
+            }
+            if (health <= 0)
+            {
                 Destroy(this.gameObject);
-                }
+            }
 
-     
+            else if (bullet.name.Equals("Bullet(Clone)") || bullet.name.Equals("Bullet"))
+            {
+
+                Destroy(this.gameObject);
+            }
+
+            else if (bullet.name.Equals("Rocket(Clone)") || bullet.name.Equals("Rocket"))
+            {
+                Destroy(GetComponent<Rigidbody2D>());
+                Destroy(GetComponent<Collider2D>());
+            }
+
+
+
 
             ReplaceImpactSound(other);
             Impact.SetActive(true);
@@ -74,11 +82,11 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 ps.Stop();
             }
 
-	        foreach (var tr in Trail.GetComponentsInChildren<TrailRenderer>())
-	        {
-		        tr.enabled = false;
-			}
-		}
+            foreach (var tr in Trail.GetComponentsInChildren<TrailRenderer>())
+            {
+                tr.enabled = false;
+            }
+        }
 
         private void ReplaceImpactSound(GameObject other)
         {

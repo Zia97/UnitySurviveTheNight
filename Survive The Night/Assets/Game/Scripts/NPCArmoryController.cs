@@ -239,8 +239,6 @@ public class NPCArmoryController : MonoBehaviour
             else if (_gameController.getNoOfNPCS() == 1)
             {
 
-                Debug.Log(NPC1Dropdown.options[NPC1Dropdown.value].text + " @@@@@@@@@@@@@@@@@@@@");
-
                 GameObject a = Instantiate(npcToPrefab("S1", "USP"), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
                 a.GetComponent<WeaponControls>().setLocation("Armory");

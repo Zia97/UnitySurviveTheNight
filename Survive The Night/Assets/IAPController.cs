@@ -81,6 +81,8 @@ public class IAPController : MonoBehaviour, IStoreListener
 
     private void updateMoney()
     {
+        PurchaseCoinsMoneyObject = GameObject.Find("PurchaseCoinsMoney");
+        PurchaseCoinsMoneyObject.GetComponentInChildren<Text>().text = UserProfile.getCoins().ToString();
 
         try
         {

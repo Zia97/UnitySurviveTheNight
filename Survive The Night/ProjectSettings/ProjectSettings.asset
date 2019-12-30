@@ -239,8 +239,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Qasim/Documents/Key/STNKEY.keystore
-  AndroidKeyaliasName: stnkey
+  AndroidKeystoreName: C:/Users/Qasim/Documents/Key/stn2.keystore
+  AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 1
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

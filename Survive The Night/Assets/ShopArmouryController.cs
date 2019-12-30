@@ -38,8 +38,6 @@ public class ShopArmouryController : MonoBehaviour
         defaultPos.y = -1;
         defaultPos.z = 0;
 
-        instantiatePlayer(UserProfile.getPrimaryWeapon());
-
         checkOwnedWeapons();
 
         primaryWeaponDropdown.onValueChanged.AddListener(delegate {
@@ -54,6 +52,10 @@ public class ShopArmouryController : MonoBehaviour
         secondaryWeaponDropdown.ClearOptions();
         primaryWeaponDropdown.AddOptions(_avaliableWeapons);
         secondaryWeaponDropdown.AddOptions(_avaliableWeapons);
+
+        instantiatePlayer(UserProfile.getPrimaryWeapon());
+
+        Debug.Log("started");
 
     }
 
