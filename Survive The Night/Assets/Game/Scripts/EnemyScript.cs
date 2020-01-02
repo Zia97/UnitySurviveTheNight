@@ -197,7 +197,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Projectile>().getHealth() > 0)
             {
-                bulletCollisionCommon(25);
+                bulletCollisionCommon(35);
             }
             collision.gameObject.GetComponent<Projectile>().Bang(gameObject, collision.gameObject);
             StartCoroutine(flashRed());

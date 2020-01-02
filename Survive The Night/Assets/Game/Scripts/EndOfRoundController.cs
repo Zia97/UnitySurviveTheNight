@@ -141,32 +141,36 @@ public class EndOfRoundController : MonoBehaviour
                 {
                     _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun)"+ System.Environment.NewLine+"Building materials: "+random3);
                 }
-                else
-                {                 
-                    _summaryController.updateSuppliesFoundSummaryText("MP-5 (Submachine gun) - Duplicate"+ System.Environment.NewLine+"Building materials: " + random3);
-                }
 
                 _summaryController.addWeaponToAvaliableWeapons("MP-5");
                 _gameController.addBuildingMaterials(random3);
             }
-            else if (random2 > 25 && random2 <= 40)
+            else if (random2 > 25 && random2 <= 35)
             {
                 int random3 = Random.Range(20, 250);
                 weaponFound = true;
+
+                if (!_avaliableWeapons.ContainsKey("Revolver"))
+                {
+                    _summaryController.updateSuppliesFoundSummaryText("Revolver" + System.Environment.NewLine + "Building materials: " + random3);
+                }
+
+                _gameController.addBuildingMaterials(random3);
+                _summaryController.addWeaponToAvaliableWeapons("Revolver");
+            }
+            else if (random2 > 35 && random2 <= 45)
+            {
+                int random3 = Random.Range(10, 160);
+                weaponFound = true;
+                _summaryController.addWeaponToAvaliableWeapons("Shotgun");
 
                 if (!_avaliableWeapons.ContainsKey("Shotgun"))
                 {
                     _summaryController.updateSuppliesFoundSummaryText("Shotgun" + System.Environment.NewLine + "Building materials: " + random3);
                 }
-                else
-                {
-                    _summaryController.updateSuppliesFoundSummaryText("Shotgun - Duplicate" + System.Environment.NewLine + "Building materials: " + random3);
-                }
-
                 _gameController.addBuildingMaterials(random3);
-                _summaryController.addWeaponToAvaliableWeapons("Shotgun");
             }
-            else if (random2 > 40 && random2 <= 50)
+            else if (random2 > 45 && random2 <= 55)
             {
                 int random3 = Random.Range(10, 160);
                 weaponFound = true;
@@ -174,19 +178,81 @@ public class EndOfRoundController : MonoBehaviour
 
                 if (!_avaliableWeapons.ContainsKey("Scout"))
                 {
-                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle)" + System.Environment.NewLine + "Building materials: " + random3);
-                }
-                else
-                {
-                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper Rifle) - Duplicate" + System.Environment.NewLine + "Building materials: " + random3);
+                    _summaryController.updateSuppliesFoundSummaryText("Scout (Sniper)" + System.Environment.NewLine + "Building materials: " + random3);
                 }
                 _gameController.addBuildingMaterials(random3);
             }
-            else if(random2>50)
+            else if (random2 > 55 && random2 <= 60)
+            {
+                int random3 = Random.Range(10, 160);
+                weaponFound = true;
+                _summaryController.addWeaponToAvaliableWeapons("M-249");
+
+                if (!_avaliableWeapons.ContainsKey("M-249"))
+                {
+                    _summaryController.updateSuppliesFoundSummaryText("M-249" + System.Environment.NewLine + "Building materials: " + random3);
+                }
+                _gameController.addBuildingMaterials(random3);
+            }
+            else if (random2 > 60 && random2 <= 65)
+            {
+                int random3 = Random.Range(10, 160);
+                weaponFound = true;
+                _summaryController.addWeaponToAvaliableWeapons("M-4Laser");
+
+                if (!_avaliableWeapons.ContainsKey("M-4Laser"))
+                {
+                    _summaryController.updateSuppliesFoundSummaryText("M4-Lazer" + System.Environment.NewLine + "Building materials: " + random3);
+                }
+                _gameController.addBuildingMaterials(random3);
+            }
+            else if (random2 > 65 && random2 <= 70)
+            {
+                int random3 = Random.Range(10, 160);
+                weaponFound = true;
+                _summaryController.addWeaponToAvaliableWeapons("RocketLauncher");
+
+                if (!_avaliableWeapons.ContainsKey("RocketLauncher"))
+                {
+                    _summaryController.updateSuppliesFoundSummaryText("RocketLauncher" + System.Environment.NewLine + "Building materials: " + random3);
+                }
+                _gameController.addBuildingMaterials(random3);
+            }
+            else if (random2 > 70 && random2 <= 72)
+            {
+                int random3 = Random.Range(10, 160);
+                weaponFound = true;
+                _summaryController.addWeaponToAvaliableWeapons("RPG");
+
+                if (!_avaliableWeapons.ContainsKey("RPG"))
+                {
+                    _summaryController.updateSuppliesFoundSummaryText("RPG" + System.Environment.NewLine + "Building materials: " + random3);
+                }
+                _gameController.addBuildingMaterials(random3);
+            }
+            else if(random2>72)
             {
                 int random3 = Random.Range(80, 400);
-                _summaryController.updateSuppliesFoundSummaryText("Building materials: " + random3);
+                
                 _gameController.addBuildingMaterials(random3);
+
+                int hammerProb = Random.Range(0, 100);
+
+                if (hammerProb == 0)
+                {
+                    goldenHammer = true;
+                    _summaryController.updateSuppliesFoundSummaryText("Golden Hammer (repairs)" + System.Environment.NewLine + "Building materials: " + random3);
+
+                }
+                else if (hammerProb >= 1 && hammerProb <= 6)
+                {
+                    superHammer = true;
+                    _summaryController.updateSuppliesFoundSummaryText("Super Hammer (repairs)" + System.Environment.NewLine + "Building materials: " + random3);
+                }
+                else
+                {
+                    _summaryController.updateSuppliesFoundSummaryText("Building materials: " + random3);
+                }
             }
         }
         else
@@ -240,19 +306,6 @@ public class EndOfRoundController : MonoBehaviour
         if(_gameController.getNoOfNPCS()==3)
         {
             _summaryController.updateSurvivorsFoundText("Surviors found: Maximum survivors found");
-        }
-
-
-        int hammerProb = Random.Range(0, 100);
-
-        if(hammerProb==0)
-        {
-            goldenHammer = true;
-           
-        }
-        if(hammerProb>=1 && hammerProb<=6)
-        {
-            superHammer = true;
         }
 
         if(superHammer)
