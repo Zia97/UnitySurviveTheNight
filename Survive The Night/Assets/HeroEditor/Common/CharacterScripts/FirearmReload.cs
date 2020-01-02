@@ -30,12 +30,9 @@ namespace Assets.HeroEditor.Common.CharacterScripts
                 StartCoroutine(Reload());
             }
         }
-
         public IEnumerator Reload()
         {
             var firearm = Character.Firearm;
-            var clip = firearm.Params.ReloadAnimation;
-            var duration = firearm.Params.MagazineType == MagazineType.Removable ? clip.length : clip.length * firearm.AmmoShooted;
 
             Reloading = true;
             Character.Animator.SetBool("Reloading", true);
@@ -54,6 +51,8 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 					break;
             }
 
+            float duration = getReloadTime();
+            Debug.Log(duration);
             yield return new WaitForSeconds(duration);
 
 	        if (Character.Firearm.Params.LoadType == FirearmLoadType.Lamp)
@@ -70,6 +69,56 @@ namespace Assets.HeroEditor.Common.CharacterScripts
         public void PlayAudioEffect()
         {
             AudioSource.Play();
+        }
+
+        public float getReloadTime()
+        {
+            var firearm = Character.Firearm;
+            var clip = firearm.Params.ReloadAnimation;
+            var duration = firearm.Params.MagazineType == MagazineType.Removable ? clip.length : clip.length * firearm.AmmoShooted;
+
+            string weaponName = Character.Firearm.Params.Name;
+
+            if (weaponName.Equals("Scout"))
+            {
+                return 1.8f;
+            }
+            if (weaponName.Equals("AK-47 [Golden]"))
+            {
+                return 1.5f;
+            }
+
+            if (weaponName.Equals("Revolver"))
+            {
+                return 1.8f;
+            }
+
+            if (weaponName.Equals("M-4Laser"))
+            {
+                return 1.2f;
+            }
+
+            if (weaponName.Equals("M-249"))
+            {
+                return 3f;
+            }
+
+            if (weaponName.Equals("SRL"))
+            {
+                return 1.4f;
+            }
+
+            if (weaponName.Equals("RPG"))
+            {
+                return duration;
+            }
+
+            if (weaponName.Equals("RocketLauncher"))
+            {
+                return 1.2f;
+            }
+
+            return duration;
         }
     }
 }
