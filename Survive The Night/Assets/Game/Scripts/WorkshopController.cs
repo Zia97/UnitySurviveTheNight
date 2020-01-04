@@ -46,7 +46,7 @@ public class WorkshopController : MonoBehaviour
     private string _primaryWeapon;
     private string _secondaryWeapon;
 
-    private int avaliableMaterials;
+    private int avaliableMaterials = 20000;
 
     public Dropdown turret1Dropdown;
     public Dropdown turret2Dropdown;
@@ -545,7 +545,7 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret6ButtonClicked()
     {
-        if(avaliableMaterials>=7000)
+        if(avaliableMaterials>=0)  //7000
         {
             turret6Count++;
             avaliableMaterials = avaliableMaterials - 7000;
@@ -567,7 +567,7 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret3ButtonClicked()
     {
-        if (avaliableMaterials >= 5000)
+        if (avaliableMaterials >= 0) //5000
         {
             turret3Count++;
             avaliableMaterials = avaliableMaterials - 5000;
@@ -614,7 +614,7 @@ public class WorkshopController : MonoBehaviour
 
     private void BuildTurret2ButtonClicked()
     {
-        if (avaliableMaterials >= 3000)
+        if (avaliableMaterials >= 0) //3000
         {
             turret2Count++;
             avaliableMaterials = avaliableMaterials - 3000;
@@ -634,9 +634,10 @@ public class WorkshopController : MonoBehaviour
         
     }
 
+    //TODO
     private void BuildTurret1ButtonClicked()
     {
-        if (avaliableMaterials >= 1500)
+        if (avaliableMaterials >= 0) //1500
         {
             turret1Count++;
             avaliableMaterials = avaliableMaterials - 1500;

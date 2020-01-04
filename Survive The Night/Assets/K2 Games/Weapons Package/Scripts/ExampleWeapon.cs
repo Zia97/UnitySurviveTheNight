@@ -63,7 +63,8 @@ public class ExampleWeapon : MonoBehaviour
         this.state = state;
 
         if(turret != null)
-            turret.SetState(state);
+            turret.SetState(state);  
+        
 
         switch(state)
         {
@@ -95,6 +96,7 @@ public class ExampleWeapon : MonoBehaviour
     {
         yield return new WaitForSeconds(firingSpeed);
 
+
         if(state != State.Waiting)
         {
             FireBullet();
@@ -116,7 +118,24 @@ public class ExampleWeapon : MonoBehaviour
     {
         shotsFired++;
 
-        if(shotsFired > shotsBeforeReload)
+        if(turret==null)
+        {
+            Debug.Log("turret is null");
+        }
+
+        if (turret != null)
+        {
+            if (turret.gameObject != null)
+            {
+                Debug.Log(turret.gameObject.tag + " " + turret.name + "  " + turret.gameObject.name);
+            }
+            else
+            {
+                Debug.Log("turret gameobject is null");
+            }
+        }
+
+        if (shotsFired > shotsBeforeReload)
         {
             shotsFired = 0;
             SetState(State.Reloading);

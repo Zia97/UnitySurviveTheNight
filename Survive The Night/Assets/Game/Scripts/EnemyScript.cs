@@ -235,7 +235,7 @@ public class EnemyScript : MonoBehaviour
 
         else if (collision.transform.gameObject.name == "TurretBullet" || collision.transform.gameObject.name == "TurretBullet(Clone)")
         {
-            bulletCollisionCommon(1);
+            bulletCollisionCommon(15);
             StartCoroutine(flashRed());
         }
 

@@ -573,9 +573,9 @@ MonoBehaviour:
   redSprite: {fileID: 21300000, guid: fc0531ce9f4e74943a47f0da532b0562, type: 3}
   greenSprite: {fileID: 21300000, guid: 23b4ddf7fc1ff2d46868e7b7d5e9bbcb, type: 3}
   yellowSprite: {fileID: 21300000, guid: 4f7bb79c62b021945b26d9a62477f9dd, type: 3}
-  firingSpeed: 0.15
-  reloadTime: 0.75
-  shotsBeforeReload: 15
+  firingSpeed: 0.5
+  reloadTime: 8
+  shotsBeforeReload: 100
   turret: {fileID: 0}
   lightsTransition: {fileID: 11498108}
   recoilAnimation: {fileID: 0}
