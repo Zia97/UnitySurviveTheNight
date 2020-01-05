@@ -70,6 +70,7 @@ TagManager:
   - S2Cross
   - S3Cross
   - GameSummaryScoreText
+  - PauseButton
   layers:
   - Default
   - TransparentFX

@@ -96,7 +96,6 @@ public class ExampleWeapon : MonoBehaviour
     {
         yield return new WaitForSeconds(firingSpeed);
 
-
         if(state != State.Waiting)
         {
             FireBullet();

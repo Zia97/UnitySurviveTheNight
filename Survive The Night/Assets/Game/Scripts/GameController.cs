@@ -119,6 +119,9 @@ public class GameController : MonoBehaviour
     public GameObject dropdownObject;
     public Canvas dropdownCanvas;
 
+    public GameObject PausedCanvasObject;
+    Canvas PausedCanvas;
+
     public GameObject BaseWall;
 
     public GameObject _playerGameObject;
@@ -127,8 +130,17 @@ public class GameController : MonoBehaviour
     public GameObject _switchWeaponObject;
     private Button _switchWeaponButton;
 
+    public GameObject _pauseButtonObject;
+    private Button _pauseButton;
+
+    public GameObject _resumeButtonObject;
+    private Button _resumeButton;
+
     public GameObject _ReloadObject;
     private Button _ReloadWeaponButton;
+
+    public GameObject BlurCanvasObject;
+    Canvas BlurCanvas;
 
     private Dictionary<string, int> _avaliableWeapons = new Dictionary<string, int>();
     private ArrayList _turretList = new ArrayList();
@@ -194,9 +206,25 @@ public class GameController : MonoBehaviour
 
         #region Find Objects
 
+        BlurCanvasObject = GameObject.Find("BlurCanvas");
+        BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
+        BlurCanvas.enabled = false;
+
+        PausedCanvasObject = GameObject.Find("PausedCanvas");
+        PausedCanvas = PausedCanvasObject.GetComponent<Canvas>();
+        PausedCanvas.enabled = false;
+
         _switchWeaponObject = GameObject.FindWithTag("SwitchWeapon");
         _switchWeaponButton = _switchWeaponObject.GetComponent<Button>();
         _switchWeaponButton.onClick.AddListener(SwitchWeaponClicked);
+
+       // _resumeButtonObject = GameObject.FindWithTag("GameResumeButton");
+        _resumeButton = _resumeButtonObject.GetComponent<Button>();
+        _resumeButton.onClick.AddListener(ResumeButtonClicked);
+
+        _pauseButtonObject = GameObject.FindWithTag("PauseButton");
+        _pauseButton = _pauseButtonObject.GetComponent<Button>();
+        _pauseButton.onClick.AddListener(PauseButtonClicked);
 
         _ReloadObject = GameObject.FindWithTag("ReloadButton");
         _ReloadWeaponButton = _ReloadObject.GetComponent<Button>();
@@ -264,6 +292,8 @@ public class GameController : MonoBehaviour
         var temp = GameObject.FindWithTag("Player");
 
     }
+
+  
 
     //Check for all purchasable weapons 
     private void AddOwnedWeapons()
@@ -333,6 +363,36 @@ public class GameController : MonoBehaviour
 
         InstantiatePlayer();
 
+    }
+
+    private void ResumeButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+    }
+
+    private void PauseButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+        else if(!Pause.isPaused)
+        {
+            Time.timeScale = 0;
+            Pause.isPaused = true;
+            BlurCanvas.enabled = true;
+            PausedCanvas.enabled = true;
+        }
+        
     }
 
     private void InstantiatePlayer()
