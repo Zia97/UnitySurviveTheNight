@@ -23,16 +23,19 @@ public class NPCArmoryController : MonoBehaviour
     public GameObject S1MP5;
     public GameObject S1Shotgun;
     public GameObject S1Scout;
+    public GameObject S1Revolver;
 
     public GameObject S2USP;
     public GameObject S2MP5;
     public GameObject S2Shotgun;
     public GameObject S2Scout;
+    public GameObject S2Revolver;
 
     public GameObject S3USP;
     public GameObject S3MP5;
     public GameObject S3Shotgun;
     public GameObject S3Scout;
+    public GameObject S3Revolver;
 
     private Dictionary<string, int> _avaliableWeapons = new Dictionary<string, int>();
 
@@ -62,6 +65,9 @@ public class NPCArmoryController : MonoBehaviour
     private Vector3 pos2 = new Vector3(0, 0, 0);
     private Vector3 pos3 = new Vector3(4, 0, 0);
 
+    private static List<string> allowedWeapons = new List<string>();
+    
+
     private void Start()
     {
         _gameControllerObject = GameObject.FindWithTag("GameController");
@@ -69,6 +75,12 @@ public class NPCArmoryController : MonoBehaviour
         _armoryBackButtonObject = GameObject.FindWithTag("ArmoryBackButton");
         _armoryBackButton = _armoryBackButtonObject.GetComponent<Button>();
         _armoryBackButton.onClick.AddListener(ArmoryBackButtonClicked);
+
+        allowedWeapons.Add("USP");
+        allowedWeapons.Add("Revolver");
+        allowedWeapons.Add("Scout");
+        allowedWeapons.Add("MP-5");
+        allowedWeapons.Add("Shotgun");
 
         S1Cross = GameObject.FindWithTag("S1Cross");
         S2Cross = GameObject.FindWithTag("S2Cross");
@@ -83,12 +95,23 @@ public class NPCArmoryController : MonoBehaviour
         _avaliableWeapons = _gameController.getAllAvaliableWeapons();
 
         List<string> results = _avaliableWeapons.Keys.Cast<string>().Distinct().ToList();
+
+        List<string> updatedWeaponsList = new List<string>();
+
+        foreach (String weapon in results)
+        {
+            if (allowedWeapons.Contains(weapon))
+            {
+                updatedWeaponsList.Add(weapon);
+            }
+        }
+
         NPC1Dropdown.ClearOptions();
         NPC2Dropdown.ClearOptions();
         NPC3Dropdown.ClearOptions();
-        NPC1Dropdown.AddOptions(results);
-        NPC2Dropdown.AddOptions(results);
-        NPC3Dropdown.AddOptions(results);
+        NPC1Dropdown.AddOptions(updatedWeaponsList);
+        NPC2Dropdown.AddOptions(updatedWeaponsList);
+        NPC3Dropdown.AddOptions(updatedWeaponsList);
 
         NPC1Dropdown.onValueChanged.AddListener(delegate {
             npc1DropdownValueChanged(npc1Value);
@@ -108,35 +131,6 @@ public class NPCArmoryController : MonoBehaviour
         var tempList = _gameController.getAllAvaliableWeapons();
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
-
-        //if (tempList.ContainsKey(selectedPrimary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
-
-        //if (tempList.ContainsKey(selectedSecondary))
-        //{
-        //    int old = tempList[selectedPrimary];
-        //    tempList[selectedPrimary] = old - 1;
-        //}
-
-        //Debug.Log(tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] + "  @@");
-        //if (tempList[NPC1Dropdown.options[NPC1Dropdown.value].text] < 0 && !NPC1Dropdown.options[NPC1Dropdown.value].text.Equals("USP"))
-        //{
-        //    armoryHelperText.text = "You do not have enough " + NPC1Dropdown.options[NPC1Dropdown.value].text + "'s";
-        //    destroyCharcter("S1");
-        //    updateNPC("S1", "USP", pos1);
-
-        //    NPC1Dropdown.value = 0;
-        //    SetWeapons();
-        //}
-        //else
-        //{
-        //    destroyCharcter("S1");
-        //    updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
-        //    SetWeapons();
-        //}
 
         destroyCharcter("S1");
         updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
@@ -165,22 +159,6 @@ public class NPCArmoryController : MonoBehaviour
         var tempList = _gameController.getAllAvaliableWeapons();
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
-
-        //if (tempList[NPC2Dropdown.options[NPC2Dropdown.value].text] < 0 && !NPC2Dropdown.options[NPC2Dropdown.value].text.Equals("USP"))
-        //{
-        //    armoryHelperText.text = "You do not have enough " + NPC2Dropdown.options[NPC2Dropdown.value].text + "'s";
-        //    destroyCharcter("S2");
-        //    updateNPC("S2", "USP", pos2);
-        //    NPC1Dropdown.value = 0;
-        //    SetWeapons();
-        //}
-        //else
-        //{
-        //    destroyCharcter("S2");
-        //    updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
-
-        //    SetWeapons();
-        //}
 
         destroyCharcter("S2");
         updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
@@ -302,7 +280,7 @@ public class NPCArmoryController : MonoBehaviour
 
     public void updateAvaliableMaterialsText()
     {
-       // avaliableMaterialsText.text = "Avaliable materials: "+avaliableMaterials;
+        //avaliableMaterialsText.text = "Avaliable materials: "+avaliableMaterials;
     }
 
     private void destroyCharcter(string survivorNumber)
@@ -313,7 +291,7 @@ public class NPCArmoryController : MonoBehaviour
         {
             if(survivorNumber.Equals("S1"))
             {
-                if(selectedcharacter.gameObject.name.Equals("S1USP(Clone)") || selectedcharacter.gameObject.name.Equals("S1MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S1Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S1Shotgun(Clone)"))
+                if(selectedcharacter.gameObject.name.Equals("S1USP(Clone)") || selectedcharacter.gameObject.name.Equals("S1MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S1Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S1Shotgun(Clone)") || selectedcharacter.gameObject.name.Equals("S1Revolver(Clone)"))
                 {
                     Destroy(selectedcharacter);
                 }
@@ -321,7 +299,7 @@ public class NPCArmoryController : MonoBehaviour
             }
             else if (survivorNumber.Equals("S2"))
             {
-                if (selectedcharacter.gameObject.name.Equals("S2USP(Clone)") || selectedcharacter.gameObject.name.Equals("S2MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S2Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S2Shotgun(Clone)"))
+                if (selectedcharacter.gameObject.name.Equals("S2USP(Clone)") || selectedcharacter.gameObject.name.Equals("S2MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S2Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S2Shotgun(Clone)") || selectedcharacter.gameObject.name.Equals("S2Revolver(Clone)"))
                 {
                     Destroy(selectedcharacter);
                 }
@@ -329,7 +307,7 @@ public class NPCArmoryController : MonoBehaviour
             }
             else if (survivorNumber.Equals("S3"))
             {
-                if (selectedcharacter.gameObject.name.Equals("S3USP(Clone)") || selectedcharacter.gameObject.name.Equals("S3MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S3Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S3Shotgun(Clone)"))
+                if (selectedcharacter.gameObject.name.Equals("S3USP(Clone)") || selectedcharacter.gameObject.name.Equals("S3MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S3Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S3Shotgun(Clone)") || selectedcharacter.gameObject.name.Equals("S3Revolver(Clone)"))
                 {
                     Destroy(selectedcharacter);
                 }
@@ -343,12 +321,22 @@ public class NPCArmoryController : MonoBehaviour
     public void updateWeaponsDropdown()
     {
         List<string> results = _avaliableWeapons.Keys.Cast<string>().Distinct().ToList();
+        List<string> updatedWeaponsList = new List<string>();
+
+        foreach(String weapon in results)
+        {
+            if(allowedWeapons.Contains(weapon))
+            {
+                updatedWeaponsList.Add(weapon);
+            }
+        }
+
         NPC1Dropdown.ClearOptions();
         NPC2Dropdown.ClearOptions();
         NPC3Dropdown.ClearOptions();
-        NPC1Dropdown.AddOptions(results);
-        NPC2Dropdown.AddOptions(results);
-        NPC3Dropdown.AddOptions(results);
+        NPC1Dropdown.AddOptions(updatedWeaponsList);
+        NPC2Dropdown.AddOptions(updatedWeaponsList);
+        NPC3Dropdown.AddOptions(updatedWeaponsList);
     }
 
     public void updateLayout()
@@ -418,6 +406,10 @@ public class NPCArmoryController : MonoBehaviour
             {
                 return S1Shotgun;
             }
+            if (npc.Equals("Revolver"))
+            {
+                return S1Revolver;
+            }
         }
 
         else if (charac.Equals("S2"))
@@ -438,6 +430,10 @@ public class NPCArmoryController : MonoBehaviour
             {
                 return S2Shotgun;
             }
+            if (npc.Equals("Revolver"))
+            {
+                return S2Revolver;
+            }
         }
 
         else if (charac.Equals("S3"))
@@ -457,6 +453,10 @@ public class NPCArmoryController : MonoBehaviour
             if (npc.Equals("Shotgun"))
             {
                 return S3Shotgun;
+            }
+            if (npc.Equals("Revolver"))
+            {
+                return S3Revolver;
             }
         }
 

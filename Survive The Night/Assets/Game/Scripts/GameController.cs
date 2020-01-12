@@ -37,16 +37,19 @@ public class GameController : MonoBehaviour
     public GameObject S1MP5;
     public GameObject S1Shotgun;
     public GameObject S1Scout;
+    public GameObject S1Revolver;
 
     public GameObject S2USP;
     public GameObject S2MP5;
     public GameObject S2Shotgun;
     public GameObject S2Scout;
+    public GameObject S2Revolver;
 
     public GameObject S3USP;
     public GameObject S3MP5;
     public GameObject S3Shotgun;
     public GameObject S3Scout;
+    public GameObject S3Revolver;
 
     public GameObject turret1;
     public GameObject turret2;
@@ -443,7 +446,14 @@ public class GameController : MonoBehaviour
     {
         if (GameObject.FindWithTag("Player") != null)
         {
-            ammoText.text = (GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Params.MagazineCapacity - GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.AmmoShooted) + "/" + GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Params.MagazineCapacity;
+            if (GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Reload.Reloading)
+            {
+                ammoText.text = ("Reloading " + "/" + GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Params.MagazineCapacity);
+            }
+            else
+            {
+                ammoText.text = (GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Params.MagazineCapacity - GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.AmmoShooted) + "/" + GameObject.FindWithTag("Player").GetComponent<Character>().Firearm.Params.MagazineCapacity;
+            }
         }
     }
 
@@ -1028,6 +1038,19 @@ public class GameController : MonoBehaviour
         if (npc.Equals("S3Scout"))
         {
             return S3Scout;
+        }
+
+        if (npc.Equals("S1Revolver"))
+        {
+            return S1Revolver;
+        }
+        if (npc.Equals("S2Revolver"))
+        {
+            return S2Revolver;
+        }
+        if (npc.Equals("S3Revolver"))
+        {
+            return S3Revolver;
         }
 
         return null;

@@ -52,7 +52,6 @@ namespace Assets.HeroEditor.Common.CharacterScripts
             }
 
             float duration = getReloadTime();
-            Debug.Log(duration);
             yield return new WaitForSeconds(duration);
 
 	        if (Character.Firearm.Params.LoadType == FirearmLoadType.Lamp)
