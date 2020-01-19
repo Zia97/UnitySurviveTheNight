@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 97e43e86f5dfe4cb4a0eeee600af6b43
-timeCreated: 1473188568
+guid: 929c52032603940c1abb8347e719306a
+timeCreated: 1472509203
 licenseType: Pro
 PluginImporter:
   serializedVersion: 1
@@ -24,33 +24,21 @@ PluginImporter:
     Linux:
       enabled: 0
       settings:
-        CPU: None
+        CPU: x86
     Linux64:
       enabled: 0
       settings:
-        CPU: None
-    LinuxUniversal:
-      enabled: 0
-      settings:
-        CPU: None
+        CPU: x86_64
     OSXIntel:
       enabled: 0
       settings:
-        CPU: None
+        CPU: AnyCPU
     OSXIntel64:
       enabled: 0
       settings:
-        CPU: None
-    OSXUniversal:
-      enabled: 0
-      settings:
-        CPU: None
-    SamsungTV:
-      enabled: 0
-      settings:
-        STV_MODEL: STANDARD_13
-    WebGL:
-      enabled: 0
+        CPU: AnyCPU
+    Tizen:
+      enabled: 1
       settings: {}
     Win:
       enabled: 0
@@ -60,16 +48,7 @@ PluginImporter:
       enabled: 0
       settings:
         CPU: AnyCPU
-    WindowsStoreApps:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
     iOS:
-      enabled: 0
-      settings:
-        CompileFlags: 
-        FrameworkDependencies: 
-    tvOS:
       enabled: 0
       settings:
         CompileFlags: 

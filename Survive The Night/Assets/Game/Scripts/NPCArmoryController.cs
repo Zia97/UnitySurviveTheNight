@@ -132,10 +132,13 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        destroyCharcter("S1");
-        updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
+        if (_gameController.getNoOfNPCS() == 1)
+        {
+            destroyCharcter("S1");
+            updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
+        }
+   
         SetWeapons();
-
     }
 
     private void SetWeapons()
@@ -160,12 +163,13 @@ public class NPCArmoryController : MonoBehaviour
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
 
-        destroyCharcter("S2");
-        updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
+        if (_gameController.getNoOfNPCS() == 2)
+        {
+            destroyCharcter("S2");
+            updateNPC("S2", NPC2Dropdown.options[NPC2Dropdown.value].text, pos2);
+        }
 
         SetWeapons();
-
-
     }
 
     private void npc3DropdownValueChanged(object npc3Value)
@@ -173,9 +177,13 @@ public class NPCArmoryController : MonoBehaviour
         var tempList = _gameController.getAllAvaliableWeapons();
         var selectedPrimary = _gameController.getPrimary();
         var selectedSecondary = _gameController.getSecondary();
-        destroyCharcter("S3");
-        updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
 
+        if (_gameController.getNoOfNPCS() == 3)
+        {
+            destroyCharcter("S3");
+            updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
+        }
+            
         SetWeapons();
     }
 

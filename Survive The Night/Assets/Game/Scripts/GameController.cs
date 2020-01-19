@@ -569,6 +569,19 @@ public class GameController : MonoBehaviour
             healthText.text = "Health: " + wallHeath + "/100";
         }
 
+        updateHealthColour();
+
+        if (wallHeath <= 0)
+        {
+            healthText.text = "Health: 0/100";
+            wallDestoryed = true;
+            Destroy(BaseWall);
+            gameOver();
+        }
+    }
+
+    public void updateHealthColour()
+    {
         if (wallHeath <= 100 && wallHeath >= 65)
         {
             healthText.color = Color.green;
@@ -580,14 +593,6 @@ public class GameController : MonoBehaviour
         if (wallHeath <= 34)
         {
             healthText.color = Color.red;
-        }
-
-        if (wallHeath <= 0)
-        {
-            healthText.text = "Health: 0/100";
-            wallDestoryed = true;
-            Destroy(BaseWall);
-            gameOver();
         }
     }
 
@@ -641,7 +646,7 @@ public class GameController : MonoBehaviour
         DestroyDeadEnemies();
         roundOverCanvas.enabled = true;
         mainGameMusic.Stop();
-        breakMusic.PlayDelayed(2);
+        breakMusic.PlayDelayed(1);
     }
 
     public void updateScore(int scoreValue)
@@ -679,6 +684,8 @@ public class GameController : MonoBehaviour
 
         InstantiateTurrets();
         InstantiateNPCS();
+
+        updateHealthColour();
 
         Instantiate(weaponNameToPrefab(_primaryWeapon), defaultPos, Quaternion.identity);
         _playerGameObject = GameObject.FindWithTag("Player");

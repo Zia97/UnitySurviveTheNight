@@ -55,9 +55,13 @@ public class GameOverController : MonoBehaviour
     {
         waveReached = wave;
         score = thisscore;
+        double coinsEarnt = Math.Round((double)score/10);
+        
 
         int highScore = PlayerPrefs.GetInt("HighScore");
-        _GameSummaryText.text = "You survived for " + waveReached + " nights";
+        _GameSummaryText.text = "You survived for " + waveReached + " nights \nYou earned "+coinsEarnt+" coins!";
+
+        UserProfile.addCoins((int)coinsEarnt);
 
         if (score>highScore)
         {
