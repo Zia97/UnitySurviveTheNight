@@ -26,7 +26,7 @@ public class ExampleTurret : MonoBehaviour
                     {
                         lightsTransition.JumpToEnd();
                         lightsTransition.Stop();
-                    }
+                    }              
                     break;
 
                 case ExampleWeapon.State.Reloading:

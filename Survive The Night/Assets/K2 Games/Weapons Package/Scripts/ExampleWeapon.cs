@@ -34,7 +34,7 @@ public class ExampleWeapon : MonoBehaviour
 
     void Start()
     {
-        if(muzzleFlash != null)
+        if (muzzleFlash != null)
         {
             muzzleFlashes = new ParticleSystem[firingPoints.Length];
 
@@ -115,6 +115,10 @@ public class ExampleWeapon : MonoBehaviour
 
     public virtual void FireBullet()
     {
+
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.PlayOneShot((AudioClip)Resources.Load("TurretFire"));
+
         shotsFired++;
 
         if(turret==null)
@@ -132,6 +136,7 @@ public class ExampleWeapon : MonoBehaviour
             {
                 Debug.Log("turret gameobject is null");
             }
+           
         }
 
         if (shotsFired > shotsBeforeReload)
@@ -142,7 +147,8 @@ public class ExampleWeapon : MonoBehaviour
         else
             for(int i = 0; i < firingPoints.Length; i++)
             {
-                if(muzzleFlashes != null && muzzleFlashEnabled)
+               
+                if (muzzleFlashes != null && muzzleFlashEnabled)
                     muzzleFlashes[i].Play();//spawn some particles
 
                 if(bulletPrefab != null)//fire a bullet
