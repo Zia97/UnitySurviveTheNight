@@ -27,14 +27,34 @@ public class EnemyScript : MonoBehaviour
     private double difficultyMultiplier = 1;
     Rigidbody2D rb;
 
+    public AudioSource audioSource;
+
+    public AudioClip music1;
+    public AudioClip music2;
+    public AudioClip music3;
+    public AudioClip music4;
+    public AudioClip music5;
+    public AudioClip music6;
+    public AudioClip music7;
+    public AudioClip music8;
+    public AudioClip music9;
+    public AudioClip music10;
+
+    private int randomMusic = 0;
+    private float randomTime = 2f;
+    private float timeCounter = 0f;
+
     private GameObject _gameController;
-    
+
+
+
+
     private System.Random rnd = new System.Random();
 
     // Use this for initialization
     void Start()
     {
-        
+
         rb = GetComponent<Rigidbody2D>();
         GetComponent<Collider2D>().isTrigger = true;
         _gameController = GameObject.FindWithTag("GameController");
@@ -52,18 +72,19 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameController==null)
+
+        if (gameController == null)
         {
             this.gameObject.GetComponent<Animator>().Play("walkSide");
             transform.position += -transform.right * _speed * Time.deltaTime;
             Destroy(gameObject, 25);
         }
-        else if(gameController.isPlayerDead())
+        else if (gameController.isPlayerDead())
         {
-            if(collidedWithPlayer)
+            if (collidedWithPlayer)
             {
                 gameObject.GetComponent<Animator>().Play("strike");
-            }       
+            }
             gameObject.GetComponent<Collider2D>().enabled = false;
         }
         else if (!isDead)
@@ -73,28 +94,39 @@ public class EnemyScript : MonoBehaviour
                 this.gameObject.GetComponent<Animator>().Play("walkSide");
                 transform.position += -transform.right * _speed * Time.deltaTime;
             }
-            else if(isMovingTowardsPlayer)
+            else if (isMovingTowardsPlayer)
             {
                 this.gameObject.GetComponent<Animator>().Play("walkSide");
-                transform.position += gameController.getPlayerPosition() * _speed/10 * Time.deltaTime;
+                transform.position += gameController.getPlayerPosition() * _speed / 10 * Time.deltaTime;
             }
-            else if(reachedPlayer)
+            else if (reachedPlayer)
             {
                 gameObject.GetComponent<Animator>().Play("strike");
             }
             else
             {
                 gameObject.GetComponent<Animator>().Play("strike");
-                if(gameController.isWallDestroyed())
+                if (gameController.isWallDestroyed())
                 {
                     isMovingTowardsPlayer = true;
                 }
             }
         }
-        else if(isDead)
+        else if (isDead)
         {
             gameObject.GetComponent<Collider2D>().enabled = false;
         }
+
+
+        if (timeCounter > randomTime)
+        {
+            randomTime = Random.Range(0, 8);
+            timeCounter = 0f;
+            ChooseMusic();
+            GetComponent<AudioSource>().Play();
+        }
+
+        timeCounter += Time.deltaTime;
     }
 
     protected void createDropProbability()
@@ -102,13 +134,13 @@ public class EnemyScript : MonoBehaviour
         if (rnd.Next(11) <= _dropProbability)
         {
             randomDrop = true;
-            noOfMaterials = rnd.Next(minMaterials,maxMaterials);
+            noOfMaterials = rnd.Next(minMaterials, maxMaterials);
         }
     }
 
     protected void setHealth(int health)
     {
-        _health =  DifficultySelector.getDifficulty() * health;
+        _health = DifficultySelector.getDifficulty() * health;
     }
 
     protected void setSpeed(float speed)
@@ -145,7 +177,7 @@ public class EnemyScript : MonoBehaviour
 
     IEnumerator flashRed()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);    
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
         yield return new WaitForSecondsRealtime(0.2f);
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
 
@@ -294,7 +326,7 @@ public class EnemyScript : MonoBehaviour
 
 
     void OnCollisionEnter2D(Collision2D collision)
-    {   
+    {
         if (collision.transform.gameObject.name == "wall")
         {
             isMovingTowardsBase = false;
@@ -325,15 +357,52 @@ public class EnemyScript : MonoBehaviour
         {
             if (!isDead)
             {
-                if(!gameController.isWallDestroyed())
+                if (!gameController.isWallDestroyed())
                 {
                     gameController.damageWall(_wallDamagetick);
-                }              
+                }
             }
             yield return new WaitForSeconds(_wallDamageFrequency);
         }
     }
 
-    
+    private void ChooseMusic()
+    {
+        randomMusic = Random.Range(1, 11);
+
+        switch (randomMusic)
+        {
+            case 1:
+                GetComponent<AudioSource>().clip = music1;
+                break;
+            case 2:
+                GetComponent<AudioSource>().clip = music2;
+                break;
+            case 3:
+                GetComponent<AudioSource>().clip = music3;
+                break;
+            case 4:
+                GetComponent<AudioSource>().clip = music4;
+                break;
+            case 5:
+                GetComponent<AudioSource>().clip = music5;
+                break;
+            case 6:
+                GetComponent<AudioSource>().clip = music6;
+                break;
+            case 7:
+                GetComponent<AudioSource>().clip = music7;
+                break;
+            case 8:
+                GetComponent<AudioSource>().clip = music8;
+                break;
+            case 9:
+                GetComponent<AudioSource>().clip = music9;
+                break;
+            case 10:
+                GetComponent<AudioSource>().clip = music10;
+                break;
+        }
+    }
 
 }

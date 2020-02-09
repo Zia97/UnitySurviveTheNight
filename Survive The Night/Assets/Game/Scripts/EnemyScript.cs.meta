@@ -3,7 +3,17 @@ guid: 544915bb9b0fc6d49998f3d8728245e3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - music1: {fileID: 8300000, guid: e8a6778b84ea46944aa3f6c6641ec729, type: 3}
+  - music2: {fileID: 8300000, guid: 586394cfeef1b3148b84ce8014ca5fb6, type: 3}
+  - music3: {fileID: 8300000, guid: 823ef2dcde3cfc749a1a1ff0a5abc004, type: 3}
+  - music4: {fileID: 8300000, guid: 273f2229dace4064b9327bf67f007a55, type: 3}
+  - music5: {fileID: 8300000, guid: 2532785ae2e97244f9e50a5a0e02ac0b, type: 3}
+  - music6: {fileID: 8300000, guid: d0a0977f49310eb4b81bd08e7d631cbc, type: 3}
+  - music7: {fileID: 8300000, guid: 8edc7ddde1fe853408fbbebcfcd427f4, type: 3}
+  - music8: {fileID: 8300000, guid: bba25ffb5c0a2df45bad2e9bf70a0e46, type: 3}
+  - music9: {fileID: 8300000, guid: cc7d7e560704c5b438e2956bd83f1e7a, type: 3}
+  - music10: {fileID: 8300000, guid: 01192fb4793c8fe4ca47f442ca91cb34, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
