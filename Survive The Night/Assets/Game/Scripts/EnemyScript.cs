@@ -120,7 +120,7 @@ public class EnemyScript : MonoBehaviour
 
         if (timeCounter > randomTime)
         {
-            randomTime = Random.Range(0, 5);
+            randomTime = Random.Range(0, 4);
             timeCounter = 0f;
             ChooseMusic();
             GetComponent<AudioSource>().Play();

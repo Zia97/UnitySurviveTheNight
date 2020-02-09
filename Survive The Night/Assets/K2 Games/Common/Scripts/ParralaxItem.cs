@@ -40,7 +40,6 @@ public class ParralaxItem : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("turret bullet collision");
         Destroy(gameObject);
     }
 }

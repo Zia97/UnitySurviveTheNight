@@ -89,7 +89,6 @@ public class SummaryController : MonoBehaviour
         workshopCanvas = workshopObject.GetComponent<Canvas>();
 
         updateDropdownWeaponList();
-        Debug.Log("Updated 123");
     }
 
     private void secondaryWeaponDropdownChanged(object secondaryWeaponDropdownValue)

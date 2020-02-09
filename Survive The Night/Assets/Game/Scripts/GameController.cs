@@ -433,7 +433,6 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.Log("EOERWERWERWETJGKIJWE");
         }
     }
 
