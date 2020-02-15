@@ -313,7 +313,6 @@ public class WorkshopController : MonoBehaviour
         avaliableTurrets = _gameController.getTurrets();
         if (turret2Dropdown.options[turret2Dropdown.value].text.Equals("Basic Turret"))
         {
-            Debug.Log(avaliableTurrets["Turret 1"] + "    count = " + turret1Count);
             if (avaliableTurrets["Turret 1"] <= turret1temp)
             {
                 var tempOptions = turret2Dropdown.options;
@@ -636,7 +635,7 @@ public class WorkshopController : MonoBehaviour
     //TODO
     private void BuildTurret1ButtonClicked()
     {
-        if (avaliableMaterials >= 1500) 
+        if (avaliableMaterials >= 1) 
         {
             turret1Count++;
             avaliableMaterials = avaliableMaterials - 1500;

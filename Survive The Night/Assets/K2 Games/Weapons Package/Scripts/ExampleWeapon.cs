@@ -121,10 +121,6 @@ public class ExampleWeapon : MonoBehaviour
 
         shotsFired++;
 
-        if(turret==null)
-        {
-            Debug.Log("turret is null");
-        }
 
         if (turret != null)
         {

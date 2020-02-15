@@ -15,7 +15,7 @@ namespace Assets.Game.Scripts
 
         private int damage = 3;
         private int health = 400;
-        private float frequency = 1f;
+        private float frequency = 2f;
         private int dropProb = 6;
         private float speed = 1f;
         private int _difficulty = 4;

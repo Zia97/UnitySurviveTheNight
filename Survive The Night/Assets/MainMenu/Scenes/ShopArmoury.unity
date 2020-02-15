@@ -727,6 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryWeaponDropdown: {fileID: 1200268835}
   secondaryWeaponDropdown: {fileID: 774127108}
+  ShopArmouryBackButton: {fileID: 121165056}
   BasicPistolPlayer: {fileID: 5676334091475545297, guid: 074f09c88310a0944b02a6b555d2e250,
     type: 3}
   BasicMP5Player: {fileID: 602, guid: eb8a550f3b74ad74083e652960458742, type: 3}
