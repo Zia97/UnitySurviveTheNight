@@ -179,7 +179,6 @@ public class WorkshopController : MonoBehaviour
         {
             var tempOptions = turret3Dropdown.options;
 
-            Debug.Log(avaliableTurrets["Turret 1"] + "    count = " + turret1Count);
             if (avaliableTurrets["Turret 1"] <= turret1temp)
             {
                 foreach(var option in tempOptions)

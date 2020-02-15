@@ -14,7 +14,6 @@ public class AnimatedExampleWeapon : ExampleWeapon
         switch(state)
         {
             case State.Firing:
-                Debug.Log("State is firing");
                 if(recoilAnimation != null)
                     recoilAnimation.TriggerTransition();
 
