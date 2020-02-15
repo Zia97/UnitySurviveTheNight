@@ -130,7 +130,9 @@ public class EndOfRoundController : MonoBehaviour
 
         if (random1 < weaponProbability * _suppliesHoursSelectedValue)
         {
+            Debug.Log("should find something");
             int random2 = Random.Range(0, 100);
+            Debug.Log(random2);
             if (random2 <= 25)
             {
                 int random3 = Random.Range(50, 350);
@@ -257,6 +259,7 @@ public class EndOfRoundController : MonoBehaviour
         }
         else
         {
+            Debug.Log("Didnt find anything");
             int random3 = Random.Range(150, 600);
             _summaryController.updateSuppliesFoundSummaryText("Building materials: " + random3);
             _gameController.addBuildingMaterials(random3);

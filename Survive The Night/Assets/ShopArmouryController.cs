@@ -9,6 +9,7 @@ public class ShopArmouryController : MonoBehaviour
     private List<string> _avaliableWeapons = new List<string>();
     public Dropdown primaryWeaponDropdown;
     public Dropdown secondaryWeaponDropdown;
+    public Button ShopArmouryBackButton;
 
     private object primaryWeaponDropdownValue;
     private object secondaryWeaponDropdownValue;
@@ -48,6 +49,11 @@ public class ShopArmouryController : MonoBehaviour
             secondaryWeaponDropdownChanged(secondaryWeaponDropdownValue);
         });
 
+        ShopArmouryBackButton.onClick.AddListener(delegate {
+            ShopBackButtonClicked();
+        });
+
+
         primaryWeaponDropdown.ClearOptions();
         secondaryWeaponDropdown.ClearOptions();
         primaryWeaponDropdown.AddOptions(_avaliableWeapons);
@@ -57,6 +63,12 @@ public class ShopArmouryController : MonoBehaviour
 
         Debug.Log("started");
 
+    }
+
+    private void ShopBackButtonClicked()
+    {
+        UserProfile.setPrimaryWeapon(primaryWeaponDropdown.options[primaryWeaponDropdown.value].text);
+        UserProfile.setSecondaryWeapon(secondaryWeaponDropdown.options[secondaryWeaponDropdown.value].text);
     }
 
     void instantiatePlayer(string selectedWeapon="")
