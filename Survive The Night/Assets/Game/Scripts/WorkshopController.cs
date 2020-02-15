@@ -635,7 +635,7 @@ public class WorkshopController : MonoBehaviour
     //TODO
     private void BuildTurret1ButtonClicked()
     {
-        if (avaliableMaterials >= 1) 
+        if (avaliableMaterials >= 1500) 
         {
             turret1Count++;
             avaliableMaterials = avaliableMaterials - 1500;
