@@ -40,6 +40,18 @@ public class EndOfRoundController : MonoBehaviour
     private GameObject _summaryControllerObject;
     private SummaryController _summaryController;
 
+    public GameObject _roundEndInfoButtonObject;
+    private Button _roundEndButton;
+
+    public GameObject _resumeButtonObject;
+    private Button _resumeButton;
+
+    public GameObject BlurCanvasObject;
+    Canvas BlurCanvas;
+
+    public GameObject roundEndInfo;
+    Canvas PausedCanvas;
+
     public Text hammerText;
 
     private Dictionary<string, int> _avaliableWeapons = new Dictionary<string, int>();
@@ -63,6 +75,21 @@ public class EndOfRoundController : MonoBehaviour
         _suppliesButtonDecreaseObject = GameObject.FindWithTag("SuppliesButtonDecrease");
         _suppliesHoursObject = GameObject.FindWithTag("SuppliesHoursSelected");
         _repairsHoursObject = GameObject.FindWithTag("RepairHoursSelected");
+
+        BlurCanvasObject = GameObject.Find("BlurCanvas");
+        BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
+        BlurCanvas.enabled = false;
+
+        roundEndInfo = GameObject.Find("roundEndInfo");
+        PausedCanvas = roundEndInfo.GetComponent<Canvas>();
+        PausedCanvas.enabled = false;
+
+        _resumeButton = _resumeButtonObject.GetComponent<Button>();
+        _resumeButton.onClick.AddListener(ResumeButtonClicked);
+
+        _roundEndInfoButtonObject = GameObject.Find("roundEndInfoButton");
+        _roundEndButton = _roundEndInfoButtonObject.GetComponent<Button>();
+        _roundEndButton.onClick.AddListener(infoButtonClicked);
 
 
         _confirmButton = _confirmButtonObject.GetComponent<Button>();
@@ -398,6 +425,36 @@ public class EndOfRoundController : MonoBehaviour
 
             _summaryController.updateBaseRepairsText("Your base was repaired from " + previousHealth + "% -> " + newHealth + "%");
         }
+    }
+
+    private void ResumeButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+    }
+
+    private void infoButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+        else if (!Pause.isPaused)
+        {
+            Time.timeScale = 0;
+            Pause.isPaused = true;
+            BlurCanvas.enabled = true;
+            PausedCanvas.enabled = true;
+        }
+
     }
 }
 

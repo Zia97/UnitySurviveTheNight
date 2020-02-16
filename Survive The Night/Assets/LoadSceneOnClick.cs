@@ -21,7 +21,7 @@ public class LoadSceneOnClick : MonoBehaviour
 
     public void LoadSceneHard(string sceneName)
     {
-        DifficultySelector.setDifficulty(1.7);
+        DifficultySelector.setDifficulty(1.2);
         SceneManager.LoadScene(sceneName);
     }
 

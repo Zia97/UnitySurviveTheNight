@@ -294,6 +294,9 @@ public class GameController : MonoBehaviour
 
         var temp = GameObject.FindWithTag("Player");
 
+        Pause.isPaused = false;
+        Time.timeScale = 1;
+
     }
 
   

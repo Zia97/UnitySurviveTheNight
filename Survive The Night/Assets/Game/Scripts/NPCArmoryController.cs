@@ -52,7 +52,7 @@ public class NPCArmoryController : MonoBehaviour
     public Canvas summaryCanvas;
 
     public Text armoryHelperText;
- 
+
     public GameObject S1Cross;
     public GameObject S2Cross;
     public GameObject S3Cross;
@@ -65,8 +65,20 @@ public class NPCArmoryController : MonoBehaviour
     private Vector3 pos2 = new Vector3(0, 0, 0);
     private Vector3 pos3 = new Vector3(4, 0, 0);
 
+    public GameObject npcInfoButtonObject;
+    private Button _infoButton;
+
+    public GameObject _resumeButtonObject;
+    private Button _resumeButton;
+
+    public GameObject BlurCanvasObject;
+    Canvas BlurCanvas;
+
+    public GameObject npcCanvasObject;
+    Canvas PausedCanvas;
+
     private static List<string> allowedWeapons = new List<string>();
-    
+
 
     private void Start()
     {
@@ -75,6 +87,21 @@ public class NPCArmoryController : MonoBehaviour
         _armoryBackButtonObject = GameObject.FindWithTag("ArmoryBackButton");
         _armoryBackButton = _armoryBackButtonObject.GetComponent<Button>();
         _armoryBackButton.onClick.AddListener(ArmoryBackButtonClicked);
+
+        BlurCanvasObject = GameObject.Find("BlurCanvas");
+        BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
+        BlurCanvas.enabled = false;
+
+        npcCanvasObject = GameObject.Find("npcInfo");
+        PausedCanvas = npcCanvasObject.GetComponent<Canvas>();
+        PausedCanvas.enabled = false;
+
+        _resumeButton = _resumeButtonObject.GetComponent<Button>();
+        _resumeButton.onClick.AddListener(ResumeButtonClicked);
+
+        npcInfoButtonObject = GameObject.Find("npcInfoButton");
+        _infoButton = npcInfoButtonObject.GetComponent<Button>();
+        _infoButton.onClick.AddListener(infoButtonClicked);
 
         allowedWeapons.Add("USP");
         allowedWeapons.Add("Revolver");
@@ -88,7 +115,7 @@ public class NPCArmoryController : MonoBehaviour
 
         if (_gameControllerObject != null)
         {
-             _gameController = _gameControllerObject.GetComponent<GameController>();
+            _gameController = _gameControllerObject.GetComponent<GameController>();
             _avaliableWeapons = _gameController.getAllAvaliableWeapons();
         }
 
@@ -113,15 +140,18 @@ public class NPCArmoryController : MonoBehaviour
         NPC2Dropdown.AddOptions(updatedWeaponsList);
         NPC3Dropdown.AddOptions(updatedWeaponsList);
 
-        NPC1Dropdown.onValueChanged.AddListener(delegate {
+        NPC1Dropdown.onValueChanged.AddListener(delegate
+        {
             npc1DropdownValueChanged(npc1Value);
         });
 
-        NPC2Dropdown.onValueChanged.AddListener(delegate {
+        NPC2Dropdown.onValueChanged.AddListener(delegate
+        {
             npc2DropdownValueChanged(npc2Value);
         });
 
-        NPC3Dropdown.onValueChanged.AddListener(delegate {
+        NPC3Dropdown.onValueChanged.AddListener(delegate
+        {
             npc3DropdownValueChanged(npc3Value);
         });
     }
@@ -137,7 +167,7 @@ public class NPCArmoryController : MonoBehaviour
             destroyCharcter("S1");
             updateNPC("S1", NPC1Dropdown.options[NPC1Dropdown.value].text, pos1);
         }
-   
+
         SetWeapons();
     }
 
@@ -183,7 +213,7 @@ public class NPCArmoryController : MonoBehaviour
             destroyCharcter("S3");
             updateNPC("S3", NPC3Dropdown.options[NPC3Dropdown.value].text, pos3);
         }
-            
+
         SetWeapons();
     }
 
@@ -197,7 +227,7 @@ public class NPCArmoryController : MonoBehaviour
         S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        summaryCanvas.enabled = true;     
+        summaryCanvas.enabled = true;
     }
 
     private void updateNPC(string charac, string weapon, Vector3 pos)
@@ -205,7 +235,7 @@ public class NPCArmoryController : MonoBehaviour
         var panel = GameObject.Find("NPCPanel");
         if (panel != null)
         {
-            GameObject a = Instantiate(npcToPrefab(charac,weapon), pos, Quaternion.identity);
+            GameObject a = Instantiate(npcToPrefab(charac, weapon), pos, Quaternion.identity);
             a.GetComponent<WeaponControls>().isNPC();
             a.GetComponent<WeaponControls>().setLocation("Armory");
             a.transform.SetParent(panel.transform, true);
@@ -218,7 +248,7 @@ public class NPCArmoryController : MonoBehaviour
         var panel = GameObject.Find("NPCPanel");
         if (panel != null)
         {
-            if(_gameController.getNoOfNPCS() == 0)
+            if (_gameController.getNoOfNPCS() == 0)
             {
 
             }
@@ -232,7 +262,7 @@ public class NPCArmoryController : MonoBehaviour
                 a.transform.localScale = new Vector3(28, 28, 28);
             }
 
-            else if(_gameController.getNoOfNPCS() == 2)
+            else if (_gameController.getNoOfNPCS() == 2)
             {
                 GameObject a = Instantiate(npcToPrefab("S1", "USP"), pos1, Quaternion.identity);
                 a.GetComponent<WeaponControls>().isNPC();
@@ -294,12 +324,12 @@ public class NPCArmoryController : MonoBehaviour
     private void destroyCharcter(string survivorNumber)
     {
         var allNPCS = GameObject.FindGameObjectsWithTag("NPC");
-        
-        foreach(var selectedcharacter in allNPCS)
+
+        foreach (var selectedcharacter in allNPCS)
         {
-            if(survivorNumber.Equals("S1"))
+            if (survivorNumber.Equals("S1"))
             {
-                if(selectedcharacter.gameObject.name.Equals("S1USP(Clone)") || selectedcharacter.gameObject.name.Equals("S1MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S1Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S1Shotgun(Clone)") || selectedcharacter.gameObject.name.Equals("S1Revolver(Clone)"))
+                if (selectedcharacter.gameObject.name.Equals("S1USP(Clone)") || selectedcharacter.gameObject.name.Equals("S1MP5(Clone)") || selectedcharacter.gameObject.name.Equals("S1Scout(Clone)") || selectedcharacter.gameObject.name.Equals("S1Shotgun(Clone)") || selectedcharacter.gameObject.name.Equals("S1Revolver(Clone)"))
                 {
                     Destroy(selectedcharacter);
                 }
@@ -331,9 +361,9 @@ public class NPCArmoryController : MonoBehaviour
         List<string> results = _avaliableWeapons.Keys.Cast<string>().Distinct().ToList();
         List<string> updatedWeaponsList = new List<string>();
 
-        foreach(String weapon in results)
+        foreach (String weapon in results)
         {
-            if(allowedWeapons.Contains(weapon))
+            if (allowedWeapons.Contains(weapon))
             {
                 updatedWeaponsList.Add(weapon);
             }
@@ -350,13 +380,13 @@ public class NPCArmoryController : MonoBehaviour
     public void updateLayout()
     {
         var noOfNpcs = _gameController.getNoOfNPCS();
-        if(noOfNpcs==0)
+        if (noOfNpcs == 0)
         {
             S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             S3Cross.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
-        if(noOfNpcs==1)
+        if (noOfNpcs == 1)
         {
             armoryHelperText.text = "Arm your survivors...";
             S1Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -378,7 +408,7 @@ public class NPCArmoryController : MonoBehaviour
             NPC2Dropdown.enabled = true;
             NPC3Dropdown.enabled = false;
         }
-        if(noOfNpcs>=3)
+        if (noOfNpcs >= 3)
         {
             armoryHelperText.text = "Arm your survivors...";
             S2Cross.gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -396,7 +426,7 @@ public class NPCArmoryController : MonoBehaviour
             return null;
         }
 
-        if(charac.Equals("S1"))
+        if (charac.Equals("S1"))
         {
             if (npc.Equals("USP"))
             {
@@ -471,6 +501,36 @@ public class NPCArmoryController : MonoBehaviour
         return null;
     }
 
+    private void ResumeButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+    }
+
+    private void infoButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+        else if (!Pause.isPaused)
+        {
+            Time.timeScale = 0;
+            Pause.isPaused = true;
+            BlurCanvas.enabled = true;
+            PausedCanvas.enabled = true;
+        }
+
+
+    }
 }
 
    
