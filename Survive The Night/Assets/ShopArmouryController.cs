@@ -29,11 +29,39 @@ public class ShopArmouryController : MonoBehaviour
     public GameObject RevolverPlayer;
     public GameObject M4LaserPlayer;
 
+    public GameObject _infoButtonObject;
+    private Button _infoButton;
+
+    public GameObject _resumeButtonObject;
+    private Button _resumeButton;
+
+    public GameObject BlurCanvasObject;
+    Canvas BlurCanvas;
+
+    public GameObject PausedCanvasObject;
+    Canvas PausedCanvas;
+
     private Vector3 defaultPos;
+
+   
 
     // Start is called before the first frame update
     void Start()
     {
+        BlurCanvasObject = GameObject.Find("BlurCanvas");
+        BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
+        BlurCanvas.enabled = false;
+
+        PausedCanvasObject = GameObject.Find("ShopArmouryInfo");
+        PausedCanvas = PausedCanvasObject.GetComponent<Canvas>();
+        PausedCanvas.enabled = false;
+
+        _resumeButton = _resumeButtonObject.GetComponent<Button>();
+        _resumeButton.onClick.AddListener(ResumeButtonClicked);
+
+        _infoButtonObject = GameObject.Find("infoButton");
+        _infoButton = _infoButtonObject.GetComponent<Button>();
+        _infoButton.onClick.AddListener(infoButtonClicked);
 
         defaultPos.x = 0;
         defaultPos.y = -1;
@@ -41,15 +69,18 @@ public class ShopArmouryController : MonoBehaviour
 
         checkOwnedWeapons();
 
-        primaryWeaponDropdown.onValueChanged.AddListener(delegate {
+        primaryWeaponDropdown.onValueChanged.AddListener(delegate
+        {
             primaryWeaponDropdownChanged(primaryWeaponDropdownValue);
         });
 
-        secondaryWeaponDropdown.onValueChanged.AddListener(delegate {
+        secondaryWeaponDropdown.onValueChanged.AddListener(delegate
+        {
             secondaryWeaponDropdownChanged(secondaryWeaponDropdownValue);
         });
 
-        ShopArmouryBackButton.onClick.AddListener(delegate {
+        ShopArmouryBackButton.onClick.AddListener(delegate
+        {
             ShopBackButtonClicked();
         });
 
@@ -71,7 +102,7 @@ public class ShopArmouryController : MonoBehaviour
         UserProfile.setSecondaryWeapon(secondaryWeaponDropdown.options[secondaryWeaponDropdown.value].text);
     }
 
-    void instantiatePlayer(string selectedWeapon="")
+    void instantiatePlayer(string selectedWeapon = "")
     {
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         GameObject a = Instantiate(weaponNameToPrefab(selectedWeapon), defaultPos, Quaternion.identity);
@@ -149,7 +180,7 @@ public class ShopArmouryController : MonoBehaviour
 
     public GameObject weaponNameToPrefab(string weaponName)
     {
-        if(weaponName == null)
+        if (weaponName == null)
         {
             return ShotgunPlayer;
         }
@@ -212,9 +243,39 @@ public class ShopArmouryController : MonoBehaviour
         return null;
     }
 
+    private void ResumeButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+    }
+
+    private void infoButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+        else if (!Pause.isPaused)
+        {
+            Time.timeScale = 0;
+            Pause.isPaused = true;
+            BlurCanvas.enabled = true;
+            PausedCanvas.enabled = true;
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
