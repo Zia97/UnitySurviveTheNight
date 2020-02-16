@@ -74,6 +74,18 @@ public class WorkshopController : MonoBehaviour
     private object turret2Value;
     private object turret3Value;
 
+    public GameObject workshopInfoButtonObject;
+    private Button _workshopInfoButton;
+
+    public GameObject _resumeButtonObject;
+    private Button _resumeButton;
+
+    public GameObject BlurCanvasObject;
+    Canvas BlurCanvas;
+
+    public GameObject workshopCanvasObject;
+    Canvas PausedCanvas;
+
     private void Start()
     {
         _gameControllerObject = GameObject.FindWithTag("GameController");
@@ -97,6 +109,21 @@ public class WorkshopController : MonoBehaviour
         _buildTurret6Object = GameObject.FindWithTag("Turret6Button");
         _buildTurret6Button = _buildTurret6Object.GetComponent<Button>();
         _buildTurret6Button.onClick.AddListener(BuildTurret6ButtonClicked);
+
+        BlurCanvasObject = GameObject.Find("BlurCanvas");
+        BlurCanvas = BlurCanvasObject.GetComponent<Canvas>();
+        BlurCanvas.enabled = false;
+
+        workshopCanvasObject = GameObject.Find("workshopInfo");
+        PausedCanvas = workshopCanvasObject.GetComponent<Canvas>();
+        PausedCanvas.enabled = false;
+
+        _resumeButton = _resumeButtonObject.GetComponent<Button>();
+        _resumeButton.onClick.AddListener(ResumeButtonClicked);
+
+        workshopInfoButtonObject = GameObject.Find("workshopInfoButton");
+        _workshopInfoButton = workshopInfoButtonObject.GetComponent<Button>();
+        _workshopInfoButton.onClick.AddListener(infoButtonClicked);
 
         if (_gameControllerObject != null)
         {
@@ -783,6 +810,37 @@ public class WorkshopController : MonoBehaviour
         turret1Dropdown.AddOptions(results);
         turret2Dropdown.AddOptions(results);
         turret3Dropdown.AddOptions(results);
+    }
+
+    private void ResumeButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+    }
+
+    private void infoButtonClicked()
+    {
+        if (Pause.isPaused)
+        {
+            Time.timeScale = 1;
+            Pause.isPaused = false;
+            BlurCanvas.enabled = false;
+            PausedCanvas.enabled = false;
+        }
+        else if (!Pause.isPaused)
+        {
+            Time.timeScale = 0;
+            Pause.isPaused = true;
+            BlurCanvas.enabled = true;
+            PausedCanvas.enabled = true;
+        }
+
+
     }
 
 }
