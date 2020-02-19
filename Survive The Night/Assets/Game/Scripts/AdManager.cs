@@ -9,10 +9,15 @@ public class AdManager : MonoBehaviour
 
     GameObject PurchaseCoinsMoneyObject;
 
-    
+    string gameId = "3282485";
+    string myPlacementId = "rewardedVideo";
+    bool testMode = true;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        Advertisement.Initialize(gameId, false);
         PurchaseCoinsMoneyObject = GameObject.Find("PurchaseCoinsMoney");
         PurchaseCoinsMoneyObject.GetComponentInChildren<Text>().text = UserProfile.getCoins().ToString();
     }
@@ -32,7 +37,7 @@ public class AdManager : MonoBehaviour
         {
             case ShowResult.Finished:
                 Debug.Log("The ad was successfully shown.");
-                UserProfile.addCoins(25);
+                UserProfile.addCoins(15);
                 updateUserMoney();
                 break;
             case ShowResult.Skipped:
